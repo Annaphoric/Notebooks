@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.6: Applications to Multiple Integrals</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.6: Applications to Multiple Integrals</h2>
+  	
+  	<ul class="topic"><b>Mass and First Moments</b>
+  	  <li>let δ(x, y, z) = density of an object within a region D; The integral of δ bounded by D gives the mass m of the object</li>
+  	    <ul>m = ∭<sub>D</sub>(δ(x, y, z)) dV</ul>
+  	    
+  	  <br><li>The first moment (M<sub>other coordinates</sub>) of the solid within the coordinate plane at a given point P = (a, b, c) is calculated by integrating the product of the density and one given coordinate. For instance, the first moment M<sub>yz</sub> of the solid within region D given its density δ(x, y, z) at point P = (a, b, c) is calculated as shown: </li>
+  	    <ul>M<sub>yz</sub> = ∭<sub>D</sub>(x δ(x, y, z)) dV</ul>
+  	  
+  	  <br><li>The mass and first moments of "2D-objects" such as a flat plate are calculated similarly. The z-coordinate need simply be dropped from the integration (using a double integral)</li>
+  	  
+  	  <br><li>The centre of mass is the centre point of the mass found by integrating the density along a volumetric region D. The coordinates of the centre of mass are found individually. Each one is found by dividing the moment at a specific coordinate by the total mass m. For example, the x-coordinate a of the centre of mass is found by dividing the first x-moment M<sub>yz</sub> by the total mass m: </li>
+  	    <ul>a = M<sub>yz</sub> / m</ul>
+  	  
+  	  <br><li>If the density of an object or plate is constant, the centre of mass is known as the <b>centroid</b> of the object. This can be solved by setting the density equal to one</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Find the centre of mass of given a solid with its density bound by region R = {x<sup>2</sup> + y<sup>2</sup> <= 4, z = 0, z = 4 - x<sup>2</sup> - y<sup>2</sup>}.
+  	  
+  	    <br><li>Solving for y: </li>
+  	      <ul>4 = x<sup>2</sup> + y<sup>2</sup></ul>
+  	      <ul>y = ± sqrt(4 - x<sup>2</sup>)</ul>
+  	    
+  	    <br><li>It is most convenient to convert the equations into a polar form: </li>
+  	      <ul>r = {0, 2};  θ = {0, 2π},  z = 4 - r<sup>2</sup>;</ul>
+  	    
+  	    <br><li>Solving for the mass m of the bounded solid: </li>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r ∫<sub>0</sub><sup>4 - r<sup>2</sup></sup>(1) dz) dr) dθ</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r (4 - r<sup>2</sup>)) dr) dθ</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(4r - r<sup>3</sup>) dr) dθ</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>([2r<sup>2</sup> - r<sup>4</sup>/4]<sub>0</sub><sup>2</sup>) dθ</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(8 - 4) dθ</ul>
+  	      <ul>m = 4 ∫<sub>0</sub><sup>2π</sup>(1) dθ</ul>
+  	      <ul>m = 8π</ul>
+  	    
+  	    <br><li>Since solid is symmetrical along any vertical plane, the x & y-coordinates of the centre of mass are both at zero. The z-coordinate c can be found by determining the first z-moment M<sub>xy</sub>: </li>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r ∫<sub>0</sub><sup>4 - r<sup>2</sup></sup>(z) dz) dr) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 1/2 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r (4 - r<sup>2</sup>)<sup>2</sup>) dr) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 1/2 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r<sup>5</sup> - 8r<sup>3</sup> + 16r) dr) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 1/2 ∫<sub>0</sub><sup>2π</sup>([r<sup>6</sup>/6 - 2r<sup>4</sup> + 8r<sup>2</sup>]<sub>0</sub><sup>2</sup>) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 1/2 ∫<sub>0</sub><sup>2π</sup>(32/3 - 32 + 32) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 32π/3 </ul>
+  	    
+  	    <br><li>The z-coordinate c is solved as shown: </li>
+  	      <ul>c = M<sub>xy</sub> / m</ul>
+  	      <ul>c = (32π/3) / (8π)</ul>
+  	      <ul>c = 4/3</ul>
+  	      <ul class="green">Therefore, the centre of mass is the point (0, 0, 4/3)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Find the centroid of the region in the first quadrant bounded by {y = x<sup>2</sup>, y = x}.
+  	  
+  	    <br><br><li>The x-limits of the region are x = {0, 1}. The mass of the solid within region is solved by setting its density equal to 1 and integrating along the bounded region: </li>
+  	      <ul>m = ∫<sub>0</sub><sup>1</sup>(∫<sub>x<sup>2</sup></sub><sup>x</sup>(1) dy) dx</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>1</sup>(x - x<sup>2</sup>) dx</ul>
+  	      <ul>m = [x<sup>2</sup>/2 - x<sup>3</sup>/3]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>m = 1/6</ul>
+  	    
+  	    <br><li>The first x-moment M<sub>y</sub> is: </li>
+  	      <ul>M<sub>y</sub> = ∫<sub>0</sub><sup>1</sup>(x ∫<sub>x<sup>2</sup></sub><sup>x</sup>(1) dy) dx</ul>
+  	      <ul>M<sub>y</sub> = ∫<sub>0</sub><sup>1</sup>(x<sup>2</sup> - x<sup>3</sup>) dx</ul>
+  	      <ul>M<sub>y</sub> = [x<sup>3</sup>/3 - x<sup>4</sup>/4]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>M<sub>y</sub> = 1/3 - 1/4</ul>
+  	      <ul>M<sub>y</sub> = 1/12</ul>
+  	    
+  	    <br><li>The x-coordinate a of the centre of mass is: </li>
+  	      <ul>a = M<sub>y</sub> / m</ul>
+  	      <ul>a = (1/12) / (1/6)</ul>
+  	      <ul>a = 1/2</ul>
+  	    
+  	    <br><li>The first y-moment M<sub>x</sub> is: </li>
+  	      <ul>M<sub>x</sub> = ∫<sub>0</sub><sup>1</sup>(∫<sub>x<sup>2</sup></sub><sup>x</sup>(y) dy) dx</ul>
+  	      <ul>M<sub>x</sub> = 1/2 ∫<sub>0</sub><sup>1</sup>([y<sup>2</sup>]<sub>x<sup>2</sup></sub><sup>x</sup>) dx</ul>
+  	      <ul>M<sub>x</sub> = 1/2 ∫<sub>0</sub><sup>1</sup>(x<sup>2</sup> - x<sup>4</sup>) dx</ul>
+  	      <ul>M<sub>x</sub> = 1/2 [x<sup>3</sup>/3 - x<sup>5</sup>/5]<sub>0</sub><sup>1</sup>) dx</ul>
+  	      <ul>M<sub>x</sub> = 1/2 (1/3 - 1/5)</ul>
+  	      <ul>M<sub>x</sub> = 1/15</ul>
+  	    
+  	    <br><li>The y-coordinate b of the centre of mass is: </li>
+  	      <ul>b = M<sub>x</sub> / m</ul>
+  	      <ul>b = (1/15) / (1/6)</ul>
+  	      <ul>b = 2/5</ul>
+  	      <ul class="green">Therefore, the centroid is the point (1/2, 2/5)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Moment of Inertia</b>
+  	  <li>The moment of inertia I (a second moment) is analogous to the mass of object, but it is applied as an object rotates. The centre of mass of an object that is farther from its axis of rotation contributes more to its moment of inertia. Every block of mass that makes up an object has its own moment of inertia at a specific radius from the axis of rotation. Overall, the sum every block's moment of inertia is the moment of inertia of the entire object. Mathematically, the moment of inertia is the integral of the square of the radius in terms of mass: </li>
+  	    <ul class="red">I = ∫(r<sup>2</sup>) dm</ul>
+  	  
+  	  <br><li>The rotational kinetic energy KE<sub>rot</sub> of a rotating object is derived from the moment of intertia I & angular velocity ω of every individual region of the object: </li>
+  	    <ul class="red">KE<sub>rot</sub> = Iω<sup>2</sup>/2</ul>
+  	    
+  	  <br><li>Assume a solid is bounded by region D and its axis of rotation is the line L. If radius r = f(x, y, z) is the distance from a point P = (x, y, z) to the line and the mass m of any block within the region is Δm<sub>k</sub> = δ(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>), the moment of inertia of the solid about line L is given by the equation: </li>
+  	    <li>I<sub>L</sub> = ∭<sub>D</sub>((f(x, y, z))<sup>2</sup> Δm) dV</li>
+  	    <li class="green">I<sub>L</sub> = ∭<sub>D</sub>((f(x, y, z))<sup>2</sup> δ(x, y, z)) dV</li>
+  	  
+  	  <br><li>If line L = x-axis, r<sup>2</sup> = y<sup>2</sup> + z<sup>2</sup></li>
+  	  <li>If L = y-axis, r<sup>2</sup> = x<sup>2</sup> + z<sup>2</sup></li>
+  	  <li>If L = z-axis, r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup></li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <li>Find all 3 moments of inertia about their respective coordinate axes for the rectangular solid of density δ centered at the origin.</li>
+  	    
+  	    <br><ul>let a = length of side parallel to the x-axis, b = length of side parallel to the y-axis, c = length of side parallel to the z-axis; As long as the centre of each side is at the origin and both sections of a side is of equal length (symmetric), the limits of the rectangular solid are from zero to half a side twice. So, the moment of inertia about the x-axis I<sub>x</sub> is written as: 
+  	      <li>I<sub>x</sub> = 8 ∫<sub>0</sub><sup>a/2</sup>(∫<sub>0</sub><sup>b/2</sup>(∫<sub>0</sub><sup>c/2</sup>((y<sup>2</sup> + z<sup>2</sup>) δ) dz) dy) dx</li>
+  	      <li>I<sub>x</sub> = 8δ ∫<sub>0</sub><sup>a/2</sup>(∫<sub>0</sub><sup>b/2</sup>([y<sup>2</sup>z + z<sup>3</sup>/3]<sub>0</sub><sup>c/2</sup>) dy) dx</li>
+  	      <li>I<sub>x</sub> = 8δ ∫<sub>0</sub><sup>a/2</sup>(∫<sub>0</sub><sup>b/2</sup>(y<sup>2</sup>c/2 + c<sup>3</sup>/24) dy) dx</li>
+  	      <li>I<sub>x</sub> = 4cδ ∫<sub>0</sub><sup>a/2</sup>([y<sup>3</sup>/3 + y c<sup>2</sup>/12]<sub>0</sub><sup>b/2</sup>) dx</li>
+  	      <li>I<sub>x</sub> = 4cδ ∫<sub>0</sub><sup>a/2</sup>(b<sup>3</sup>/24 + bc<sup>2</sup>/24) dx</li>
+  	      <li>I<sub>x</sub> = bcδ/6 ∫<sub>0</sub><sup>a/2</sup>(b<sup>2</sup> + c<sup>2</sup>) dx</li>
+  	      <li>I<sub>x</sub> = bcδ/6 (b<sup>2</sup> + c<sup>2</sup>) [x]<sub>0</sub><sup>a/2</sup></li>
+  	      <li class="green">I<sub>x</sub> = abcδ/12 (b<sup>2</sup> + c<sup>2</sup>)</li>
+  	    </ul>
+  	    
+  	    <ul>Similarly, the moment of inertias about the y-axis and z-axis are:
+  	      <li class="green">I<sub>y</sub> = abcδ (a<sup>2</sup> + c<sup>2</sup>);  I<sub>z</sub> = abcδ (a<sup>2</sup> + b<sup></sup>)</li>
+  	    </ul>
+  	    
+  	    <ul>Since the solid is a rectangle, the volume V of the solid is V = abc. This reveals the mass m of the object which is the density δ multiplied by the volume. Therefore the moment of inertias can be simplifed to:
+  	      <li class="green">I<sub>x</sub> = m/12 (b<sup>2</sup> + c<sup>2</sup>);  I<sub>y</sub> = m/12 (a<sup>2</sup> + c<sup>2</sup>);  I<sub>z</sub> = m/12 (a<sup>2</sup> + b<sup>2</sup>)</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>A flat triangular plate in the first quadrant is bounded by the lines {x = 1, y = 0, y = 2x}. The density δ(x, y) of the plate at any point is {6(x + y + 1)}. Find the plate's moments of inertia about both coordinate axes and the origin.
+  	    
+  	    <br><br><li>The square of the radius r<sup>2</sup> from the x-axis to any point within the plate is y<sup>2</sup>. Solving for the moment of inertia about the x-axis: </li>
+  	      <ul>I<sub>x</sub> = 6 ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>2x</sup>((x + y + 1) y<sup>2</sup>) dy) dx</ul>
+  	      <ul>I<sub>x</sub> = 6 ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>2x</sup>(xy<sup>2</sup> + y<sup>3</sup> + y<sup>2</sup>) dy) dx</ul>
+  	      <ul>I<sub>x</sub> = 6 ∫<sub>0</sub><sup>1</sup>([(x + 1) y<sup>3</sup>/3 + y<sup>4</sup>/4]<sub>0</sub><sup>2x</sup>) dx</ul>
+  	      <ul>I<sub>x</sub> = 6 ∫<sub>0</sub><sup>1</sup>(8x<sup>3</sup> (x + 1)/3 + 4x<sup>4</sup>) dx</ul>
+  	      <ul>I<sub>x</sub> = 24 ∫<sub>0</sub><sup>1</sup>(2/3 (x<sup>4</sup> + x<sup>3</sup>) + x<sup>4</sup>) dx</ul>
+  	      <ul>I<sub>x</sub> = 8 ∫<sub>0</sub><sup>1</sup>(5x<sup>4</sup> + 4x<sup>3</sup>) dx</ul>
+  	      <ul>I<sub>x</sub> = 8 [x<sup>5</sup> + x<sup>4</sup>]<sub>0</sub><sup>1</sup></ul>
+  	      <ul class="green">I<sub>x</sub> = 16</ul>
+  	    
+  	    <br><li>The square of the radius r<sup>2</sup> from the y-axis to any point within the plate is x<sup>2</sup>. Solving for the moment of inertia about the y-axis: </li>
+  	      <ul>I<sub>y</sub> = 6 ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>2x</sup>((x + y + 1) x<sup>2</sup>) dy) dx</ul>
+  	      <ul>I<sub>y</sub> = 6 ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>2x</sup>(x<sup>3</sup> + x<sup>2</sup> (y + 1)) dy) dx</ul>
+  	      <ul>I<sub>y</sub> = 6 ∫<sub>0</sub><sup>1</sup>([x<sup>3</sup>y + x<sup>2</sup>y<sup>2</sup>/2 + x<sup>2</sup>y]<sub>0</sub><sup>2x</sup>) dx</ul>
+  	      <ul>I<sub>y</sub> = 6 ∫<sub>0</sub><sup>1</sup>(4x<sup>4</sup> + 2x<sup>3</sup>) dx</ul>
+  	      <ul>I<sub>y</sub> = 12 [2x<sup>5</sup>/5 + x<sup>4</sup>/4]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>I<sub>y</sub> = 12 (2/5 + 1/4)</ul>
+  	      <ul class="green">I<sub>y</sub> = 39/5</ul>
+  	      
+  	    <br><li>The moment of inertia at the origin I<sub>0</sub> is found by summing both moments of inertia: </li>
+  	      <ul>I<sub>0</sub> = I<sub>x</sub> + I<sub>y</sub></ul>
+  	      <ul>I<sub>0</sub> = 16 + 39/5</ul>
+  	      <ul class="green">I<sub>0</sub> = 99/5</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

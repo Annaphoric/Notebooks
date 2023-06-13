@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" href="Differential_Equations.css">
+				<title>Introduction to Differential Equations</title>
+		</head>
+		
+		<body>
+				<h1>Introduction to Differential Equations</h1>
+				
+				<ul class="topic"><b>Differential Equations</b>
+						<li>Differential equations are equations involve the <b>derivative</b> of a function</li>
+						  <ul>A derivative tells us an equation's rate of change</ul>
+						 
+				  <br><li>DEs (differential equations) have direct application to physical systems using linear algebra. Numerical models (such as MATLAB models) can be made to approximate their solutions</li>
+				  
+				  <br><li>Types of DEs: </li>
+				    <ul><b>Ordinary Differential Equation</b>
+				      <li>The DE of a function containing one independent variable. The derivatives of this function are referred to as <b>normal derivatives</b></li>
+				    </ul>
+				    
+				    <br><ul><b>Partial Differential Equations</b>
+				      <li>The DE of a function containing more than one independent variable. The derivatives of this function are referred to as <b>partial derivatives</b></li>
+				    </ul>
+				    
+				    <br><ul><b>Systematic Differential Equations</b>
+				      <li>A set of DEs based on functions with multiple dependent variables</li>
+				    </ul>
+				  
+				  <li>The <b>order</b> of a DE is the highest derivative that appears within the function's equation</li>
+				  <li>A <b>linear differential equation</b> is a linear equation of a function. Contrarily, <b>non-linear differential equations</b> can be parabolic, hyperbolic, etc. A function containing the square of a dependent variable or product of a derivative & dependent variable is non-linear</li>
+				  <li>A <b>solution</b> to an n-th order DE is a function containing at least n derivatives such that if the values of the derivatives were plugged in, the equation would be true</li>
+				</ul>
+				
+				<ul class="example"><b>Example 1: </b>
+				  <ol><span>Verify that the function y = sin(2t) solves the DE: d<sup>2</sup>y/dt<sup>2</sup> + 4y = 0</span>
+				    
+				    <br><li>Taking the derivatives of y = sin(2t): </li>
+				      <ul><span>dy/dt = 2 cos(2t)</span></ul>
+				      <ul><span>d<sup>2</sup>y/dt<sup>2</sup> = -4 sin(2t)</span></ul>
+				      
+				      <br><ul class="green">Since (-4 sin(2t)) + 4(sin(2t)) = 0 -> 0 == 0 is true, sin(2t) is, indeed, a solution to the given DE</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 2: </b>
+				  <ol><span>What are the solutions of y if dy/dt = 2t ?</span>
+				    
+				    <br><li>Integrating the DE: </li>
+				      <ul><span>∫(dy/dt) = t<sup>2</sup></span> + C (indefinite integration; solving for the antiderivative)</ul>
+				      <ul class="green"><span>y = t<sup>2</sup></span> + C, where C is any real number</ul>
+				  </ol>
+				</ul>
+				
+		</body>
+</html>

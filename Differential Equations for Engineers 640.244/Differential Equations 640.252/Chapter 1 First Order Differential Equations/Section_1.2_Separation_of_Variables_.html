@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset-"utf-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.2: Separation of Variables</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.2: Separation of Variables</h1>
+    
+    <ul class="topic"><b>Differential Equations & their Solutions</b>
+      <li>The standard form of a first-order differential equation is: </li>
+        <ul>dy/dt = f(t, y), where y = dependent variable & t = independent variable (time)</ul>
+      
+      <br><li>A <b>solution</b> to a DE is a function of y that satisfies the equation for all t as: </li>
+        <ul>dy/dt = f(t, y(t))</ul>
+        
+      <br><li>In the case for DE dy/dt = y, the function y(t) = c e<sup>t</sup>, where c = any constant, easily satisfies the equation; therefore, it is considered a solution to the DE</li>
+        <ul>If there are multiple solutions to a DE, it is possible that they all algebraically look different from each other</ul>
+      
+      <br><li>One way to solve for an initial value problem (IVP) is by integrating the DE to solve for a general solution, substituting values, and solving for the integration constant</li>
+    </ul>
+
+      
+      <br><ul class="topic"><b>Separable Equations</b>
+        <br><li>A DE is considered <b>separable</b> only if it can be expressed as a product of a function of t & a function of y, having the form: </li>
+        <ul>dy/dt = g(t) h(y)</ul>
+        
+      <br><li>A DE is considered both separable and <b>autonomous</b> only if it can be expressed as a function of y, but not a function of t, having the form: </li>
+        <ul>dy/dt = h(y)</ul>
+      
+      <br><li>There may be instances where the DE cannot be integrated, especially if it is non-autonomous</li>
+      <li>The DE will first have to be separated via the <b>separation of variables</b>, that is, the dependent variable with its derivative should lie on one side of the equation, whilst the independent variable with its derivative should lie on the other</li>
+      <li>It will now have the form: </li>
+        <ul>h(y) dy = g(t) dt</ul>
+      <li>Although this is an informal way to algebraically simplify the equation, integration is now possible on both sides: in terms of y on the left side & in terms of t on the right</li>
+      
+      <br><li>If integration leads to a general solution that contains a function that is not a solution, a conditional equillibrium solution will have to be specified to ensure that the general solution remains a general solution to the DE, such as: </li>
+        <ul>dy/dt = y<sup>2</sup> --> y(t) = -1 / (t + C) && y(t) = 0</ul>
+        
+      <br><li>If integration leads to an equation that cannot be solved for y, an implicit solution will have to be solved for y, rather than an explicit one</li>
+    </ul>
+
+    
+    <br><ul class="example"><b>Example 1: </b>
+      <ol>Solve for the initial value problem given: DE dy/dt = 12t<sup>3</sup> - 2 sin(t), IC y(0) = 3;
+        
+        <br><li>Integrating the DE: </li>
+          <ul>∫(dy/dt)dt = ∫(12t<sup>3</sup> - 2 sin(t))dt</ul>
+          <ul>y = 3t<sup>4</sup> + 2 cos(t) + C  // This is the general solution</ul>
+        
+        <br><li>Using the IC to solve for integration constant C: </li>
+          <ul>y(0) = 3(0)<sup>4</sup> + 2 cos(0) + C == 3</ul>
+          <ul>2 + C = 3</ul>
+          <ul>C = 1</ul>
+        
+        <br><li>Writing out the solution to the IVP: </li>
+          <ul class="green">y(t) = 3t<sup>4</sup> + 2 cos(t) + 1</ul>
+      </ol>
+    </ul>
+  </body>
+</html>

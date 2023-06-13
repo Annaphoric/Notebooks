@@ -1,0 +1,91 @@
+body {
+  background: #DCC;
+  font-size: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.topic ul:before, ol:before {
+  content: "- ";
+}
+
+.topic ul:before {
+  content: "> ";
+}
+
+.topic ul ul:before, .example ul:before {
+  content: "~ ";
+}
+
+li {
+  list-style-position: inside;
+  text-indent: 1em;
+}
+
+a:hover {
+  color: #F00;
+}
+
+.red {
+  color: #C00;
+}
+
+.green {
+  color: #080;
+}
+
+.blue {
+  color: #00C;
+}
+
+.black {
+  color: #000;
+}
+
+sup, sub {
+  font-size: 0.7em;
+}
+
+sup sup, sub sub {
+		font-size: 0.5em;
+}
+
+/*
+Common characters to use:
+
+∂∫∳Δ∇°√±∓∈⋃≡≈≠∝∞⨯⋅≤≥αβγδεφκλμθπρσωΣΩ∴∵➝
+
+
+Blank template tags (Do not edit; copy & paste):
+
+<ul class="example"><b>Example X: </b>
+				  <ol><em></em>
+				    
+				    <br><li></li>
+				  </ol>
+				</ul>
+
+<ul class="topic"><b></b>
+				  <li></li>
+				</ul>
+
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section </title>
+  </head>
+  <body>
+  		<h1>Section </h1>
+  		
+  		<ul class="topic"><b></b>
+  		  <li></li>
+  		</ul>
+  </body>
+</html>
+
+*/

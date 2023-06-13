@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 5.3: Cayley-Hamilton's Theorum</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 5.3: Cayley-Hamilton's Theorum</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given a matrix of size 3 ⨯ 3 with eigenvalues λ = {-4, 2, 5}, is this matrix diagonalisable?</li>
+      
+      <br><ul>Since the multiplicity of the set of eigenvalues is one for each eigenvalue since none are repeated, the dimensions of the eigenspace made from each eigenvalue is one. In order for the matrix to be diagonalisable, the dimensions of each eigenspace must add up to the size of the matrix, 3: 
+        <li>dim(B<sub>(λ = -4)</sub>) + dim(B<sub>(λ = 2)</sub>) + dim(B<sub>(λ = 5)</sub>) == 3</li>
+        <li>1 + 1 + 1 == 3 (true)</li>
+        <li>Since the sum of the dimensions is 3, the given matrix is diagonalisable</li>
+      </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Given a 5 ⨯ 5 matrix with eigenvalues λ = {-4, 6} with respective multiplicities of 3 & 2 and the number of dimensions of the eigenspace for λ = 6 is 2, under what conditions is the matrix diagonalisable and not diagonalisable? </li>
+      
+        <br><ul>The polynomial characteristic p(λ) for this matrix is: 
+          <li>(-1)<sup>5</sup>(λ + 4)<sup>3</sup>(λ - 6)<sup>2</sup> = 0</li>
+        </ul>
+        
+        <br><ul>The dimensions of the eigenspace for the λ = -4 is based on its multiplicity (but it is not always true that they are, essentially, the same): 
+          <li>dim(B<sub>(λ = -4)</sub>) ≤ 3</li>
+          <li>If the number of dimensions of this eigenspace is 3, the matrix is diagonalisable (since the sum of the dimensions of both eigenspaces is 5). If it is less than 3, the matrix is not diagonalisable (since the sum of both eigenspaces is not 5)</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Cayley-Hamilton Theorum</b>
+      <li>For a matrix A of size n ⨯ n having with eigenvalues λ = {λ<sub>1</sub>, λ<sub>2</sub>...λ<sub>n</sub>}, the expression c<sub>n</sub>A<sup>n</sup> + c<sub>n - 1</sub>A<sup>n - 1</sup> +...c<sub>0</sub>I (p(A)) is always equal to a zero matrix of the same size. The values of c are the coeficients of the λ within the characteristic polynomial: </li>
+        <ul class="red">c<sub>n</sub>A<sup>n</sup> + c<sub>n - 1</sub>A<sup>n - 1</sup> +...c<sub>0</sub> = <b>0</b></ul>
+        <ul class="red">p(A) = <b>0</b></ul>
+      
+      <br><li>If the main diagonal of a matrix of size n ⨯ n is made up of all zeros, the lower triangle is made up of all zeros, but the upper triangle is filled with non-zero numbers, the matrix is said to be <b>nilpotent</b>. A nilpotent matrix raised to the n-th power is equal to the zero matrix. This is proved by Cayley-Hamilton's Theorum</li>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Prove the Cayley-Hamilton Theorum using matrix A = [[7 6] [-1 2]].
+      
+        <br><br><li>Computing p(λ): </li>
+          <ul>det([[(7 - λ) 6] [-1 (2 - λ)]]) = 0</ul>
+          <ul>(λ<sup>2</sup> - 9λ + 14) + 6 = 0</ul>
+          <ul>λ<sup>2</sup> - 9λ + 20 = 0</ul>
+          
+        <br><li>Showing that p(A) == <b>0</b> is true: </li>
+          <ul>A<sup>2</sup> = [[7 6] [-1 2]] [[7 6] [-1 2]]</ul>
+          <ul>A<sup>2</sup> = [[49 + (-6)] [-7 + (-2)]] & [[42 + 12] [-6 + 4]]</ul>
+          <ul>A<sup>2</sup> = [[43] [-9]] & [[54] [-2]]</ul>
+          <ul>A<sup>2</sup> = [[43 54] [-9 -2]]</ul>
+          
+          <br><ul>-9A = -9 [[7 6] [-1 2]]</ul>
+          <ul>-9A = [[-63 -54] [9 -18]]</ul>
+          
+          <br><ul>p(A) = A<sup>2</sup> - 9A + 20I == <b>0</b></ul>
+          <ul>[[43 54] [-9 -2]] + [[-63 -54] [9 -18]] + [[20 0] [0 20]] == <b>0</b></ul>
+          <ul>[[(43 - 63 + 20) (54 - 54)] [(-9 + 9)] [(-2 - 18 + 20)]] == <b>0</b></ul>
+          <ul>[[0 0] [0 0]] == <b>0</b> (true)</ul>
+          <ul class="green">Since p(A) == <b>0</b> is true, the Cayley-Hamilton Theorum is obeyed</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 2.2: Complex Roots for Second-Order Differential Equations</title>
+  </head>
+  <body>
+  		<h1>Section 2.2: Complex Roots for Second-Order Differential Equations</h1>
+    
+    <ul class="topic"><b>Solutions with Complex Roots</b>
+      <li>In the case where solutions contain complex roots within the charaacteristic equation, we use solutions y(t) = {e<sup>a t ± b</sup>} having roots r = {a ± b i}, where b = {cos(b t) + i sin(b t)}. The general solution is written as y(t) = {c<sub>1</sub> e<sup>a t</sup> (cos(b t) + i sin(b t)) + c<sub>2</sub> e<sup>a t</sup> (cos(b t) - i sin(b t))}. At any time t, the value for y will always be a complex value. let DE y'' + p(t) y' + q(t) y = 0;  where p(t) && q(t) are continuous functions. In order to alter a complex-valued solution y(t) so that it can be applied to the real world, the solution is split into 2 terms containing the real & imaginary portions: y(y) = u(t) + i v(t), where u(t) && v(t) are both real-valued functions. There functions are now considered solutions themselves to the DE</li>
+      <li>To test this out, homogenous L(u(t) + i v(t)) operation is performed: </li>
+        <ul>L(u + i v) = (u + i v)'' + p(t) (u + i v)' + q(t) (u + i v) == 0</ul>
+        <ul>(u'' + p(t) u' + q(t) u) + i (v'' + p(t) v' + q(t) v) = 0</ul>
+        <ul>L(u) && L(v) == 0 must be true</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol><em>Assume a characteristic equation has roots r = {a ± b i}. What is the general solution to the DE?</em>
+      
+        <br><li>let f(t) = e<sup>a t</sup> (cos(b t) ± i sin(b t));  The general solution can be written as: </li>
+          <ul>y(t) = c<sub>1</sub> e<sup>a t</sup> cos(b t) + c<sub>2</sub> e<sup>a t</sup> sin(b t)</ul>
+          <ul>The legitimacy of the solution can be checked using the Wranskian w(t) = y<sub>1</sub> y<sub>2</sub>' - y<sub>1</sub>' y<sub>2</sub>, where y<sub>1</sub> = e<sup>a t</sup> cos(b t) & y<sub>2</sub> = e<sup>a t</sup> sin(b t). w(t) is never zero as long as b is not zero</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol><em>Solve the initial value problem: {y'' + 2y' - 15y = 0}, y(0) = 1, y'(0) = -2.</em>
+      
+        <br><li>Using the r-exponential method: </li>
+          <ul>y'' + 2y' - 15y = 0</ul>
+          <ul>r<sup>2</sup> + 2r - 15 = 0</ul>
+          <ul>(r + 5)(r - 3) = 0</ul>
+          <ul>r = {-5, 3}</ul>
+          
+          <br><ul>Therefore, the general solution is {y(t) = c<sub>1</sub> / e<sup>5t</sup> + c<sub>2</sub> e<sup>3t</sup>}. This solution is real-valued</ul>
+        
+        <br><li>Solving for the constants using given ICs: </li>
+          <ul>y'(t) = 3c<sub>2</sub> e<sup>3t</sup> - 5c<sub>1</sub> / e<sup>5t</sup></ul>
+          
+          <br><ul>y(0) = c<sub>1</sub> / e<sup>5(0)</sup> + c<sub>2</sub> e<sup>3(0)</sup> == 1</ul>
+          <ul>c<sub>1</sub> + c<sub>2</sub> = 1</ul>
+          
+          <br><ul>y'(0) = 3c<sub>2</sub> e<sup>3(0)</sup> - 5c<sub>1</sub> / e<sup>5(0)</sup> == 2</ul>
+          <ul>5c<sub>1</sub> - 3c<sub>2</sub> = -2</ul>
+          
+          <br><ul>3c<sub>1</sub> + 5c<sub>1</sub> + 3c<sub>2</sub> - 3c<sub>2</sub> = 3 - 2 // Via elimination addition</ul>
+          <ul>8c<sub>1</sub> = 1</ul>
+          <ul>c<sub>1</sub> = 1/8;  c<sub>2</sub> = 7/8</ul>
+          
+          <br><ul class="green">y(t) = 1 / (8 e<sup>5t</sup>) + 7 e<sup>3t</sup>/8 // This is the general solution</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol><em>Solve the initial value problem: {y'' + 2y' + 5y = 0}, y(0) = 2, y'(0) = 1</em>
+      
+        <br><li>Using the r-exponential method: </li>
+          <ul>y'' + 2y' + 5y = 0</ul>
+          <ul>r<sup>2</sup> + 2r + 5 = 0 // This cannot be factored</ul>
+          <ul>r = (-2 ± sqrt(4 - 20)) / 2 // Using the quadratic formula; the equation has complex roots</ul>
+          <ul>r = (-2 ± 4i) / 2</ul>
+          <ul>r = -1 ± 2i</ul>
+          <ul>let a = -1;  b = 2;</ul>
+          
+          <br><ul>y(t) = c<sub>1</sub> cos(2t) / e<sup>t</sup> + c<sub>2</sub> sin(2t) / e<sup>t</sup> // This is the general solution based on the standard form to solutions for complex roots: y(t) = c<sub>1</sub> e<sup>a t</sup> cos(b t) + c<sub>2</sub> e<sup>a t</sup> sin(b t)</ul>
+          
+        <br><li>Solving for the constants: </li>
+          <ul>y'(t) = -c<sub>1</sub>(2sin(2t) / e<sup>t</sup> + cos(2t) / e<sup>t</sup>) + c<sub>2</sub>(2cos(2t) / e<sup>t</sup> - sin(2t) / e<sup>t</sup>)</ul>
+          
+          <br><ul>y(0) = c<sub>1</sub> cos(2(0)) / e<sup>(0)</sup> + c<sub>2</sub> sin(2(0)) / e<sup>(0)</sup> == 2</ul>
+          <ul>c<sub>1</sub> = 2</ul>
+          
+          <br><ul>y'(0) = -c<sub>1</sub>(2sin(2(0)) / e<sup>(0)</sup> + cos(2(0)) / e<sup>(0)</sup>) + c<sub>2</sub>(2cos(2(0)) / e<sup>(0)</sup> - sin(2(0)) / e<sup>(0)</sup>) == 1</ul>
+          <ul>2c<sub>2</sub> - c<sub>1</sub> = 1</ul>
+          
+          <br><ul>2c<sub>2</sub> - (2) = 1</ul>
+          <ul>c<sub>2</sub> = 3/2</ul>
+          
+          <br><ul>y(t) = 2cos(2t) / e<sup>t</sup> + 3sin(2t) / (2e<sup>t</sup>) // This is the explicit solution</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol><em>Find the general solution to DEs {y'' - 8y' + 16y = 0}, {y'' + 2y' - y = 0}, {y'' - 6y' + 13y}.</em>
+      
+        <br><li>Using the r-exponential method: </li>
+          <ul>y'' - 8y' + 16y = 0</ul>
+          <ul>r<sup>2</sup> - 8r + 16 = 0</ul>
+          <ul>(r - 4)<sup>2</sup> = 0 // Double root</ul>
+          <ul>r = 4</ul>
+          
+          <br><ul class="green">y(t) = e<sup>4t</sup> (c<sub>1</sub> + t c<sub>2</sub>)</ul>
+          <ul>t is added as constant-coefficient for double roots</ul>
+        
+        <br><li>Using the r-exponential method: </li>
+          <ul>y'' + 2y' - y = 0</ul>
+          <ul>r<sup>2</sup> + 2r - 1 = 0 // Cannot be factored normally</ul>
+          <ul>r = (-2 ± sqrt(4 + 4)) / 2</ul>
+          <ul>r = -1 ± sqrt(2)</ul>
+          
+          <br><ul>y(t) = c<sub>1</sub> e<sup>-1 + sqrt(2)</sup> + c<sub>2</sub> e<sup>(-1 - sqrt(2))</sup></ul>
+          
+        <br><li>Using the r-exponential method: </li>
+          <ul>y'' - 6y' + 13y = 0</ul>
+          <ul>r<sup>2</sup> - 6r + 13 = 0 // Cannot be factored normally</ul>
+          <ul>r = (6 ± sqrt(36 - 52)) / 2</ul>
+          <ul>r = 3 ± 2i</ul>
+          
+          <br><ul>y(t) = e<sup>3t</sup> (c<sub>1</sub> cos(2t) + c<sub>2</sub> sin(2t))</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

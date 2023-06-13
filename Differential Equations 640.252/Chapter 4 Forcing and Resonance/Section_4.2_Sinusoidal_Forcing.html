@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../MathJax.css">
+    <title>Section 4.2: Sinusoidal Forcing</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>MathJax = {tex: {inlineMath: [['$', '$']]}};</script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+  
+  <body>
+    <h1>Section 4.2: Sinusoidal Forcing</h1>
+    
+    <ul><b>Complexification of Sinusoidal Forcing</b>
+      <li>let forced harmonic oscillator DE $\frac{d^2t}{dt^2} + p \frac{dy}{dt} + q y = g(t)$, where $g(t) = $ sinusoidal function;</li>
+        <ul>The external force $g(t)$ is periodic and has an average value of zero</ul>
+        <ul>if $g(t) = sin(ω t)$ | $g(t) = cos(ω t)$: period $T = \frac{2π}{ω}$ & frequency $f = \frac{ω}{2π}$</ul>
+      
+      <br><li>To solve for the specific solution for a non-homogenous DE if the external force is sinusoidal, a constant-coefficient $α$ can be solved using the complex solution: </li>
+        <ul>$y_c(t) = α e^{it}$ </ul>
+        <ul>$y_c(t) = α (cos(t) + i sin(t))$</ul>
+        <ul>$y_c(t) = y_r(t) + i y_i(t)$, where $y_r(t) = $ real component of solution & $y_i(t) = $ imaginary component of solution</ul>
+        
+        <br><ul>This solution is used for its associated complexed DE $\frac{d^2t}{dt^2} + p \frac{dy}{dt} + q y = e^{it}$</ul>
+      
+      <br><li>The specific solution $y_p(t)$ can also be written in polar form by solving for the polar form of the complexed solution $y_c(t)$ given constant-coefficient $α$: </li>
+        <ul>$α_θ = |α| e^{iθ}$, where $θ = atan(\frac{α_i}{α_r})$ (imaginary component & real component of constant-coefficient respectively)</ul>
+        
+        <br><ul>$y_c(t) = α_θ e^{iθ}$</ul>
+        <ul>$y_c(t) = |α| e^{it} e^{iθ}$</ul>
+        <ul>$y_c(t) = |α| e^{i(t + θ)}$</ul>
+        <ul>$y_c(t) = |α| (cos(t + θ) + i sin(t + θ))$</ul>
+      
+      <br><li>A $sin(θ)$ function can be converted to a $cos(θ)$ function by the trigonometric formula: </li>
+        <ul>$sin(θ) = cos(θ - \frac{π}{2})$</ul>
+      
+      <br><li>For any IC, the solutions of a general sinusoidal non-homogenous DE tends to the specific non-homogenous solution as t increases</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Find the general solution of non-homogenous DE $\frac{d^2y}{dt^2} + 2 \frac{dy}{dt} + 2y = sin(t)$, then write it in polar form:
+      
+        <br><br><li>Solving for the eigenvalues & general solution $y_h(t)$ for the associated homogenous DE: </li>
+          <ul>$λ^2 + 2λ + 2 = 0$</ul>
+          <ul>$λ = \frac{-2 \pm \sqrt{-4}}{2}$</ul>
+          <ul>$λ = \{-1 \pm i\}$</ul>
+      
+          <br><ul>General solution: $y_h(t) = k_1e^{-t} cos(t) + k_2e^{-t} sin(t)$</ul>
+      
+        <br><li>Solving for the specific solution for the complexed non-homogenous DE and its components: </li>
+          <ul>let $y_c(t) = α e^{it}$;</ul>
+          <ul>$\frac{dy_c}{dt} = αi e^{it}$</ul>
+          <ul>$\frac{d^2y_c}{dt^2} = -α e^{it}$</ul>
+          
+          <br><ul>$\frac{d^2y_c}{dt^2} + 2 \frac{dy_c}{dt} + 2y_c = e^{it}$</ul>
+          <ul>$-α e^{it} + 2αi e^{it} + 2α e^{it} = e^{it}$</ul>
+          <ul>$α(1 + 2i) = 1$</ul>
+          <ul>$5α = 1 - 2i$ (multiplying both sides by complex conjugate)</ul>
+          <ul>$α = \frac{1 - 2i}{5}$</ul>
+          <ul>$α_θ = \frac{\sqrt{5}}{5} e^{i atan(-2)}$</ul>
+          
+          <br><ul>Complexed solution: $y_c(t) = \frac{1 - 2i}{5} e^{it}$</ul>
+          <ul>$y_c(t) = \frac{1 - 2i}{5} (cos(t) + i sin(t))$</ul>
+          <ul>$y_c(t) = \frac{1}{5}((cos(t) + 2 sin(t)) + i(-2 cos(t) + sin(t)))$</ul>
+          
+          <br><ul>Real component: $y_r(t) = \frac{1}{5}(cos(t) + 2 sin(t))$</ul>
+          <ul>Imaginary component: $y_i(t) = \frac{1}{5}(-2 cos(t) + sin(t))$</ul>
+        
+        <br><li>Writing the specific & general solution for the given DE: </li>
+          <ul>Specific solution: $y_p(t) = y_i(t)$</ul>
+          
+          <br><ul>General solution: $y(t) = k_1e^{-t} cos(t) + k_2e^{-t} sin(t) + \frac{1}{5}(-2 cos(t) + sin(t))$</ul>
+          <ul>$y(t) = k_1e^{-t} cos(t) + k_2e^{-t} sin(t) + \frac{\sqrt{5}}{5} cos(t + atan(-2) - \frac{π}{2})$</ul>
+          
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Find the general solution of non-homogenous DE $\frac{d^2y}{dt^2} + 2 \frac{dy}{dt} + 10y = 4 cos(2t)$ and write it in polar form:
+        
+        <br><br><li>Solving for general solution of associated homogenous DE: </li>
+          <ul>$λ^2 + 2λ + 10 = 0$</ul>
+          <ul>$λ = \frac{-2 \pm \sqrt{-36}}{2}$</ul>
+          <ul>$λ = \{-1 \pm 3i\}$</ul>
+          
+          <br><ul>$y_h(t) = k_1 e^{-t} cos(3t) + k_2 e^{-t} sin(3t)$</ul>
+        
+        <br><li>Solving for the specific solution of the complexed DE in cartesian form: </li>
+          <ul>$y_c(t) = α e^{2it}$</ul>
+          <ul>$\frac{dy_c}{dt} = 2αi e^{2it}$</ul>
+          <ul>$\frac{d^2y_c}{dt^2} = -4α e^{2it}$</ul>
+          
+          <br><ul>$\frac{d^2y}{dt^2} + 2 \frac{dy}{dt} + 10y = 4e^{2it}$</ul>
+          <ul>$-4α e^{2it} + 4αi e^{2it} + 10α e^{2it} = 4e^{2it}$</ul>
+          <ul>$α(3 + 2i) = 2$</ul>
+          <ul>$α = \frac{2(3 - 2i)}{13}$</ul>
+          
+          <br><ul>$y_c(t) = \frac{2(3 - 2i)}{13} e^{2it}$</ul>
+          <ul>$y_c(t) = \frac{2(3 - 2i)}{13} (cos(2t) + i sin(2t))$</ul>
+          <ul>$y_c(t) = \frac{2}{13}((3 cos(2t) + 2 sin(2t)) + i(-2 cos(2t) + 3 sin(2t)))$</ul>
+          
+        <br><li>Solving for the specific solution of the complexed DE in polar form: </li>
+          <ul>$α_θ = \frac{\sqrt{52}}{13} e^{i atan(-\frac{2}{3})}$</ul>
+          <ul>$α_θ = \frac{2 \sqrt{13}}{13} e^{i atan(-\frac{2}{3})}$</ul>
+          
+          <br><ul>$y_{cθ}(t) = \frac{2 \sqrt{13}}{13} e^{i atan(-\frac{2}{3})} e^{2it}$</ul>
+          <ul>$y_{cθ}(t) = \frac{2 \sqrt{13}}{13} e^{i(2t + atan(-\frac{2}{3})}$</ul>
+          <ul>$y_{cθ}(t) = \frac{2 \sqrt{13}}{13} (cos(2t + atan(-\frac{2}{3})) + i sin(2t + atan(-\frac{2}{3})))$</ul>
+        
+        <br><li>Writing the specific & general solution for the given DE in both cartesian & polar form: </li>
+          <ul>Specific cartesian solution: $y_p(t) = \frac{2}{13}(3 cos(2t) + 2 sin(2t))$</ul>
+          
+          <br><ul>General cartesian solution: $y(t) = k_1 e^{-t} cos(3t) + k_2 e^{-t} sin(3t) + \frac{2}{13}(3 cos(2t) + 2 sin(2t))$</ul>
+          
+          <br><ul>Specific polar solution: $y_{pθ}(t) = \frac{2 \sqrt{13}}{13} cos(2t + atan(-\frac{2}{3}))$</ul>
+          
+          <br><ul>General polar solution: $y_θ(t) = k_1 e^{-t} cos(3t) + k_2 e^{-t} sin(3t) + \frac{2 \sqrt{13}}{13} cos(2t + atan(-\frac{2}{3}))$</ul>
+          
+      </ol>
+    </ul>
+    
+  </body>
+</html>

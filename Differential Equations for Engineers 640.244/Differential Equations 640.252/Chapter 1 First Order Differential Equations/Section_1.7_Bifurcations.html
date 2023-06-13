@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.7: Bifurcations</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.7: Bifurcations</h1>
+    
+    <ul class="topic"><b>Parameters</b>
+      <li><b>Parameters</b> are quantities that do not that do not depend on the independent variable (time)</li>
+      <li>Usually, they are expressed as a constant of proportionality which is specific to the type of independent variable rather than the quantity</li>
+      <li>Solutions to a DE may change as the parameter varies</li>
+        <ul>The degree to how much the DE changes depends on the type of parameter; sometimes a small change in the parameter can lead to a drastic change in the long-term behaviour of solutions</ul>
+        <ul>This change is known as a <b>bifurcation</b></ul>
+    
+      <br><li>let autonomous DE dy/dt = {g(y) + μ}, where μ = parameter</li>
+      <li>The notation for a DE dependent on the parameter is written as: </li>
+        <ul>f<sub>μ</sub>(y) = y<sup>2</sup> - 2y + μ, where f represents the DE</ul>
+      
+      <br><li>A <b>one-parameter family</b> is the general DE written for any value of μ</li>
+      
+      <br><li>When changing the value of a parameter within a specific interval, the relative position & type of equillibrium point does not change, rather the intensity of the long-term behaviour</li>
+      <li>A drastic change (bifurcation) will occur if the parameter reaches beyond the interval into a new interval</li>
+      <li>The value of the parameter which divides the 2 intervals is the bifurcation value</li>
+        <ul>The bifurcation value is almost always a node (solutions increase both above && below the equillbrium point)</ul>
+      
+      <br><li>A <b>bifurcation diagram</b> is a graph plotting y over μ</li>
+    </ul>
+    
+    <ul class="topic"><b>Bifurcations</b>
+      <li>Generally, bifurcations do not occur</li>
+      <li>In other words, a small change in the parameter leads only to a small change in the behaviour of the solution</li>
+      
+      <br><li>A bifurcation only occurs for values of μ where the partial derivative of the DE in terms of y is equal to zero</li>
+      <li>let dy/dt = f<sub>μ</sub>(y) = g(y) + μ;</li>
+        <ul>f'<sub>μ</sub>(y) = g'(y)</ul>
+        <ul>let y<sub>0</sub> be a value which satisfies f'<sub>μ</sub>(y<sub>0</sub>) = 0</ul>
+        <ul>A bifurcation value exists where f<sub>μ</sub>(y<sub>0</sub>) == 0</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given DE f<sub>μ</sub>(y) = {y(1 - y)<sup>2</sup> + μ}, determine the bifurcation values μ for the DE
+        <li>Solving for the derivative of the DE and its roots: </li>
+          <ul>f'<sub>μ</sub>(y) = (1 - y)<sup>2</sup> - 2y(1 - y)</ul>
+          <ul>f'<sub>μ</sub>(y) = (1 - y)(1 - 3y)</ul>
+          
+          <br><ul>0 = (1 - y)(1 - 3y)</ul>
+          <ul>y = {1, 1/3}</ul>
+        
+        <li>Solving for bifurcation values at f<sub>μ</sub>(y) = 0: </li>
+          <ul>f<sub>μ</sub>(1) = (1)(1 - 1)<sup>2</sup> + μ</ul>
+          <ul>μ = 0</ul>
+          
+          <br><ul>f<sub>μ</sub>(1/3) = (1/3)(1 - 1/3)<sup>2</sup> + μ</ul>
+          <ul>μ = -4/27</ul>
+          
+          <br><ul class="green">μ = {0, -4/27}</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

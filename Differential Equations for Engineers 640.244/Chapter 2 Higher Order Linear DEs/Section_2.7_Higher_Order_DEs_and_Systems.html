@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 2.7: Higher-order DEs and Systems</title>
+  </head>
+  <body>
+  		<h1>Section 2.7: Higher-order DEs and Systems</h1>
+  		
+  		<ul class="topic"><b>Systems of Equations</b>
+  		  <li>In the real world, there are multiple factors that are accounted for when solving an equation. The system can be updated by changing a model of a system. As far as we know, there is only one method (Euler's method) for solving for a DE numerically (regardless if it is homogenous or not; linear or not) which only works for first-order DEs. However, Euler's Method also works for first-order systems. A higher-order DE can be solved using Euler's Method by converting it into a first-order system</li>
+  		  <li>An n-th order equation will become an n-component system using a n-amount of arbitrary variables. This leads to a linear equation with matrices that would solve the equation. let second-order DE {y'' + a(t) y' + b(t) y = g(t)}; This second-order DE will have a matrix derivative of 2 components: [x<sub>1</sub> x<sub>2</sub>], where x<sub>1</sub> = y & x<sub>2</sub> = y'. In this case: </li>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>] = [y y']</ul>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>]' = [y' y'']</ul>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>]' = [y' g(t) - (a(t) y' + b(t) y)]</ul>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>]' = [x<sub>2</sub> g(t) - (a(t) x<sub>2</sub> + b(t) x<sub>1</sub>)]</ul>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>]' = [0 -b(t)] x<sub>1</sub> + [1 -a(t)] x<sub>2</sub> + [0 g(t)]</ul>
+  		    <ul>[x<sub>1</sub> x<sub>2</sub>]' = [[0 -b(t)] [1 -a(t)]] [x<sub>1</sub> x<sub>2</sub>] + [0 g(t)]</ul>
+  		    <ul><b>x</b>' = [[0 -b(t)] [1 -a(t)]] <b>x</b>' + [0 g(t))]</ul>
+  		</ul>
+  		
+  		<ul class="topic"><b>Importance of Systems of Equations</b>
+  		  <li>When encountered with a multi-variable problem, linear/systems of equations are convenient in organising and reaching a solution more efficiently. Systems can be used to solve complex systems such as where multiple variables are changing</li>
+  		  <li>Systems can also be used to predict a final value over time and achieve the best-fit parameters based on the data</li>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 1: </b>
+				  <ol><em>Convert DE {y'' + t<sup>2</sup> y' - e<sup>t</sup> y = sin(t)} and ICs {y(0) = 3; y'(0) = 1} into a first-order system.</em>
+				    
+				    <br><li>let x<sub>1</sub> = y == 3, x<sub>2</sub> = y' == 1;  In matrix form, this equation is written as: </li>
+				      <ul>[x<sub>1</sub> x<sub>2</sub>]' = [y' (sin(t) - t<sup>2</sup> y' + e<sup>t y</sup>)]</ul>
+				      <ul>[x<sub>1</sub> x<sub>2</sub>]' = [x<sub>2</sub> (sin(t) - t<sup>2</sup> x<sub>2</sub> + e<sup>t</sup> x<sub>1</sub>)]</ul>
+				      <ul>[x<sub>1</sub> x<sub>2</sub>]' = [[0 e<sup>t</sup>] [1 -t<sup>2</sup>]] [x<sub>1</sub> x<sub>2</sub>] + [0 sin(t)]</ul>
+				  </ol>
+				</ul>
+  		
+  		<ul class="example"><b>Example 2: </b>
+				  <ol><em>Consider a bioreactor described by the following set of balance equations {x<sub>1</sub>' = (μ - D) x<sub>1</sub>;  x<sub>2</sub>' = D (x<sub>2f</sub> - x<sub>2</sub>) - μ x<sub>1</sub> / γ}, where x = biomass/substrate concentration, μ = growth rate = μ<sub>max</sub> x<sub>2</sub> / (k<sub>m</sub> + x<sub>2</sub>). Integrate the system over time to obtain concentration profiles given ICs: μ<sub>max</sub> = 0.53;  k<sub>m</sub> = 0.12;  k<sub>1</sub> = 0.4545;  γ = 0.4;  x<sub>2f</sub> = 4;  D = 0.3;  Assume that the reactor reaches steady state for t = 100. Compare the 2 conditions for x: {[x<sub>1</sub>(0), x<sub>2</sub>(0)] = [1, 1]} and {[x<sub>1</sub>(0), x<sub>2</sub>(0)] = [0.5, 1]}.</em>
+				    
+				    <br><li>This is a sample example.</li>
+				  </ol>
+				</ul>
+  		
+  		<ul class="example"><b>Example 3: </b>
+				  <ol><em>In a given sequential metabolic transformation A -> B -> C, the reaction kinetics is described by the following set of equations: {dA/dt = A / (k<sub>1</sub> + A);  dB/dt = A / (k<sub>1</sub> + A) - k<sub>2</sub> B<sup>n</sup>; dC/dt = k<sub>2</sub> B<sup>n</sup>}</em>
+				    
+				    <br><li></li>
+				  </ol>
+				</ul>
+  		
+  </body>
+</html>

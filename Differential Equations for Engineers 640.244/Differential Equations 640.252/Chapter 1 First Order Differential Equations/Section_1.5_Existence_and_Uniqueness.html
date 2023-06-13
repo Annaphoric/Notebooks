@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.5: Existence & Uniqueness Theorems</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.5: Existence & Uniqueness Theorems</h1>
+    
+    <ul class="topic"><b>Existence</b>
+      <li>Even before solving for solutions to a DE, we first must prove that they exist</li>
+      <li>If a model for a physical system cannot locate any solutions, then the model is considered invalid</li>
+      
+      <br><li>Given 5th degree polynomial {f(x) = 2x<sup>5</sup> - 10x + 5}, to determine if there are any solutions (roots of x; where f(x) = 0), test values for x can be chosen: </li>
+        <ul>f(-1) = 13</ul>
+        <ul>f(1) = -3</ul>
+      <li>Since this polynomial is continuous, it can be confirmed that there exists at least one value of zero for some value of x in the polynomial, where f(x<sub>0</sub>) = 0</li>
+        <ul>x<sub>0</sub> would have to be between -1 & 1 to achieve a value of zero for the polynomial, even if it may not be unique</ul>
+        
+      <br><li>The same reasoning can be applied to a first-order DE: </li>
+        <ul>let dy/dt = f(t, y), a continuous function where t & y lie within a bounded interval, then there exists a t<sub>0</sub> that lies within the interval, giving a value y(t<sub>0</sub>) = y<sub>0</sub></ul>
+        <ul>This theorem is true as long as the function is continuous and does not change drastically</ul>
+    </ul>
+    
+    <ul class="topic"><b>Uniqueness</b>
+      <li>A solution is considered unique if there is only one value of t for some y</li>
+      <li>More specifically: </li>
+        <ul>let dy/dt = f(t, y), a continuous function where t & y lie within a bounded interval, and y<sub>1</sub>(t) & y<sub>2</sub>(t) are 2 functions that solve for the DE at a point (t<sub>0</sub>, y<sub>0</sub>); if y<sub>1</sub>(t) == y<sub>2</sub>(t) is true, then the solution is considered unique</ul>
+        <ul>This theorem is true as long as the function & its partial derivative with respect to y are continuous</ul>
+    </ul>
+    
+  </body>
+</html>

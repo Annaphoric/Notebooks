@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.8: Linear Differential Equations</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.8: Linear Differential Equations</h1>
+   
+    <ul class="topic"><b>Linear Differential Equations</b>
+      <li>Linear DEs are first-order DEs that have a primary function of t (a(t)) multiplied by y and a secondary function of t (b(t)) on its own</li>
+      <li>A linear DE has the form: </li>
+        <ul>dy/dt = a(t) y + b(t)</ul>
+      
+      <br><li>If b(t) == 0, the DE is said to be <b>homogenous</b> or unforced, else it is <b>non-homogenous</b> or forced</li>
+      <li>If a(t) == λ , where λ = constant, the DE is said to be a constant-coefficient equation</li>
+    </ul>
+    
+    <ul class="topic"><b>Linearity Principles</b>
+      <li>There are 2 linearity principles, one for homogenous linear DEs & one for non-homogenous linear DEs</li>
+        <ul><b>Principle 1: </b>
+          <li>If y(t) is a solution to homogenous linear DE dy/dt = a(t) y, then λ y(t), where λ = constant, is also a solution</li>
+            <ul>The general solution to any homogenous linear DE can be determined via separation, then integration: 
+              <li>dy/dt = a(t) y</li>
+              <li>∫(dy/(y dt)) dy = ∫(a(t)) dt</li>
+              <li>ln|y| = ∫(a(t)) dt + C</li>
+              <li>y(t) = e<sup>∫(a(t)) dt + C</sup></li>
+              
+              <br><li>let k = e<sup>C</sup></li>
+              <li>y(t) = k e<sup>∫(a(t)) dt</sup></li>
+            </ul>
+            
+            <br><ul>It is observed that nonzero solutions of y(t) are all multiples of each other for every k</ul>
+            <ul>y(t) = 0 is a solution to every homogenous equation</ul>
+        </ul>
+        
+        <br><ul><b>Principle 2: </b>
+          <li>The general solution to any non-homogenous equation is the sum of the general solution to it associated homogenous equation and one solution to the non-homogenous equation</li>
+            <ul>let non-homogenous DE dy/dt = a(t) y + b(t): 
+              <li>The associated homogenous DE is dy/dt = a(t)</li>
+              <li>let y<sub>h</sub>(t) be any solution to dy/dt = a(t), y<sub>p</sub>(t) be any solution to dy/dt = {a(t) y + b(t)}; then {k y<sub>h</sub>(t) + y<sub>p</sub>(t)}, where k = constant, is also a solution to dy/dt = {a(t) y + b(t)}</li>
+              <li>let y<sub>p</sub>(t) & y<sub>q</sub>(t) be 2 different solutions to dy/dt = {a(t) y + b(t)}; then {y<sub>p</sub>(t) - y<sub>q</sub>(t)}</li>
+            </ul>
+        </ul>
+      
+      <br><li>A <b>steady-state solution</b> is a general solution whereby every specific solution tends towards a common periodic function, such as an oscillation</li>
+    </ul>
+    
+    <ul class="topic"><b>Solving Linear Equations</b>
+      <li>A non-homogenous DE can be solved using the Method of the Undetermined Coefficient</li>
+        <ul>First, the DE is separated by putting the t terms & y terms on opposite ends so that {dy/dt + a(t) y = b(t)}</ul>
+        <ul>let α, β = coefficient required to solve for a solution y<sub>p</sub>(t) to the non-homogenous DE</ul>
+        <ul>Note: if  b(t) = e<sup>t</sup> of some multiple, only α e<sup>t</sup> is used; if b(t) = trigonometric function, α sin(t) + β cos(t) is used</ul>
+        <ul>y<sub>p</sub>(t) = α b(t) would simply be substituted into the DE and solved for α</ul>
+        <ul>Note: if it is not possible to algebraically solve for α as is, multiply t to b(t) and solve for α t b(t)</ul>
+        <ul>Once α is solved, it is plugged into y<sub>p</sub>(t) to give the solution</ul>
+        <ul>The general solution to the non-homogenous equation is the sum of the general solution to the associated homogenous DE (y<sub>h</sub>(t)) & y<sub>p</sub>(t)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Determine the general solution to DE dy/dt = (cos(t)) y: 
+        
+        <li>Since the DE is homogenous, it can be separated and integrated as normally</li>
+          <ul>∫(dy/(y dt)) dy = ∫(cos(t)) dt</ul>
+          <ul>y(t) = e<sup>∫(cos(t)) dt + C</sup></ul>
+          <ul class="green">y(t) = k e<sup>sin(t)</sup>, where k = e<sup>C</sup></ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

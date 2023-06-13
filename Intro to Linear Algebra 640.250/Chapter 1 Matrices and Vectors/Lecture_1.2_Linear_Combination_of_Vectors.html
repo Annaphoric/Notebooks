@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.2: Linear Combination of Vectors</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.2: Linear Combination of Vectors</h2>
+    
+    <ul class="blue"><b>Linear Combination of Vectors</b>
+      <li>Given 2 vectors <b>v</b> = [[a<sub>1</sub>],  [a<sub>2</sub>]...[a<sub>n</sub>]] & <b>w</b> = [[b<sub>1</sub>],  [b<sub>2</sub>]...[b<sub>n</sub>]], the linear combination of these vectors (LCAV) results in the plane <b>u</b> = c<sub>1</sub><b>v</b> + c<sub>2</sub><b>w</b>. <b>u</b> can also be represented as <b>u</b> = [[c<sub>1</sub>a<sub>1</sub> + c<sub>2</sub>b<sub>1</sub>], [c<sub>1</sub>a<sub>2</sub> + c<sub>2</sub>b<sub>2</sub>] + ...]</li>
+        <ul>The c scalars refer to any constant, the a elements refer to the entries of <b>v</b> and the b elements refer to the entries of <b>w</b>. A vector multiplied by any and every constant forms a line in the projected along the vector</ul>
+        <ul>The resulting vector is a plane that includes the first 2 vectors</ul>
+      
+      <br><li>R<sup>n</sup> refers to n-dimensional space. Geometrically, it is a vector containing all possible coordinates or components given an n-dimensional graph</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Solve the following system of equations using the LCAV, if possible: {6x - 7y + 5z = 4, 2y - 3z + 4w = 5, x - 6z + 9w = 10}
+      
+        <br><br><li>Rewriting the system of equations in the form of matrices (the variables act like constants): </li>
+          <ul>x [[6],  [0],  [1]] + y [[7],  [2],  [0]] + z [[5],  [-3],  [-6]] + w [[0],  [4],  [9]] = [[4],  [5],  [10]]</ul>
+          <ul class="green">Since the vector on the right side of the equation does not lie on the plane of the vectors on the left side of the equations (using the first 2 vectors for a simple proof), there is no solution to the system of equations</ul>
+          <ul>The vectors used in the answer are called coefficient vectors</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Is vector <b>A</b> = [[3], [5], [-5]] a linear combination of generating set S = {[[2], [0], [-1]], [[-1], [1], [0]]}?
+      
+        <br><br><li>Rewriting the vectors using LCAV: </li>
+          <ul>x [[2], [0], [-1]] + y [[-1], [1], [0]] = [[3], [5], [-5]]</ul>
+        
+        <br><li>Forming a system of equations: </li>
+          <ul>{2x - y = 3, y = 5, -x = -5}</ul>
+        
+        <br><li>Substituting the appropriate variables into the system of equations: </li>
+          <ul>2(5) - (5) = 3</ul>
+          <ul>5 == 3 (false)</ul>
+          <ul class="green">Since the result is false, the system of equations is inconsistent and has no real solution. Geometrically, vector <b>A</b> lies outside the plane containing the vectors of set S</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Multiplying a Matrix & Vector</b>
+      <li>In order to multiply a matrix and a vector, the matrix's number of columns must be equal to the vector's number of rows. In other words, the matrix must have dimensions n ⨯ m and the vector must have dimensions m ⨯ 1. The dot product of a matrix's row is taken with the vector's column until the final row/column. The result is a matrix having dimensions n ⨯ 1</li>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given the following system of equations: {3a - 5b + 7c + 4d = 3, 2a + b + d = -1, 6a - c + 2d = 1}, rewrite this system as a coefficient matrix and variable matrix: 
+      
+        <br><br><li>Rewriting the matrices: </li>
+          <ul class="green">[[3, -5, 7, 4], [2, 1, 0, 1], [6, 0, -1, 2]] ⋅ [[a], [b], [c], [d]] = [[3], [-1], 1]</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Simplify [[3, -1, 4], [-2, 6, -1]] ⋅ [[0], [1], [0]].
+      
+        <br><br><li>Performing the dot product: </li>
+          <ul>result = [[0 - 1 + 0], [0 + 6 + 0]]</ul>
+          <ul class="green">result = [[-1], [6]]</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Types of Matrices</b>
+      <li>Identity Matrix (I<sub>n ⨯ n</sub>)</li>
+        <ul class="blue">A square, symmetric matrix consisting of all zeros except for the diagonal which consists of ones</ul>
+      
+      <br><li><b>Standard vectors in R<sup>n</sup></b></li>
+        <ul>Similar in physics, <b>i</b> or e<sub>1</sub> represents the vector [[1, 0, 0...]], <b>j</b> or e<sub>2</sub> represents the vector [[0, 1, 0...]], & <b>k</b> or e<sub>3</sub> represents the vector [[0, 0, 1...]]</ul>
+        <ul>A standard vector in n-dimensional space is e<sub>n</sub> having the matrix [[0, 0, 0...1]]</ul>
+        <ul>Multiplying a matrix by a standard matrix results in the column of the matrix containing the column of the vector's 1</ul>
+      
+      <br><li>Rotation matrix</li>
+        <ul>A 2 ⨯ 2 matrix having the form: [[cosθ, -sinθ], [sinθ, cosθ]] (The matrix may have more dimensions but must be a square matrix)</ul>
+        <ul>Used to multiply with a given 2-dimensional vector (2 ⨯ 1) to change its direction whilst keeping its magnitude constant, resulting in a vector of the same dimensions</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <ol>Rotate vector <b>u</b> = [[-1], [-3]] by 210° (θ = 7π/6).
+      
+        <br><br><li>Multiplying the vector by the corresponding rotation matrix: </li>
+          <ul><b>v</b> = [[cosθ, -sinθ], [sinθ, cosθ]] ⋅ [[-1], [-3]]</ul>
+          <ul><b>v</b> = [[cos(7π/6), -sin(7π/6)], [sin(7π/6), cos(7π/6)]] ⋅ [[-1], [-3]]</ul>
+          <ul><b>v</b> = [[-sqrt(3)/2, 1/2], [-1/2, -sqrt(3)/2]] ⋅ [[-1], [-3]]</ul>
+          <ul class="green"><b>v</b> = [[sqrt(3)/2 - 3/2], [1/2 + 3 sqrt(3)/2]]</ul>
+      
+        <br><li>To check if the lengths/magnitudes of both vectors are equivalent, the norm or magnitude of each vector is taken: </li>
+          <ul>||<b>u</b>|| = sqrt(1 + 9)</ul>
+          <ul>||<b>u</b>|| = sqrt(10)</ul>
+          
+          <br><ul>||<b>v</b>|| = sqrt((12 - 6 sqrt(3))/4 + (28 + 6 sqrt(3))/4)</ul>
+          <ul>||<b>v</b>|| = sqrt((6 - 3 sqrt(3) + 14 + 3 sqrt(3))/2)</ul>
+          <ul>||<b>v</b>|| = sqrt(20/2)</ul>
+          <ul>||<b>v</b>|| = sqrt(10)</ul>
+          
+          <br><ul>||<b>u</b>|| == ||<b>v</b>|| (true)</ul>
+      </ol>
+    </ul>
+  </body>
+</html> 

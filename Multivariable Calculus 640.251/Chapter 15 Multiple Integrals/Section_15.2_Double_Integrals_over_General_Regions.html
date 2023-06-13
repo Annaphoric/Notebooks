@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.2: Double Integrals over General Regions</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.2: Double Integrals over General Regions</h2>
+  	
+  	<ul class="topic"><b>Introduction</b>
+  	  <li>A double integral of a function f(x, y) over a non-rectangular bound is evaluated the same as a double integral over a rectangular bound. Although, when the bound is too complex, the evaluation of the integral would differ</li>
+  	  <br><li>To find the volume of a surface z made by f(x, y) over the interval [a, b] with respect to x and bounded by the 2 curves y<sub>1</sub> = g(x), y<sub>2</sub> = h(x) with respect to y, the integrable area A(x) between the 2 curves is found first: </li>
+  	    <ul class="red">A(x) = ∫<sub>g(x)</sub><sup>h(x)</sup>(f(x, y)) dy</ul>
+  	  <li>The volume V is found by evaluating the area over the interval [a, b] in terms of x: </li>
+  	    <ul>V = ∫<sub>a</sub><sub>b</sub>(A(x)) dx</ul>
+  	    <ul class="red">V = ∫<sub>a</sub><sub>b</sub>(∫<sub>g(x)</sub><sup>h(x)</sup>(f(x, y)) dy) dx</ul>
+  	  
+  	  <li>The volume can also be found by integrating over the curves in terms of y and then over the interval in terms of x</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Find the volume of the prism whose base is the triangle at z = 0 (xy-plane) bounded by the lines {y = 0 (x-axis), y = x, x = 1} and whose top is bounded by the plane z = {f(x, y) = 3 - x - y}. 
+  	  
+  	    <br><br><li>The area A(x) of the plane bounded by y = 0 & y = x (or the interval y ∈ [0, x]) is calculated as shown: </li>
+  	      <ul>A(x) = ∫<sub>0</sub><sup>x</sup>(3 - x - y) dy</ul>
+  	      <ul>A(x) = [3y - xy - y<sup>2</sup>/2]<sub>0</sub><sup>x</sup></ul>
+  	      <ul>A(x) = 3(x) - x(x) - (x)<sup>2</sup>/2</ul>
+  	      <ul>A(x) = 3x - 3x<sup>2</sup>/2</ul>
+  	      <ul>The area can also be calculated by integrating the plane along the interval x = y & x = 1 in terms of x</ul>
+  	     
+  	     <br><li>Since x = 0 when y = 0 && y = x, the volume of the prism is found by integrating the area along the interval x ∈ [0, 1]: </li>
+  	       <ul>V = ∫<sub>0</sub><sup>1</sup>(A(x)) dx</ul>
+  	       <ul>V = ∫<sub>0</sub><sup>1</sup>(3x - 3x<sup>2</sup>/2) dx</ul>
+  	       <ul>V = [3x<sup>2</sup>/2 - x<sup>3</sup>/2]<sub>0</sub><sup>1</sup></ul>
+  	       <ul>V = 3(1)<sup>2</sup>/2 - (1)<sup>3</sup>/2</ul>
+  	       <ul>V = 3/2 - 1/2</ul>
+  	       <ul class="green">V = 1</ul>
+  	       <ul>The volume can also be calculated by integrating the area in terms of x along the interval y ∈ [0, 1] since x = 0 when y = 0 && y = x</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Finding Limits of Integration</b>
+  	  <li>When determining the limits of integration given a sketch of a region, the top curve and bottom curve are compared when the first integral is in terms of y. The right curve to left curve are compared when the first integral is in terms of x</li>
+  	    <ul>When the first integral integrates in terms of y, vertical cross-sections are made and evaluated from the bottom curve to the top curve. The vertical cross-sections extend along the x-axis in an interval using constants</ul>
+  	    <ul>Similarly, when the first integral integrates in terms of x, horizontal cross-sections are made and evaluated from the left curve to the right curve. The horizontal cross-sections extend along the y-axis in an interval using constants</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Calculate ∬<sub>R</sub>(sin(x)/x) dA where R is the triangle at z = 0 bounded by the lines {y = 0, y = x, x = 1}.
+  	  
+  	    <br><br><li>function f(x, y) = sin(x)/x; The area A(x) of the function bounded by the interval y ∈ [0, x] in terms of y is: </li>
+  	      <ul>A(x) = ∫<sub>0</sub><sup>x</sup>(sin(x)/x) dy</ul>
+  	      <ul>A(x) = ([y]<sub>0</sub><sup>x</sup> sin(x)) / x</ul>
+  	      <ul>A(x) = (x) sin(x) / x</ul>
+  	      <ul>A(x) = sin(x)</ul>
+  	      <ul>Attempting to find the area in terms of y would result in an un-integrable antiderivative</ul>
+  	    
+  	    <br><li>Since x = 0 when y = 0 && y = x. The volume V is found by integrating the area A(x) along the interval x ∈ [0, 1]: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(A(x)) dx</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(sin(x))</ul>
+          <ul>V = -[cos(x)]<sub>0</sub><sup>1</sup></ul>
+          <ul>V = [cos(x)]<sub>1</sub><sup>0</sup></ul>
+          <ul>V = cos(0) - cos(1)</ul>
+          <ul class="green">V = 1 - cos(1)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Write an equivalent integral given {∫<sub>0</sub><sup>2</sup>(∫<sub>x<sup>2</sup></sub><sup>2x</sup>(4x + 2) dy) dx} with the order of integration. 
+  	    
+  	    <br><br><li>let y<sub>1</sub> = x<sup>2</sup>, y<sub>2</sub> = 2x; At x = 0 & x = 2, the value of the y-variables are: </li>
+  	      <ul>y = (0)<sup>2</sup>;  y = 2(2)</ul>
+  	      <ul>y = 0;  y = 4</ul>
+  	    
+  	    <br><li>Solving for the x-variables: </li>
+  	      <ul>x = sqrt(y);  x = y/2;</ul>
+  	    
+  	    <br><li>Therefore, the integration in reversed order is written as: </li>
+  	      <ul class="green">∫<sub>0</sub><sup>4</sup>(∫<sub>y/2</sub><sup>sqrt(y)</sup>(4x + 2) dx) dy</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Properties of Double Integrals</b>
+  	  <li>Double integrals share the same properties as single integrals; the functions that are used for integration always have an upper bound and a lower bound. A function greater than another indicates that the integral of the first function is always greater than the second. Any constants (including exclusive independent variables) can be factored out of the integral</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>Find the volume of the wedge-like solid that lies beneath the surface z = {16 - x<sup>2</sup> - y<sup>2</sup>} and above the bounded region R made by the equations {y = 2 sqrt(x), y = 0, y = 4x - 2}. 
+  	  
+  	    <br><br><li>A sum of 2 integrals would be required if the area is solved in terms of y. On the other hand, only one integral for the area is required if the surface is integrated in terms of x. Therefore, the given equations of the bounded region are solved in terms of y: </li>  
+  	      <ul>x = y<sup>2</sup>/4;  x = (y + 2)/4</ul>
+  	    
+  	    <br><li>The area of the surface is the integral evaluated in terms of x along the curves in terms of y is calculated as follows: </li>
+  	      <ul>A(y) = ∫<sub>y<sup>2</sup>/4</sub><sup>(y + 2)/4</sup>(16 - x<sup>2</sup> - y<sup>2</sup>) dx</ul>
+  	      <ul>A(y) = [16x - x<sup>3</sup>/3 - xy<sup>2</sup>]<sub>y<sup>2</sup>/4</sub><sup>(y + 2)/4</sup></ul>
+  	      <ul>A(y) = (16(y + 2)/4 - ((y + 2)/4)<sup>3</sup>/3 - (y + 2) y<sup>2</sup>/4) - (16(y<sup>2</sup>/4 - (y<sup>2</sup>/4)<sup>3</sup>/3 - (y<sup>2</sup>/4) y<sup>2</sup>))</ul>
+  	      <ul>A(y) = 4(y + 2) - (y + 2)<sup>3</sup>/192 - (y + 2) y<sup>2</sup>/4 - 4y<sup>2</sup> + y<sup>6</sup>/192 + y<sup>4</sup>/4</ul>
+  	      <ul>A(y) = 4(y + 2) - 4y<sup>2</sup> + (y<sup>6</sup> - (y + 2)<sup>3</sup>)/192 + (y<sup>4</sup> - (y + 2) y<sup>2</sup>)/4</ul>
+  	     
+  	    <br><li>Solving for the y-variable using the system of equations: </li>
+  	      <ul>y<sup>2</sup>/4 = (y + 2)/4</ul>
+  	      <ul>y<sup>2</sup> = (y + 2)</ul>
+  	      <ul>y<sup>2</sup> - y - 2 = 0</ul>
+  	      <ul>(y - 2)(y + 1) = 0</ul>
+  	      <ul>y = {-1, 2}</ul>
+  	    
+  	    <br><li>Since y = -1 is not within the bounds of the region, the interval y ∈ [0, 2] will have to be used: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>2</sup>(4(y + 2) - 4y<sup>2</sup> + (y<sup>6</sup> - (y + 2)<sup>3</sup>)/192 + (y<sup>4</sup> - (y + 2) y<sup>2</sup>)/4) dy</ul>
+  	      <ul>V = [y<sup>7</sup>/1344 + y<sup>5</sup>/20 - 4y<sup>3</sup>/3 - y<sup>4</sup>/16 - 2y<sup>3</sup>/12 - (y + 2)<sup>4</sup>/768]<sub>0</sub><sup>2</sup></ul>
+  	      <ul class="green">V = 20803/1680</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 16.3: Path Independence, Conservative Fields, and Potential Functions</title>
+  </head>
+  
+  <body>
+  	<h2>Section 16.3: Path Independence, Conservative Fields, and Potential Functions</h2>
+  	
+  	<ul class="topic"><b>Path Independence</b>
+  	  <li>As was observed in the first section of the chapter, the value of the line integral of a vector field <b>F</b> along curve C is dependent on the path taken; that is, the value changes depending on which path is taken from A to B. Although, there are vector fields that are <b>conservative</b> and the value of their line integral (∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>)) is <b>path independent</b></li>
+  	    <ul class="red">Conservative fields, an application to physics, are fields that obey the law of conservation of energy. The work done by these fields depends solely on the initial & final position of the object. If the initial & final positions of the object happen to be equivalent (a closed path/curve), the line integral of the field is always zero. Examples of conservative fields: 
+  	      <li><b>Gravitational field (G)</b></li>
+  	        <ul>These fields represent the effect of gravity (gravitational force) due to the presence of a massive object in space like earth</ul>
+  	        <ul>Formally, the force caused by the field is given by the equation: 
+  	          <li><b>F</b> = m<b>G</b> (where m is the mass of the object)</li>
+  	        </ul>
+  	      
+  	      <li><b>Electric field (E)</b></li>
+  	        <ul>These fields represent the effect of electrostatic forces due to the presence of a charged particle like a proton in space</ul>
+  	        <ul>Formally, the force caused by the field is given by the equation: 
+  	          <li><b>F</b> = q<b>E</b></li>
+  	        </ul>
+  	    </ul>
+  	    
+  	    <br><ul>Additionally, conservative fields all share the property of also being gradient fields of some scalar function f. This function would then be known as a <b>Potential Function</b>. A potential function can be used to determine all possible values of line integrals of <b>F</b> from point A to point B within region D: 
+  	      <li class="red"><b>F</b> = ∇f</li>
+  	    </ul>
+  	    
+  	    <ul>Based on the Fundamental Theorem of Calculus, the following calculations can be made: 
+  	      <li>∫<sub>A</sub><sup>B</sup>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>A</sub><sup>B</sup>(∇f ⋅ d<b>r</b>)</li>
+  	      <li>∫<sub>A</sub><sup>B</sup>(<b>F</b> ⋅ d<b>r</b>) = f(B) - f(A)</li>
+  	      <li>This calculation also applies to the evaluation of line integrals</li>
+  	    </ul>
+  	    
+  	    <ul>In the case for gravitational fields, their potential function is known as a gravitational potential</ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Assumptions on Curves, Vector Fields & Domains</b>
+  	  <li>In order for the FToC to be applied for conservative fields, certain qualifications must be fulfilled: </li>
+  	    <ul>The curves must be piecewise smooth
+  	      <li>In other words, the subcurves that make up the curve must all be smooth</li>
+  	    </ul>
+  	    <ul>The vector fields must have components that have continuous first partial derivatives</ul>
+  	    <ul>The domains within region D must be connected
+  	      <li>This means that any 2 points within D should be able to connect to each other in any path, forming a smooth curve. This would imply a simple connection</li>
+  	    </ul>
+  	  
+  	  <br><li>If 2 different paths connect point A to point B, one of them can be reversed to make a simple closed loop</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <li>Suppose the force field <b>F</b> is the gradient field of the function f(x, y, z) = -1/(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), find the work done by <b>F</b> in moving an object along a smooth curve joining point A = (1, 0, 0) to point B = (0, 0, 2).</li>
+  	  
+  	    <br><ul>Based on the FToC, the following assumption can be made: 
+  	      <li>work = ∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = f(B) - f(A)</li>
+  	      <li>work = f(0, 0, 2) - f(1, 0, 0)</li>
+  	      <li>work = -1/4 - (-1)</li>
+  	      <li class="green">work = 3/4</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <li>Find the work done by the conservative field <b>F</b> = {yz<b>i</b> + xz<b>j</b> + xy<b>k</b>} where f(x, y, z) = xyz in moving an object along a smooth curve C joining point A = (-1, 3, 9) to point B = (1, 6, -4).</li>
+  	  
+  	    <br><ul>Similarly as the previous example, the FToC can be used: 
+  	      <li>work = ∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = f(B) - f(A)</li>
+  	      <li>work = f(1, 6, -4) - f(-1, 3, 9)</li>
+  	      <li>work = (-24) - (-27)</li>
+  	      <li class="green">work = 3</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Component Test for Conservative Fields</b>
+  	  <li>To determine whether a vector field is conservative, certain first partial derivatives must show equivalence. let vector-field <b>F</b> = {M(x, y, z)<b>i</b> + N(x, y, z)<b>j</b> + P(x, y, z)<b>k</b>} lie on a simply connected domain whose component functions all have first partial derivatives. Vector field <b>F</b> is conservative only if the following are true: </li>
+  	    <ul>∂P/∂y == ∂N/∂z</ul><ul>∂M/∂z == ∂P/∂x</ul><ul>∂N/∂x == ∂M/∂y</ul>
+  	  
+  	  <br><li>If the vector field is found to be conservative, the following vector, known as the curl of <b>F</b>, exists and must have a magnitude of zero: </li>
+  	    <ul class="red">curl(<b>F</b>) = (∂P/∂y - ∂N/∂z)<b>i</b> + (∂M/∂z - ∂P/∂x)<b>j</b> + (∂N/∂x - ∂M/∂y)<b>k</b></ul>
+  	    <ul>||curl(<b>F</b>)|| = 0</ul>
+  	  
+  	  <br><li>If <b>F</b> is the gradient of potential function f (Δf), the following assumptions must also be true: </li>
+  	    <ul><b>F</b> = Δf</ul>
+  	    <ul>M<b>i</b> + N<b>j</b> + P<b>k</b> = (∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b> + (∂f/∂z)<b>k</b></ul>
+  	    <ul>M = ∂f/∂x</ul><ul>N = ∂f/∂y</ul><ul>P = ∂f/∂z</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Show that vector field <b>F</b> = {(e<sup>x</sup> cos(y) + yz)<b>i</b> + (xz - e<sup>x</sup> sin(y))<b>j</b> + (xy + z)<b>k</b>} is conservative within its domain and determine its potential function.
+  	  
+  	    <br><br><li>let M = {e<sup>x</sup> cos(y) + yz}, N = {xz - e<sup>x</sup>}, P = {xy + z}; To determine whether the given vector field is conservative, the 6 relevant first partial derivatives must be found: </li>
+  	      <ul>∂M/∂y = z - e<sup>x</sup> sin(y);  ∂M/∂z = y</ul>
+  	      <ul>∂N/∂x = z - e<sup>x</sup> sin(y);  ∂N/∂z = x</ul>
+  	      <ul>∂P/∂x = y;  ∂P/∂y = x</ul>
+  	      <ul class="green">It is observed that ∂M/∂y == ∂M/∂x, ∂M/∂z == ∂P/∂x, ∂N/∂z == ∂P/∂y are all true, confirming that the vector field is, indeed, conservative</ul>
+  	    
+  	    <br><li>Since the vector field is conservative, the component functions of the field must all equal the respective partial derivatives of a potential function f. To find the equation of f, one out of the 3 component functions must integrated according to its respective term (in this case, M is integrated with respect to x): </li>
+  	      <ul>f(x, y, z) = ∫(e<sup>x</sup> cos(y) + yz) dx</ul>
+  	      <ul>f(x, y, z) = e<sup>x</sup> cos(y) + xyz + g(y, z) (where g(y, z) is a constant function as a result of the indefinite integration)</ul>
+  	    
+  	    <br><li>The first derivatives of the determined potential function must match with the given component functions (in this case, N is compared with ∂f/∂y): </li>
+  	      <ul>∂f/∂y = xz - e<sup>x</sup> sin(y) + ∂g/∂y</ul>
+  	      
+  	      <br><ul>In order for N == ∂f/∂y to be true, ∂g/∂y must equal zero</ul>
+  	    
+  	    <br><li>Since ∂g/∂y == 0 is true, the constant function g may or may not only be a function of z and not of x nor y. To know is g(z) exists, P is compared with ∂f/∂z: </li>
+  	      <ul>∂f/∂z = xy + ∂g/∂z</ul>
+  	      
+  	      <br><ul>In order for P == ∂f/∂z to be true, ∂g/∂z must equal z. This means g(z) = z<sup>2</sup>/2 after performing integration of g in terms of z</ul>
+  	      
+  	    <br><li>Therefore, the most accurate representation of potential function f is: </li>
+  	      <ul class="green">f(x, y, z) = e<sup>x</sup> cos(y) + xyz + z<sup>2</sup>/2 + C</ul>
+  	      <ul>In other words, {e<sup>x</sup> cos(y) + xyz + z<sup>2</sup>/2} is one possible antiderivative of f according to the given vector field</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 2.4: Mechanical and Electrical Vibrations</title>
+  </head>
+  <body>
+  		<h1>Section 2.4: Mechanical and Electrical Vibrations</h1>
+  		
+  		<ul class="topic"><b>Damped Vibrations</b>
+  		  <li>Given standard DE: {a y'' + b y' + c y = 0, where [a, b, c] > 0 is true}, there are 3 categories of solutions for these types of vibrations: </li>
+  		    <ul><b>Underdamped</b></ul>
+  		    <ul><b>Critically Damped</b></ul>
+  		    <ul><b>Overdamped</b></ul>
+  		  
+  		  <br><li>All roots are based on the quadratic formula</li>
+  		  
+  		  <br><li><b>Underdamped vibrations</b> occur whenever b<sup>2</sup> < 4ac is true. Complex roots would be present in this case (due to a negative discriminant). The 2 roots present are in the form {r = ρ + i μ}, where ρ = -b/2 & μ = sqrt(4ac - b<sup>2</sup>) / 2. Therefore, the general solution y(t) is written as {y(t) = c<sub>1</sup> e<sup>ρ t</sup> cos(μ t) + c<sub>2</sub> e<sup>ρ t</sup> sin(μ t)}</li>
+  		  <li>Since b > 0 is always true, the value for ρ becomes more negative over time.  This is known as <b>decay</b> and ρ is commonly called the <b>decay factor</b>. These vibrations oscillate due to the sinosoidal nature of sine or cosine.</li>
+  		  <li>μ is referred to as the <b>quasi-frequency</b></li>
+  		  <li>The value of 2π / μ gives the <b>quasi-period</b></li>
+  		  
+  		  <br><li>The general solution can also be written as {y(t) = R e<sup>ρ t</sup> cos(μ t - φ), where R = constant} to show its <b>envelope curves</b>. Within this solution: </li>
+  		    <ul>y<sub>max</sub> = R e<sup>ρ t</sup></ul>
+  		    <ul>y<sub>min</sub> = -R e<sup>ρ t</sup></ul>
+  		  <li>Envelope curves & the sinosoidal wave converge to y = 0 from y = -1 or y = 1</li>
+  		  
+  		  <br><li><b>Critically damped vibrations</b> occur whenever b<sup>2</sup> == 4ac is true. Repeating roots would be present in this case (due to a discriminant of zero). The general solution y(t) is written as {y(t) = c<sub>1</sub> / e<sup>b t / 2</sup> + c<sub>2</sub> t / e<sup>b t / 2</sup>}</li>
+  		  
+  		  <br><li><b>Overdamped vibrations</b> occur whenever b<sup>2</sup> > 4ac is true. Real roots would be present in this case (due to a positive discriminant). Given real roots r = {r<sub>1</sub>, r<sub>2</sub>}, the general solution y(t) is written as {y(t) = c<sub>1</sub> e<sup>r<sub>1</sub> t</sup> + c<sub>2</sub> e<sup>r<sub>2</sub> t</sup>}</li>
+  		  
+  		  <br><li>Critically damped vibrations reach equillibrium fastest in decay compared to the other 2 types of vibrations</li>
+  		</ul>
+  		
+  		<ul class="topic"><b>Undamped Vibrations</b>
+  		  <li>Given standard DE: {a y'' + b y' + c y = 0}, in these types of vibrations, b == 0 is true. Therefore, the DE reduces to {a y'' + c y = 0, where [a, c] > 0 is true}. The root is written as: </li>
+  		    <ul>a r<sup>2</sup> + c = 0 // Using the r-exponential method</ul>
+  		    <ul>r = ± sqrt(- c / a)</ul>
+  		    <ul>The roots for undamped vibrations are always complex</ul>
+  		  
+  		  <br><li>The general solution y(t) is written as: </li>
+  		    <ul>y(t) = c<sub>1</sub> cos(ω t) + c<sub>2</sub> sin(ω t), where ω = ± r</ul>
+  		    <ul>y(t) = R cos(ω t + φ), where R = constant</ul>
+  		    <ul>There is no exponential within the solution because b == 0 is true</ul>
+  		    
+  		  <br><li>This type of vibration is also called <b>harmonic motion</b. This is used to describe continuous oscillating motion. In other words, there is no decay over time; the oscillating motion runs forever without a change in endpoints</li>
+  		  
+  		  <br><li>The <b>natural frequency</b> is ω whilst the <b>period</b> is 2π/ω. The natural frequency is always larger than the quasi-frequency</li>
+  		  
+  		  <br><li>A <b>phase shift</b> corresponds to the value of φ</li>
+  		  
+  		  <br><li>The <b>amplitude</b> is R</li>
+  		  
+  		  <br><li>To analyse undamped vibrations numerically, the constants {c<sub>1</sub>, c<sub>2</sub>} are first solved. The amplitude R is equal to the distance between the 2 constants: </li>
+  		    <ul>R = sqrt(c<sub>1</sub><sup>2</sup> + c<sub>2</sub><sup>2</sup>)</ul>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 1: </b>
+				  <ol><em>A 5kg mass stretches a spring by 3.77m. Assume that there is a dampener attached to the spring with a coefficient of 2N*s/m. If the mass is pulled down by an additional 0.05m and released, find a function for the position of this mass over time. Round to the nearest whole number when finding the spring constant. How would you describe the damping of this system? Find a time T so that for all t ≥ T, the mass is within 1E-3m of the equillibrium position</em>
+				    
+				    <br><li>The DE for this situation is: </li>
+				      <ul>m y'' + γ y' + k y = 0, where y = position, m = mass, γ = damping-coefficent, k = spring-constant</ul>
+				      <ul>5y'' + 2y' + k y = 0</ul>
+				    
+				    <br><li>The spring constant is solved by Hooke's Law: </li>
+				      <ul>F = m g = k s, where F = restoring-force, g = acceleration of gravity, k = spring-constant, s = spring-displacement</ul>
+				      <ul>(5)(9.8) = k (3.77)</ul>
+				      <ul>k = 13</ul>
+				      
+				    <br><li>The ICs are y(0) = 0.05 (The initial displacement); & y'(0) = 0 (The initial velocity); Solving for the general solution: </li>
+				      <ul>5y'' + 2y' + 13y = 0</ul>
+				      <ul>5r<sup>2</sup> + 2r + 13 = 0 // Using the r-exponential method; unable to factor</ul>
+				      <ul>r = (-2 ± sqrt(4 - 260)) / 10</ul>
+				      <ul>r = (-1 ± 8i) / 5</ul>
+				      
+				      <br><ul>let a = -1/5;  b = 8/5 (quasi-frequency)</ul>
+				      <ul>The natural frequency is sqrt(13/5)</ul>
+				      
+				      <br><ul>y(t) = c<sub>1</sub> e<sup>a t</sup> cos(b t) + c<sub>2</sub> e<sup>a t</sup> sin(b t)</ul>
+				      <ul>y(t) = c<sub>1</sub> cos(8t/5) / e<sup>t/5</sup> + c<sub>2</sub> sin(8t/5) / e<sup>t/5</sup></ul>
+				      <ul>(c<sub>1</sub> cos(8t/5) + c<sub>2</sub> sin(8t/5)) / e<sup>t/5</sup></ul>
+				      
+				    <br><li>Solving for the solution explicitly using the ICs: </li>
+				      <ul>y'(t) = -c<sub>1</sub>(cos(8t/5) + 8 sin(8t/5)) / (5 e<sup>t/5</sup>) + c<sub>2</sub>(8 cos(8t/5) - sin(8t/5)) / (5 e<sup>t/5</sup>)</ul>
+				      
+				      <br><ul>y(0) = (c<sub>1</sub> cos(8(0)/5) + c<sub>2</sub> sin(8(0)/5)) / e<sup>(0)/5</sup> == 0.05</ul>
+				      <ul>c<sub>1</sub> = 0.05 = 1/20</ul>
+				      
+				      <br><ul>y'(0) = -c<sub>1</sub>(cos(8(0)/5) + 8 sin(8(0)/5)) / (5 e<sup>(0)/5</sup>) + c<sub>2</sub>(8 cos(8(0)/5) - sin(8(0)/5)) / (5 e<sup>(0)/5</sup>) == 0</ul>
+				      <ul>(8c<sub>2</sub> - c<sub>1</sub>) / 5 = 0</ul>
+				      <ul>8c<sub>2</sub> - c<sub>1</sub> = 0</ul>
+				      <ul>8c<sub>2</sub> - (1/20) = 0</ul>
+				      <ul>c<sub>2</sub> = 6.25E-3 = 1/160</ul>
+				      
+				      <br><ul>y(t) = cos(8t/5) / (20 e<sup>t/5</sup>) + sin(8t/5) / (160 e<sup>t/5</sup>)</ul>
+				      <ul>This system exhibits underdamped motion (non-harmonic) because of the oscillations caused by sine & cosine</ul>
+				      
+				    <br><li>To find a new time T, the envelope curves of the function are determined: </li>
+				      <ul>R = sqrt(c<sub>1</sub><sup>2</sup> + c<sub>2</sub><sup>2</sup>)</ul>
+				      <ul>R = sqrt((1/20)<sup>2</sup> + (1/160)<sup>2</sup>)</ul>
+				      <ul>R = sqrt(1 + 1/64) / 20</ul>
+				      <ul>R = sqrt(65) / 160</ul>
+				      
+				      <br><ul>y(t) = R e<sup>a t</sup> cos(b t + φ)</ul>
+				      <ul>y(t) = sqrt(65) cos(8t/5 + φ) / (160 e<sup>t/5</sup>)</ul>
+				      <ul>The term {P = sqrt(65) / (160 e<sup>t/5</sup>)} shows how the envelope curves behave</ul>
+				    
+				    <br><li>The time T is found where P = R e<sup>a t</sup> < m is true. At mass m = 1E-3: </li>
+				      <ul>sqrt(65) / (160 e<sup>T/5</sup>) < 1E-3</ul>
+				      <ul>e<sup>T/5</sup> < 0.16 / sqrt(65)</ul>
+				      <ul>T > -5 ln(0.16 / sqrt(65))</ul>
+				      <ul>T > 19.6s</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 2: </b>
+				  <ol><em>The damping-coefficient of 3 different fluids are tested using 3 identical objects/masses & springs. One case has the object in air, another has the object submerged in water, and the third has the object dipped in honey. Each case has the object pulled downward 10cm from equillibrium and released. DEs given are: {3y'' + 2y' + 5y = 0}, {3y'' + 0.1y' + 5y = 0}, {3y'' + 15y' + 5y = 0}. ICs given are {y(0) = 10}, {y'(0) = 0}. Which DE corresponds to the respective fluid? How? How should these equations look like?</em>
+				    
+				    <br><li>For each equation, mass m = 3 && spring-constant k = 5 are constant. The damping coefficients in each equation differ. A higher damping coefficient indicates a higher resistance to motion (higher viscosity). Therefore, DE {3y'' + 0.1y' + 5y = 0} illustrates case 1 which is a medium of air, DE {3y'' + 2y' + 5y = 0} illustrates case 2 which is a medium of water, and DE {3y'' + 15y' + 5y = 0} illustrates a medium of honey</li>
+				    
+				    <br><li>To measure the behaviour of the 3 cases, the type is vibration V is analysed where V = {b<sup>2</sup> - 4ac}: </li>
+				      <ul>V = (0.1)<sup>2</sup> - 60 // In air</ul>
+				      <ul>V = -59.99 // Very negative, indicating underdamped motion (sinosoidal) with very slow decay</ul>
+				      
+				      <br><ul>V = (2)<sup>2</sup> - 60 // In water</ul>
+				      <ul>V = -56 // Negative, indicating underdamped motion (sinosoidal) with faster decay than air</ul>
+				      
+				      <br><ul>V = (15)<sup>2</sup> - 60 // In honey</ul>
+				      <ul>V = 165 // Very positive, indicating overdamped motion (asymptotic) with slow decay</ul>
+				  </ol>
+				</ul>
+				
+  </body>
+</html>

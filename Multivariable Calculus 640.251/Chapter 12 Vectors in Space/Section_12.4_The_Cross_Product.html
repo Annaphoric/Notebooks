@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+    <title>Section 12.4: The Cross Product</title>   
+  </head>
+  
+  <body>
+    <h2>Section 12.4: The Cross Product</h2>
+    
+    <ul class="topic"><b>Intro</b>
+      <li>To describe how a line tilts (is inclined) on a plane, the slope of 2 vectors and their angle displacement are used. To describe how a plane tilts in space, the 2 vectors are multiplied to obtain a 3<sup>rd</sup> vector that is perpendicular to the plane is determined. The direction of the perpendicular vector indicates the inclination of the plane</li>
+        <ul>The method used for multiplying the 2 vectors here is known as the Cross Product (vector product)</ul>
+      <li class="red">Unlike the Dot Product which results in a scalar, the Cross Product results in a vector</li>
+    </ul>
+    
+    <ul class="topic"><b>Solving for a Vector Perpendicular to a Plane</b>
+      <li class="blue">Assume 2 vectors <b>u</b> (initial) & <b>w</b> (terminal) lie on the same plane; The normal vector <b>n</b> (a unit vector) perpendicular to this plane is determined by using the <b>Right-Hand Rule</b> where the thumb is the direction of <b>n</b>, and the other fingers are curled from the initial vector <b>u</b> towards the terminal vector <b>w</b> at the smallest angle possible</li>
+      <li>Mathematically, the direction is determined by the <b>Cross Product</b> as shown: </li>
+        <ul class="red"><b>u</b> ⨯ <b>w</b> = (||<b>u</b>|| * ||<b>w</b>||sinθ) * <b>n</b></ul>
+      <li>The order of the vectors when performing the Cross Product is important and therefore it is vital to recognise: </li>
+        <ul class="red"><b>u</b> ⨯ <b>w</b> = -(<b>w</b> ⨯ <b>u</b>)</ul>
+      <li>If the angle is clockwise, <b>n</b> is (+), if the angle is counter-clockwise, <b>n</b> is (-)</li>
+      <li>The normal vector is always <b>orthogonal</b> (forms right angles) to the other 2 vectors</li>
+      <li>Vectors are said to be <b>parallel</b> if one is a nonzero multiple of the other and their Cross Product is equal to zero</li>
+    </ul>
+    
+    <ul class="topic"><b>Area of a Parallelogram or Triangle</b> 
+      <li class="blue">The area of the parallelogram formed using the 2 vectors can be determined by calculating the magnitude of their Cross Product where |<b>u</b>| is the base & ||<b>w</b>|| * |sinθ| is the height. The formula is as shown: </li>
+        <ul>Area<sub>parallelogram</sub> = ||<b>u</b>|| * ||<b>w</b>|| * |sinθ| * ||<b>n</b>||</ul> 
+        <ul class="red">Area<sub>parallelogram</sub> = ||<b>u</b>|| * ||<b>w</b>||sinθ</ul> 
+        <ul class="red">Area<sub>parallelogram</sub> = ||<b>u</b> ⨯ <b>w</b>||</ul> 
+      <li>The area of the triangle formed with these 2 vectors is by taking the half of the area of the parallelogram</li>
+        <ul class="red">Area<sub>triangle</sub> = (||<b>u</b>|| * ||<b>w</b>||sinθ) / 2</ul> 
+        <ul class="red">Area<sub>triangle</sub> = (||<b>u</b> ⨯ <b>w</b>||) / 2</ul> 
+    </ul> 
+    
+    <ul class="topic"><b>Solving for the Cross Product using Components</b>
+      <li>Assume <b>u</b> = < x, y, z > & <b>w</b> = < a, b, c >, the Cross Product is calculated as follows: </li> 
+        <ul><b>u</b> ⨯ <b>w</b> = < x, y, z > ⨯ < a, b, c ></ul>
+        <ul><b>u</b> ⨯ <b>w</b> = (x<b>i</b> + y<b>j</b> + z<b>k</b>) ⨯ (a<b>i</b> + b<b>j</b> + c<b>k</b>)</ul> 
+        <ul><b>u</b> ⨯ <b>w</b> = ((xa<b>i</b> ⨯ <b>i</b>) + (xb<b>i</b> ⨯ <b>j</b>) + (xc<b>i</b> ⨯ <b>k</b>)) + ((ya<b>j</b> ⨯ <b>i</b>) + (yb<b>j</b> ⨯ <b>j</b>) + (yc<b>j</b> ⨯ <b>k</b>)) + ((za<b>k</b> ⨯ <b>i</b>) + (zb<b>j</b> ⨯ <b>j</b>) + (zc<b>k</b> ⨯ <b>k</b>))</ul> 
+        <ul class="red"><b>u</b> ⨯ <b>w</b> = (yc - zb)<b>i</b> - (xc - za)<b>j</b> + (xb - ya)<b>k</b></ul> 
+      
+      <br><li>Another way to view Cross Product operations is as the <b>Symbolic Determinant Expansion</b> (SDE; cross multiplication) as a 2D array: </li> 
+        <ul>For a 2 ⨯ 2 Matrix: 
+          <li class="red">[[a, b], [c, d]] = ad - bc</li> 
+        </ul> 
+        <ul>For a 3 ⨯ 3 Matrix: 
+          <li>[[<b>i</b>, <b>j</b>, <b>k</b>], [x, y, z], [a, b, c]] = [[y, z], [b, c]]<b>i</b> - [[x, z], [a, c]]<b>j</b> + [[x, y], [a, b]]<b>k</b></li> 
+          <li class="red">[[<b>i</b>, <b>j</b>, <b>k</b>], [x, y, z], [a, b, c]] = (yc - zb)<b>i</b> - (xc - za)<b>j</b> + (xb - ya)<b>k</b></li> 
+        </ul> 
+      </ul>
+       
+  <ul class="example"><b>Example 1: </b> 
+    <ol>Given <b>u</b> = 2<b>i</b> + <b>j</b> + <b>k</b> & <b>w</b> = -4<b>i</b> + 3<b></b> + <b>k</b>, find a) <b>u</b> ⨯ <b>w</b>; b) <b>w</b> ⨯ <b>u</b>;. 
+      
+      <br><br><span class="part">a) The Cross Products can be solved using SDE: </span>
+        <ul><b>u</b> ⨯ <b>w</b> = [[<b>i</b>, <b>j</b>, <b>k</b>], [2, 1, 1], [-4, 3, 1]]</ul> 
+        <ul><b>u</b> ⨯ <b>w</b> = [[1, 1], [3, 1]]<b>i</b> - [[2, 1], [-4, 1]]<b>j</b> + [[2, 1], [-4, 3]]<b>k</b></ul>
+        <ul><b>u</b> ⨯ <b>w</b> = (1 - 3)<b>i</b> - (2 - (-4))<b>j</b> + (6 - (-4))<b>k</b></ul> 
+        <ul class="green"><b>u</b> ⨯ <b>w</b> = -2<b>i</b> - 6<b>j</b> + 10<b>k</b></ul> 
+    </ol>
+    
+    <br><ol><span class="part">b) Since (<b>w</b> ⨯ <b>u</b>) = -(<b>u</b> ⨯ <b>w</b>), the opposite of the result in part a can simply be used to solve this part </span>
+      <ul><b>w</b> ⨯ <b>u</b> = -(<b>u</b> ⨯ <b>w</b>)</ul>
+      <ul><b>w</b> ⨯ <b>u</b> = -(-2<b>i</b> - 6<b>j</b> + 10<b>k</b>)</ul>
+      <ul class="green"><b>w</b> ⨯ <b>u</b> = 2<b>i</b> + 6<b>j</b> - 10<b>k</b></ul>
+    </ol>
+  </ul> 
+  
+  <ul class="example"><b>Example 2</b> 
+    <ol>Find a vector perpendicular to the plane P(1, -1, 0), Q(2, 1, -1), R(-1, 1, 2).
+    
+      <br><br><li>The components of the 2 vectors<b>PQ</b> & <b>PR</b> will first have to be found: </li>
+        <ul><b>PQ</b> = &lt; 2 - 1, 1 - (-1), -1 - 0 &gt;, <b>PR</b> = &lt; -1 - 1, 1 - (-1), 2 - 0 &gt;</ul> 
+        <ul><b>PQ</b> = &lt; 1, 2, -1 &gt;, <b>PR</b> = &lt; -2, 2, 2 &gt;</ul>
+     
+      <br><li>The Cross Product of these 2 vectors can now be used; the result is the orthogonal vector: </li>
+        <ul><b>PQ</b> ⨯ <b>PR</b> = &lt; 1, 2, -1 &gt; ⨯ < -2, 2, 2 ></ul> 
+        <ul><b>PQ</b> ⨯ <b>PR</b> = [[<b>i</b>, <b>j</b>, <b>k</b>], [1, 2, -1], [-2, 2, 2]]</ul>
+        <ul><b>PQ</b> ⨯ <b>PR</b> = [[2, -1], [2, 2]]<b>i</b> - [[1, -1], [-2, 2]]<b>j</b> + [[1, 2], [-2, 2]]<b>k</b></ul> 
+        <ul><b>PQ</b> ⨯ <b>PR</b> = (4 - (-2))<b>i</b> - (2 - 2)<b>j</b> + (2 - (-4))<b>k</b></ul> 
+        <ul class="green"><b>PQ</b> ⨯ <b>PR</b> = 6<b>i</b> + 6<b>k</b></ul>
+     </ol> 
+  </ul>
+   
+  <ul class="example"><b>Example 3</b> 
+     <ol>Find the area of the triangle with vertices P(1, -1, 0), Q(2, 1, -1), R(-1, 1, 2).
+      
+       <br><br><li>Since these vertices happen to be the same points as in the previous example, the orthogonal vector can be used here. Taking the magnitude of this vector, then halving it solves for the area of the triangle: </li>
+         <ul>A<sub>triangle</sub> = |6<b>i</b> + 6<b>k</b>| / 2</ul>
+         <ul>A<sub>triangle</sub> = sqrt((6)<sup>2</sup> + (6)<sup>2</sup>) / 2</ul>
+         <ul>A<sub>triangle</sub> = sqrt(72) / 2</ul> 
+         <ul class="green">A<sub>triangle</sub> = 3 * sqrt(2)</ul>
+     </ol>
+   </ul>
+   
+   <ul class="example"><b>Example 4</b>
+     <li>Find the unit vector perpendicular to the plane made by the points P(1, -1, 0), Q(2, 1, -1), R(-1, 1, 2)</li>
+       <ul>The answers from examples 2 & 3 can be used here. The normal vector <b>n</b> is the unit vector that must be solved here. This can be solved by finding the direction of orthogonal vector:
+         <li><b>n</b> = (<b>PQ</b> ⨯ <b>PR</b>) / |<b>PQ</b> ⨯ <b>PR</b>|</li>
+         <li><b>n</b> = (6<b>i</b> + 6<b>k</b>) / (6 * sqrt(2))</li>
+         <li class="green"><b>n</b> = (1/sqrt(2))<b>i</b> + (1/sqrt(2))<b>k</b></li>
+       </ul>
+   </ul>
+   
+   <ul class="topic"><b>Torque</b>
+     <li class="blue">The force required to cause a rotation (a change in angular velocity)</li>
+     <li>Mathematically, torque is calculated by multiplying the magnitude of a force <b>F</b> (|<b>F</b>|) by the angular displacement (sinθ) made between itself and the lever arm <b>R</b> multiplied by the magnitude of the lever arm (|<b>R</b>|). This is shown as follows: </li>
+       <ul class="red">Torque<sub><b>F</b></sub> = T<sub>F</sub> = (|<b>R</b>||<b>F</b>|sinθ)<b>n</b></ul>
+     <li>Torque can also be found by taking the Cross Product of the lever arm & the force (the order matters!): </li>
+       <ul class="red">T<sub><b>F</b></sub> = <b>R</b> ⨯ <b>F</b></ul>
+     <li>It can also be concluded that: </li>
+       <ul class="red">|T<sub>F</sub>| = |<b>R</b> ⨯ <b>F</b>| = |<b>R</b>||<b>F</b>|sinθ</ul>
+   </ul>
+   
+   <ul class="example"><b>Example 5</b>
+     <li>A force <b>F</b> of 20lb is applied on a bar (|<b>PQ</b>|) 3ft away from the axis of rotation at a 70° angle, what is the torque applied to the bar?</li>
+       <ul>Since the vector <b>PQ</b> itself isn't given (only its magnitude), the Cross Product can't be used. Instead, the magnitudes of each individually can be used: 
+         <li>|T<sub><b>F</b></sub>| = |<b>R</b>||<b>F</b>|sinθ</li>
+         <li>|T<sub><b>F</b></sub>| = (3)(20)sin(70°)</li>
+         <li class="red">|T<sub><b>F</b></sub>| = 60sin(70°) ≈ 56.4lb-ft</li>
+       </ul>
+   </ul>
+   
+   <ul class="topic"><b>Triple Scalar/Box Product</b>
+     <li class="blue">The triple scalar product of vectors <b>u</b>, <b>v</b> & <b>w</b> is the volumetric vector made by the 3 vectors</li>
+     <li>This vector is solved by taking the Cross Product of <b>u</b> & <b>v</b> and the Dot Product of this result & <b>w</b> as shown:</li>
+       <ul class="red">TSP = (<b>u</b> ⨯ <b>v</b>) ⋅ <b>w</b></ul>
+     <li>The volume of the parallelepiped (box) that forms as a result of the 3 vectors is the magnitude of the TSP where |<b>u</b> ⨯ <b>v</b>| is the area of the parallelogram and |<b>w</b>||cosθ| as shown: </li>
+       <ul class="red">Volume<sub><b>uvw</b></sub> = V<sub><b>uvw</b></sub> = |(<b>u</b> ⨯ <b>v</b>) ⋅ <b>w</b>|</ul>
+       <ul class="red">V<sub><b>uvw</b></sub> = |<b>u</b> ⨯ <b>v</b>||<b>w</b>||cosθ|</ul>
+     <li>It is also observed that: </li>
+       <ul>(<b>u</b> ⨯ <b>v</b>) ⋅ <b>w</b> = <b>u</b> ⋅ (<b>v</b> ⨯ <b>w</b>) = (<b>v</b> ⨯ <b>w</b>) ⋅ <b>u</b> = (<b>w</b> ⨯ <b>u</b>) ⋅ <b>v</b></ul>
+     <li>Assuming <b>u</b> = < a, b, c >, <b>v</b> = < i, j, k >, <b>w</b> = < x, y, z >, TSP can also be solved using SDE: </li>
+       <ul class="red">(<b>u</b> ⨯ <b>v</b>) ⋅ <b>w</b> = [[a, b, c], [i, j, k], [x, y, z]]</ul>
+   </ul>
+   
+   <ul class="example"><b>Example 6</b>
+     <li>Find the volume of the parallelepiped formed by the vectors <b>u</b> = <b>i</b> + 2<b>j</b> - <b>k</b>, <b>v</b> = -2<b>i</b> + 3<b>k</b> & <b>w</b> = 7<b>j</b> - 4<b>k</b></li>
+       <ul>
+         <li>V<sub><b>uvw</b></sub> = [[1, 2, -1], [-2, 0, 3], [0, 7, -4]]</li>
+         <li>V<sub><b>uvw</b></sub> = ([[0, 3], [7, -4]] * 1) - ([[-2, 3], [0, -4]] * 2) + ([[-2, 0], [0, 7]] * -1)</li>
+         <li>V<sub><b>uvw</b></sub> = ((0 - 21) * 1) - ((8 - 0) * 2) + (((-14) - 0) * -1)</li>
+         <li>V<sub><b>uvw</b></sub> = abs(-21 - 16 + 14)</li>
+         <li>V<sub><b>uvw</b></sub> = abs(-23)</li>
+         <li class="green">V<sub><b>uvw</b></sub> = 23u<sup>3</sup></li>
+       </ul>
+   </ul>
+    
+  </body>  
+</html>

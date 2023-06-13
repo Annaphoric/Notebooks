@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.6: Second-Order Linear Equations</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.6: Second-Order Linear Equations</h1>
+    
+    <ul class="topic"><b>Second-Order Linear Equations</b>
+      <li>A method that solves the general solution to a second-order DE also solves the general solution of its associated system & vice versa</li>
+      
+      <br><li>Given second-order DE a d<sup>2</sup>y/dt<sup>2</sup> + b dy/dt + c y = 0, where (a, b, c) = constants, let solution y(t) = e<sup>s t</sup>, where s = constant: </li>
+        <ul>Since the DE is linear, homogenous, constant-coefficient & second-order, there is a simpler way to solve for the solution to the equation</ul>
+        <ul>This method is much like the method described in the previous chapter, by differentiating the solution, substituting it into the equation & solving for s:
+          <li>dy/dt = s e<sup>s t</sup></li>
+          <li>d<sup>2</sup>y/dt<sup>2</sup> = s<sup>2</sup> e<sup>s t</sup></li>
+          
+          <br><li>a (s<sup>2</sup> e<sup>s t</sup>) + b (s e<sup>s t</sup>) + c (e<sup>s t</sup>) = 0</li>
+          <li>e<sup>s t</sup> (a s<sup>2</sup> + b s + c) = 0</li>
+          <li>a s<sup>2</sup> + b s + c = 0</li>
+          <li>s = (-b +- sqrt(b<sup>2</sup> - 4a c)) / 2a</li>
+          <li>s = {s<sub>1</sub>, s<sub>2</sub>}</li>
+          
+          <br><li>Therefore, the solutions and general solution are: </li>
+            <ul>y<sub>1</sub>(t) = e<sup>s<sub>1</sub> t</sup></ul>
+            <ul>y<sub>2</sub>(t) = e<sup>s<sub>2</sub> t</sup></ul>
+            
+            <br><ul>y(t) = k<sub>1</sub> e<sup>s<sub>1</sub> t</sup> + k<sub>2</sub> e<sup>s<sub>2</sub> t</sup></ul>
+          
+          <br><ul>Since y(t) is a solution to the second-order DE, this same solution & its derivative can be used to write the solution to its associated linear system d<b>Y</b>/dt = [[0 1] [-10 -7]] <b>Y</b>, where <b>Y</b>(t) = [[y(t)] [v(t)]]: 
+            <li><b>Y</b>(t) = [[k<sub>1</sub> e<sup>s<sub>1</sub> t</sup> + k<sub>2</sub> e<sup>s<sub>2</sub> t</sup>] [k<sub>1</sub> s<sub>1</sub> e<sup>s<sub>1</sub> t</sup> + k<sub>2</sub> s<sub>2</sub> e<sup>s<sub>2</sub> t</sup>]]</li>
+            <li><b>Y</b>(t) = k<sub>1</sub> e<sup>s<sub>1</sub> t</sup> [[1] [s<sub>1</sub>]] + k<sub>2</sub> e<sup>s<sub>2</sub> t</sup> [[1] [s<sub>2</sub>]]</li>
+          </ul>
+        </ul>
+      
+      <br><li>If an IC {y(0) = y<sub>0</sub>; v(0) = v<sub>0</sub>} is given, the constants k<sub>1</sub> & k<sub>2</sub> can be solved by setting the solution equations equal to y<sub>0</sub> & y'<sub>0</sub> at t = 0</li>
+      
+      <br><li>This can also be applied the complex solutions where y<sub>1</sub>(t) is the real part of the solution & y<sub>2</sub>(t) is the imaginary part of the solution to find the general solution y(t) to the second-order DE</li>
+      <li>v<sub>1</sub>(t) & v<sub>2</sub>(t) is solved by differentiating the solutions to find the general solution <b>Y</b>(t) = [[y(t)] [v(t)]] of its associated linear system</li>
+    </ul>
+    
+    <ul class="topic"><b>Classifying Harmonic Oscillators</b>
+      <li>The classification of a harmonic oscillator is dependent on how damped it is, that is, how much energy is dissipated into the surroundings</li>
+      
+      <br><li>Given second-order DE (m d<sup>2</sup>y/dt + b dy/dt + k y) = 0, where m = mass, b = damping coefficient, k = spring constant, y = position, t = time, the characteristic polynomial is written as: </li>
+        <ul>e<sup>s t</sup>(m s<sup>2</sup> + b s + k) = 0, where y(t) = e<sup>s t</sup></ul>
+        <ul>m s<sup>2</sup> + b s + k = 0</ul>
+        <ul>s = (-b +- sqrt(b<sup>2</sup> - 4mk)) / 2m
+          <li>if b == 0: </li>
+            <ul>This is considered an <b>undamped</b> or simple harmonic oscillator</ul>
+            <ul>s = +-sqrt(-4mk) / 2m</ul>
+            <ul>s = i sqrt(k) / sqrt(m)</ul>
+            <ul>s = i sqrt(k/m)</ul>
+            
+            <br><ul>y(t) = e<sup>i ω t</sup>, where ω = sqrt(k/m)</ul>
+            <ul>y(t) = cos(ω t) + i sin(ω t)</ul>
+            <ul>y(t) = k<sub>1</sub> cos(ω t) + k<sub>2</sub> sin(ω t)</ul>
+            
+            <ul>v(t) = -k<sub>1</sub> ω sin(ω t) + k<sub>2</sub> ω cos(ω t)</ul>
+            
+            <br><ul><b>Y</b>(t) = k<sub>1</sub> [[cos(ω t)] [-ω sin(ω t)]] + k<sub>2</sub> [[sin(ω t)] [ω cos(ω t)]]</ul>
+            
+            <br><ul>The natural period is 2π/ω and the natural frequency is ω/2π (angular frequency is ω itself)</ul>
+          
+          <br><li>if (b<sup>2</sup> - 4mk) < 0: </li>
+            <ul>This is considered an <b>underdamped</b> harmonic oscillator</ul>
+            <ul>The general solution will solely be complex and separated into its real & imaginary parts in the form: 
+              <li>y(t) = k<sub>1</sub> e<sup>-m t / 2</sup> cos(t sqrt(b<sup>2</sup> - 4mk) / 2) + k<sub>2</sub> e<sup>-m t / 2</sup> sin(t sqrt(b<sup>2</sup> - 4mk) / 2)</li>
+            </ul>
+          
+          <br><li>if (b<sup>2</sup> - 4mk) > 0: </li>
+            <ul>This is considered an <b>overdamped</b> harmonic oscillator</ul>
+            <ul>The general solution will solely be real in the form: 
+              <li>y(t) = k<sub>1</sub> e<sup>t (-b - sqrt(b<sup>2</sup> - 4mk)) / 2</sup> + k<sub>2</sub> e<sup>t (-b + sqrt(b<sup>2</sup> - 4mk)) / 2</sup></li>
+            </ul>
+          
+          <br><li>if (b<sup>2</sup> - 4mk) == 0: </li>
+            <ul>This is considered a <b>critically damped</b> harmonic oscillator</ul>
+            <ul>The general solution will solely be real containing a repeated root in the form: 
+              <li>y(t) = k<sub>1</sub> e<sup>-b t / 2</sup> + k<sub>2</sub> t e<sup>-b t / 2</sup></li>
+            </ul>
+        </ul>
+      
+      <br><li>Since m > 0 is always true, the nature of the origin or eigenline is always a sink</li>
+    </ul>
+    
+  </body>
+</html>

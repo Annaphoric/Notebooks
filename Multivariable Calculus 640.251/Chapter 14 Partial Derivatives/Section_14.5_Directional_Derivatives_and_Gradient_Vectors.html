@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.5: Directional Derivatives & Gradient Vectors</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.5: Directional Derivatives & Gradient Vectors</h2>
+  	
+  	<ul class="topic"><b>Directional Derivatives</b>
+  	  <li>The directional unit vector at a given point points towards the direction of a curve</li>
+  	  <li>Assume function f(x, y) & point P = (a, b) are in a certain region, the unit vector {<b>u</b> = u<sub>x</sub><b>i</b> + u<sub>y</sub><b>j</b>} points towards the direction of the curve. The components of this vector are found by parametrising f through point P parallel to <b>u</b> according to the arc length s. These parametric equations are written as: </li>
+  	    <ul>x = a + su<sub>x</sub>; y = b + su<sub>y</sub></ul>
+  	   
+  	   <li class="blue">The directional derivative (D<sub><b>u</b></sub>f(P) or df<sub><b>u</b></sub>(P)) in terms of s is found by taking the derivative of f(x, y) at evaluated at point P = (a, b) in the direction of the directional unit vector <b>u</b>. It is shown by the equation: </li>
+  	     <ul class="red">df<sub><b>u</b></sub>(P)/ds = lim<sub>s -> 0</sub>((f(a + su<sub>x</sub>, b + su<sub>y</sub>) - f(a, b)) / s)</ul>
+  	   
+  	   <li>Another way to determine the directional derivative is to assign the partial derivatives of f as their respective components evaluated at point P = (a, b) for the directional vector. Let {x = a + s(dx/ds), y = b + s(dy/ds)} be the line the point P = (a, b) parametrised by the arc length s and {<b>u</b> = (dx/ds)<b>i</b> + (dy/ds)<b>j</b>} be the unit vector in the direction of increasing s, the direction derivative of f evaluated at point P in the direction of <b>u</b> is as follows: </li>
+  	     <ul>(df(P)/ds)<sub><b>u</b></sub> = (∂f(P)/∂x)(dx/ds) + (∂f(P)/∂y)(dy/ds)</ul>
+  	     <ul>(df(P)/ds)<sub><b>u</b></sub> = ((∂f(P)/∂x)<b>i</b> + (∂f(P)/∂y)<b>j</b>) ⋅ ((dx/ds)<b>i</b> + (dy/ds)<b>j</b>)</ul>
+  	     <ul class="red">(df(P)/ds)<sub><b>u</b></sub> = ∇f ⋅ <b>u</b> = <b>F</b> ⋅ <b>u</b></ul>
+  	     <ul>{∇f = <b>F</b> = (∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b>i} in this case is known as the gradient vector of f(x, y)</ul>
+  	   
+  	   <br><li>The value of the gradient vector is found by evaluating the partial derivatives of the function at a given point</li>
+  	</ul>
+  
+    <ul class="example"><b>Example 1: </b>
+      <li>Find the derivative of {f(x, y) = x<sup>2</sup> + xy} at point P = (1, 2) in the direction of the unit vector {<b>u</b> = (1/sqrt(2))<b>i</b> + (1/sqrt(2))<b>j</b>}</li>
+      
+        <br><ul>Using the equation for directional derivatives: 
+          <li>df<sub><b>u</b></sub>(1, 2)/ds = lim<sub>s -> 0</sub>((f(1 + s(1/sqrt(2)), 2 + s(1/sqrt(2))) - f(1, 2)) / s)</li>
+          <li>df<sub><b>u</b></sub>(1, 2)/ds = lim<sub>s -> 0</sub>(((1 + s/sqrt(2))<sup>2</sup> + (1 + s/sqrt(2))(2 + s/sqrt(2))) - (1 + 2)) / s)</li>
+          <li>df<sub><b>u</b></sub>(1, 2)/ds = lim<sub>s -> 0</sub>(((1 + s sqrt(2) + s<sup>2</sup>/2) + (2 + (3s sqrt(2))/2 + s<sup>2</sup>/2)) - 3) / s)</li>
+          <li>df<sub><b>u</b></sub>(1, 2)/ds = lim<sub>s -> 0</sub>((s<up>2</up> + (5s sqrt(2))/2 + 3) - 3) / s)</li>
+          <li>df<sub><b>u</b></sub>(1, 2)/ds = lim<sub>s -> 0</sub>(s + (5 sqrt(2))/2)</li>
+          <li class="green">df<sub><b>u</b></sub>(1, 2)/ds = (5 sqrt(2)) / 2</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Find the derivative of {f(x, y) = x e<sup>y</sup> + cos(xy)} at point Q = (2, 0) in the direction of {<b>v</b> = 3<b>i</b> - 4<b>j</b>}.
+        
+        <br><br><li>let <b>u</b> = the directional unit vector of <b>v</b>. <b>u</b> is found as shown: </li>
+          <ul><b>u</b> = <b>v</b>/||<b>v</b>||</ul>
+          <ul><b>u</b> = < 3, -4 > / 5</ul>
+          <ul><b>u</b> = (3/5)<b>i</b> - (4/5)<b>j</b></ul>
+        
+        <br><li>The gradient vector of f(x, y) (<b>F</b>) is expressed as: </li>
+          <ul><b>F</b> = (∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b></ul>
+          <ul><b>F</b> = (e<sup>y</sup> - y sin(xy))<b>i</b> + (x e<sup>y</sup> - x sin(xy))<b>j</b></ul>
+        
+        <br><li>Evaluating <b>F</b> at the point Q: </li>
+          <ul><b>F</b>(2, 0) = <b>i</b> + 2<b>j</b></ul>
+        
+        <br><li>df<sub><b>u</b></sub> evaluated at point Q can now be solved (using the dot product): </li>
+          <ul>df<sub><b>u</b></sub>(2, 0) = <b>F</b> ⋅ <b>u</b></ul>
+          <ul>df<sub><b>u</b></sub>(2, 0) = < 1, 2 > ⋅ < 3/5, -4/5 ></ul>
+          <ul>df<sub><b>u</b></sub>(2, 0) = 3/5 - 8/5</ul>
+          <ul class="green">df<sub><b>u</b></sub>(2, 0) = -1</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Properties of Directional Derivatives</b>
+      <li>Since the dot product can be used to find the directional derivative of a function, another way of calculating this vector is by using the angle between the 2 vectors. It can be calculated as shown: </li>
+        <ul>df<sub><b>u</b></sub> = ||<b>f</b>|| ||<b>u</b>|| cosθ</ul>
+        <ul class="red">df<sub><b>u</b></sub> = ||<b>f</b>|| cosθ</ul>
+        <ul>df<sub><b>u</b></sub> = <b>f</b> ⋅ <b>u</b></ul>
+      
+      <br><li>The function f(x, y) increases most rapidly when cosθ = 1 (θ = 0 or 2π). In the direction of this angle, the directional derivative would be equal to the magnitude of the gradient of f: </li>
+        <ul class="red">df<sub>(<b>u</b>, θ = 0)</sub> = ||<b>F</b>||</ul>
+      <li>Similarly, the function decreases most rapidly when cosθ = -1 (θ = π). In the direction of this angle, the directional derivative would be equal to the opposite of the magnitude of <b>F</b>: </li>
+        <ul class="red">df<sub>(<b>u</b>, θ = π)</sub> = -||<b>F</b>||</ul>
+      <li>The function is constant (zero change in f) when cosθ = 0 (θ = π/2). The unit vector would be orthogonal to the gradient of f, leading to a dot product equal to 0</li>
+        <ul class="red">df<sub>(<b>u</b>, θ = π/2)</sub> = 0</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Find the directions in which {f(x, y) = x<sup>2</sup>/2 + y<sup>2</sup>/2} a) Increases most  rapidly; b) Decreases most rapidly; c) There is no change in f; evaluated at the point P = (1, 1).</li>
+        
+        <br><ul>a)
+          <li>The gradient vector of f (<b>F</b>) is solved as follows: </li>
+            <ul><b>F</b> = (∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b></ul>
+            <ul><b>F</b> = x<b>i</b> + y<b>j</b></ul>
+          
+          <br><li>Evaluating this vector at point P: </li>
+            <ul><b>F</b>(1, 1) = <b>i</b> + <b>j</b></ul>
+          
+          <br><li>The direction where the function increases most rapidly is the direction <b>u</b> of the evaluated gradient vector: </li>
+            <ul><b>u</b> = <b>F</b>(1, 1)/||<b>F</b>(1, 1)||</ul>
+            <ul><b>u</b> = < 1, 1 > / sqrt(2)</ul>
+            <ul class="green"><b>u</b> = (1/sqrt(2))<b>i</b> + (1/sqrt(2))<b>j</b></ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>The direction where the function decreases most rapidly is the opposite if the directional unit vector: </li>
+            <ul class="green">-<b>u</b> = -(1/sqrt(2)<b>i</b> - (1/sqrt(2)))</ul>
+        </ul>
+        
+        <br><ul>c)
+          <li>The direction where the function has no change is an orthogonal version of <b>u</b>, normal to the function (<b>n</b>) and its opposite: </li>
+            <ul class="green"><b>n</b> = -(1/sqrt(2))<b>i</b> + (1/sqrt(2))<b>j</b></ul>
+            <ul class="green"><b>n</b> = (1/sqrt(2))<b>i</b> - (1/sqrt(2))<b>j</b></ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Gradients & Tangents to Level Curves</b>
+      <li>Assume a differentiable function f(x, y) is equal to a constant value c (forming a level curve at c) along a smooth curve {<b>r</b>(t) = g(t)<b>i</b> + h(t)<b>j</b>}, the following must be true: </li>
+        <ul>f(g(t), h(t)) = c</ul>
+        <ul>df(g(t), h(t))/dt = dc/dt</ul>
+        <ul>(∂f/∂x)(dg/dt) + (∂f/∂y)(dh/dt) = 0 (via Chain Rule; dg = dx & dh = dy)</ul>
+        <ul>((∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b>) ⋅ ((dg/dt)<b>i</b> + (dh/dt)<b>j</b>) = 0</ul>
+        <ul><b>F</b> ⋅ d<b>r</b>/dt = 0</ul>
+        <ul class="red"><b>F</b> ⋅ <b>v</b> = 0</ul>
+        <ul class="blue">This shows that the gradient vector of f(x, y) at a level curve of a constant is always normal (orthogonal) to the velocity vector made from the tangent vector of the positional vector</ul>
+      
+      <br><li>The tangent line made in the direction of the velocity vector made from a level curve of f(x, y) and normal to the gradient vector of f at point P = (a, b) is expressed as follows: </li>
+        <ul class="red">(∂f(a, b)/∂x)(x - a) + (∂f(a, b)/∂y)(y - b) = 0</ul>
+      
+      <br><li>Gradient vectors have the same vector algebra as an ordinary vector</li>
+      
+      <br><li>Gradient vectors can also be made by a triple-variable function like f(x, y, z) and will have the following components: </li>
+        <ul><b>F</b> = (∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b> + (∂f/∂z)<b>k</b></ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Find the equation for the line tangent to the ellipse made by {x<sup>2</sup>/4 + y<sup>2</sup> = 2} at point Q = (-2, 1)
+      
+        <br><br><li>let g(x, y) = x<sup>2</sup>/4 + y<sup>2</sup>. The partial derivatives of g are: </li>
+          <ul>∂g/∂x = x/2; ∂g/∂y = 2y;</ul>
+        
+        <br><li>Evaluating the partial derivatives at point Q: </li>
+          <ul>∂g(-2, 1)/∂x = -1; ∂g(-2, 1)/∂y = 2;</ul>
+        
+        <br><li>This means the gradient vector of f at Q will have the form: </li>
+          <ul><b>F</b> = -<b>i</b> + 2<b>j</b></ul>
+        
+        <br><li>Therefore, the tangent line L is expressed as: </li>
+          <ul>L = {-(x - (-2)) + 2(y - (1)) = 0} (Original constant 2 of level curve is disregarded)</ul>
+          <ul>L = {-x - 2 + 2y - 2 = 0}</ul>
+          <ul class="green">L = {2y - x = 4}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 6: </b>
+      <ol>Find the derivative of {f(x, y, z) = x<sup>3</sup> - xy<sup>2</sup> - z} evaluated at point P = (1, 1, 0) in the direction of vector {<b>r</b> = 2<b>i</b> - 3<b>j</b> + 6<b>k</b>} Then find the max, min and zero changes of f.
+      
+        <br><br><li>The 3 partial derivatives of f are as shown: </li>
+          <ul>∂f/∂x = 3x<sup>2</sup> - y<sup>2</sup>; ∂f/∂y = -2xy; ∂f/∂z = -1;</ul>
+        
+        <br><li>Evaluating each partial derivative at point P: </li>
+          <ul>∂f(1, 1, 0)/∂x = 2; ∂f(1, 1, 0)/∂y = -2; ∂f(1, 1, 0)/∂z = -1;</ul>
+        
+        <br><li>let <b>F</b> = the gradient vector of f(x, y, z) evaluated at point P. <b>F</b> is expressed as: </li>
+          <ul><b>F</b>(1, 1, 0) = 2<b>i</b> - 2<b>j</b> - <b>k</b></ul>
+        
+        <br><li>let <b>u</b> = the direction of <b>r</b>. <b>u</b> is evaluated as: </li>
+          <ul><b>u</b> = <b>r</b> / ||<b>r</b>||</ul>
+          <ul><b>u</b> = < 2, -3, 6 > / 7</ul>
+          <ul><b>u</b> = (2/7)<b>i</b> - (3/7)<b>j</b> + (6/7)<b>k</b></ul>
+        
+        <br><li>The directional derivative of f at P in the direction of <b>u</b> is the dot product of the gradient vector of f & the unit vector <b>u</b>: </li>
+          <ul>df<sub><b>u</b></sub>(1, 1, 0) = <b>F</b>(1, 1, 0) ⋅ <b>u</b></ul>
+          <ul>df<sub><b>u</b></sub>(1, 1, 0) = < 2, -2, -1 > ⋅ < 2/7, -3/7, 6/7 ></ul>
+          <ul>df<sub><b>u</b></sub>(1, 1, 0) = 4/7 + 6/7 - 6/7</ul>
+          <ul class="green">df<sub><b>u</b></sub>(1, 1, 0) = 4/7</ul>
+        
+        <br><li>let <b>D</b> = the direction in which the function increases most rapidly. <b>D</b> is the magnitude of the gradient vector of f(P): </li>
+          <ul><b>D</b> = <b>F</b> / ||<b>F</b>(1, 1, 0)||</ul>
+          <ul><b>D</b> = < 2, -2, -1 > / 3</ul>
+          <ul class="green"><b>D</b> = (2/3)<b>i</b> - (2/3)<b>j</b> - <b>k</b></ul>
+        
+        <br><li>The function decreases most rapidly at the opposite direction of <b>D</b>: </li>
+          <ul class="green">-<b>D</b> = -(2/3)<b>i</b> + (2/3)<b>j</b> + <b>k</b></ul>
+        
+        <br><li>The function has a change of zero at the direction orthogonal to <b>D</b> (by taking the opposite of one component)</li>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Derivatives along Paths</b>
+      <li>Assume <b>r</b>(t) = x(t)<b>i</b> + y(t)<b>j</b> + z(t)<b>k</b> is the positional vector function for a smooth path C, <b>v</b>(t) is the derivative of <b>r</b> in terms of t, and w = f(<b>r</b>(t)) is a scalar function evaluated along C. The derivative of w or f in terms of t is calculated using the chain rule or dot product: </li>
+        <ul class="red">∂w/∂t = (∂w/∂x)(∂x/∂t) + (∂w/∂y)(∂y/∂t) + (∂w/∂z)(∂z/∂t)</ul>
+        <ul class="red">df(<b>r</b>(t))/dt = <b>F</b>(<b>r</b>(t)) ⋅ <b>v</b>(t)</ul>
+    </ul>
+    
+  </body>
+</html>

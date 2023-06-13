@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.6: Equillibria & the Phase Line</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.6: Equillibria & the Phase Line</h1>
+    
+    <ul class="topic"><b>Phase Lines</b>
+      <li>An <b>autonomous</b> DE is a DE that is a function of solely y</li>
+      <li>It has the form: </li>
+        <ul>dy/dt = f(y)</ul>
+      
+      <br><li>Autonomous DEs have the same value for any t-value given a y-value</li>
+      
+      <br><li>A phase line is a vertical line consisting of all values of y for one t-value (t<sub>0</sub>)</li>
+        <ul>To simplify the phase line, it should consist of the sign between each equillibrium solution/point (where dy/dt = 0) for increasing t</ul>
+        <ul>They can help determine the long-term behaviour of the DE</ul>
+      
+      <br><li>According to the Existence & Uniqueness Theorem, a solution to an equillibrium point can never reach it, rather simply approach it; it is asymptotic at the horizontal where the equillibrium solution lies</li>
+      
+      <br><li>An equillibrium point is a <b>sink</b> if any solution given an IC is asymptotic to the equillibrium solution as t increases; in other words, the graph flows inwards towards the equillibrium solution</li>
+      <li>An equillibrium point is a <b>source</b> if any solution given an IC is asymptotic to the equillibrium solution as t decreases; in other words, the graph flows outwards away from the equillibrium solution</li>
+      <li>An equillibrium point is a <b>node</b> if any solution given an IC is asymptotic inwards or outwards to the equillibrium solution as t increases or decreases; in other words, the graph flows inwards or outwards above or below the equillibrium solution but never both</li>
+    </ul>
+    
+    <ul class="topic"><b>Linearization</b>
+      <li><b>Linearization Theorem</b></li>
+        <ul>let DE dy/dt = f(y), y<sub>0</sub> = equillibrium point;</ul>
+        <ul>The derivative of the function determines whether an equillibrium point is a sink, source, or neither; in other words, the derivative linearly approximates f(y) at y<sub>0</sub></ul>
+        <ul>if f'(y<sub>0</sub>) < 0: y<sub>0</sub> is a sink</ul>
+        <ul>else if f'(y<sub>0</sub>) > 0: y<sub>0</sub> is a source</ul>
+        <ul>else if f'(y<sub>0</sub>) == 0: the nature of y<sub>0</sub> cannot be determined</ul>
+    </ul>
+    
+  </body>
+</html>

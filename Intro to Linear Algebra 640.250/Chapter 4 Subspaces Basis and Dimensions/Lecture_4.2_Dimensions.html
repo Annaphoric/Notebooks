@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 4.2: Dimensions</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 4.2: Dimensions</h2>
+    
+    <ul class="topic"><b>Dimensions</b>
+      <li>A set of linearly independent vectors generates an optimal set/subspace, minimal list, or basis. No other vectors in this set cannot be casted out; if one were casted out, the span would not be the same as in the original set</li>
+      
+      <br><li>The standard basis in R<sup>3</sup> or all real numbers in 3D space is set B = {<b>i</b>, <b>j</b>, <b>k</b>}.</li>
+      <li>The standard basis for R<sup>n</sup> is set B = {<b>e<sub>1</sub></b>, <b>e<sub>2</sub></b>...<b>e<sub>n</sub></b>}</li>
+      <li>There is only 1 standard basis for a given dimension of a span of vectors, but infinite amount of bases for a given dimension of a span of vectors</li>
+      
+      <br><li>Bases can always vary in the vectors within them but the spans of each basis must remain the same depending on the number of components & vectors. All optimal sets must contain the same number of vectors as the <b>dimension</b> of their span, regardless of the number of components. For example, if the span of an optimal set (basis) is all real numbers in a 2D plane (the dimension of the set is 2; dim(set) = 2), there can only be 2 vectors in the set</li>
+      
+      <br><li>All and only subspaces can have bases</li>
+      
+      <br><li>All bases having the same span have the same number of vectors</li>
+      
+      <br><li>The <b>column space</b> is also referred to as the range, where the number of its dimensions is equal to the rank. It consists of the span of a set of independent vectors (a basis). Reducing a matrix to Row Echelon Form changes the basis of the column space, because the calculations alter the original matrix</li>
+        <ul>The dimensions of the row space is always the same as the column space because a matrix is transposable</ul>
+      
+      <br><li>The point at the origin is the only subspace with zero dimensions. Lines, planes or other dimensional objects that do not span (include) the origin are not subspaces</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given matrix A = [[-1 1 2 2] [2 0 -5 3] [1 -1 -1 -1] [0 1 -2 2]], find a basis for a) null(A);  b) col(A);</li>
+      
+        <br><ul>a)
+          <li>Using A as a coefficient matrix set equal to the zero vector, forming a homogenous system, and converting to Row Echelon Form: </li>
+            <ul>[[-1 1 2 2] [2 0 -5 3] [1 -1 -1 -1] [0 1 -2 2]] [[x] [y] [z] [w]] = <b>0</b></ul>
+            
+            <br><ul>[[<b>-1</b> 1 2 2] [0 2 -1 7] [0 0 1 1] [0 1 -2 2]] (E2 = E2 + 2 E1;  E3 = E3 + E1)</ul>
+            <ul>[[<b>-1</b> 1 2 2] [0 1 -2 2] [0 0 1 1] [0 2 -1 7]] (E2, E4 = E4, E2)</ul>
+            <ul>[[<b>-1</b> 1 2 2] [0 <b>1</b> -2 2] [0 0 1 1] [0 0 3 3]] (E4 = E4 - 2 E2)</ul>
+            <ul>[[<b>-1</b> 1 2 2] [0 <b>1</b> -2 2] [0 0 <b>1</b> 1] [0 0 0 0]] (E4 = E4 - 3 E3)</ul>
+            <ul>The resulting coefficient matrix in Row Echelon Form has a rank of 3 & nullity of 1. Therefore, the dimensions for the column space of A is 3 (col(A) = 3) and the dimensions for the nullspace of A is 1 (null(A) = 1)</ul>
+          
+          <li>Solving for the variables: </li>
+            <ul>{-x + y + 2z + 2w = 0;  y - 2z + 2w = 0;  z + w = 0}</ul>
+            <ul>x = y + 2z + 2w;  y = 2z - 2w;  z = -w</ul>
+            <ul>x = (2z - 2w) + 2z + 2w</ul>
+            <ul>x = 4z;  y = 2z - 2w;  w = -z</ul>
+            <ul>x = 4z;  y = 2z - 2(-z)</ul>
+            <ul>x = 4z;  y = 4z;  z = z;  w = -z</ul>
+            <ul class="green">Therefore, the solutions for the homogenous system is the set N = {z [[4] [4] [1] [-1]]}. This set is also referred to as the nullspace</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>Since the rank is 3, the dimensions for the column space of A is 3 which must contain 3 vectors. The optimal set of 3 vectors based on the original matrix is set C = {[[-1] [2] [1] [0]], [[1] [0] [-1] [1]], [[2] [3] [-1] [2]]}. This is also referred to as the basis of A. Since the solutions were found in terms of the third variable, the third vector is casted out. Similarly, the rowspace for A is set R = {[[-1 1 2 2] [2 0 -5 3] [0 1 -2 2]]}. Both the column space & rowspace have the same dimensions, 3, since the matrix can be transposed, having a rank of 3</li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

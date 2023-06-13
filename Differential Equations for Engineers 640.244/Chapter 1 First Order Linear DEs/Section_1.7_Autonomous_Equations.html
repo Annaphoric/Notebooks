@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 1.7: Autonomous Equations</title>
+  </head>
+  <body>
+  		<h1>Section 1.7: Autonomous Equations</h1>
+  		
+  		<ul class="topic"><b>Autonomous Equations</b>
+  		  <li>Consider first-order DE y' = f(t, y), this equation is said to <b>autonomous</b> if the function is independent of t. This equation would only contain y as a variable. In other words f(t, y) == f(y) is always true</li>
+  		  
+  		  <br><li>Population & population growth are common real-world examples of autonomous functions For instance, when solving for y(t) given DE {dy/dt = ky} & IC {y(0) = y<sub>0</sub>}, y(t) is found to be {y(t) = y<sub>0</sub> e<sup>kt</sup>}. This equation is the standard equation for the exponential growth model. Note that the exponential growth model itself is not autonomous (as it contains t), rather its DE</li>
+  		  
+  		  <br><li><b>Equilibrium solutions</b> (ESs) are solutions that give the same output for any t. Since there are, indeed, solutions to the DE, existence & uniqueness theorems still apply</li>
+  		  
+  		  <br><li>A <b>phase line</b> is 1D representation of solution curves relative to equilibrium solutions. If the DE output is positive for a given DE, the solution curve will asymptote upwards towards the highest y within that interval. Contrarily, if the DE output is negative for a given DE, the solution curve will asymptote downwards towards the lowest y within that interval</li>
+  		    <ul>An <b>asymptotically stable</b> ES arises when all nearby solution curves converge towards it; df/dy is negative</ul>
+  		    <ul>An <b>asymptotically unstable</b> ES arises when all nearby solution curves diverge away from it; df/dy is positive</ul>
+  		    <ul>An <b>asymptotically semistable</b> ES arises when some, but not all solution curves converge towards it; df/dy can vary</ul>
+  		    
+  		  <br><li>Concavity can also help determine the behaviour of a graph of f(y). Tangent lines to the graph change sign at inflection points (wherever df/dy == 0 || f(y) == 0 is true). Therefore, concavity changes direction at any inflection point</li>
+  		    <ul>ES curves are concave up whenever whenever df/dy && f(y) have the same sign, and concave down when the signs are different</ul>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 1: </b>
+  		  <ol><em>Analyse the solutions to DE dy/dt = y (y - 5) (y + 3)<sup>2</sup>; for corresponding ICs.</em>
+  		  
+  		    <br><li>Since this DE is non-linear, there is no direct way to differentiating or solving for y(t). Instead, an IC can be declared to satisfy the DE: </li>
+  		      <ul>if(y([n]) = 0) dy/dt = 0;</ul>
+  		      <ul>if(y([n]) = 5) dy/dt = 0;</ul>
+  		      <ul>if(y([n]) = -3) dy/dt = 0;</ul>
+  		      
+  		      <br><ul>(n is any real number). The ICs {y([n]) = [-3, 0, 5]} are all equillbrium solutions because the output remains constant.</ul>
+  		    
+  		    <br><li>To examine the behaviour of solution curves relative to equillibrium solutions, values of y are chosen in between each interval: </li>
+  		      <ul>for(y ∈ (-∞, -3)) if(y = -4) dy/dt = 36 (positive; the solution curve will asymptote upwards towards y = -3)</ul>
+  		      <ul>for(y ∈ (-3, 0)) if(y = -1) dy/dt = 24 (positive; the solution curve will asymptote towards y = 0))</ul>
+  		      <ul>for(y ∈ (0, 5)) if(y = 1) dy/dt = -64 (negative; the solution curve will asymptote downwards towards y = 0)</ul>
+  		      <ul>for(y ∈ (5, ∞)) if(y = 6) dy/dt = 486 (positive; the solution curve will asymptote upwards towards infinity)</ul>
+  		      
+  		      <br><ul>y = -3 is semistable (+ -> +); y = 0 is stable (+ -> -); y = -5 is unstable (- -> +)</ul>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 2: </b>
+				  <ol><em>Find & classify all ESs to autonomous-equation {dy/dt = (y - 1) cos(y)}</em>
+				    
+				    <br><li>Finding ESs: </li>
+				      <ul>if(y = [1, N [π] + π/2) dy/dt = 0</ul>
+				    
+				    <br><li>Examining behaviours within some ES intervals: </li>
+				      <ul>for(y ∈ (π/2, 3π/2)) if(y = π) dy/dt = 1 - π (negative; asymptotes downwards y = π/2)</ul>
+				      <ul>for(y ∈ (1, π/2)) if(y = π/3) dy/dt = (π/3 - 1) / 2 (positive; asymptotes upwards towards y = π/2)</ul>
+				      <ul>for(y ∈ (-π/2, 1)) if(y = 0) dy/dt = -1 (negative; asymptotes downwards towards y = -π/2)</ul>
+				      <ul>for(y ∈ -3π/2, -π/2) if(y = -π) dy/dt = 1 + π (positive; asymptotes upwards towards y = -π/2)</ul>
+				      
+				      <br><ul>y = 1 is unstable; y = [± (3π/2 + 2N π)] are unstable; y = [± (π/2 + 2N π)] are stable</ul>
+				  </ol>
+				</ul>
+  		
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 6.2: Orthonormal Sets</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 6.2: Orthonormal Sets</h2>
+    
+    <ul><b>Pairwise Orthogonality</b>
+      <li>Given a set S of k-amount of nonzero vectors for all real numbers n where k ≤ n, the vectors are said to be <b>pairwise orthogonal</b> if the dot product of any 2 vectors within the set is zero, having an angle of π/2 between the vectors</li>
+      
+      <br><li>A set containing only standard unit vectors (<b>i</b>, <b>j</b>, <b>k</b>...) is always pairwise orthogonal. This is also known as an <b>orthonormal</b> set. Not all sets containing unit vectors <b>w</b> are orthonormal, only those which contain pairwise orthogonal unit vectors. To convert any set into an orthonormal set, the <b>Gram-Schmidt method</b> is performed: </li>
+        <ul><b>w</b><sub>k</sub> = (<b>v</b><sub>k</sub> - (<b>v</b><sub>k</sub> ⋅ <b>w</b><sub>k - 1</sub>) ⋅ <b>w</b><sub>k = 1</sub>) / ||<b>v</b><sub>k</sub> - (<b>v</b><sub>k</sub> ⋅ <b>w</b><sub>k - 1</sub>) ⋅ <b>w</b><sub>k = 1</sub>||</ul>
+      
+      <br><li>The basis for an orthonormal set can be found by finding linear combinations of the vectors within the set. The constants are found by taking the dot product of the the projected vector & each vector within the basis</li>
+      
+      <br><li>Pairwise orthogonal vectors are linearly independent</li>
+      
+      <br><li>Since every subspace has a basis, every basis can be converted to an orthonormal form</li>
+    </ul>
+    
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given set S = {[[1] [2] [1]], [[1] [-1] [1]], [[2] [-1] [0]]}, is this an orthonormal set?</li>
+      
+        <br><ul>To determine if the set is orthonormal, the dot product of any 2 vectors in the set is taken: <li>[[1] [2] [1]] ⋅ [[1] [-1] [1]] == 0</li>
+          <li>1 - 2 + 1 == 0 (true)</li>
+          
+          <br><li>[[1] [2] [1]] ⋅ [[2] [-1] [0]] == 0</li>
+          <li>2 - 2 == 0 (true)</li>
+          
+          <br><li>[[1] [-1] [1]] ⋅ [[2] [-1] [0]] == 0</li>
+          <li>2 + 1 == 0 (false)</li>
+          <li class="green">Since the dot product of these 2 vectors is not zero, the set is not orthonormal</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Given set S = {[[1] [0] [-1] [1]], [[2] [1] [-1] [0]], [[2] [-1] [-1] [3]]}, convert this set into an orthonormal set.
+      
+        <br><br><li>The Gram-Schmidt method will have to be performed. First, the first vector is converted to a unit vector <b>u</b>: </li>
+          <ul><b>u</b> = [[1] [0] [-1] [1]] / ||[[1] [0] [-1] [1]]||</ul>
+          <ul><b>u</b> = [[1] [0] [-1] [1]] / sqrt(3)</ul>
+          
+        <br><li>Next, the projection onto the first vector is removed from the second vector to form an orthonormal vector <b>v</b>: </li>
+          <ul><b>p</b> = [[2] [1] [-1] [0]] - (([[2] [1] [-1] [0]] ⋅ <b>u</b>) <b>u</b>)</ul>
+          <ul><b>p</b> = [[2] [1] [-1] [0]] - ((2 + 1) [[1] [0] [-1] [1]] / sqrt(9))</ul>
+          <ul><b>p</b> = [[2] [1] [-1] [0]] - [[1] [0] [-1] [1]]</ul>
+          <ul><b>p</b> = [[1] [1] [0] [-1]]</ul>
+          
+          <br><ul><b>v</b> = <b>p</b> / ||<b>p</b>||</ul>
+          <ul><b>v</b> = [[1] [1] [0] [-1]] / ||[[1] [1] [0] [-1]]||</ul>
+          <ul><b>v</b> = [[1] [1] [0] [-1]] / sqrt(3)</ul>
+        
+        <br><li>Finally, the 2 projections onto the first & second vectors are removed from the third vector to form an orthonormal vector <b>w</b>: </li>
+          <ul><b>q</b> = [[2] [-1] [-1] [3]] - (([[2] [-1] [-1] [3]] ⋅ <b>u</b>) <b>u</b>) - (([[2] [-1] [-1] [3]] ⋅ <b>v</b>) <b>v</b>)</ul>
+          <ul><b>q</b> = [[2] [-1] [-1] [3]] - ((2 + 1 + 3) / sqrt(9) [[1] [0] [-1] [1]]) - ((2 - 1 - 3) / sqrt(9) [[1] [1] [0] [-1]])</ul>
+          <ul><b>q</b> = [[2] [-1] [-1] [3]] - 2 [[1] [0] [-1] [1]] + 2/3 [[1] [1] [0] [-1]]</ul>
+          <ul><b>q</b> = [[2] [-1] [-1] [3]] - [[2] [0] [-2] [2]] + [[2/3] [2/3] [0] [-2/3]]</ul>
+          <ul><b>q</b> = [[0] [-1] [1] [1]] + [[2/3] [2/3] [0] [-2/3]]</ul>
+          <ul><b>q</b> = [[2/3] [-1/3] [1] [1/3]]</ul>
+          
+          <ul><b>v</b> = <b>q</b> / ||<b>q</b>||</ul>
+          <ul><b>v</b> = [[2/3] [-1/3] [1] [1/3]] / ||[[2/3] [-1/3] [1] [1/3]]||</ul>
+          <ul><b>v</b> = [[2/3] [-1/3] [1] [1/3]] / sqrt(4/9 + 1/9 + 1 + 1/9)</ul>
+          <ul><b>v</b> = [[2/3] [-1/3] [1] [1/3]] / (sqrt(15) / 3)</ul>
+          <ul><b>v</b> = [[2] [-1] [3] [1]] / sqrt(15)</ul>
+          
+          <br><ul class="green">Therefore, the orthonormal basis for the given set is B = {<b>u</b>, <b>v</b>, <b>w</b>}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given set W = {[[1] [-2] [0] [-1]], [[2] [1] [1] [0]], [[1] [0] [-2] [1]]} and vector <b>u</b> = [[6] [9] [9] [0]] = a [[1] [-2] [0] [-1]] + b [[2] [1] [1] [0]] + c [[1] [0] [-2] [1]], determine the constants of <b>u</b>.
+        
+        <br><br><li>Solving for the dot product of any 2 vectors: </li>
+          <ul>[[1] [-2] [0] [-1]] ⋅ [[2] [1] [1] [0]] == 0</ul>
+          <ul>2 - 2 == 0 (true)</ul>
+          
+          <br><ul>[[1] [-2] [0] [-1]] ⋅ [[1] [0] [-2] [1]] == 0</ul>
+          <ul>1 - 1 == 0 (true)</ul>
+          
+          <br><ul>[[2] [1] [1] [0]] ⋅ [[1] [0] [-2] [1]] == 0</ul>
+          <ul>2 - 2 == 0 (true)</ul>
+          
+          <br><ul>Since the dot product of any vector is zero, ever vector is orthogonal to each other, but not unit vectors (orthonormal)</ul>
+          
+        <br><li>As long as the set is orthogonal, the constants are solved by taking the dot product of <b>u</b> & each vector and dividing by the square of the vector's magnitude (if they were orthonormal, then each vector is divided by simply its magnitude instead): </li>
+          <ul>a = (<b>u</b> ⋅ [[1] [-2] [0] [-1]]) / ||[[1] [-2] [0] [-1]]||<sup>2</sup></ul>
+          <ul>a = ([[6] [9] [9] [0]] ⋅ [[1] [-2] [0] [-1]]) / sqrt(1 + 4 + 1)<sup>2</sup></ul>
+          <ul>a = (6 - 18) / 6</ul>
+          <ul class="green">a = -2</ul>
+          
+          <br><ul>b = (<b>u</b> ⋅ [[2] [1] [1] [0]]) / ||[[2] [1] [1] [0]]||<sup>2</sup></ul>
+          <ul>b = (12 + 9 + 9) / 6</ul>
+          <ul class="green">b = 5</ul>
+          
+          <br><ul>c = (<b>u</b> ⋅ [[1] [0] [-2] [1]]) / ||[[1] [0] [-2] [1]]||<sup>2</sup></ul>
+          <ul>c = (6 - 18) / 6</ul>
+          <ul class="green">c = -2</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Statistics.css">
+  	<title>Chapter 3: Confidence Intervals</title>
+  </head>
+  
+  <body>
+    <h2>Chapter 3: Confidence Intervals</h2>
+    
+    <ul class="topic"><b>Sampling Distributions</b>
+      <li>Most of the times, a researcher wishes to make a general conclusion of a population based on collected sample data. This process is known as <b>statistical inference</b>, which is the opposite to data collection, sampling data from a population</li>
+      
+      <br><li>A <b>population parameter</b> is a numerical value that describes a specific quality of the population</li>
+      <li>A <b>sample statistic</b> is a numerical value collected from a sample</li>
+      <li>Sample statistics are used to make the best estimate for the value of a population parameter</li>
+      
+      <br><li>Common notations for a population include: </li>
+        <ul>Mean: μ</ul><ul>Standard deviation: σ</ul><ul>Proportion: p</ul><ul>Correlation: ρ</ul><ul>Regression slope: β</ul>
+        
+      <br><li>Common notations for a sample include: </li>
+        <ul>Mean: <b>x</b>(actually with a line on top)</ul><ul>Standard deviation: s</ul><ul>Proportion: <b>p</b></ul><ul>Correlation: r</ul><ul>Regression slope: b</ul>
+        
+      <br><li>Sample statistics vary from sample to sample but population parameters are fixed to a population. Data collected from various samples can be used to most accurately predict a population parameter as long as the sample statistics are close to one another. As long as samples sizes are large enough, plotting every sample statistic like all sample means as a dotplot gives a roughly bell-shaped curve centered around the population parameter like the population mean</li>
+      <li>The <b>sampling distribution</b> is the distribution or spread of sample statistics of the same sample size. It is used to show how sample statistics vary from sample to sample</li>
+      
+      <br><li>The <b>standard error</b> SE is the standard deviation of sample statistics of multiple samples. It is thought of as the distances between the population parameter and a given sample statistic</li>
+        <ul>The 95% Rule for standard deviation also applies to standard error. In this case, about 95% of sample statistics falls within 2 stds from the population parameter or statistics mean</ul>
+        <ul>A low standard error indicates little variability between sample statistics. This is the goal of researchers who formulate a hypothesis of the population based on samples in their study</ul>
+      
+      <br><li>Sample size affects the distribution of sample statistics. The larger the sample size, the lower the variablility of sample statistics. This also causes more statistics to be closer to the population paramter</li>
+      
+      <br><li>Samples should be obtained randomly to avoid researcher bias, statistic curve skewing, and false conclusions about a population</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>The US Census states that 27.5% of US adults at least 25 years of age have a Bachelor's degree or higher. In a random sample of 200 adults, 58 of them reported that they have at least a Bachelor's degree.
+        a) What is the population proportion based on this information?
+        b) What is the sample statistic?</li>
+        
+        <br><ul>a)
+          <li>The population parameter is the proportion: p = 0.275</li>
+        </ul>
+        
+        <br><ul>b)
+          <li>The sample statistic is the proportion: <b>p</b> = 58/200 = 0.29</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>The EPA, Environmental Protection Agency, determines the automobile economic fuel information by testing a sample of cars. In a sample study, 12 Toyota Prius were tested and resulted in an average fuel consumption of 1 gallon every 48.3 miles or 48.3mpg.
+        a) Predict the population parameter.</li>
+        
+          <br><ul>a)
+            <li>The predicted population parameter is μ = 48.3mpg based on the sample data <b>x</b> = 48.3</li>
+          </ul>
+    </ul>
+    
+    <ul class="topic"><b>Confidence Intervals</b>
+      <li>In order to properly compare sample statistics to a population parameter, the best parameter must be chosen for proper estimations.</li>
+        <ul>One categorical variable: Proportion</ul><ul>One numerical variable: Mean</ul><ul>2 categorical variables: Difference in proportions</ul><ul>One categorical & one numerical variable: Difference in means</ul><ul>2 numerical variables: Correlation</ul>
+      
+      <br><li>In sample statistics, the <b>margins of error</b> MEs are the endpoints of an interval that most plausibly includes the population parameter. The interval is shown as: </li>
+        <ul>interval = (statistic ± ME)</ul>
+      
+      <br><li>Similarly, a <b>confidence interval</b> CI is an interval centered at the sample statistic with a deviation of a margin of error. In addition, confidence intervals have a predetermined chance of including the population parameter based on all samples. The <b>success rate</b> of a confidence interval is the probability that the interval of interest truly includes the population parameter. In practise, the success rate should always be maximised; it is usually 95% or higher</li>
+        <ul>At a success rate of 95%, it can be certain that 95% of sample statistics will be within 2 standard errors (like standard deviation) from the population parameter. This is written as: 
+          <li class="red">CI = (statistic ± (2 * SE)), where parameter ∈ CI</li>
+        </ul>
+        <ul>Not all sample statistics will include the population parameter within its 95% confidence interval. In fact, 5% of statistics are expected to lie outside the interval (where the population parameter is not found) or within either of the 2 tails (ends) of the bell-shaped curve</ul>
+        
+      <br><li>Like success rate, <b>confidence level</b> is the amount of confidence put into a population hypothesis based on a sample data</li>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Are television sets necessary anymore? In a US nationwide survey of n = 1484 adults, 42% are in favour of saying that TV sets are a necesity, rather than a luxury. The margin of error in sampling is found to be ±3%.
+        a) Determine the interval that gives the most plausible range for the population proportion</li>
+      
+      <br><ul>a)
+        <li>Since the sample proportion is <b>p</b> = 0.42 and the margin of error is ME = ±0.03, the population parameter is most likely found within the interval of (0.42 ± 0.03) or (0.39, 0.45)<sub>int</sub></li>
+      </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>In a random sample of 30 Major League Baseball players, the salary mean is <b>x</b> = 4.55e6 & the std is s = 6.81e6. The measured standard error of all random samples that include 20 MLB players is SE = 9.9e5.
+      a) Give the confidence interval based on this information.
+      b) The true population salary mean is μ = 4.215e6. Does this parameter lie within the CI?</li>
+      c) Why is the std quite distinct from the SE?
+      
+        <br><ul>a)
+          <li>For a 95% CI: </li>
+            <ul>CI = (statistic ± (2 * SE))</ul>
+            <ul>CI = (4.55e6 ± (2 * 9.9e5))</ul>
+            <ul>CI = (4.55e6 ± 1.98e6)</ul>
+            <ul class="green">CI = (3.57, 5.53) (in millions)</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>The true population salary mean of μ = 4.215 does, in fact, fall into the determined CI</li>
+        </ul>
+        
+        <br><ul>c)
+          <li>The SE is the standard deviation of all random sample means of n = 30 whilst the given std is but one of the samples</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <li>Obesity in America. Obesity is a factor as one of the most leading causes of death in the US. Besides being a public health issue, obesity has led to much economic concern. In 2008, it is estimated that $147 billion in medical care costs were related to obesity. The CDC annually collects data from US adults and in 2010, over 450000 people were surveyed. The main variable observed was BMI (body mass index) or specifically height & weight. BMI is calculated as (kg / m<sup>2</sup>) or ((703 * lbs) / in). In one sample, the mean for BMI was found to be <b>x</b> = 27.655 given a standard error of SE = 0.009. Additionally in 2010, the 95% confidence interval for the proportion of all US adults that were classified as obese was found to be (0.276, 0.278). In 2000, the 95% CI was (0.195, 0.199).
+        a) Give a 95% confidence interval for the population BMI mean based on the given sample mean.
+        b) Overweight is classified as having a BMI within the range [25, 30). Does the US population fall within this range based on the CI?
+        c) Interpret the 2 given CIs based on obesity and how they relate to sample size</li>
+        
+        <br><ul>a)
+          <li>CI = (27.655 ± (2 * 0.009))</li>
+          <li>CI = (27.655 ± 0.018)</li>
+          <li>CI = (27.637, 27.673)</li>
+        </ul>
+        
+        <br><ul>b)
+          <li>Since the CI for population BMI in the US does fall within the classification of being overweight, it can be concluded that it is 95% certain that the average US adult is overweight, unfortunately</li>
+        </ul>
+        
+        <br><ul>c)
+          <li>When comparing the 2 given obesity CIs, it is clear to see that a higher proportion of US adults were classified as obese for the 2010 survey sample compared to the sample in 2000. The range of the CI in 2010 is 0.002 and the range of the CI in 2000 is 0.004. This range is interpreted as the total margin of error. Since the margin of error is lower in 2010 than it is in 2000, it can be concluded that the sample size in the 2010 survey study is larger than the 2000 study</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Boostrap Confidence Intervals</b>
+      <li>In most cases, knowing the population parameter or formulating thousands of randomised samples is not ideal. A better, alternative method of measuring the variability of sample statistics is known as <b>bootstrapping</b>. This method allows for closely approximating a sample distribution and its standard error. Bootstrapping copies sample data over and over until it is the size of a population, mimicking the population itself. This is usually done with replacement of the original sample</li>
+      
+      <br><li>To form a <b>bootstrap sample</b>, a case from the original sample is selected to replace another case from the same sample, similar to copying a text and pasting that text into a highlighted text, replacing it. Every bootstrap sample must be the same size as its corresponding original sample. Evidently, a <b>bootstrap statistic</b> is the statistic from a bootstrap sample</li>
+      
+      <br><li>Bootstrap samples derived from an original sample can be plotted to form a <b>bootstrap distribution</b>. Bootstrap distributions are centred around the original sample statistic rather than the population parameter</li>
+    </ul>
+    
+  </body>
+</html>

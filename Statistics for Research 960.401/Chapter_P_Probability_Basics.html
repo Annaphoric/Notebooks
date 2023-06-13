@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Statistics.css">
+  	<title>Chapter P: Probability Basics</title>
+  </head>
+  
+  <body>
+    <h2>Chapter P: Probability Basics</h2>
+    
+    <ul class="topic"><b>Probability Rules</b>
+      <li>Events are considered random if their outcome is unknown. Although, the chance of an event occurring can be determined even if the outcome itself is random. <b>Probability</b> is the frequency of the outcome of an event occurring infinite times (in the long-run)</li>
+        <ul>Probability (P) is always a value between 0 and 1 or between 0% and 100%
+          <li class="red">P(event) = a / n, where a = amount of one classification (like 13 hearts in a deck of cards) & n = number of total possible outcomes (like 52 possible outcomes in a deck of cards)</li>
+        </ul>
+        <ul>Most outcomes of an event have an equal chance of occurring</ul>
+      
+      <br><li><b>Complement Rule</b></li>
+        <ul>The probability of one event not occurring (not A) is equal to the difference between the event occurring & 100%: 
+          <li>P(not A) = 1 - P(A)</li>
+        </ul>
+      
+      <br><li><b>Additive Rule</b></li>
+        <ul>If 2 events can occur at the same time (jointed events), the probability of either one of 2 events occurring is equal to the sum of the events occurring individually subtracted by both events occurring at the same time: 
+          <li class="red">P(A or B) = P(A) + P(B) - P(A and B)</li>
+        </ul>
+        <ul>If 2 events cannot occur at the same time (disjointed events), the probability of either one of 2 events occurring is equal to the sum of the events occurring individually: 
+          <li class="red">P(A or B) = P(A) + P(B)</li>
+        </ul>
+      
+      <br><li><b>Conditional Rule</b></li>
+        <ul>The probability of an event B occurring if another event A has already occurred is equal to the probability of the events occurring at the same time divided by the chance of the initial event A occurring: 
+          <li class="red">P(B if A) = P(A and B) / P(A)</li>
+        </ul>
+      
+      <br><li><b>Multiplicative Rule</b></li>
+        <ul>The probability of 2 events occurring at the same time is equal to the probability of the event B occurring if the initial event A has already occurred multiplied by the chance of initial event A occurring:
+          <li class="red">P(A and B) = P(B if A) * P(A)</li>
+        <ul>If the 2 events are independent, the probability of an event occurring after a second event is: 
+          <li class="red">P(A and B) = P(A) * P(B)</li>
+        </ul>
+        </ul>
+      
+      <br><li><b>Independent Events</b></li>
+        <ul>Events that do not affect another from occurring even if they occur at the same time. 2 events are said to be independent if P(B if A) = P(B)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>There are 100 senators appointed in the US. As of 2016, out of these senators, there are 46 democrats & 54 republicans. Out of the 46 democratic senators, 14 are female & 32 are male. Out of the 54 republican senators, 6 are female & 48 are male. Answer the following questions relating to these US Senators.
+      a) What is the chance of choosing a female out of all senators?
+      b) A Republican?
+      c) A Republican female?
+      d) A female if we know the senator is a Republican?
+      e) A Republican if we know the senator is a female?
+      f) Either a female or a Republican (or both)?
+      g) Are politcal party & gender independent or disjointed events?
+      </li>
+        <ul>a)
+          <li>P(femaleSenator) = P(F) = 20 / 100</li><li>P(F) = 0.2 = 20%</li>
+        </ul>
+        <ul>b)
+          <li>P(republicanSenator) = P(R) = 54 / 100</li><li>P(R) = 0.54 = 54%</li>
+        </ul>
+        <ul>c)
+          <li>P(republicanFemaleSenator) = P(R + F) = 6 / 100</li><li>P(R + F) = 0.6 = 60%</li>
+        </ul>
+        <ul>d)
+          <li>P(femaleRepublican) = P(F if R) = 6 / 54</li><li>P(F if R) = 0.111 = 11.1%</li>
+        </ul>
+        <ul>e)
+          <li>P(republicanFemale) = (R if F) = 6 / 20</li><li>P(R if F) = 0.3 = 30%</li>
+        </ul>
+        <ul>f)
+          <li>P(eitherFemaleRepublican) = P(F or R) = (20 + (54 - 6)) / 100</li><li>P(F or R) = 68 / 100 = 68%</li>
+        </ul>
+        <ul>g)
+          <li>The relationship between political party & gender is independent because they can occur at the same time</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Tree Diagrams & Bayes' Rule</b>
+      <li><b>Total Probability Rule</b></li>
+        <ul>The probability of an event D occurring individually can be solved by taking the sum of every other event A, B, C occurring alongside D as long as A, B, C are all disjointed:
+          <li>P(D) = P(A and D) + P(B and D) + P(C and D)</li>
+          <li>P(D) = (P(A) * P(D if A)) + (P(B) * P(D if B)) + (P(C) * P(D if C))</li>
+        </ul>
+      
+      <br><li>A <b>tree diagram</b> depicts the possibilities of jointed events occurring together given the probabilities of an individual event and its disjointed event occurring conditionally with the initial</li>
+        <ul>The first branches closest to the root represent the probability of an event occurring individually (P(A)). Subsequent branches represent the probability of an event occurring if the initial (jointed) event A has already occurred P(B if A)</ul>
+        <ul>The tip of the second branch is the probability of both events P(A and B) occurring simoultaneously. This is solved by multiplying the values of the 2 previous branches</ul>
+        <ul>The sum of the every second branch/event (B) occurring alongside a different initial event is the probability of B occurring (P(B)). P(A if B) can therefore be solved by dividing P(A and B) by P(B)</ul>
+      
+      <br><li><b>Bayes' Rule</b></li>
+        <ul>One way to solve for a conditional probability given another can be solved by taking values from a Tree Diagram. Another way to interchange conditionals is purely by math: 
+          <li class="red">P(A if D) = P(A and D) / P(D)</li>
+          <li>P(A if D) = (P(D if A) * P(A)) / (P(A) * P(D if A) + P(B) * P(D if B) + P(C) * P(C if D))</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>According to the 2012 US Census, about 13.2% of all licensed drivers are young adults (18-24), 35.6% are in between (25-54), and the remaining 51.2% are older (< 55). In addition, the probability that a young person is involved in an automobile accident during a given year is about 0.16. For a driver whose age is in the middle, the probability drops to 0.08 and for older drivers the rate is about 0.04. What is the overall probability that a driver has had an accident during 2012?
+        
+        <br><br><li>First, the individual probabilities are declared and assigned: </li>
+          <ul>let Y = young; M = middle; O = older; A = accident</ul>
+          <ul>P(Y) = 0.132; P(M) = 0.356; P(O) = 0.512</ul>
+          <ul>P(A if Y) = 0.16; P(A if M) = 0.08; P(A if O) = 0.04</ul>
+        
+        <br><li>The probability of having an accident & being in an age group is solved by the Multiplicative Rule: </li>
+          <ul>P(A and Y) = P(Y) * P(A if Y);  P(A and M) = P(M) * P(A if M);  P(A and O) = P(O) * P(A if O)</ul>
+          <ul>P(A and Y) = 0.132 * 0/16;  P(A and M) = 0.356 * 0.08;  P(A and O) = 0.512 * 0.04</ul>
+          <ul>P(A and Y) = 0.0211;  P(A and M) = 0.0285;  P(A and O) = 0.0205</ul>
+        
+        <br><li>Since the 3 age groups are disjointed events (cannot occur at the same time), the probability of having an accident is the sum of the probabilities of accidents for each individual age group: </li>
+          <ul>P(A) = P(A and Y) + P(A and M) + P(A and O)</ul>
+          <ul>P(A) = 0.0211 + 0.0285 + 0.0205</ul>
+          <ul class="green">P(A) = 0.0701 = 7%</ul>
+          <ul>This is the probability have having an accident in the year 2012</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Random Variables & Probability Functions</b>
+      <li>A <b>random variable</b> is a variable that varies in value depending on the circumstance or instance</li>
+        <ul>Random variables can be <b>discrete</b> (having a finite set of possibilities) or <b>continuous</b> (having a infinite set of possibilities within an interval, including irrational numbers)</ul>
+      
+      <br><li><b>Probability Functions</b></li>
+        <ul>Used for displaying the values of discrete random variables based on the probability of each value occurring</ul>
+        <ul>For a random variable X with a value of 2, the probability of this instance is denoted as P(X = 2), having a probability function p in terms of x, where x is any possible value of X. In this case, the probability P of this instance is p(2): 
+          <li>P(X = 2) = p(2)</li>
+        </ul>
+        <ul>The sum of all probabilities of X given a value x is always one: 
+          <li>∑(p(x)) = 1</li>
+        </ul>
+      
+      <br><li><b>Mean of a Random Variable</b></li>
+        <ul>To find the mean μ of a random variable X, the sum of n-values x is taken with respect to its corresponding probability P. This may be solved using a probability function:
+          <br><li class="red">μ = ∑<sub>k = 0</sub><sup>n</sup>(x<sub>k</sub> * p(x<sub>k</sub>))</li>
+        </ul>
+      
+      <br><li><b>Standard Devation of a Random Variable</b></li>
+        <ul>Similar to the standard deviation of a dataset, the standard deviation σ of n-values x for a random variable X is: 
+          <li class="red">σ = sqrt(∑<sub>k = 0</sub><sup>n</sup>((x<sub>k</sub> - μ)<sup>2</sup> * p(x<sub>k</sub>)))</li>
+          <li>std = sqrt(∑((values[] - mean)<sup>2</sup> * p(values[])))</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Find the probability function for: a) Rolling a six-sided die once where X = the number on the top face;  b) Rolling a six-sided die twice where Y = the sum of the values in both rolls;  c) In addition, calculate the mean of the values of a sum;  d) Find the standard deviation of the values of a sum</li>
+      
+      <ul>a)
+        <li>P(X) = p(x), where x = {1, 2, 3, 4, 5, 6}</li>
+        <li>Since there are 6 possible values of x & the probability of each one occurring is equal: </li>
+          <ul>p(x) = 1/6, where x = {1:6} (the output of each value once)</ul>
+          <ul>p(x) = 1, where x = [1:6] (the sum of all outputs for each value)</ul>
+          <ul>∑(p(x)) = 1, where x = {1:6}</ul>
+      </ul>
+      
+      <br><ul>b)
+        <li>P(Y) = p(y), where y = {2:12}</li>
+        <li>Since there are 6 possible values for each roll, there are 36 possible outcomes for a single pair of numbers. These sums are disjointed (they cannot occur at the same time) and dependent (the value of one roll affects the probability of the sum after the subsequent roll)</li>
+        <li>The sum of 2 numbers of a pair for both rolls varies depending on the value: </li>
+          <ul>p(2 || 12) = 1/36;  p(3 || 11) = 2/36 = 1/18;  p(4 || 10) = 3/36 = 1/12;  p(5 || 9) = 4/36 = 1/9;  p(6 || 8) = 5/36;  p(7) = 6/36 = 1/6</ul>
+      </ul>
+      
+      <br><ul>c)
+        <li>mean = (2 * (1/36)) + (3 * (1/18)) + (4 * (3/12)) + (5 * (1/9)) + (6 * (5/36)) + (7 * (1/6)) + (8 * (5/36)) + (9 * (1/9)) + (10 * (1/12)) + (11 * (1/18)) + (12 * (1/36))</li>
+        <li>mean = 7</li>
+      </ul>
+      
+      <br><ul>d)
+        <li>std = sqrt(∑((sums[2:12] - 7)<sup>2</sup> * p(sums[2:12])))</li>
+        <li>std = 2.42</li>
+        <li>This means for infinite amount of events for a sum, 95% of sums are within the range of [7±2(2.42)] or [2.16:11.84]</li>
+      </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>A charitable organisation is running a raffle for a fundraiser. They plan to sell 1000 tickets for $2 each. Out of those 1000 tickets, there is one grand prize of $500, 2 second-win prizes for $100 each, and 10 third-win prizes for $20 each. What is the average amount of money won per ticket?</li>
+      
+        <br><ul>There are 13 possibilities for winning a prize; 1/1000 chance for winning the grand prize, 2/1000 chance for winning the second-win prize & 10/1000 chance for winning the third-win prize. The sum of each prize with respect to their corresponding probabilities (the average) is: 
+          <li>average = (500 * (1/1000)) + (100 * (1/500)) + (20 * (1/100))</li>
+          <li>average = 0.9 = $0.90</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Binomial Probabilities</b>
+      <li>A <b>binomial random variable</b> has a fixed number of trials and a fixed probability for each outcome of independent trial (or extremely close to independent). One outcome is labelled as the "success" outcome (true; 1), and all others are "failures" (false; 0)</li>
+        <ul>For example, if a coin is flipped 10 times, the probability of choosing heads is 1/2 and always 1/2 (P = 1/2). The number of trials is 10 (n = 10). A previous trial does not affect the probability of subsequent trials (independent events)</ul>
+      
+      <br><li><b>Binomial probabilities</b> can be solved by multiplying together each probability according all possible combinations for a certain amount of successes individually as in example 5. Another method, which is much less time consuming is by first solving for the binomial coefficient ((n) (k)) (a 2D tuple; read as n choose k): </li>
+        <ul class="red">((n) (k)) = n! / (k! * (n - k)!), where n = trials & k = successes (n ≥ k must always be true)</ul>
+        <ul>The binomial coefficient solves for the number of possible combinations of k-successes for n-trials</ul>
+        <ul>((n) (k)) == ((n) (n - k)) is also true for n ≥ k</ul>
+      
+      <br><li>The formula for binomial probability P for a given n, k and p is:   </li>
+        <ul class="red">P(X = k) = ((n) (k)) * p<sup>k</sup> * (1 - p)<sup>n - k</sup></ul>
+      
+      <br><li>The mean μ & standard deviation σ of successes k according to their binomial probabilities P can be solved using the same formula as in the previous section. A simpler way to solve for them is by using the following formulas: </li>
+        <ul class="red">μ = n * p(S), where n = trials & p(S) = probability of success</ul>
+        
+        <br><ul class="red">σ = sqrt(n * p(S) * (1 - p(S)))</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <li>A European roulette has 37 slots, where 18 are red, 18 are black & 1 is green. A ball spins around the inside of the roulette and falls into one of the slots. A gambler places 4 bets on black. let X = the number of correct bets. What is the probability function of X? Then, find the mean & standard deviation of X</li>
+      
+        <br><ul>There is a 18/37 chance of having a success (or 1), expressing this as a probability P of 4 success trials (1 possible combination): 
+          <li>P(X = 4) = (p(S))<sup>4</sup></li>
+          <li>P(#1111) = (18/37)<sup>4</sup></li>
+          <li>P(#1111) = 0.0560</li>
+        </ul>
+        
+        <br><ul>There is a 19/37 chance of having a failure F (or 0), expressing this as a probability P of 4 failure trials (1 possible combination): 
+          <li>P(X = 0) = (p(F))<sup>4</sup></li>
+          <li>P(#0000) = (19/37)<sup>4</sup></li>
+          <li>P(#0000) = 0.0695</li>
+        </ul>
+        
+        <br><ul>Expressing probability of 3 success trials & 1 failure trial (4 possible combinations): 
+          <li>P(X = 3) = 4 (p(S))<sup>3</sup> p(F)</li>
+          <li>P(#0111, #1011, #1101, #1110) = 4 (18/37)<sup>3</sup> (19/37)</li>
+          <li>P = 0.2365</li>
+        </ul>
+        
+        <br><ul>Expressing probability of 2 success trials & 2 failure trials (6 possible combinations): 
+          <li>P(X = 2) = 6 (p(S))<sup>2</sup> (p(F))<sup>2</sup></li>
+          <li>P(0011, 0101, 1001, 0110, 1010, 1100) = 6 (18/37)<sup>2</sup> (18/37)<sup>2</sup></li>
+          <li>P = 0.3745</li>
+        </ul>
+        
+        <br><ul>Expressing probability of 1 success trial & 3 failure trials (4 possible combinations): 
+          <li>P(X = 1) = 4 p(S) (p(F))<sup>3</sup></li>
+          <li>P(0001, 0010, 0100, 1000) = 4 (18/37) (19/37)<sup>3</sup></li>
+          <li>P = 0.2635</li>
+        </ul>
+        
+        <br><ul>These binomial probabilities can also be solved using the binomial formula, giving the same results</ul>
+        
+        <br><ul>The mean is solved in 2 ways: 
+          <li>mean = ∑<sub>k = 0</sub><sup>n</sup>(x<sub>k</sub> * p(x<sub>k</sub>))</li>
+          <li>mean = ∑([0:4] ⋅ p([0:4]))</li>
+          <li>mean = ∑([0:4] ⋅ [0.0695, 0.2635, 0.3745, 0.2365, 0.0560])</li>
+          <li>mean = 1.956</li>
+          
+          <br><li>or simply: mean = n * p(S)</li>
+          <li>mean = 4 * (18/37)</li>
+          <li class="green">mean = 1.956</li>
+        </ul>
+        
+        <br><ul>The standard deviation is solved in 2 ways: 
+          <li>std = sqrt(∑<sub>k = 0</sub><sup>n</sup>((x<sub>k</sub> - μ)<sup>2</sup> * p(x<sub>k</sub>)))</li>
+          <li>std = sqrt(∑(([0:4] - 1.956)<sup>2</sup> ⋅ [0.0695, 0.2635, 0.3745, 0.2365, 0.0560]))</li>
+          <li>std = 0.99954</li>
+          
+          <br><li>or simply: std = sqrt(n * p(S) * (1 - p(S)))</li>
+          <li>std = sqrt(4 * (18/37) * (1 - (18/37)))</li>
+          <li class="green">std = 0.99954</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 6: </b>
+      <li>In a survey of N = 389624 Norwegians, about 50% of Norwegians drink at least 5 cups of coffee per day and 89.4% drink at least 1 cup of coffee per day. Find the binomial probabilities if: 
+        a) 6 Norwegians in a sample of 10 drink at least 5 cups of coffee per day;
+        b) 6 Norwegians in a sample of 10 drink at least 1 cup of coffee per day;
+        c) more than 45 Norwegians in a sample of 50 drink at least 1 cup of coffee per day;</li>
+        d) In addition, out of a sample size of 50 Norwegians, find the mean of those who drink at least 1 cup of coffee per day;
+        e) Then, find the standard deviation;
+      
+        <br><ul>a)
+          <li>n = 10; k = 6; p = 0.5</li>
+          <li>((10) (6)) = 10! / (6! * (10 - 6)!)</li>
+          <li>((10) (6)) = 210</li>
+        
+          <br><li>P(X = 6) = 210 * (0.5)<sup>6</sup> * (1 - 0.5)<sup>10 - 6</sup></li>
+          <li class="green">P = 0.205</li>
+        </ul>
+      
+        <br><ul>b)
+          <li>n = 10; k = 6; p = 0.894</li>
+          <li>((10) (6)) = 210</li>
+        
+          <br><li>P(X = 6) = 210 * (0.894)<sup>6</sup> * (1 - 0.894)<sup>n - k</sup></li>
+          <li class="green">P = 0.014</li>
+        </ul>
+      
+        <br><ul>c)
+          <li>n = 50; k = [46:50]; p = 0.894</li>
+          <li>((50) ([46:50])) = [230300, 19600, 1225, 50, 1]</li>
+        
+          <br><li>P(X = [46:50]) = [0.1679, 0.1205, 0.0635, 0.0219, 0.0037]</li>
+          <li>P(X > 45) = ∑(P(X = [46:50]))</li>
+          <li>P(X > 45) = 0.3775</li>
+        </ul>
+      
+        <br><ul>d)
+          <li>n = 50; p = 0.894</li>
+          <li>mean = 50 * 0.894</li>
+          <li class="green">mean = 44.7</li>
+        </ul>
+        
+        <br><ul>e)
+          <li>std = sqrt(50 * 0.894 * (1 - 0.894))</li>
+          <li class="green">std = 2.18</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Density Curves & Normal Distribution</b>
+      <li><b>Normal Distribution</b> N is the method used for describing the distribution of a continuous random variable</li>
+        <ul>This type of distribution takes the shape of a bell-shaped curve</ul>
+        <ul>The mean μ & std σ are used to distinguish the curve from another curve
+          <li>distribution = N(μ, σ)</li>
+        </ul>
+      
+      <br><li><b>Density Curves</b> give a visual, graphical representation of normal distribution. These curves emphasise the location, shape & spread of the values in a given continuous random variable within a certain interval. They can also be overlayed over other numerical graphs like histograms to show the pattern of data</li>
+        <ul>The total area under the curve is one (that is, the integration of the curve's function in a given interval). This corresponds to 100% of the total probabilities. The area is always proportional to the distribution of the data in an interval</ul>
+        <ul>A <b>normal density curve</b> N takes the parameters μ (mean) & σ (standard deviation) where the mean is the centre of the bell curve & horizontally stretched in terms of its standard deviation. A lower std indicates a restricted distribution of data and narrow curve. A higher std indicates a loose distribution of data and wide curve</ul>
+        <ul>The probability within a given area of the curve is referred to as the cumulative distribution function. The area of the curve for a given probability is referred to as the inverse of the cumulative distribution function. Both values can be solved using technology (like Python or a calculator)</ul>
+      
+      <br><li><b>Standard Normal Distribution</b></li>
+        <ul>A standard normal density function Z has a mean of zero & standard deviation of 1: 
+          <li>if(X == N(0, 1)): X == Z is true</li>
+        </ul>
+        <ul>The standard normal is used to simplify calculations for determining the statistics of the data</ul>
+        <ul>To convert a non-standard normal distribution X to a standard one, the values of X are subtracted by the mean, then divided by the std. This is equivalent to obtaining the z-score of the value:
+          <li>Z[] = (X[] - μ) / σ</li>
+          <li>X[] = μ + (Z[] * σ) (the inverse of the above operations)</li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>
+    

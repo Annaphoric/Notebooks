@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.7: The Trace-Determinant Plane</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.7: The Trace-Determinant Plane</h1>
+    
+    <ul class="topic"><b>The Trace-Determinant Plane</b>
+      <li>The behaviour of a linear system is represented by its corresponding eigenvalues & eigenvectors</li>
+      
+      <br><li>Given d<b>Y</b>/dt = <b>A Y</b>, where <b>A</b> = [[a b] [c d]], <b>Y</b> = solution vector: </li>
+        <ul>The characteristic polynomial is: 
+          <li>λ<sup>2</sup> - (a + d) λ + a d - b c</li>
+          <li>λ<sup>2</sup> - T λ + D, where T = trace(<b>A</b>) = (a + d), <b>D</b> = det(<b>A</b>) = (a d - b c)</li>
+        </ul>
+        <ul>The corresponding eigenvalues are: 
+          <li>λ = (T +- sqrt(T<sup>2</sup> - 4D)) / 2</li>
+            <ul>if (T<sup>2</sup> - 4D) > 0, the eigenvalues are real & distinct</ul>
+            <ul>if (T<sup>2</sup> - 4D) == 0, the eigenvalues are repeated</ul>
+            <ul>if (T<sup>2</sup> - 4D) < 0, the eigenvalues are complex</ul>
+        </ul>
+      
+      <br><li>The <b>Trace-Determinant Plane</b> is a plot of D over T, forming a graph on the TD-plane</li>
+        <ul>The graph is a curve (upwards parabola with a vertex at the origin) corresponding to D = T<sup>2</sup> / 4 from T<sup>2</sup> - 4D == 0
+          <li>The region along the curve indicates that D == T<sup>2</sup> / 4 and the eigenvalues are repeated</li>
+          <li>The region above the curve indicates that D > T<sup>2</sup> / 4 and the eigenvalues are complex</li>
+            <ul>In this case, the real part of the eigenvalue is a = T<sup>2</sup> / 2 & the imaginary part of the eigenvalue is b = T<sup>2</sup> - 4D (which is always less than zero)</ul>
+            <ul>if T > 0, the solution curves of the linear system represent a spiral source</ul>
+            <ul>if T == 0, the solution curves of the linear system represent a center</ul>
+            <ul>if T < 0, the solution curves of the linear system represent a spiral sink</ul>
+          <li>The region below the curve indicates that D < T<sup>2</sup> / 4 and the eigenvalues are real</li>
+            <ul>if T > 0, the system always has at least one positive eigenvalue
+              <li>if D > 0, the system will have another positive eigenvalue</li>
+              <li>if D == 0, the system will also have a zero eigenvalue</li>
+              <li>if D < 0, the system will also have a negative eigenvalue</li>
+            </ul>
+            <ul>if T == 0, the system always has at least one zero eigenvalue
+              <li>if D > 0, the system will also have a positive eigenvalue</li>
+              <li>if D == 0, the system will have another zero eigenvalue</li>
+              <li>i D < 0, the system will also have a negative eigenvalue</li>
+            </ul>
+            <ul>if T < 0, the system always has at least one negative eigenvalue
+              <li>if D > 0, the system will also have a positive eigenvalue</li>
+              <li>if D == 0, the system will also have a zero eigenvalue</li>
+              <li>if D < 0, the system will have another negative eigenvalue</li>
+            </ul>
+            
+            <br><ul>if there is at least one positive eigenvalue but no negative eigenvalues, the origin is a source</ul>
+            <ul>if there is both a negative & positive eigenvalue, the origin is a saddle</ul>
+            <ul>if there is at least one negative eigenvalue but no positive eigenvalues, the origin is a sink</ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>The Parameter Plane</b>
+      <li>The trace-determinant plane is an example of a <b>parameter plane</b></li>
+      <li>The entries of a matrix for a system are parameters that can be adjusted</li>
+      <li>This in turn would cause a change in the trace & determinant of the matrix and in the behaviour of the system entirely</li>
+      <li>However, the trace-determinant plane does not give information about which eigenvectors are linearly independent and the direction of the solution curves (either clockwise or anticlockwise)</li>
+      <li>let matrix <b>A</b> = [[a b] [c d]];</li>
+        <ul>The solutions to the corresponding DE rotate clockwise if b is positive but anticlockwise if b is negative</ul>
+        
+      <br><li>Usually small changes in the parameters do not greatly affect the behaviour of the linear system</li>
+      <li>However, there are three such <b>critical loci</b> where a bifurcation along the trace-determinant plane does occur (a heavy change in behaviour): </li>
+        <ul>The positive D-axis
+          <li>When moving from left to right (increasing T), the system changes from a spiral sink to a center at the D-axis and lastly to a spiral source</li>
+        </ul>
+        <ul>The T-axis
+          <li>When moving from bottom to top (increasing D), the system changes from a saddle to a sink if T < 0, from a saddle to a center if D == 0, or from a saddle to a source if D > 0</li>
+        </ul>
+        <ul>The repeated-root parabola
+          <li>When moving from bottom to top (increasing D), the system changes from a sink to a spiral sink if T < 0, or a source to a spiral source if T > 0</li>
+        </ul>
+      
+      <br><li>Bifurcations always occur at D == 0 (across the T-axis) or D == T<sup>2</sup>/4 (across the repeated-root parabola)</li>
+      
+      <br><li>The matrix can be written as a one-parameter family of a linear system where the bifurcation value is given by a</li>
+        <ul>Depending on the value of trace T & determinant D, variation of the bifurcation causes a heavy change in the system</ul>
+    </ul>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </body>
+</html>

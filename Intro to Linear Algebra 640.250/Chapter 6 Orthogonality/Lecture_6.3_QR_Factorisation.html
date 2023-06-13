@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 6.3: QR Factorisation</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 6.3: QR Factorisation</h2>
+    
+    <ul class="topic"><b>QR Factorisation</b>
+      <li>Rearranging the Gram-Schmidt equation leads to a triangular linear combination of orthonormal vectors: </li>
+        <ul>[<b>w</b><sub>1</sub>...<b>w</b><sub>k</sub>] [[c<sub>1</sub> 0 0...0] [b<sub>1</sub> <sub>2</sub> 0...0] [a<sub>1</sub> b<sub>2</sub> c<sub>3</sub>...0]...] = [<b>v</b><sub>k</sub>...<b>v</b><sub>k</sub>]</ul>
+        <ul>QR = A</ul>
+      
+      <br><li>To solve for the constants within the R-matrix (upper triangular matrix), <b>QR Factorisation</b> is performed: </li>
+        <ul class="red">c<sub>ij</sub> = <b>w</b><sub>i</sub> ⋅ <b>v</b><sub>j</sub></ul>
+      
+      <br><li>QR Factorisation is also called Iwasawa decomposition</li>
+      
+      <br><li>The Q-matrix (containing the orthonormal vectors) is always the same size as matrix A (containing the original vectors). The R-matrix (the upper-triangular matrix containing the constants) is always a square matrix with the same size as the number of columns of the 2 other matrices</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given set S = {[[1] [1] [1]], [[5] [-1] [2]]}, find the QR factoristion of the matrix formed by the set.
+      
+        <br><br><li>The matrix formed by the span of the set is matrix A = [[1 5] [1 -1] [1 2]]. The R-matrix must be a square matrix of size 2 since A has 2 columns. let vector <b>v</b><sub>1</sub> = [[1] [1] [1]], <b>v</b><sub>2</sub> = [[5] [-1] [2]]. Applying the Gram-Schmidt method: </li>
+          <ul><b>w</b><sub>1</sub> = <b>v</b><sub>1</sub> / ||<b>v</b><sub>1</sub>||</ul>
+          <ul><b>w</b><sub>1</sub> = [[1] [1] [1]] / sqrt(3)</ul>
+          
+          <br><ul><b>w</b><sub>2</sub> = <b>v</b><sub>2</sub> - (<b>v</b><sub>2</sub> ⋅ <b>w</b><sub>1</sub>) <b>w</b><sub>1</sub> / ||<b>w</b><sub>2</sub>||</ul>
+          <ul><b>w</b><sub>2</sub> = [[5] [-1] [2]] - ([[5] [-1] [2]] ⋅ [[1] [1] [1]]) [[1] [1] [1]] / 3 / <b>w</b><sub>2</sub></ul>
+          <ul><b>w</b><sub>2</sub> = [[5] [-1] [2]] - [[2] [2] [2]] / ||<b>w</b><sub>2</sub>||</ul>
+          <ul><b>w</b><sub>2</sub> = [[3] [-3] [0]] / ||<b>w</b><sub>2</sub>||</ul>
+          <ul><b>w</b><sub>2</sub> = [[3] [-3] [0]] / 3 sqrt(2)</ul>
+          <ul><b>w</b><sub>2</sub> = [[1] [-1] [0]] / sqrt(2)</ul>
+        
+        <br><li>The QR equation is written as: </li>
+          <ul>A = QR</ul>
+          <ul>[[1 5] [1 -1] [1 2]] = [[1/sqrt(3) 1/sqrt(2)] [1/sqrt(3) -1/sqrt(2)] [1/sqrt(3) 0]] [[a b] [0 c]]</ul>
+        
+        <br><li>Solving for the constants using QR factoristion: </li>
+          <ul>a = <b>w</b><sub>1</sub> ⋅ <b>v</b><sub>1</sub></ul>
+          <ul>a = ([[1] [1] [1]] ⋅ [[1] [1] [1]]) / sqrt(3)</ul>
+          <ul>a = sqrt(3)</ul>
+          
+          <br><ul>b = <b>w</b><sub>1</sub> ⋅ <b>v</b><sub>2</sub></ul>
+          <ul>b = ([[1] [1] [1]] ⋅ [[5] [-1] [2]]) / sqrt(3)</ul>
+          <ul>b = 2 sqrt(3)</ul>
+          
+          <br><ul>c = <b>w</b><sub>2</sub> ⋅ <b>v</b><sub>2</sub></ul>
+          <ul>c = ([[1] [-1] [0]] ⋅ [[5] [-1] [2]]) / sqrt(2)</ul>
+          <ul>c = 3 sqrt(2)</ul>
+          
+          <br><ul>Therefore, the final form of the QR equation for this matrix is: 
+            <li class="green">[[1 5] [1 -1] [1 2]] = [[1/sqrt(3) 1/sqrt(2)] [1/sqrt(3) -1/sqrt(2)] [1/sqrt(3) 0]] [[sqrt(3) (2 sqrt(3))] [0 (3 sqrt(2))]]</li>
+          </ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Orthogonal Matrices</b>
+      <li>An <b>orthogonal matrix</b> (Unitary matrix; Rotation matrix) Q is a square matrix where its inverse is identical to its transpose (Not Q from QR Factorisation): </li>
+        <ul>Q Q<sup>t</sup> = I</ul>
+      
+      <br><li>Dot Product Theorum</li>
+        <ul>A<b>v</b> ⋅ B<b>w</b> = <b>v</b> ⋅ A<sup>t</sup>B<b>w</b> = <b>w</b> ⋅ B<sup>t</sup>A<b>v</b></ul>
+        <ul>Q<b>v</b> ⋅ Q<b>w</b> = <b>v</b> ⋅ <b>w</b> (Orthogonal matrices do not change the scale or the length of the vectors, but instead rotates them)</ul>
+      
+      <br><li>The columns/rows of an orthogonal matrix form an orthonormal basis for all real numbers</li>
+      
+      <br><li>Orthogonal matrices always have a determinant of [±1]</li>
+    </ul>
+    
+    <ul class="topic"><b>Projection Matrices</b>
+      <li>A <b>projection matrix</b> P contains all projection vectors in a given subspace. For all real numbers, the formulato solve for the projection vectors is: </li>
+        <ul>P = C (C<sup>t</sup> C)<sup>-</sup>C<sup>t</sup></ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Given vector <b>u</b> = [[1] [2] [-1]], W = {x + y - z = 0;  x - y + 3z = 0}, find the projection of <b>u</b> onto the subspace formed by W.
+      
+        <br><br><li>Rewriting the system of equations in a matrix form and reducing: </li>
+          <ul>[[1 1 -1] [1 -1 3]] [[x] [y] [z]] = <b>0</b></ul>
+          <ul>let A = [[1 1 -1] [1 -1 3]] (W is the nullspace of A)</ul>
+          
+          <br><ul>[[1 1 -1] [0 -2 4]] (R2 = R2 - R1)</ul>
+          <ul>{x + y - z = 0;  2z - y = 0}</ul>
+          <ul>z = x + y;  y = 2z</ul>
+          <ul>x(z) = -z;  y(z) = 2z;  z(z) = z</ul>
+          
+          <br><ul>B = {[[-1] [2] [1]]}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given <b>u</b> = [[-6] [4] [5]] & W = [[1 3] [-1 1] [2 5]], find the projection formed by <b>u</b> on the subspace formed by the span of W.
+      
+        <br><br><li>Using the projection formula: </li>
+          <ul>P = (C<sup>t</sup> C) (C<sup>t</sup> C)<sup>-</sup></ul>
+          <ul>W<sup>t</sup> = [[1 -1 2] [3 1 5]]</ul>
+          
+          <br><ul>W<sup>t</sup> W = [[1 -1 2] [3 1 5]] [[1 3] [-1 1] [2 5]]</ul>
+          <ul>W<sup>t</sup> W = [[6 12] [12 35]]</ul>
+          
+          <br><ul>(W<sup>t</sup> W)<sup>-</sup> = [[35 -12] [-12 6]] / 66</ul>
+          <ul>(W<sup>t</sup> W)<sup>-</sup> = [[(35/66) -(2/11)] [-(2/11) (1/11)]]</ul>
+          
+          <br><ul>P = [[(35/66) -(2/11)] [-(2/11) (1/11)]] [[6 12] [12 35]] [[-6] [4] []]</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

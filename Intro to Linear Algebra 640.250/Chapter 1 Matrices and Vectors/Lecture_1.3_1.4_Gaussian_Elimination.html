@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.3, 1.4: Gaussian Elimination</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.3, 1.4: Gaussian Elimination</h2>
+    
+    <ul class="topic"><b>Gaussian Elimination</b>
+      <li>An organised method for solving systems of equations</li>
+      
+      <br><li>A <b>row operation</b> is a modification of an equation without changing its true values. These include: </li>
+        <ul>Changing the order of equations</ul>
+        <ul>Multiplying an equation by a nonzero scalar</ul>
+        <ul>Adding equations together</ul>
+      
+      <br><ol>The following steps are used: 
+        <li>Convert the system of equations into the product of a coefficient matrix & vector set equal to another vector</li>
+        <li>Perform row operations to eliminate the same variable on all equations except one equation</li>
+        <li>Use back substitution on the equations using found variable</li>
+        <li>Repeat steps 2 & 3 until all variables are solved, if possible</li>
+      </ol>
+        
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Solve the following system of equations, if possible: {x - y - 3z + w = 0, -2x + y + 5z = -4, 4x - 2y - 10z + w = 5}.
+      
+        <br><br><li>Rewriting the system of equations as a coefficient matrix and vector: </li>
+          <ul>[[1, -1, -3, 1], [-2, 1, 5, 0], [4, -2, -10, 1]] ⋅ [[x], [y], [z], [w]] = [[0], [-4], [5]]</ul>
+          
+        <br><li>Row operations are now performed until the first variable is solved (x in this case): </li>
+          <ul>Note: Commas are removed for more efficient typing</ul>
+          <ul>2 main row operations are performed here: The second row is replaced with the sum of the first equation multipled by 2 and the second equation; The third row is replaced with the sum of the first equation multiplied by -4 and the third equation</ul>
+          <ul>[[<b>1</b> -1 -3 1] [0 -1 -1 2] [0 2 2 -3]] ⋅ [[x] [y] [z] [w]] = [[0] [-4] [5]]</ul>
+          <ul>Here, the element in the first row & column (1 in this case) is known as the pivot, which always contains zeros below it</ul>
+        
+        <br><li>Row operations are performed until the second variable is solved (y in this case): </li>
+          <ul>[[<b>1</b> -1 -3 1] [0 <b>-1</b> -1 2] [0 0 0 1]] ⋅ [[x] [y] [z] [w]] = [[0] [-4] [-3]]</ul>
+          <ul>The element in the second row & column (-1 in this case) becomes another pivot</ul>
+          <ul>Since no more pivots can be defined, the entire equation is now said to be in a Row Echelon form</ul>
+        
+        <br><li>Since there is a standard row (a row containing all zeros except for a one) in the coefficient matrix, the matrices can be converted into a system of equations and back substitution can be used to solve for the variables: </li>
+          <ul>{x - y - 3z + w = 0; -y - z + 2w = -4; w = -3}</ul>
+          <ul>{x - y - 3z + (-3) = 0; -y - z + 2(-3) = -4} (substituting w = -3 into the equations)</ul>
+          <ul>{x - y - 3z = 3; -y - z = 2}</ul>
+          <ul>{x - y - 3z = 3; y = -(z + 2)}</ul>
+          <ul>{x - (-(z + 2)) - 3z = 3} (substituting y = -(z + 2) into the equation)</ul>
+          <ul>{x + z + 2 - 3z = 3}</ul>
+          <ul>{x - 2z = 1}</ul>
+          <ul>x = 2z + 1</ul>
+          
+          <br><ul class="green">There are infinite solutions in the form of 3 equations that were found: {x = 2z + 1; y = -(z + 2); w = -3}. Since there is the same independent variable (or parameter) on 2 equations (z is the parameter of x and y), there is one degree of freedom. This means the solutions form a one dimensional line in 4-dimensional space (each dimension for one variable), having the point (1 + 2z, -z - 2, z, -3) as the corresponding solutions to the system of equations</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Solve the following system of equations: {x + 3y + z + w = -1; -2x - 6y - z = 5; x + 3y + 2z + 3w = 2}.
+      
+        <br><br><li>Converting the system of equations in a matrix form: </li>
+          <ul>[[1 3 1 1] [-2 -6 -1 0] [1 3 2 3]] ⋅ [[x] [y] [z] [w]] = [[-1] [5] [2]]</ul>
+        
+        <br><li>Solving for the first pivot: </li>
+          <ul>The second row is replaced with the sum of the first equation multiplied by 2 and the second equation</ul>
+          <ul>[[1 3 1 1] [0 0 1 2] [1 3 2 3]] ⋅ [[x] [y] [z] [w]] = [[-1] [3] [2]]</ul>
+          
+          <br><ul>The third row is replaced with the sum of the first equation multipled by -1</ul>
+          <ul>[[<b>1</b> 3 1 1] [0 0 1 2] [0 0 1 2]] ⋅ [[x] [y] [z] [w]] = [[-1] [3] [3]]</ul>
+        
+        <br><li>Since the second and third row are equivalent, the equations can be converted back into a systematic form and back substitution is used: </li>
+          <ul>{x + 3y + z + w = -1; z + 2w = 3}</ul>
+          <ul>{x + 3y + z + w = -1; z = 3 - 2w}</ul>
+          <ul>x + 3y + (3 - 2w) + w = -1 (substituting z = 3 - 2w)</ul>
+          <ul>x + 3y - w = -4</ul>
+          <ul>x = w - 3y - 4</ul>
+          
+          <br><ul class="green">There are infinitely many solutions in the form of 2 algebraic equations: {x = w - 3y - 4; z = 3 - 2w}. There are 2 independent variables (y & z), so there are 2 degrees of freedom. Geometrically, the equations form a 2-dimensional plane in 4-dimensional space</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Find the value of r in the following system of equations: {-x + ry = 2; rx - 9y = 6} to solve for a consistent solution.
+      
+        <br><br><li>Converting the systematic format into a matrix form: </li>
+          <ul>[[-1 r] [r -9]] ⋅ [[x] [y]] = [[2] [6]]</ul>
+        
+        <br><li>Solving for the first pivot: </li>
+          <ul>Replace the second equation by the sum of the first equation multiplied by r and the second equation</ul>
+          <ul>[[-1 r] [0 (r<sup>2</sup> - 9)]] ⋅ [[x] [y]] = [[2] [2r + 6]]</ul>
+        
+        <br><li>Converting from matrix form back into systematic form and performing back substitution: </li>
+          <ul>{-x + ry = 2; y(r<sup>2</sup> - 9) = 2r + 6}</ul>
+          <ul>{x = ry - 2; y = (2r + 6)/(r<sup>2</sup> - 9)}</ul>
+          <ul>x = r((2r + 6)/(r<sup>2</sup> - 9)) - 2 (Substituting y = (2r + 6)/(r<sup>2</sup> - 9)</ul>
+          
+          <br><ul class="green">There are 2 possible responses to this question:
+            <li>The equations are consistent if r = -3. So, there are infinite solutions when r = -3, having the algebraic form: x = -(3y + 2). Since there is one independent variable, there is one degree of freedom. Geometrically, the solution is a line on a 2D plane</li>
+            
+            <br><li>The equations are also consistent if r ≠ 3. So, there are infinite solutions when r ≠ 3, having the algebraic form: {x = r((2r + 6)/(r<sup>2</sup> - 9)) - 2; y = (2r + 6)/(r<sup>2</sup> - 9)}. This also means there is no solution at r = 3. Since there is one independent variable, there is one degree of freedom. Geometrically, the solution is a line in 3D space</li>
+          </ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

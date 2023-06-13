@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+    <title>Section 12.2: Vectors in 3D Space</title>
+  </head>
+  
+  <body>
+    <h2>Section 12.2: Vectors in 3D Space</h2>
+    
+    <ul class="topic"><b>Vectors</b>
+      <li class="blue">A vector is a directed line segment that has both an initial point & a final point. It's value is measured by its <b>magnitude</b> & <b>direction</b></li>
+      <li>Vectors are equal if they have the same magnitude && direction</li>
+      <li>A vector <b>u</b> with initial point A & terminal point B is depicted as AB<sup>➝</sup> (A half arrow above the 2 letters) has a length of |AB➝|</li>
+      <li>A vector <b>u</b> originating from the origin to a point (i, j, k) can be written in its <b>component form</b> as shown: </li>
+        <ul class="red"><b>u</b> = < i, j, k > 
+          <li class="black">This vector has an x-component equal to i, a y-component equal to j, and a z-component equal to k</li>
+          <li class="black">Each component is equal to the distance between the terminal point and initial point according to their axes</li></ul>
+      
+      <br><li>A vector <b>v</b> originating from point P(x<sub>0</sub>, y<sub>0</sub>, z<sub>0</sub>) and ending at point Q(x, y, z) can be written as: </li>
+        <ul class="red"><b>v</b> = < x - x<sub>0</sub>, y - y<sub>0</sub>, z - z<sub>0</sub> > where i = x - x<sub>0</sub>, j = y - y<sub>0</sub>, k = z - z<sub>0</sub></ul>
+      <li>The <b>magnitude</b> or length of a vector can be solved using the formula: </li>
+        <ul class="red">||<b>v</b>|| = |<b>v</b>| = √(i<sup>2</sup> + j<sup>2</sup> + k<sup>2</sup>) = √((x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> + (z - z<sub>0</sub>)<sup>2</sup>)</ul>
+      
+      <br><li>Space vectors that lie on the same plane are said to be coplanar</li>
+    </ul>
+    
+    <ul class="topic"><b>Example 1</b>
+      <li class="question">Find the a) component form; b) length; of vector <b>v</b> with initial point P(-3, 4, 1) & terminal point Q(-5, 2, 2)</li>
+        <ul>Its component form is written as: 
+          <li><b>v</b> = < ((-5) - (-3)), (2 - 4), (2 - 1) ></li>
+          <li class="green"><b>v</b> = < -2, -2, 1 ></li></ul>
+        <ul>Its length/magnitude would be solved as follows: 
+          <li>||<b>v</b>|| = √((-2)<sup>2</sup> + (-2)<sup>2</sup> + (1)<sup>2</sup>)</li>  
+          <li>||<b>v</b>|| = √(4 + 4 + 1)</li>
+          <li>||<b>v</b>|| = √(9)</li>
+          <li class="green">||<b>v</b>|| = 3</li></ul>
+    </ul>
+    
+    <ul class="topic"><b>Example 2</b>
+      <li class="question">A small cart is being pulled along a frictionless horizontal surface with a force <b>F</b> of 20lb with components < i, j > at an angle of 45° above the ground. What is the magnitude of the effective force that moves the cart forward?</li>
+      <ul>The "effective" force that pulls the cart is equal to its horizontal component i. This can be solved by multiplying the total force by cos(45°) as shown:
+        <li>i = 20 * cos(45°)</li>
+        <li class="green">i = 20 * (1/√(2)) ≈ 14.14lb</li>
+    </ul></ul>
+    
+    <ul class="topic"><b>Algebraic Operations with Vectors</b>
+      <li>There are 2 common types of algebraic operations with vectors: </li>
+        <ul><b>Vector Addition</b>
+          <li class="blue">Vectors are added using their components. Let <b>u</b> & <b>v</b> be vectors with components < i, j, k > & < a, b, c > respectively: </li>
+            <ul class="red"><b>u</b> + <b>v</b> = < i + a, j + b, k + c ></ul>
+          <li>The sum of the vectors or product using a vector is known as the <span class="green">resultant vector</span></li>
+          <li>A vector with the same magnitude but opposite directions from each other are opposites of each other and have their components in their opposite signs</li> 
+            </ul>
+        <ul><b>Scalar Multiplication</b>
+          <li class="blue">Vectors can be multiplied with a scalar number using the vector's components. Let <b>u</b> be a vector with components < i, j, k > and c be a scalar: </li>
+            <ul class="red">c * <b>u</b> = < c * i, c * j, c * k ></ul>
+          <li>The magnitude of the resultant vector is solved using the distance formula for vectors: </li>
+            <ul>|cu| = √((ci)<sup>2</sup> + (cj)<sup>2</sup> + (ck)<sup>2</sup>)</ul>
+            <ul>|cu| = √(c<sup>2</sup>(i<sup>2</sup> + j<sup>2</sup> + k<sup>2</sup>))</ul>
+            <ul class="red">|cu| = |c||u|</ul> 
+    </ul></ul>
+    
+    <ul class"topic"><b>Example 3</b>
+      <li class="question">Let vector <b>u</b> = < -1, 3, 1 > and vector <b>v</b> = < 4, 7, 0 >, find the resultant components for the operations a) 2<b>u</b> + 3<b>v</b>; b) <b>u</b> - <b>v</b>; c) |u/2|</li>
+        <ul class="empty">a)
+          <li>2<b>u</b> = < -2, 6, 2 ></li>
+          <li>3<b>v</b> = < 12, 21, 0 ></li>
+          <li>2<b>u</b> + 3<b>v</b> = < -2 + 12, 6 + 21, 2 + 0 ></li>
+          <li class="green">2<b>u</b> + 3<b>v</b> = < 10, 27, 2 ></li>
+        </ul>
+        <ul class="empty">b)
+          <li><b>u</b> - <b>v</b> = < -1 - 4, 3 - 7, 1 - 0 ></li>
+          <li class="green"><b>u</b> - <b>v</b> = < -5, -4, 1 ></li>
+        </ul>
+        <ul class="empty">c)
+          <li><b>u</b> / 2 = < -1/2, 3/2, 1/2 ></li>
+          <li>|<b>u</b> / 2| = √((-1/2)<sup>2</sup> + (3/2)<sup>2</sup> + (1/2)<sup>2</sup>)</li>
+          <li>|<b>u</b> / 2| = √(1/4 + 9/4 + 1/4)</li>
+          <li>|<b>u</b> / 2| = √(11/4)</li>
+          <li class="green">|<b>u</b> / 2| = √(11)/2</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Unit Vectors</b>
+      <li class="blue">Vectors that has a magnitude equal to 1</li>
+      <li>There are 3 <b>standard unit vectors</b> each with their appropriate components: </li>
+        <ul class="red"><b>i</b> = < 1, 0, 0 > (having only an x-component of 1)</ul>
+        <ul class="red"><b>j</b> = < 0, 1, 0 > (having only a y-component of 1)</ul>
+        <ul class="red"><b>k</b> = < 0, 0, 1 > (having only a z-component of 1)</ul>
+      <li>These standard vectors each have a hat/circumflex on top of them and are written as î, ĵ, ǩ</li>
+      <li>A vector <b>u</b> with components (scalars) < x, y, z > that has a linear combination of all 3 unit vectors is written as: </li>
+        <ul class="red"><b>u</b> = (x * <b>i</b>) + (y * <b>j</b>) + (z * <b>k</b>) = x < 1, 0, 0 > + y < 0, 1, 0 > + z < 0, 0, 1 ></ul>
+      <br><li class="green">A unit vector can be written in the form: </li>
+        <ul><b>v</b> / |<b>v</b>| (This unit vector is in the direction of vector <b>v</b>)</ul>
+      <li class="green">The length of any nonzero unit vector is written as: </li>
+        <ul class="red">|(1/|<b>v</b>|) * <b>v</b>| = (1/|<b>v</b>|) * |<b>v</b>| = |<b>v</b>| / |<b>v</b>| = 1</ul>
+    </ul>
+    
+    <ul class="topic"><b>Example 4</b>
+      <li class="question">Find the unit vector <b>u</b> in the direction of the vector from initial point P(1, 0, 1) to terminal point Q(3, 2, 0)</li>
+        <ul>The components of vector <b>PQ</b> will first have to be solved and written according to its unit vectors
+          <li><b>PQ</b> = < 3 - 1, 2 - 0, 0 - 1 ></li>
+          <li><b>PQ</b> = < 2, 2, -1 ></li>
+          <li><b>PQ</b> = 2 < 1, 0, 0 > + 2 < 0, 1, 0 > - 1 < 0, 0, 1 ></li>
+          <li class="green"><b>PQ</b> = 2<b>i</b> + 2<b>j</b> - <b>k</b></li>
+        </ul>
+        <ul>The length of <b>PQ</b> or |<b>PQ</b>| can now be solved
+          <li>|<b>PQ</b>| = sqrt((2)<sup>2</sup> + (2)<sup>2</sup> + (-1)<sup>2</sup>)</li>
+          <li>|<b>PQ</b>| = sqrt(4 + 4 + 1)</li>
+          <li>|<b>PQ</b>| = sqrt(9)</li>
+          <li class="green">|<b>PQ</b>| = 3</li>
+        </ul>
+        <ul>The unit vector <b>u</b> is found as follows:
+          <li><b>u</b> = <b>PQ</b> / |<b>PQ</b>|</li>
+          <li class="green"><b>u</b> = (2<b>i</b> + 2<b>j</b> - <b>k</b>) / (3) = (2/3)<b>i</b> + (2/3)<b>j</b> - (1/3)<b></b></li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Example 5</b>
+      <li class="question">Given vector <b>w</b> = 3<b>i</b> - 4<b>j</b>, express this this vector as a product of its speed times its direction of motion</li>
+        <ul>The vector can be written in its component form:
+          <li><b>w</b> = < 3, -4 ></li>
+        </ul>
+        <ul>Solving for its length:
+          <li>|<b>w</b>| = sqrt((3)<sup>2</sup> + (-4)<sup>2</sup>)</li>
+          <li>|<b>w</b>| = sqrt(9 + 16)</li>
+          <li>|<b>w</b>| = sqrt(25)</li>
+          <li class="green">|<b>w</b>| = 5</li>
+        </ul>
+        <ul>The unit vector in the direction of <b>w</b> is written as:
+          <li><b>w</b> / |<b>w</b>| = (3<b>i</b> - 4<b>j</b>) / (5) = (3/5)<b>i</b> - (4/5)<b>j</b></li>
+        </ul>
+        <ul>Therefore, vector <b>w</b> can be written as:
+          <li class="green"><b>w</b> = |<b>w</b>| * (<b>w</b> / |<b>w</b>|) = 5 ((3/5)<b>i</b> - (4/5)<b>j</b>) where the 5 outside the parentheses is the speed and everything inside the parentheses is the direction of vector <b>w</b></li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Example 6</b>
+      <li class="question">A force <b>F</b> of 6N is applied in the direction of the vector <b>p</b> = 2<b>i</b> + 2<b>j</b> - <b>k</b>. Express this force as the product of its magnitude & direction</li>
+        <ul>The direction of <b>F</b> is equal to <b>p</b> / |<b>p</b>|. First, the length of <b>p</b> must be calculated: 
+          <li>|<b>p</b>| = sqrt((2)<sup>2</sup> + (2)<sup>2</sup> + (-1)<sup>2</sup>)</li>
+          <li class="green">|<b>p</b>| = 3</li>
+        </ul>
+        <ul>The direction can now be solved:
+          <li><b>p</b> / |<b>p</b>| = (2<b>i</b> + 2<b>j</b> - <b>k</b>) / (3)</li>
+        </ul>
+        <ul>Therefore, vector <b>p</b> can be expressed as:
+          <li class="green"><b>p</b> = 6 ((2/3)<b>i</b> + (2/3)<b>j</b> - (1/3)<b>k</b>) where 6 is the magnitude and everything in the parentheses is the direction of <b>F</b></li>
+        </ul>
+    </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="_.js"></script>
+  </body>
+</html>

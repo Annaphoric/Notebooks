@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../MathJax.css">
+    <title>Section 4.1: Forced Harmonic Oscillators</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>MathJax = {tex: {inlineMath: [['$', '$']]}};</script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+  
+  <body>
+    <h1>Section 4.1: Forced Harmonic Oscillators</h1>
+    
+    <ul><b>Forced Harmonic Oscillators</b>
+      <li>A forced harmonic oscillator is an example of a non-autonomous second-order DE</li>
+      <li>The equation for the internal forces (spring force & damping force) involved in a mass attached to a spring (unforced, homogenous) is: </li>
+        $$m \frac{d^{2}y}{dt^{2}} + b \frac{dy}{dt} + k y = 0$$
+        <ul>where $m$ = mass, $b$ = damping coefficient, $k$ = spring constant, $y$ = position, $t$ = time</ul>
+        
+      <br><li>When an external force $f(t)$ is applied, the oscillator becomes forced & non-homogenous, having the equation: </li>
+        $$m \frac{d^{2}y}{dt^{2}} + b \frac{dy}{dt} + k y = f(t)$$
+        $$\frac{d^{2}y}{dt^{2}} + p \frac{dy}{dt} + q y = g(t)$$
+        <ul>where $p = \frac{b}{m}$, $q = \frac{k}{m}$, $g = \frac{f}{m}$</ul>
+      
+      <br><li>The external force can be written as an exponential or sinusoidal function</li>
+      <li>The Extended Linearity Principle says that the general solution $y(t)$ to a forced equation is the sum of the general solution $y_h(t)$ to its associated homogenous equation & one specific solution $y_p(t)$ to the unforced equation: </li>
+        $$y(t) = y_h(t) + y_p(t)$$
+      
+      <br><li>if $y_h(t) = k_1 y_1(t) + k_2 y_2(t)$: </li>
+        $$y(t) = k_1 y_1(t) + k_2 y_2(t) + y_p(t)$$
+        
+      <br><li>If there is damping present, the damping coefficient $p$ is always positive and the equillibrium point at the origin is always a sink</li>
+      
+      <br><li>The <b>Method of Undetermined Coefficients</b> can be used to solve for a specific solution of the non-homogenous equation</li>
+        <ul>This method involves solving for a constant-coefficient $α$ after using a convenient solution based on the external force</ul>
+        <ul>If at first, no specific solution is achieved, the solution is multiplied by $t$, then $α$ is solved</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Find the general solution of the non-homogenous DE $\frac{d^2y}{dt^2} + 5 \frac{dy}{dt} + 6y = e^{-t}$.
+        
+        <br><br><li>Solving for eigenvalues & general solution $y_h(t)$ of associated homogenous DE $\frac{d^2y}{dt^2} + 5 \frac{dy}{dt} + 6y = 0$: </li>
+          <ul>$λ^2 + 5λ + 6 = 0$</ul>
+          <ul>$(λ + 3)(λ + 2) = 0$</ul>
+          <ul>$λ = \{-2, -3\}$</ul>
+          
+          <br><ul>General solution for homogenous equation: $y_h(t) = k_{-2} e^{-2t} + k_{-3} e^{-3t}$</ul>
+        
+        <br><li>Using the method of undetermined coefficients to solve for a specific solution $y_p(t)$ of the non-homogenous DE: </li>
+          <ul>let $y_p(t) = α e^{-t}$;</ul>
+          <ul>$\frac{dy_p}{dt} = -α e^{-t}$</ul>
+          <ul>$\frac{d^2y_p(t)}{dt^2} = α e^{-t}$</ul>
+          
+          <br><ul>$\frac{d^2y_p}{dt^2} + 5 \frac{dy_p}{dt} + 6y_p = e^{-t}$</ul>
+          <ul>$α e^{-t} - 5α e^{-t} + 6α e^{-t} = e^{-t}$</ul>
+          <ul>$2α e^{-t} = e^{-t}$</ul>
+          <ul>$α = \frac{1}{2}$</ul>
+          
+          <br><ul>Specific solution: $y_p(t) = \frac{e^{-t}}{2}$</ul>
+          
+          <br><ul>General solution for non-homoegnous equation: $y(t) = k_{-2}e^{-2t} + k_{-3}e^{-3t} + \frac{e^{-t}}{2}$</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

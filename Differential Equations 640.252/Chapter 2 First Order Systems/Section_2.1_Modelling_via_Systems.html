@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 2.1: Modelling via Systems</title>
+  </head>
+  
+  <body>
+    <h1>Section 2.1: Modelling via Systems</h1>
+    
+    <ul class="topic"><b>Predator-Prey Systems</b>
+      <li>let R(t) = population of prey, F(t) = population of predator, dR/dt = {2R - 1.2R F}, dR/dt = {0.9R F - F};</li>
+      <li>dR/dt shows how the population of prey changes over time and dF/dt shows how the population of predator changes over time</li>
+      <li>The proportionality coefficient (-1.2) shows how the predator interacts with the prey to decrease the population of the prey and (0.9) shows how the predator interacts with the prey to increase the population of the predator</li>
+      <li>At dR/dt = 0 && dF/dt = 0, the populations of both are not changing</li>
+        <ul>A function of R(t) and F(t) that would case dR/dt && dF/dt to have a value of zero is known as one <b>equillibrium solutions</b> consisting of a pair of constant functions</ul>
+        <ul>An obvious equillibrium solution would be where R(t) && F(t) both equal zero:
+          <li>{R(t) = 0, F(t) = 0}</li>
+        </ul>
+        <ul>Another way to solve for an equillibrium solution is by setting dR/dt && dF/dt equal to zero and setting the 2 equations within the system equal to each other:
+          <li>dR/dt = (2 - 1.2F) R;  dF/dt = (0.9R - 1) F</li>
+          <li>(2 - 1.2F) R = 0;  (0.9R - 1) F = 0</li>
+          <li>(2 - 1.2F) R = (0.9R - 1) F</li>
+          <li>R(t) = 1.11;  F(t) = 1.67</li>
+          
+          <br><li>In other words, when the population of prey is R(t) = 1.11 && the population of predator F(t) = 1.67, the system is at equillibrium (the population are perfectly maintained indefinitely) as long as there are no confounding factors</li>
+        </ul>
+      
+      <br><li>if R(t) = 0: dR/dt == 0 & dF/dt == -F;</li>
+        <ul>This means that there is no change in prey population; however, the predator population will continue to decrease and can never increase as long as there is no prey</ul>
+      
+      <br><li>if F(t) = 0: dF/dt == 0 & dR/dt == 2R;</li>
+        <ul>This means that there is no change in predator poulation; however, the prey population will theoretically continue to increase indefinitely</ul>
+        <ul>In reality, the prey population follows more of a logistic growth model rather than exponential</ul>
+      
+      <br><li>An <b>initial condition</b> solves for a specific solution of the DE by solving for an explicit value for the DE first, then equations for R(t) & F(t) are written afterwards in the form of a system</li>
+      <li>An initial condition of R(0) = R<sub>0</sub> & F(0) = F<sub>0</sub> where (R<sub>0</sub>, F<sub>0</sub>) = (1, 0.5)</li>
+      <li>A <b>solution curve</b> is the graph made by the systems of equations that consists of the initial condition</li>
+        <ul>This graph is plotted as a plane where the axes are the values of R(t) & F(t) over time; it is also known as a <b>phase plane</b>, which is analagous to a phase line</ul>
+        <ul>The <b>initial point</b> (R<sub>0</sub>, F<sub>0</sub>) is the point where the curve begins</ul>
+        <ul>The curve forms a cycle that eventually returns back to the initial point after a certain amount of time</ul>
+        <ul>A <b>phase portrait</b> is a collection of multiple solution curves</ul>
+      <li>An equillibrium solution on a solution curve is shown as point rather than a curve because it is always constant (dR/dt = dF/dt = 0), known as an <b>equillibrium point</b></li>
+    </ul>
+    
+    <ul class="topic"><b>The Motion of an Object attached to a Spring</b>
+      <li>Assuming a mass is horizontally connected to a spring on a frictionless table, the undamped motion of the spring (ignoring air resistance & other forces) can relate to the the model described by the predator-prey system</li>
+      <li>The dependent variable is the force of the spring in motion</li>
+      <li>The 2 independent variables are the displacement from equillibrium (resting position) and time</li>
+      <li>The 2 quantities in the mass-spring model are the mass of the object & the spring constant (specific to the type of spring)</li>
+      <li>let y = displacement from equillibrium position, F = force due to acceleration, F<sub>s</sub> = restoring force, t = time, m = mass, k = spring constant, a = acceleration, v = velocity;</li>
+      <li>A (-) y value indicates that the spring is compressed whilst a (+) y value indicates that the spring is stretched</li>
+      <li>The formula that describes the undamped motion of a spring is based on Newton's 2nd Law & Hooke's Law: </li>
+        <ul>F = m a</ul>
+        <ul>F = m d<sup>2</sup>y/dt<sup>2</sup></ul>
+        
+        <br><ul>F<sub>s</sub> = -k y, (Note: This equation is negative because the restoring force always points towards the direction opposite to the position of the mass)</ul>
+        
+        <br><ul>m d<sup>2</sup>y/dt<sup>2</sup> = -k y</ul>
+        <ul>d<sup>2</sup>y/dt<sup>2</sup> + k y / m = 0
+          <li>This equation shows a spring in simple harmonic oscillation</li>
+          <li>This is a second-order DE that relates the acceleration to the position over time</li>
+        </ul>
+      
+      <br><li>Another way to express acceleration is by using a first-order DE that relates the acceleration to the velocity over time</li>
+      <li>The system of equations is written as: </li>
+        <ul>dy/dt = v, dv/dt = -k y / m</ul>
+        
+        <br><ul>if k / m = 1: dv/dt = -y;</ul>
+        
+      <li>The system of equations {dy/dt = v; dv/dt = -y} can be satisfied if y(t) = cos(t) && v(t) = -sin(t)</li>
+        <ul>This solution can be written as (y(t), v(t)) = (cos(t), -sin(t))</ul>
+        <ul>This forms a solution curve which happens to be a unit circle centered at the origin with a radius of one</ul>
+        <ul>The circle is parsed clockwise with increasing time since the equation of v(t) is negative</ul>
+      
+      <br><li>The vt-plane, yt-plane & yv-plane can be combined together to form a unique yvt-graph, having the convenient shape of a coil</li>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 5.1: Eigenvalues</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 5.1: Eigenvalues</h2>
+    
+    <ul class="topic"><b>Eigenvalues</b>
+      <li><b>Eigenvalues</b> are only applied to diagonal square matrices. These matrices have a size n ⨯ n, non-zero values on the main diagonal & all zeros outside the diagonal. The notation for eigenvalues is λ. They are also called characteristic values</li>
+      
+      <br><li>A matrix λ is an eigenvalue for matrix A if and only if there is a nonzero vector <b>v</b> (known as an <b>eigenvector</b>) so that the product of A * <b>v</b> is equal to the product of λ * <b>v</b>: </li>
+        <ul class="red">if(A * <b>v</b> == λ * <b>v</b> && <b>v</b> != <b>0</b>) {λ = eigenvalue}</ul>
+        <ul>(A<b>v</b> = λ<b>v</b>) is known as the eigenvalue equation</ul>
+      
+      <br><li>The eigenvalue equation can also be written in terms of a product of λ & an identity matrix I: </li>
+        <ul>A<b>v</b> = λI<b>v</b></ul>
+        <ul class="red">(A - λI)<b>v</b> = <b>0</b> (homogenous equation)</ul>
+      
+      <br><li>The set of eigenvectors {<b>v</b>} always form subspaces known as <b>eigenspaces</b> for λ. Eigenspaces, like subspaces, are closed under addition, where any vector can be added to a vector in the set and still have the same span, and closed in scalar multiplication, where any scalar can be multipled to a vector in the set and still have the same span</li>
+        <ul>The eigenspace for λ is the nullspace of (A - λI):
+          <li class="red">eigen(λ) = null(A - λI)</li>
+        </ul>
+      <li>let B = A - λI; If B<b>v</b> = <b>0</b>, then B has no inverse and the determinant of B is zero (det(B) == 0) because the nullity of B is greater than zero (null(B) > 0) && the rank of B is less than its size (rank(B) < n) && the columns/rows are dependent</li>
+        <ul>If the determinant of B is zero, then the polynomial of λ is also zero. The polynomial p of λ is also called the characteristic polynomial: 
+          <li class="red">det(A - λI) = det(B) = p(λ) = 0</li>
+        </ul>
+        <ul>The roots of p(λ) are the eigenvalues for matrix A</ul>
+      
+      <br><li>let D = [[λ<sub>1</sub> 0...0] [0 λ<sub>2</sub>...0]...[0...0 λ<sub>n</sub>]] (an infinite square diagonal matrix). The value of D raised to the m would be: </li>
+        <ul>D<sup>m</sup> = [[λ<sub>1</sub><sup>m</sup> 0...0] [0 λ<sub>2</sub><sup>m</sup>...0]...[0...0 λ<sub>n</sub><sup>m</sup>]]</ul>
+        
+      <br><li>If a matrix is able to be represented as a diagonal matrix, it is <b>diagonalisable</b></li>
+      
+      <br><li>Eigenvectors formed from different eigenvalues are linearly independent</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given matrix A = [[-9 -7] [14 12]], determine the eigenvalues for A, then find the basis for the nullspace of A.
+      
+        <br><li>Solving for λ using the zero determinant of (A - λI): </li>
+          <ul>det(A - λI) = ((-9 - λ) * (12 - λ)) - (-7 * 14) == 0</ul>
+          <ul>(λ<sup>2</sup> - 12λ + 9λ - 108) + 98 = 0</ul>
+          <ul>λ<sup>2</sup> - 3λ - 10 = 0 (This is the polynomial of λ or p(λ))</ul>
+          <ul>(λ - 5)(λ + 2) = 0</ul>
+          <ul class="green">λ = {-2, 5}</ul>
+        
+        <br><li>Using the values of λ to find the basis for null(A): </li>
+          <ul>For λ = 5: 
+            <li>let B = A - 5I;</li>
+            <li>B = [[(-9 - 5) -7] [14 (12 - 5)]]</li>
+            <li>B = [[-14 -7] [14 7]]</li>
+            
+            <br><li>[[-14 -7] [0 0]] (R2 = R2 + R1; rank = 1; null = 1)</li>
+            <li>{-14x - 7y = 0} (Written as a system of equations)</li>
+            <li>7y = -14x</li>
+            <li>x(x) = x, y(x) = -2x (The variables written as a function in terms of x)</li>
+            <li></li>
+            <li class="green">The solutions/nullspace to the system of equations is the vector <b>w</b> = [[x] [-2x]] = x [[1] [-2]] for all x (spanning a line). The corresponding eigenvector is simply <b>v</b> = [[1] [-2]]. The basis B for the eigenspace is the set containing <b>v</b>. This is written as: </li>
+              <ul>B<sub>(λ = 5)</sub> = {[[1] [-2]]}</ul>
+            <li>This shows that [[-9 -7] [14 12]] [[1] [-2]] = 5 [[1] [-2]]</li>
+          </ul>
+          
+          <br><ul>For λ = -2: 
+            <li>let C = A + 2I;</li>
+            <li>C = [[(-9 + 2) -7] [14 (12 + 2)]]</li>
+            <li>C = [[-7 -7] [14 14]]</li>
+            
+            <br><li>[[-7 -7] [0 0]] (R2 = R2 + 2 R1)</li>
+            <li>{-(7x + 7y) = 0}</li>
+            <li>x(x) = x; y(x) = -x</li>
+            <li class="green">solutions = x [[1] [-1]];  eigenvector <b>v</b> = [[1] [-1]];  eigenspace-basis B<sub>(λ = -2)</sub> = {[[1] [-1]]}</li>
+          </ul>  
+      </ol>
+    </ul>
+    
+  </body>
+</html>

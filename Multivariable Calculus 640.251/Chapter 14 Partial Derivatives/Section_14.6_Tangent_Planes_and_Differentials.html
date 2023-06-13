@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.6: Tangent Planes & Differentials</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.6: Tangent Planes & Differentials</h2>
+  
+    <ul class="topic"><b>Tangent Planes & Normal Lines</b>
+      <li class="blue">Tangent planes are made by the linearisation of a triple-variable function w = f(x, y, z) at a point on a level surface (3D cross-section of a 4D graph).</li>
+      <li>Assume there is a point P = (a, b, c) that is located on a level surface made by f(x, y, z) = d. The tangent plane E at this point is given by the equation: </li>
+        <ul class="red">E = (∂f(P)/∂x)(x - a) + (∂f(P)/∂y)(y - b) + (∂f(P)/∂z)(z - c) = 0</ul>
+        
+      <br><li>A normal line L is a line through the same point and is parallel to the gradient vector of the function. It is given by the equation: </li>
+        <ul class="red">L = {x = a + (∂f(P)/∂x) t, y = b + (∂f(P)/∂y) t, z = c + (∂f(P)/∂z) t}</ul>
+      
+      <br><li>If z can be isolated to simplify the function as z = f(x, y) where ∂f/∂z = 1, the equation for the tangent plane E of the surface at point P = (a, b, c) can be simplified as: </li>
+        <ul class="red">E = (∂f(P)/∂x)(x - a) + (∂f(P)/∂y)(y - b) - (z - c) = 0</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Find the a) tangent plane; b) normal line; of the level surface (circular paraboloid) made by {f(x, y, z) = x<sup>2</sup> + y<sup>2</sup> + z = 9} at point Q = (1, 2, 4).</li>
+      
+        <br><ul>a)
+          <li>The partial derivatives of f are: </li>
+            <ul>∂f/∂x = 2x; ∂f/∂y = 2y; ∂f/∂z = 1;</ul>
+          
+          <li>Evaulating the partial derivatives at point Q: </li>
+            <ul>∂f(Q)/∂x = 2; ∂f(Q)/∂y = 4; ∂f(Q)/∂z = 1;</ul>
+          
+          <li>The evaluated gradient vector of f (<b>F</b>(P))is: </li>
+            <ul><b>F</b>(P) = 2<b>i</b> + 4<b>j</b> + <b>k</b></ul>
+          
+          <li>The tangent plane E can now be written as: </li>
+            <ul>E = {2(x - 1) + 4(y - 2) + (z - 4) = 0}</ul>
+            <ul>E = {2x - 2 + 4y - 8 + z - 4 = 0}</ul>
+            <ul class="green">E = {2x + 4y + z = 14}</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>The normal line is written as: </li>
+            <ul class="green">L = {x = 1 + 2t, y = 2 + 4t, z = 1 + t}</ul>
+        </ul>
+    </ul>
+    
+    <ul><b>Example 2: </b>
+      <ol>Find the plane tangent to the surface made by {z = x cos(y) - y e<sup>x</sup>} at the origin.
+      
+        <br><li>let f(x, y) = x cos(y) - y e<sup>x</sup>. The partial derivatives of f are: </li>
+          <ul>∂f/∂x = cos(y) - y e<sup>x</sup>; ∂f/∂y = -(x sin(y) + e<sup>x</sup>)</ul>
+        
+        <li>Evaluating the partial derivatives at the origin: </li>
+          <ul>∂f(0, 0, 0)/∂x = 1; ∂f(0, 0, 0)/∂y = -1;</ul>
+        
+        <li>The tangent plane E will have the form: </li>
+          <ul>E = {x - y - z = 0}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>The cylinder {f(x, y, z) = x<sup>2</sup> + y<sup>2</sup> = 2} & plane {g(x, y, z) = x + z = 4} make an intersecting ellipse. Point P = (1, 1, 3) exists at the this ellipse. Find the parametric equations for the line tangent to the ellipse at the given point.
+      
+        <br><li>The tangent line is orthogonal to both gradient vectors made by the equations. The partial derivatives of f evaluated at point P are: </li>
+          <ul>∂f(P)/∂x = 2x; ∂f(P) = 2y;</ul>
+          <ul>∂f(1, 1, 3)/∂x = 2; ∂f(1, 1, 3)/∂y = 2;</ul>
+        
+        <br><li>The gradient vector of f evaluated at P <b>F</b>(P) is: </li>
+          <ul><b>F</b>(P) = 2<b>i</b> + 2<b>j</b></ul>
+        
+        <br><li>The partial derivatives of g evaluated at point P are: </li>
+          <ul>∂g(P)/∂x = 1; ∂g(P)/∂z = 1;</ul>
+          <ul>∂g(1, 1, 3)/∂x = 1; ∂g(1, 1, 3)/∂z = 1;</ul>
+        
+        <br><li>The gradient vector of g evaluated at P <b>G</b>(P) is: </li>
+          <ul><b>G</b>(P) = <b>i</b> + <b>k</b></ul>
+        
+        <br><li>The tangent line is also parallel to the resulting vector <b>w</b> from the cross product of the 2 evaluated gradient vectors. The cross product of shown as: </li>
+          <ul><b>w</b> = <b>F</b> ⨯ <b>G</b></ul>
+          <ul><b>w</b> = < 2, 2, 0 > ⨯ < 1, 0, 1 ></ul>
+          <ul><b>w</b> = 2<b>i</b> - 2<b>j</b> - 2<b>k</b></ul>
+        
+        <br><li>The components of this vector and the given point can now be used to express the parametrised  tangent line L: </li>
+          <ul>L = {x = 1 + 2t, y = 1 - 2t, z = 3 - 2t}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Estimating Change in a Specific Direction</b>
+      <li class="blue">The distance between 2 points of a function f is expressed as ds. If <b>u</b> is the direction from initial point P to terminal point Q, the change in f (df) is given by the formula: </li>
+        <ul>df = (<b>F</b>(P) ⋅ <b>u</b>) ds</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Given {f(x, y, z) = y sin(x) + 2yz}, estimate how much the change in f (df) is if the initial point P = (0, 1, 0) moves 0.1 units towards the terminal point Q = (2, 2, -2). 
+      
+        <br><br><li>The partial derivatives of f evaluated at initial point P are: </li>
+          <ul>∂f(P)/∂x = y cos(x); ∂f(P)/∂y = sin(x) + 2z; ∂f(P)/∂z = 2y;</ul>
+          <ul>∂f(0, 1, 0)/∂x = 1; ∂f(0, 1, 0)/∂y = 0; ∂f(0, 1, 0)/∂z = 2;</ul>
+        
+        <br><li>The evaluated gradient vector of f has the form: </li>
+          <ul><b>F</b>(P) = <b>i</b> + 2<b>k</b></ul>
+        
+        <br><li>The vector made between the 2 points (<b>PQ</b>) is: </li>
+          <ul><b>PQ</b> = < 2, 2 - 1, -2 ></ul>
+          <ul><b>PQ</b> = 2<b>i</b> + <b>j</b> - 2<b>k</b></ul>
+          
+        <br><li>The direction <b>u</b> of <b>PQ</b> is: </li>
+          <ul><b>u</b> = <b>PQ</b> / ||<b>PQ</b>||</ul>
+          <ul><b>u</b> = < 2, 1, -2 > / 3</ul>
+          <ul><b>u</b> = (2/3)<b>i</b> + (1/3)<b>j</b> - (2/3)<b>k</b></ul>
+        
+        <br><li>The dot product of the evaluated gradient vector <b>F</b>(P) & the directional unit vector <b>u</b>is: </li>
+          <ul><b>F</b> ⋅ <b>u</b> = < 1, 0, 2 > ⋅ < 2/3, 1/3, -2/3 ></ul>
+          <ul><b>F</b> ⋅ <b>u</b> = 2/3 - 4/3</ul>
+          <ul><b>F</b> ⋅ <b>u</b> = -2/3</ul>
+        
+        <br><li>Finally, the change in f (df) from the initial point to the terminal point can be evaluated by multiplying the result of the dot product with the given distance between the points (ds): </li>
+          <ul>df = (<b>F</b> ⋅ <b>u</b>) ds</ul>
+          <ul>df = (-2/3)(1/10)</ul>
+          <ul class="green">df = -2/30</ul>
+      </ol>
+    </ul>
+    
+    <ul><b>Linearisation of a Double-Variable Function</b>
+      <li>To approximate an unknown value of a differentiable function z = f(x, y) at a point Q = (c, d), a given nearby point P = (a, b) is chosen to approximate f(c, d) in the form of a plane. As long as the distance between the 2 points is arbitrarily small, the linear approximation L(x, y) of the function at the given point (for nearby points) is: </li>
+        <ul class="red">f(c, d) ≈ L(x, y) = f(a, b) + (∂f(a, b)/∂x)(x - a) + (∂f(a, b)/∂y)(y - b)</ul>
+        <ul>L(x, y) is the plane tangent to the surface made by z = f(x, y) at the point P. This is analagous to the line made by linearisation of a single-variable function using a relative point</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <ol>Find the linearisation of {f(x, y) = x<sup>2</sup> - xy + y<sup>2</sup>/2 + 3} at point P = (3, 2).
+        
+        <br><br><li>Evaluating the function at the given point: </li>
+          <ul>f(3, 2) = 9 - 6 + 2 + 3</ul>
+          <ul>f(3, 2) = 8</ul>
+        
+        <br><li>The partial derivatives of f at point P are: </li>
+          <ul>∂f(P)/∂x = 2x - y; ∂f(P)/∂y = y - x;</ul>
+          <ul>∂f(3, 2)/∂x = 4; ∂f(3, 2)/∂y = -1;</ul>
+        
+        <br><li>The linearisation of the function at point P is written as: </li>
+          <ul>L(x, y) = f(a, b) + (∂f(a, b)/∂x)(x - a) + (∂f(a, b)/∂y)(y - b)</ul>
+          <ul>L(x, y) = 8 + 4(x - 3) - (y - 2)</ul>
+          <ul>L(x, y) = 4x - 12 - y + 2 + 8</ul>
+          <ul>L(x, y) = 4x - y - 2</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Standard Linear Approximation Error</b>
+      <li>Let M = the upper bound (highest value) of the absolute values of the 2<sup>nd</sup>-order partial derivatives of a function f(x, y). The error E(x, y) of performing a linear approximation can be bounded within a rectangle with a centre point P = (a, b). This value is expressed as: </li>
+        <ul>E(x, y) = |f(x, y) - L(x, y)|</ul>
+        <ul class="green">E(x, y) <= ±(M(|x - a| + |y - b|)<sup>2</sup>) / 2</ul>
+    </ul>
+    
+    <ul class="topic"><b>Differentials of Multivariable Functions</b>
+      <li>For single-variable functions like y = f(x), the change in f (Δf) indicates the change in the value of the function as x changes from a to {a + Δx}: </li>
+        <ul>Δf = f(a + Δx) = f(a)</ul>
+      <li>The differential of f is written as: </li>
+        <ul>df = f'(a) Δx</ul>
+      
+      <br><li>The same concept applies for multivariable functions. Assume z = f(x, y) is differentiable and its partial derivatives exist at a point P = (a, b). When moving from this point to a nearby point, the change in f (Δf) is respresented as: </li>
+        <ul>Δf = f(a + Δx, b + Δy) - f(a, b)</ul>
+      <li>Applying linearisation to the function at the given point, the change in linearisation (ΔL) is demonstrated as: </li>
+        <ul>ΔL = L(a + Δx, b + Δy) - L(a, b)</ul>
+        <ul>ΔL = (∂f(a, b)/∂x)Δx + (∂f(a, b)/∂y)Δy</ul>
+      <li>The total differential (d_) of a function is defined as its linearisation from a given point to a nearby point: </li>
+        <ul class="red">df = (∂f(a, b)/∂x) dx + (∂f(a, b)/∂y) dy</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 6: </b>
+      <ol>Suppose a cylindrical can is expected to have a radius r = 1in & height h = 5in. When making the can, it is found that the radius & height are off by dr = +0.03 & dh = -0.1. Estimate the absolute change in the volume of making this can relative to its blueprint.
+        
+        <br><br><li>The volume of a cylinder is given by the formula V = πr<sup>2</sup>h. The partial derivatives of V(r, h) in terms of r & h are: </li>
+          <ul>∂V/∂r = 2πrh; ∂V/∂h = πr<sup>2</sup>;</ul>
+        
+        <br><li>Evaluating the partial derivatives according to the blueprint values: </li>
+          <ul>∂V(1, 5)/∂r = 10π; ∂V(1, 5)/∂h = π;</ul>
+        
+        <br><li>The change in volume of the actual can relative to the blueprint values is most approximated to be the value of its absolute differential (dV)</li>
+          <ul>ΔV ≈ dV = (∂V(1, 5)/∂r)dr + (∂V(1, 5)/∂h)dh</ul>
+          <ul>dV = (10π)(0.03) + (π)(-0.01)</ul>
+          <ul class="green">dV = 0.29π in</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 7: </b>
+      <ol>My company manufactures stainless steel circular cylindrical molasses storage tanks that are 25ft high and have a radius of 5ft. How sensitive are the tanks' volumes to small variations in height & radii?
+      
+        <br><br><li>let r = 5, h = 25; The partial derivatives of V(r, h) evaluated at the given radius & height are: </li>
+          <ul>∂V(r, h)/∂r = 2πrh; ∂V(r, h)/∂h = πr<sup>2</sup>;</ul>
+          <ul>∂V(5, 25)/∂r = 250π; ∂V(5, 25)/∂h = 25π;</ul>
+        
+        <br><li>The absolute differential dV is calculated as: </li>
+          <ul>dV = (∂V(5, 25)/∂r)dr + (∂V(5, 25)/∂h)dh</ul>
+          <ul>dV = 250π dr + 25π dh</ul>
+          <ul class="green">Based on my result, a change in radius would cause a more drastic affect in volume (by a factor of 250π) compared to the same change in height (by only a factor of 25π). A large partial derivative indicates a more sensitive change in an independent variable. Nevertheless, if the original blueprint value of height was higher by a certain amount, the change in height would be more sensitive than the radius. Therefore, it can be concluded that the sensitivity of the volume based on its radius & height is more affected by the original values, rather than the change in independent variables</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Linearisation & Differentials of Triple-Variable Functions & Beyond</b>
+      <li>The linear approximation L(x, y, z) of f(x, y, z) at a P = (a, b, c) to a nearby point is: </li>
+        <ul>L(x, y, z) = f(P) + (∂f(P)/∂x)(x - a) + (∂f(P)/∂y)(y - b) + (∂f(P)/∂z)(z - c)</ul>
+      
+      <br><li>The error E created when making this approximation is based on the upper bound (highest value) of any 2<sup>nd</sup> partial derivative of f (assuming they are continuous) at a point P = (a, b, c). The error is given by: </li>
+        <ul>E(x, y, z) = |f(x, y, z) - L(x, y, z)|</ul>
+        <ul class="green">E(x, y) <= ±(M(|x - a| + |y - b| + |z - c|)<sup>2</sup>) / 2</ul>
+      
+      <br><li>The absolute, total differential of f(x, y, z) is calculated as: </li>
+        <ul>df = (∂f(P)/∂x) dx + (∂f(P)/∂y) dy + (∂f(P)/∂z) dz</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 8: </b>
+      <li>Find the linearisation L(x, y, z) of {f(x, y, z) = x<sup>2</sup> - xy + 3 sin(z)} at point Q = (2, 1, 0).</li>
+        
+        <br><ul>The function at the given point has value of: </ul>
+          <li>f(2, 1, 0) = 4 - 2</li>
+          <li>f(2, 1, 0) = 2</li>
+        
+        <br><ul>The partial derivatives of f evaluated at Q are: </ul>
+          <li>∂f(x, y, z)/∂x = 2x - y; ∂f(x, y, z)/∂y = -x; ∂f(x, y, z)/∂z = 3 cos(z);</li>
+          <li>∂f(2, 1, 0)/∂x = 3; ∂f(2, 1, 0)/∂y = -2; ∂f(2, 1, 0)/∂z = 3;</li>
+          
+        <br><li>The linearisation of the function is expressed as: </li>
+          <ul>L(x, y, z) = 2 + (3)(x - 2) + (-2)(y - 1) + (3)(z)</ul>
+          <ul>L(x, y, z) = 3x - 2y + 3z + 2 - 6 + 2</ul>
+          <ul class="green">L(x, y, z) = 3x - 2y = 3z - 2</ul>
+    </ul>
+    
+  </body>
+</html>

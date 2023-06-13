@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.7b: Linear Dependence & Independence</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.7b: Linear Dependence & Independence</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given set S = {[[1] [2] [0] [-1]], [[1] [-3] [1] [2]], [[1] [2] [-2] [3]]}, is this an independent or dependent set?</li>
+      
+        <br><ul>Rewriting the vectors as a coefficient matrix and converting to Row Echelon Form: 
+          <li>[[1 1 1] [2 -3 2] [0 1 -2] [-1 2 3]]  [[a] [b] [c]] = <b>0</b> (equality to a zero vector indicates a homogenous system)</li>
+          <li>[[<b>1</b> 1 1] [0 -5 0] [0 1 -2] [0 3 4]]   [[a] [b] [c]] = <b>0</b> (E2 = E2 - 2 E1; E4 = E4 + E1)</li>
+          <li>[[<b>1</b> 1 1] [0 1 -2] [0 -5 0] [0 3 4]]   [[a] [b] [c]] = <b>0</b> (E2, E3 = E3, E2;)</li>
+          <li>[[<b>1</b> 1 1] [0 <b>1</b> -2] [0 0 -10] [0 0 10]]   [[a] [b] [c]] = <b>0</b> (E3 = E3 + 5 E2; E4 = E4 - 3 E2)</li>
+          <li>[[<b>1</b> 1 1] [0 <b>1</b> -2] [0 0 <b>-10</b>] [0 0 0]]   [[a] [b] [c]] = <b>0</b> (E4 = E4 + E3)</li>
+          
+          <br><li>{a + b + c = 0; b - 2c = 0; -10c = 0}</li>
+          <li>[a, b, c] = 0</li>
+          <li class="green">Since each variable is equal to zero, we can conclude than the set is an independent set since the values of the variables can only be zero to form a zero matrix. The rank of the matrix is 3 since there are 3 pivots and the nullity is zero (free independent variables). Nullity also correlates to dependence; if nullity = 0, the vectors are independent and if nullity != 0, the vectors are dependent</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Given set S = {[[1] [0] [-1] [-1] [1]], [[-1] [1] [1] [0] [1]], [[-1] [-1] [2] [1] [0]], [[0] [-1] [3] [-2] [7]]}, determine if the set is dependent or independent.</li>
+      
+        <br><ul>Converting to a coefficient matrix and Row Echelon Form: 
+          <li>[[1 -1 -1 0] [0 1 -1 -1] [-1 1 2 3] [-1 0 1 -2] [1 1 0 7]]</li>
+          <li>[[<b>1</b> -1 -1 0] [0 1 -1 -1] [0 0 1 3] [0 -1 0 -2] [0 2 1 7]] (E3 = E3 + E1; E4 = E4 + E1; E5 = E5 - E1)</li>
+          <li>[[<b>1</b> -1 -1 0] [0 <b>1</b> -1 -1] [0 0 1 3] [0 0 -1 -3] [0 0 3 9]] (E4 = E4 + E2; E5 = E5 - 2 E1)</li>
+          <li>[[<b>1</b> -1 -1 0] [0 <b>1</b> -1 -1] [0 0 1 3] [0 0 0 0] [0 0 1 3]] (E4 = E4 + E3; E5 = E5 / 3)</li>
+          <li>[[<b>1</b> -1 -1 0] [0 <b>1</b> -1 -1] [0 0 <b>1</b> 3] [0 0 0 0] [0 0 0 0]] (E5 = E5 - E3; Reduced Echelon Form)</li>
+          <li class="green">This matrix has a rank of 3. Since there is one column available (the final vector), the nullity is one. Based on this info, we can conclude that the set containing the vectors is dependent since the final vector can be removed and still retain its corresponding span. The vectors can be solved in terms of the another, by choosing a value for one scalar multiple</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Given set S = {[[1] [2] [-1]], [[2] [1] [-3]], [[-1] [7] [r]]}, find values of r so that the set is classified as dependent.</li>
+      
+        <br><ul>Converting to a coefficient matrix & Row Echelon Form: 
+          <li>[[1 2 -1] [2 1 7] [-1 -3 r]]</li>
+          <li>[[<b>1</b> 2 -1] [0 -3 9] [0 -1 (r - 1)]] (E2 = E2 - 2 E1; E3 = E3 + E1)</li>
+          <li>[[<b>1</b> 2 -1] [0 1 -3] [0 -1 (r - 1)]] (E2 = E2 / -3)</li>
+          <li>[[<b>1</b> 2 -1] [0 <b>1</b> -3] [0 0 (r - 4)]] (E3 = E3 + E2)</li>
+          <li class="green">In order for the matrix to be considered dependent, there must be a column (vector) available to remove (having no pivots). This can occur by setting r = 4 so that the value is zero. This causes the matrix to have 2 pivots (rank = 2) and a nullity of 1 (for one column with no pivots)</li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+    <title>Section 12.1: 3D Coordinate Systems</title>
+  </head>
+  
+  <body>
+    <h2>Section 12.1: 3D Coordinate Systems</h2>
+    
+    <ul class="topic"><b>Right-Hand Rule</b>
+      <li>The proper way to draw a 3D-CG (3D-Coordinate Graph) is to use the appropriate parts of your hands to point towards a <span class="green">(+) axis</span></li>
+        <ul class="red">The thumb points towards the z<sub>+</sub> axis</ul>
+        <ul class="red">The other fingers point toward the x<sub>+</sub> axis</ul>
+        <ul class="red">The palm points towards the y<sub>+</sub> axis</ul>
+      <li>A (+) angle moves <span class="red">counter-clockwise</span> when the fingers curl from the x-axis towards the y-axis</li>
+    </ul>
+    
+    <ul class="topic"><b>3D Coordinate Graph</b>
+      <li>This type of graph is also known as a <b>Cartesian Coordinate Graph</b> or <b>Rectangular Coordinate Graph</b></li>
+      <li>Points located on an axis have coordinates from the other planes equal to 0. For example, if a point is located on the x-axis, it will have a y-coordinate & z-coordinate equal to 0 and will have a Cartesian/rectangular coordinate of <span class="green">(x, 0, 0)</span> where x is the magnitude of the point from the origin having a direction</li>
+    </ul>
+    
+    <ul class="topic"><b>Planes on a 3D Graph</b>
+      <li>Every plane on a 3D graph has a <i>standard equation</i> associated with it</li>
+        <ul class="red">The xy-plane has an equation of z = 0</ul>
+        <ul class="red">The xz-plane has an equation of y = 0</ul>
+        <ul class="red">The yz-plane has an equation of x = 0</ul>
+      <li class="blue">Every section of space between planes is known as an <b>octant</b> (analogous to quadrants on a 2D graph)</li>
+        <ul class="green">There are 8 octants in total
+           <li class="black">The first octant is the region in which all axes point towards the (+) direction</li>
+        </ul>
+      <li>A combination of any 2 planes leads to a line on the graph, parallel to the unspecified axis</li>
+      <li>A combination of any 3 planes leads to a point on the graph</li>
+    </ul>
+    
+    <ul class="topic"><b>Equations and Inequalites on a 3D Graph</b>
+      <li>A simple equation like x = 2 signifies that there must be a yz-plane going towards ∞ located at a distance of 2 on the x-axis from the origin</li>
+        <ul>This means that the value of y & z can be any real number within (-∞, ∞)</ul>
+      <li>A simple inequality like z ≥ 3 indicates the entire region of space above the value of 3</li>
+        <ul>This also means that the value of y & z can be any real number within (-∞, ∞)</ul>
+    </ul>
+    
+    <ul class="topic"><b>Example 1</b>
+      <li class="question">Indicate a few points that satisfy the equations x<sup>2</sup> + y<sup>2</sup> = 4 && z = 3</li>
+        <ul>Points that would satisfy these 2 equations must first satisfy the 1<sup>st</sup> equation with x & y. Then, as long as the value of z remains 3, the point would be correct. Some points include:
+         <span class="green"><li>(-2, 0, 3)</li><li>(2, 0, 3)</li><li>(0, -2, 3)</li><li>(0, 2, 3)</li></span>
+        </ul>
+      <ul>These 2 equations happen to form a circle located within the z<sub>+</sub> axis where z = 3</ul>  
+    </ul>
+    
+    <ul class="topic"><b>Measuring Distance between 2 points on a 3D Graph</b>
+      <li>The distance between 2 points P & Q (written as |PQ|)is given by the equation: </li>
+        <ul class="red">|PQ| = √((x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> + (z - z<sub>0</sub>)<sup>2</sup>)</ul>
+      <br><li>Squaring both sides of the equation leds to the <b>Standard Equation for a Sphere</b> as shown: </li>
+        <ul class="red">r<sup>2</sup> = (x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> + (z - z<sub>0</sub>)<sup>2</sup> where r = radius</ul>
+    </ul>
+    
+    <ul class="topic"><b>Examples 2 & 3</b>
+      <li class="question">Find the distance between P(2, 1, 5) & Q(-2, 3, 0)</li>
+        <ul>The distance formula for points in space must be used. The distance will be solved as follows: 
+          <li>√(((-2) - (2))<sup>2</sup> + ((3) - (1))<sup>2</sup>+ ((0) - (5))<sup>2</sup>)</li>
+          <li>√((-4)<sup>2</sup> + (2)<sup>2</sup> + (-5)<sup>2</sup>)</li>
+          <li>√(16 + 4 + 25)</li>
+          <li class="green">√(45) = 3√(5)</li>
+        </ul>
+        
+      <br><li class="question">Find the center (i, j, k) & radius r for the equation of a sphere given as x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> + 3x - 4z + 1 = 0</li>
+      <ul>This can be done by finding the perfect square of the x, y and z-variables individually
+        <li>(x + (3/2))<sup>2</sup> - (3/2)<sup>2</sup> + (y + 0)<sup>2</sup> + (z - 2)<sup>2</sup> - 4 = -1</li>
+        <li>(x + (3/2))<sup>2</sup> + y<sup>2</sup> + (z - 2)<sup>2</sup> = 3 + (3/2)<sup>2</sup></li>
+        <li>(x + (3/2))<sup>2</sup> + y<sup>2</sup> + (z - 2)<sup>2</sup> = 21/4</li>
+        <li class="green">Therefore, the center of the sphere = (-3/2, 0, 2) and the radius = √(21)/2</li>
+      </ul>
+    </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="_.js"></script>
+  </body>
+</html>

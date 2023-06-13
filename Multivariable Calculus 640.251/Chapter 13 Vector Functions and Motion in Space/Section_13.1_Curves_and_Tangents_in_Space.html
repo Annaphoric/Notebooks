@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+    <title>Section 13.1: Curves & their Tangents in Space</title>   
+  </head>
+
+  <body>
+    <h2>Section 13.1: Curves & their Tangents in Space</h2>
+    
+    <ul class="topic"><b>Curves in Space</b>
+      <li>A curve C(t) in space is given by 3 parametrised equations that make up the points of the curve according to the x, y, & z axes. The equations are calculated as functions in terms of t (time) within a time interval I as shown: </li>
+        <ul>x = f(t); y = g(t); z = h(t)</ul>
+      <li>Therefore, the curve will have the points: </li>
+        <ul>C(t) = (x, y, z)</ul>
+        <ul>C(t) = (f(t), g(t), h(t)) for t ∈ I</ul>
+      
+      <li>These set of points can also be written as a vector <b>r</b>(t) originating from the origin and terminating at the curve: </li>
+        <ul><b>r</b>(t) = f(t)<b>i</b> + g(t)<b>j</b> + h(t)<b>k</b></ul>
+        <ul><b>r</b>(t) = < f(t), g(t), h(t) ></ul>
+        
+      <br><li>Since these functions are part of the vector components of <b>r</b>, they are known as <b>component vectors</b>. They are also classified as <b>scalar functions</b> or real-valued functions since their domain of t is all real numbers. Functions with domains that are vectors or regions in space like <b>r</b> itself are <b>vector functions</b> or vector-valued functions</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Describe the graph made by the vector function <b>c</b>(t) = cos(t)<b>i</b> + sin(t)<b>j</b> + t<b>k</b>.
+        
+        <br><br><li>The graph made by this curve is an upwards helix and is bound by the circle (cylinder) {x<sup>2</sup> + y<sup>2</sup> = 1}. In order to satisfy the curve properly, we can then assume that: </li>
+          <ul>x = cos(t); y = sin(t), z = t</ul>
+        
+        <br><li>These equations happen to be the parametrised equations for <b>c</b> for t ∈ (-∞, ∞). Every time t increases by 2π, the curve makes one iteration upwards</li>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Limits & Continuity</b>
+      <li class="blue">Limits of vector functions are taken much like the limits of scalar functions</li>
+        <ul>Given <b>r</b>(t) = {f(t)<b>i</b> + g(t)<b>j</b> + h(t)<b>k</b>} and the convergent limit <b>L</b>: 
+          <li>lim<sub>t ➝ t<sub>0</sub></sub>(<b>r</b>(t)) = <b>L</b></li>
+          <li>lim<sub>t ➝ t<sub>0</sub></sub>(<b>r</b>(t)) = (lim<sub>t ➝ t<sub>0</sub></sub>(f(t)))<b>i</b> + (lim<sub>t ➝ t<sub>0</sub></sub>(g(t)))<b>j</b> + (lim<sub>t ➝ t<sub>0</sub></sub>(h(t)))<sub>k</sub></li>
+        </ul>
+      <li>A vector function is continuous if lim<sub>t ➝ a</sub>(<b>r</b>(t)) = <b>r</b>(a) for a ∈ (-∞, ∞)</li>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Solve lim<sub>t ➝ π/4</sub>(<b>r</b>(t)) where <b>r</b>(t) = cos(t)<b>i</b> + sin(t)<b>j</b> + t<b>k</b>
+        
+        <br><br><li>The same limit is applied to each component function: </li>
+          <ul>< lim<sub>t ➝ π/4</sub>(cos(t)), lim<sub>t ➝ π/4</sub>(sin(t)), lim<sub>t ➝ π/4</sub>(t) ></ul>
+          <ul class="green">< 1/sqrt(2), 1/sqrt(2), π/4 ></ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Derivatives & Motion</b>
+      <li>Assume vector function <b>c</b>(t) = f(t)<b>i</b> + g(t)<b>j</b> + h(t)<b>k</b> is the position vector of a particle moving along a curve in space and each component function is differentiable, the change between 2 points on the curve is as shown: </li>
+        <ul>Δ<b>c</b> = d<b>c</b> = <b>c</b>(t + Δt) - <b>r</b>(t)</ul>
+        <ul>Δ<b>c</b> = (<b>c</b>(t + Δt)) - (f(t)<b>i</b> + g(t)<b>j</b> + h(t)<b>k</b>)</ul>
+        <ul>Δ<b>c</b> = d<b>c</b> = d<b>c</b> = (f(t + Δt) - f(t))<b>i</b> + (g(t + Δt) - g(t))<b>j</b> + (h(t + Δt) - h(t))<b>k</b></ul>
+        
+      <br><li>Dividing both sides by Δt and taking the limit as the this value approaches 0: </li>
+        <ul class="red">lim<sub>dt ➝ 0</sub>((d<b>c</b>)/(dt)) = lim<sub>dt ➝ 0</sub>((d<b>c</b>)/(dt)) = ((df)/(dt))<b>i</b> + ((dg)/(dt))<b>j</b> + ((dh)/(dt))<b>k</b></ul>
+ = (f(t + Δt)<b>i</b> + g(t + Δt)<b>j</b> + h(t + Δt)<b>k</b>) - (<b>r</b>(t))</li>
+    
+      <br><li>As long as the curve is smooth (no breaks, discontinuity or sharps points), d<b>c</b>/dt can never equal zero</li>
+      <li>The vector <b>c</b>'(t) = d<b>c</b>/dt is the tangent line of the curve in space <b>c</b>(t) made at the position t. Regardless of the sign of d<b>c</b>, if dt is (+), the vector points forwards; if dt is (-), the vector points backwards</li>
+      
+      <br><li>Assuming t = time & <b>r</b> = the position vector of a smooth curve in space: </li>
+        <ul>Velocity <b>v</b> is the differential of the position in terms of time:
+          <li><b>v</b>(t) = d<b>r</b>/dt</li>
+        </ul>
+        <ul>Speed s is the magnitude of the velocity: 
+          <li>s = ||<b>v</b>||</li>
+        </ul>
+        <ul>Acceleration <b>a</b> is the differential of the velocity in terms of time: 
+          <li><b>a</b> = d<b>v</b>/dt = d<sup>2</sup><b>r</b>/dt<sup>2</sup></li>  
+        </ul>
+        <ul>The direction of motion <b>D</b> (unit vector) is the direction of the velocity:
+          <li><b>D</b> = <b>v</b> / ||<b>v</b>||</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>Determine the a) velocity; b) speed; c) acceleration; d) vector velocity at t = 7π/4; of a particle whose motion in space is given by the position vector <b>r</b>(t) = 2cos(t)<b>i</b> + 2sin(t)<b>j</b> + 5cos<sup>2</sup>(t)<b>k</b>.</li>
+        
+        <br><ul>a) 
+          <li><b>v</b>(t) = d<b>r</b>/dt</li>
+          <li><b>v</b>(t) = (d(2cos(t))/dt)<b>i</b> + (d(2sin(t))/dt)<b>j</b> + (d(5cos<sup>2</sup>(t))/dt)<b>k</b></li>
+          <li><b>v</b>(t) = -2sin(t)<b>i</b> + 2cos(t)<b>j</b> - 10cos(t)sin(t)<b>k</b></li>
+          <li class="green"><b>v</b> = -2sin(t)<b>i</b> + 2cos(t)<b>j</b> - 5sin(2t)<b>k</b></li>
+        </ul>
+        
+        <br><ul>b) 
+            <li>s = ||<b>v</b>||</li>
+            <li>s = ||< -2sin(t), 2cos(t), -5sin(2t) >||</li>
+            <li>s = sqrt(4sin<sup>2</sup>(t) + 4cos<sup>2</sup>(t) + 25sin<sup>2</sup>(2t))</li>
+            <li class="green">s = sqrt(4 + 25sin<sup>2</sup>(2t))</li>
+        </ul>
+        
+        <br><ul>c) 
+          <li><b>a</b>(t) = d<b>v</b>/dt</li>
+          <li class="green"><b>a</b>(t) = -2cos(t)<b>i</b> - 2sin(t) - 10cos(2t)</li>
+        </ul>
+        
+        <br><ul>d) 
+          <li><b>v</b>(7π/4) = -2sin(7π/4)<b>i</b> + 2cos(7π/4)<b>j</b> - 5sin(2(7π/4))<b>k</b></li>
+          <li class="green"><b>v</b>(7π/4) = sqrt(2)<b>i</b> + sqrt(2)<b>j</b> + 5<b>k</b></li>
+          <li>s(7π/4) = ||<b>v</b>(7π/4)|| = sqrt(29)</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Differentiation Rules for Vector Functions</b>
+      <li>let <b>u</b> & <b>v</b> = any differentiable vector function in terms of time t, <b>C</b> = any constant vector, c = any scalar multiple, & f = any scalar function in terms of time t: </li>
+        <ul>d(<b>C</b>)/dt = <b>0</b> (a vector in any direction with a magnitude of zero)</ul>
+        
+        <br><ul>d(c<b>u</b>(t))/dt = c<b>u'</b>(t)</ul>
+        
+        <br><ul>d(f(t)<b>u</b>)/dt = f'(t)<b>u</b>(t) + f(t)<b>u'</b>(t)</ul>
+        
+        <br><ul>d(<b>u</b>(t) ± <b>v</b>(t))/dt = <b>u'</b>(t) ± <b>v'</b>(t)</ul>
+        
+        <br><ul>d(<b>u</b>(f(t)))/dt = f'(t)<b>u'</b>(f(t))</ul>
+        
+        <br><ul>d(<b>u</b>(t) ⋅ <b>v</b>(t))/dt = (<b>u'</b>(t) ⋅ <b>v</b>(t)) + (<b>u</b>(t) ⋅ <b>v'</b>(t))</ul>
+        
+        <br><ul>d(<b>u</b>(t) ⨯ <b>v</b>(t))/dt = (<b>u'</b>(t) ⨯ <b>v</b>(t)) + (<b>u</b>(t) ⨯ <b>v'</b>(t)) (order is significant)</ul>
+    </ul>
+    
+    <ul class="topic"><b>Vector Functions of Constant Length</b>
+      <li>Given a vector function <b>r</b> of constant length/magnitude (like from the centre of a sphere), its tangent vector <b>r'</b> is always perpendicular (Their dot product is equal to zero). This is expressed as: </li>
+        <ul>d(<b>r</b>(t) ⋅ <b>r</b>(t)) = d(||<b>r</b>(t)||<sup>2</sup>)/dt</ul> 
+        <ul>d(<b>r</b>(t) ⋅ <b>r</b>(t)) = d(c<sup>2</sup>)/dt</ul>
+        <ul>d(<b>r</b>(t) ⋅ <b>r</b>(t)) = 0</ul>
+        <ul class="red"><b>r</b>(t) ⋅ d(<b>r</b>)/dt = 0</ul>
+    </ul>
+    
+  </body>
+</html>

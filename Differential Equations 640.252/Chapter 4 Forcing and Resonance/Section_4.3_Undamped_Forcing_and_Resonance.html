@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../MathJax.css">
+    <title>Section 4.3: Undamped Forcing & Resonance</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>MathJax = {tex: {inlineMath: [['$', '$']]}};</script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  </head>
+  
+  <body>
+    <h1>Section 4.3: Undamping Forcing & Resonance</h1>
+    
+    <ul><b>Resonance</b>
+      <li>The equation for an undamped harmonic oscillator with sinusoidal forcing has the form: </li>
+        <ul>$\frac{d^2y}{dt^2} + g(y) y = f(y)$, where $f(y)$ is the sinusoidal forcing equation like $f(y) = sin(ω t)$ or $f(y) = cos(ω t)$</ul>
+      
+      <br><li><b>Resonance</b> is the phenomenon that occurs when the frequency of the forcing equation approaches the natural frequency of the harmonic oscillator equation</li>
+        <ul>The forcing frequency of the external force is always $\frac{ω}{2π}$</ul>
+        <ul>The natural frequency is the frequency of the associated homogenous DE</ul>
+        <ul>The external force is considered a <b>resonant force</b> when the harmonic oscillator is in exact resonance
+          <li>At this point, the solutions grow towards increasing infinity in a linear fashion</li>
+        </ul>
+        
+      <br><li>The solution to a forced undamped harmonic oscillator has sinusoidal waves with amplitudes that increase & decrease</li>
+        <ul><b>Beating</b> occurs when the natural frequency & forced frequency are approximately the same</ul>
+        <ul>In other words, an external force that is sinusoidal would cause the harmonic oscillator to beat when the frequencies of both are approximately the same</ul>
+        <ul>The sinusoidal waves of the solutions create a sinusoidal pattern itself (waves make up a larger wave that beats)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1</b>
+      <ol>Find the general solution of the undamped equation $\frac{d^2y}{dt^2} + 2y = cos(ω t)$: 
+        
+        <br><br><li>Solving for the general solution of the associated homogenous unforced equation: </li>
+          <ul>$λ^2 + 2 = 0$</ul>
+          <ul>$λ = i\sqrt{2}$</ul>
+          
+          <br><ul>$y_h(t) = k_1 cos(\sqrt{2}t) + k_2 sin(\sqrt{2}t)$</ul>
+        
+        <br><li>Solving for a specific solution to the given DE: </li>
+          <ul>let $y_c(t) = α e^{ω i t}$</ul>
+          <ul>$\frac{dy_c}{dt} = α ω i e^{ω i t}$</ul>
+          <ul>$\frac{d^2y_c}{dt^2} = -α ω^2 e^{ω i t}$</ul>
+          
+          <br><ul>$-(α ω^2 e^{ω i t}) + 2α e^{ω i t} = e^{ω i t}$</ul>
+          <ul>$α(2 - ω^2) = 1$</ul>
+          <ul>$α = \frac{1}{2 - ω^2}$</ul>
+          
+          <br><ul>$y_c(t) = \frac{1}{2 - ω^2} e^{ω i t}$</ul>
+          <ul>$y_c(t) = \frac{1}{2 - ω^2} (cos(ω t) + i sin(ω t))$</ul>
+          
+        <br><li>General solution to the given DE: </li>
+          <ul>$y(t) = k_1 cos(\sqrt{2}t) + k_2 sin(\sqrt{2}t) + \frac{1}{2 - ω^2} cos(ω t)$</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

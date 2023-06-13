@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.4: Double Integrals in Polar Form</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.4: Double Integrals in Polar Form</h2>
+  	
+  	<ul class="topic"><b>Integrals in Polar Coordinates</b>
+  	  <li>Double integrals are sometimes easier to evaluate if they are converted from Cartesian form to polar form</li>
+  	  
+  	  <br><li>Suppose function f(r, θ) is bound by region R = {θ ∈ [α, β], r ∈ [g(θ), h(θ)]} && {0 <= g(θ) <= h(θ) <= a}. The region R would lie within region Q = {r ∈ [0, a] for θ ∈ [α, β]} where (β - α) ∈ [0, 2π]. Each division of angles is given by θ = α + m Δθ leading up to θ = β where m is location of the polar rectangle. Based on this information, it is revealed that: </li>
+  	    <ul>The change of angle (Δθ; angular displacement) is given by: 
+  	      <li>Δθ = (β - α) / m</li>
+  	    </ul>
+  	    <ul>The change in radius Δr is the highest value for the radius (a) divided by m: 
+  	      <li>Δr = a / m</li>
+  	    </ul>
+  	    <ul>The change in area ΔA<sub>k</sub> of any polar rectangle is found by multiplying Δθ, Δr, & the radius at k</ul>
+  	    <ul>The sum S<sub>N</sub> of the all the polar rectangles is written as: 
+  	      <li class="red">S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(r<sub>k</sub>, θ<sub>k</sub>)) ΔA<sub>k</sub></li>
+  	    </ul>
+  	    <ul>Taking the limit as N approaches infinity defines the double integral of the polar function: 
+  	      <li>lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∬<sub>R</sub>(f(r<sub>k</sub>, θ<sub>k</sub>)) dA<sub>k</sub></li>
+  	    </ul>
+  	    <ul>The iterated integral of the double integral is written as: 
+  	      <li class="red">∫<sub>α</sub><sup>β</sup>(∫<sub>g(θ)</sub><sup>h(θ)</sup>(r) dr) dθ</li>
+  	    </ul>
+  	  
+  	  <li>If the function f(r, θ) = 1, then the area of the f bounded by region R is: </li>
+  	    <ul class="red">A = ∬<sub>R</sub>(r) dr dθ</ul>
+  	  
+  	  <li>Cartesian functions like f(x, y) can be converted to polar functions like f(r, θ) using the following equations: </li>
+  	    <ul>r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup></ul><ul>x = r cosθ</ul><ul>y = r sinθ</ul>
+  	    <ul>dx dy = r dr dθ</ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Finding Limits of Integration</b>
+  	  <li>To find the limits of integration in polar form, a sketch can be made to give a visual representation of the bounded function. The r-limits can be found by determining the curve closest to the origin (lower curve) & the curve farthest from the origin (upper curve) at a certain θ. The θ-limits can be found by locating the lowest & highest θ-values possible that bounds the region</li>
+  	</ul>
+  	
+  	<ul class="example"><b></b>
+  	  <li>Find the limits of integration for the function f(r, θ) bounded by the region R = {r = 1 + cosθ & r = 1}.</li>
+  	    
+  	    <br><ul>Solving for the angles of intersection: 
+  	      <li>1 = 1 + cosθ</li>
+  	      <li>0 = cosθ</li>
+  	      <li>θ = {-π/2, π/2}</li>
+  	    </ul>
+  	    
+  	    <ul>Within these angles, the lower curve is found to be r = 1 and the upper curve is r = {1 + cosθ}</ul>
+  	    <ul>Therefore, the integral can be written as: 
+  	      <li class="green">∫<sub>-π/2</sub><sup>π/2</sup>(∫<sub>1</sub><sup>1 + cosθ</sup>(r f(r, θ)) dr) dθ</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Find the area enclosed within the lemniscate r<sup>2</sup> = 4 cos(2θ). 
+  	  
+  	    <br><br><li>The area of the lemniscate located within one quadrant is exactly a quarter of the entire region of the lemiscate. This means the area located within a quadrant can be multiplied by 4 to solve for the total area enclosed by the lemiscate. Solving for the r-bounds: </li>
+  	      <ul>r = 2 sqrt(cos(2θ))</ul>
+  	      <ul>r in [0, 2 sqrt(cos(2θ))]</ul>
+  	    
+  	    <br><li>Solving for the θ-bounds (for r = 0): </li>
+  	      <ul>0 = 2 sqrt(cos(2θ))</ul>
+  	      <ul>0 = cos(2θ)</ul>
+  	      <ul>θ = π/4</ul>
+  	      <ul>θ in [0, π/4]</ul>
+  	    
+  	    <br><li>The area A of the lemniscate is: </li>
+  	      <ul>A = 4 ∫<sub>0</sub><sup>π/4</sup>(∫<sub>0</sub><sup>2 sqrt(cos(2θ))</sup>(r) dr) dθ</ul>
+  	      <ul>A = 2 ∫<sub>0</sub><sup>π/4</sup>(2 sqrt(cos(2θ))<sup>2</sup>) dθ</ul>
+  	      <ul>A = 8 ∫<sub>0</sub><sup>π/4</sup>cos(2θ) dθ</ul>
+  	      <ul>A = 4 [sin(2θ)]<sub>0</sub><sup>π/4</sup></ul>
+  	      <ul class="green">A = 4</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Evaluate {∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx} where R is the semicircular region bounded by y = 0 & y = sqrt(1 - x<sup>2</sup>). 
+  	  
+  	    <br><br><li>The given Cartesian bounds can be converted into their polar form: </li>
+  	      <ul>r sinθ = 0;  r<sup>2</sup> sin<sup>2</sup>θ = 1 - r<sup>2</sup> cos<sup>2</sup>θ</ul>
+  	      <ul>θ = {0, π};  r<sup>2</sup> = 1</ul>
+  	      <ul>θ = {0, π};  r = {0, 1};</ul>
+  	    
+  	    <br><li>The given Cartesian function can be converted into a polar function: </li>
+  	      <ul>e<sup>x<sup>2</sup> + y<sup>2</sup></sup> = e<sup>r<sup>2</sup></sup></ul>
+  	      
+  	    <br><li>Evaluating the integral: </li>
+  	      <ul>∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx = ∫∫<sub>R</sub>(e<sup>r<sup>2</sup></sup> r) dr dθ</ul>
+  	      <ul>∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx = 1/2 ∫<sub>0</sub><sup>π</sup>([e<sup>r<sup>2</sup></sup>]<sub>0</sub><sup>1</sup>) dθ</ul>
+  	      <ul>∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx = 1/2 ∫<sub>0</sub><sup>π</sup>(e - 1) dθ</ul>
+  	      <ul>∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx = (e - 1)/2 [θ]<sub>0</sub><sup>π</sup></ul>
+  	      <ul class="green">∫∫<sub>R</sub>(e<sup>x<sup>2</sup> + y<sup>2</sup></sup>) dy dx = π (e - 1)/2 </ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>Evaluate the integral ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>sqrt(1 - x<sup>2</sup>)</sup>(x<sup>2</sup> + y<sup>2</sup>) dy) dx.
+  	  
+  	    <li>Converting the Cartestian bounds (y-limits) to a polar form: </li>
+  	      <ul>x = 0;  y = sqrt(1 - x<sup>2</sup>);</ul>
+  	      <ul>r cosθ = 0;  r sinθ = sqrt(1 - (r cosθ)<sup>2</sup>);</ul>
+  	      <ul>r in [0, 1];  θ in [0, π/2];</ul>
+  	    
+  	    <li>let V = ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>sqrt(1 - x<sup>2</sup>)</sup>(x<sup>2</sup> + y<sup>2</sup>) dy) dx. The integral is rewritten then evaluated as shown: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>π/2</sup>(∫<sub>0</sub><sup>1</sup>(r<sup>3</sup>) dr) dθ</ul>
+  	      <ul>V = 1/4 ∫<sub>0</sub><sup>π/2</sup>(1) dθ</ul>
+  	      <ul class="green">V = π/8</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <ol>Find the volume V of the solid region bounded above by the paraboloid z = {9 - x<sup>2</sup> - y<sup>2</sup>} and below by the unit circle C = {x<sup>2</sup> + y<sup>2</sup> = 1, z = 0}. 
+  	    
+  	    <br><br><li>Changing the function to a polar form: </li>
+  	      <ul>9 - x<sup>2</sup> - y<sup>2</sup></ul>
+  	      <ul>9 - r<sup>2</sup>(cos<sup>2</sup>θ + sin<sup>2</sup>θ)</ul>
+  	      <ul>9 - r<sup>2</sup></ul>
+  	    
+  	    <br><li>Given the unit circle, it can be observed that the radius r extends from 0 to 1 & the angle θ changes from 0 to 2π. These are the respective r-bounds & θ-bounds; therefore, the volume of the solid can be found by evaluating the polar integral is evaluated as: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>1</sup>(9r - r<sup>3</sup>) dr) dθ</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2π</sup>([9r<sup>2</sup>/2 - r<sup>4</sup>/4]<sub>0</sub><sup>1</sup>) dθ</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2π</sup>(9/2 - 1/4) dθ</ul>
+  	      <ul>V = 17/4 [θ]<sub>0</sub><sup>2π</sup></ul>
+  	      <ul>V = 17π/2</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 6: </b>
+  	  <ol>Find the area of the region R enclosed by the circle C = {x<sup>2</sup> + y<sup>2</sup> = 4, z = 0}, bound by the lower line {y = 1} and upper line {y = x sqrt(3)}. 
+  	  
+  	    <br><br><li>Given the bounds of the region, the bounds in polar form are: </li>
+  	      <ul>r<sup>2</sup> = 4;  r sinθ = 1;  r sinθ = r cosθ sqrt(3)</ul>
+  	      <ul>r = 2;  r = cscθ;  sinθ = 1/(2);  tanθ = sqrt(3);</ul>
+  	      <ul>r = {cscθ, 2};  θ = {π/6, π/3}</ul>
+  	    
+  	    <br><li>The area A of the region is: </li>
+  	      <ul>A = ∫<sub>π/6</sub><sup>π/3</sup>(∫<sub>cscθ</sub><sup>2</sup>(r) dr) dθ</ul>
+  	      <ul>A = 1/2 ∫<sub>π/6</sub><sup>π/3</sup>(4 - csc<sup>2</sup>θ) dθ</ul>
+  	      <ul>A = 1/2 [4θ + cotθ]<sub>π/6</sub><sup>π/3</sup></ul>
+  	      <ul>A = 1/2 ((4π/3 - 2π/3) + (1/sqrt(3) - sqrt(3)))</ul>
+  	      <ul>A = 1/2 ((2π/3) - 2/sqrt(3))</ul>
+  	      <ul>A = π/3 - 1/sqrt(3)</ul>
+  	      <ul class="green">A = (π - sqrt(3))/3</ul>
+  	  </ol>
+  	</ul>
+  </body>
+</html>

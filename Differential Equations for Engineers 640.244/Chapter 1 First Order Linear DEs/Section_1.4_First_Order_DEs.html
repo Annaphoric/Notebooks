@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" href="../Differential_Equations.css">
+				<title>Section 1.4: First Order DEs</title>
+		</head>
+		
+		<body>
+				<h1>Section 1.4: First Order DEs</h1>
+		
+				<ul class="topic"><b>First Order DEs</b>
+				  <li>A <b>first order differential equation</b> is an equation containing a max of a first derivative. The first derivative can easily be isolated</li>
+				  
+				  <br><li>A <b>differential</b> is the tangent line made at a point of a function in terms of an independent variable such as dy/dt based on y(t). Depending on what the function y = f(t) is, different points on the curve will have tangent lines with different slopes. A graphical representation of the slopes of tangent lines along a curve is referred to as a <b>slope field</b>. The slopes are drawn out as vectors based on how the function behaves for a given value of independent variable (t). These vectors have a magnitude based on the differential (tangent line slope) of a given point and a direction based on nearby differentials  for a given point</li>
+				    <ul>For instance, if a point y(0) = 3 (or (3, 0)) of function y(t) has slope vectors that point upwards towards y = 5, the solution is said to approach 5 given initial condition y(0) = 3</ul>
+				    
+				  <br><li>Also written as y<sup>(t)</sup> = f( t, y(t), y'(t)), y<sup>n - 1</sup>(t)) for t in I, where t = independent variable & y = dependent variable</li>
+				  
+				  <br><li>First order DEs can be either linear or non-linear</li>
+				    <ul><span>Linear 1st order DEs have the standard form: {a(t) y' + b(t) y = c(t)} or {dy/dt + p(t) y = g(t)}. The equation g(t) is said to be..</span>
+				      <li>a <b>constant coefficient</b> only if p(t) is a constant</li>
+				      <li><b>homogenous</b> only if it is equal to zero</li>
+				      <li><b>non-homogenous</b> if it is equal to a non-zero number</li>
+				    </ul>
+				    
+				    <br><ul><span>Any linear first-order DE can be multiplied on both sides by an <b>integrating factor</b> μ such that the reverse product rule can be performed to explicitly solve for the dependent variable. The process using a linear 1° DE in standard form is as shown: </span>
+				      <li>μ(t) (y' + p(t) y) = μ(t) g(t) (the integrating factor μ is multiplied on both sides)</li>
+				      <li>μ dy/dt + μ p(t) y) = μ g(t) (factor out μ)</li>
+				      
+				      <br><li>μ' = μ p(t) (based on the product rule for derivatives)</li>
+				      <li>dμ/dt = μ p(t) (rewriting derivative as differential form)</li>
+				      <li>dμ / μ = p(t) dt (separating the DE)</li>
+				      <li>ln(μ) = P(t) + C, where P'(t) = p(t) (integrating both sidess)</li>
+				      <li class="red">μ(t) = e<sup>P(t)</sup> (this is the integrating factor; the constant is removed because the integrating factor is multiplied on both sides)</li>
+				      
+				      <br><li>μ(t) (y' + p(t) y) = (μ(t) y)' (Rewriting left side of the equation)</li>
+				      <li>d(μ(t) y)/dt = μ(t) g(t) (Rewriting as differential form)</li>
+				      <li>d(μ(t) y) = μ(t) g(t) dt (Separating DE)</li>
+				      <li>μ(t) y = μ(t) G(t) / p(t) + C, where G'(t) = g(t) (integrating both sides)</li>
+				      <li class="red">y(t) = G(t) / p(t) + C / μ(t) (This is the general solution; dividing both sides by μ(t))</li>
+				      <li class="red">y(t) = G(t) / p(t) + C / e<sup>P(t)</sup> (This is another way to write the general solution)</li>
+				    </ul>
+				</ul>
+				
+				<ul class="example"><b>Example 1: </b>
+				  <ol><em>Solve for y(t) given the differential equation: t<sup>2</sup> dy/dt + 2ty = e<sup>t</sup>.</em>
+				    
+				    <br><li>Since this DE is first-order & linear, it can be separated: </li>
+				      <ul>t<sup>2</sup> y' + 2ty = e<sup>t</sup></ul>
+				      <ul>(t<sup>2</sup> y)' = e<sup>t</sup> (the reverse product rule of differentiation was used here. (t<sup>2</sup> y)' can also be written as d(t<sup>2</sup> y)/dt)</ul>
+				      <ul>t<sup>2</sup> y = e<sup>t</sup> + C (both sides are integrated in terms of t)</ul>
+				      <ul>y(t) = (e<sup>t</sup> / t<sup>2</sup>) + C / t<sup>2</sup> (Solving for y)</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 2: </b>
+				  <ol><em>Solve for y(t) explicitly given the DE: y' + 4y = 1; & initial condition: y(0) = 1;.</em>
+				  
+				    <br><li>Solving for y(t) generally: </li>
+				      <ul>dy/dt + 4y = 1</ul>
+				      <ul>e<sup>4t</sup> (dy/dt + 4y) = e<sup>4t</sup> (p(t) = 4; P(t) = ∫(p(t) dt) = 4t; μ(t) = e<sup>4t</sup>) (Multiply both sides by integrating factor)</ul>
+				      <ul>d(e<sup>4t</sup> y) = e<sup>4t</sup> dt (Rewriting left-side)</ul>
+				      <ul>e<sup>4t</sup> y = e<sup>4t</sup>/4 + C (Integrating both sides)</ul>
+				      <ul>y(t) = 1/4 + C / e<sup>4t</sup> (This is the general solution for y(t); divide both sides by integrating factor)</ul>
+				     
+				    <br><li>Solving for y(t) explicitly using initial condition: </li>
+				      <ul>y(0) = 1/4 + C / e<sup>4(0)</sup> == 1 (Substituting)</ul>
+				      <ul>1/4 + C = 1</ul>
+				      <ul>C = 3/4</ul>
+				      
+				      <br><ul class="green">y(t) = 1/4 + 3 / (4e<sup>4t</sup>)</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 3: </b>
+				  <ol><em>Explicitly solve for y(t) given DE: y' - y = 4t e<sup>3t</sup>; initial condition: y(0) = 2.</em>
+				    
+				    <br><li>Finding the general solution of y(t): </li>
+				      <ul>dy/dt - y = 4t e<sup>3t</sup></ul>
+				      <ul>e<sup>-t</sup>(dy/dt - y) = 4t e<sup>2t</sup> (p(t) = -1; μ(t) = e<sup>-3t</sup>)</ul>
+				      <ul>d(y / e<sup>t</sup>) = 4t e<sup>2t</sup> dt (Separating equation)</ul>
+				      <ul>y / e<sup>t</sup> = 2t e<sup>2t</sup> - 2∫(e<sup>2t</sup> dt) + C (Integration via integration by parts (IBP): u = 4t; dv = e<sup>2t</sup> dt; du = 4 dt; v = e<sup>2t</sup>/2)</ul>
+				      <ul>y / e<sup>t</sup> = 2t e<sup>2t</sup> - e<sup>2t</sup> + C (Completing integration)</ul>
+				      <ul>y(t) = (2t - 1) e<sup>3t</sup> + C e<sup>t</sup> (This is the general solution)</ul>
+				    
+				    <br><li>Solving for y(t) explicitly using initial condition: </li>
+				      <ul>y(0) = C - 1 = 2</ul>
+				      <ul>C = 3</ul>
+				      
+				      <br><ul class="green">y(t) = (2t - 1) e<sup>3t</sup> - e<sup>t</sup> (This is the explicit solution)</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 4: </b>
+				  <ol><em>Solve for y(t) explicitly given DE: ty' - 4y = t<sup>2</sup> + 1/t; initial condition: y(1) = 2.</em>
+				  
+				    <br><li>Solving for y(t) generally: </li>
+				      <ul>t dy/dt - 4y = t<sup>2</sup> + 1/t</ul>
+				      <ul>dy/dt - 4y/t = t + 1/t<sup>2</sup> // Dividing both sides by t to put the DE in standard form, isolating the differential</ul>
+				      <ul>e<sup>-4 ln(t)</sup>(dy/dt - 4y/t) = e<sup>-4 ln(t)</sup>(t + 1/t<sup>2</sup>) // Multiplying by integrating factor; p(t) = -4y/t; μ(t) = e<sup>-4 ln(t)</sup>;</ul>
+				      <ul>d(t<sup>-4</sup> y) = t<sup>-4</sup> (t + 1/t<sup>2</sup>) dt // e<sup>-4 ln(t)</sup> becomes t<sup>-4</sup> according to power log rule</ul>
+				      <ul>d(y / t<sup>4</sup>) = (1/t<sup>3</sup> + 1/t<sup>6</sup>) dt</ul>
+				      <ul>y / t<sup>4</sup> = C - (1/2t<sup>2</sup> + 1/5t<sup>5</sup>) // Integrating both sides</ul>
+				      <ul>y(t) = C t<sup>4</sup> - (t<sup>2</sup>/2 + 1/5t) // This is the general solution</ul>
+				    
+				    <br><li>Solving for y(t) explicitly using initial condition: </li>
+				      <ul>y(1) = C - (1/2 + 1/5) == 2</ul>
+				      <ul>C - 7/10 = 2</ul>
+				      <ul>C = 27/10</ul>
+				      
+				      <br><ul>y(t) = 27t<sup>4</sup>/10 - (t<sup>2</sup>/2 + 1/5t) // This is the explicit solution</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 5: </b>
+				  <ol><em>Solve for y(t) explicitly given DE: 2y' - ty = 1; IC: y(1) = 4;</em>
+				    
+				    <br><li>Solving for y(t) generally: </li>
+				      <ul>dy/dt - ty/2 = 1/2 // Converting to differential, standard form by dividing by 2</ul>
+				      <ul>e<sup>-t<sup>2</sup>/4</sup>(dy/dt - ty/2) = e<sup>-t<sup>2</sup>/4</sup>/2 // Multiplying by integrating factor μ(t) = e<sup>-t<sup>2</sup>/4</sup>; p(t) = -t/2;</ul>
+				      <ul>d(y / e<sup>t<sup>2</sup>/4</sup>) = dt / 2e<sup>t<sup>2</sup>/4</sup></ul>
+				      <ul>y / e<sup>t<sup>2</sup>/4</sup> = 1/2 ∫(dt / e<sup>t<sup>2</sup>/4</sup>) + C // Integrating the left-side. The right-side cannot be evaluated, converting it into a definite integral would be the simplest form to write out the integral</ul>
+				      <ul>y / e<sup>t<sup>2</sup>/4</sup> = 1/2 ∫<sub>1</sub><sup>t</sup>(ds / e<sup>s<sup>2</sup>/4</sup>) + C // Arbitrary variable s was used to signify the change in form. 1 is used as the lower bound to match the IC</ul>
+				      <ul>y(t) = e<sup>t<sup>2</sup>/4</sup> (1/2 ∫<sub>1</sub><sup>t</sup>(ds / e<sup>s<sup>2</sup>/4</sup>) + C) // This is the general solution</ul>
+				      
+				    <br><li>Solving for y(t) explicitly using the IC: </li>
+				      <ul>y(1) = e<sup>1/4</sup> C == 4</ul>
+				      <ul>C = 4/e<sup>1/4</sup></ul>
+				      
+				      <br><ul>y(t) = e<sup>t<sup>2</sup>/4</sup> (1/2 ∫<sub>1</sub><sup>t</sup>(ds / e<sup>s<sup>2</sup>/4</sup>) + 4e<sup>1/4</sup>)</ul>
+				  </ol>
+				</ul>
+				
+		</body>
+</html>

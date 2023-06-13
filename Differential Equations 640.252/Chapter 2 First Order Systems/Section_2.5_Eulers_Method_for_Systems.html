@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 2.5: Euler's Method for Systems</title>
+  </head>
+  
+  <body>
+    <h1>Section 2.5: Euler's Method for Systems</h1>
+    
+    <ul class="topic"><b>Euler's Method</b>
+      <li><b>Euler's Method</b>, as described previously, is a method for approximating the graph of a solution using line segments whose slopes are equal to a value of the DEs</li>
+      
+      <br><li>let first-order SoE {dx/dt = f(x, y); dy/dt = g(x, y)}, solution vector <b>Y</b>(t) = (x(t), y(t)), vector function <b>F</b>(x, y) = (f(x, y), g(x, y))</li>
+      <li>Subsequent points (x<sub>k + 1</sub>, y<sub>k + 1</sub>) are calculated as follows: </li>
+        <ul>(x<sub>k + 1</sub>, y<sub>k + 1</sub>) = (x<sub>k</sub>, y<sub>k</sub>) +^ <b>F</b>(x<sub>k</sub>, y<sub>k</sub>) Δt, Note: "+^" is showing vector addition</ul>
+        <ul>(x<sub>k + 1</sub>, y<sub>k + 1</sub>) = (x<sub>k</sub> + f(x<sub>k</sub>, y<sub>k</sub>), y<sub>k</sub> + g(x<sub>k</sub>, y<sub>k</sub>))</ul>
+    </ul>
+    
+    <ul class="topic"><b>Van der Pol Equation</b>
+      <li>The Van der Pol equation is a second-order DE given by: </li>
+        <ul>d<sup>2</sup>/dt<sup>2</sup> - (1 - x<sup>2</sup>) dx/dt + x = 0</ul>
+      
+      <li>This equation can be coverted to a first-order SoE where y = dx/dt: </li>
+        <ul>{dx/dt = y; dy/dt = (1 - x<sup>2</sup>) - x}</ul>
+      
+      <li>Euler's Method can be applied to this equation as described earlier</li>
+    </ul>
+    
+  </body>
+</html>

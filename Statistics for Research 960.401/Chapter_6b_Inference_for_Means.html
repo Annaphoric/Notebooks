@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Statistics.css">
+  	<title>Chapter 6b: Inference for Means</title>
+  </head>
+  
+  <body>
+    <h2>Chapter 6b: Inference for Means</h2>
+    
+    <ul class="topic"><b>Distribution for a Mean</b>
+      <li>When the observed parameter is the mean, the normal distribution can be described via its standard error SE as long as the Central Limit Theorum applies (large sample size; n > 30). For randomised samples of constant size n from a population of mean μ & standard deviation σ, the standard error is calculated by dividing the standard deviation by square root of the sample size n: </li>
+        <ul>SE = σ / sqrt(n)</ul>
+      <li>Most of the times, the std of the population is unknown. In this case, the standard error can be approximated using the sample std s instead: </li>
+        <ul class="red">SE = s / sqrt(n)</ul>
+      
+      <br><li>Approximating the distribution's spread using the sample std forms a different type of distribution known as the <b>t-distribution</b>. The shape of a t-distribution graph is dependent on the sample size itself. Specifically, the distribution is measured based on the <b>degrees of freedom</b> df which is the sample size subtracted by one: </li>
+        <ul class="red">df = n - 1</ul>
+      
+      <br><li>Generally, the larger the sample size (or df), the more similar the t-distribution curve is to a normal distribution curve. t-distributions with low df (around 5) have curves with thicker tails & a shorter peak</li>
+      
+      <br><li>For small sample sizes, t-distribution may be appropriate only if the distribution of data is symmetrical containing no extreme outliers. Specifically, t-distribution should not be used if: </li>
+        <ul>n < 20 (small sample size) with outliers and skewed data</ul>
+        <ul>20 < n < 50 (moderate sample size) with extreme outliers and heavily skewed data</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>For the following cases, compute the standard error SE based on the data: 
+      a) A sample of Atlanta commute times of size n = 500 shows an average of <b>x</b> = 29.11 minutes with std s = 20.7. The standard error from the randomisation simulation was SE = 0.93.
+      b) A sample of body temperatures of size n = 50 has mean <b>x</b> = 98.26 with std s = 0.765. The standard error from the randomisation simulation was SE = 0.11.</li>
+      
+        <br><ul>a)
+          <li>AtlantaSE = 20.7 / sqrt(500)</li>
+          <li>AtlantaSE = 0.93</li>
+        </ul>
+        
+        <br><ul>b)
+          <li>TempSE = 0.765 / sqrt(50)</li>
+          <li>TempSE = 0.11</li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

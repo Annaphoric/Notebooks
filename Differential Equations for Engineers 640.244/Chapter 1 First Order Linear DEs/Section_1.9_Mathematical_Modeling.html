@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 1.8: Mathematical Modeling</title>
+  </head>
+  <body>
+  		<h1>Section 1.8: Mathematical Modeling</h1>
+  		
+  		<ul class="topic"><b>Mathematical Modeling</b>
+  		  <li><b>Mathematical modeling</b> allows differential equations to be applied to the real-world & other fields. DEs are generally applied when a value/measurement changes depending on another factor (like time). Common applications include fluid flow within a pipe, pollutant concentration, price fluctuation, & disease modeling</li>
+  		  
+  		  <br><li>The convential way to model DEs is by using the <b>Accumulation Equation</b> (balance equation; like mass or energy). This equation shows that the net rate of change is equal to the rate increased subtracted by the rate decreased: </li>
+  		    <ul>net_rate_of_change = rate_added - rate_removed</ul>
+  		    <ul>The total or net rate of change is dependent on the derivative whilst the rate added or removed is dependent on various other factors</ul>
+  		  
+  		  <br><ol><span>There are 3 main steps to mathematical modeling: </span>
+  		    <li>Formulate the model (based on science principles or accumulation equation)</li>
+  		    <li>Solve the differential equation (describes how a physical system will behave over time)</li>
+  		    <li>Refine the model (testing with data, to confirm reliability of model)</li>
+  		  </ol>
+  		  
+  		  <br><li>Mathematical modeling allows for <b>optimal system design</b></li>
+  		    <ul>This ensures that a system performs at the highest efficency & capacity</ul>
+  		    <ul>The DE can be easily modified to improve the system quality</ul>
+  		  
+  		  <br><li>Mathematical modeling also allows for fewer physical experiments</li>
+  		    <ul>This reduces material, instrument, time, & labour costs</ul>
+  		    <ul>Rather than performing experiments to improve the model, the DE based on the experiment can be modified & tested to improve the model instead</ul>
+  		    
+  		  <br><li>The most common type of physical system encountered is one that involves a change of liquid volume and/or solute within a tank. There is both an input of liquid & output of liquid via pipes. Generally, the solute concentration flowing out of the tank is equal to the concentration flowing into the tank</li>
+      
+      <br><li><b>Parameter Estimation</b> is another component of mathematical modeling in science. When the values of coefficients in a model are unknown, the coefficients can be approximated using the data itself. Applications of coefficients include those are specific heat, conductivity & drag coefficients</li>  		  
+  	 </ul>
+  		
+  		<ul class="example"><b>Example 1: </b>
+  		  <ol><em>Velocity increases at a rate of 9.8m/s<sup>2</sup> towards the earth as gravity. In addition, the drag of an object causes the velocity moving downwards to decrease at a rate of 0.1m<sup>-</sup> multiplied by the square of the velocity. Write the DE that pertains to the velocity of a free-falling object.</em>
+  		  
+  		    <br><li>dv/dt = 9.8 - 0.1v<sup>2</sup></li>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 2: </b>
+  		  <ol><em>A tank of water initially contains 100 gallons of water & 5lbs of salt. A water stream containing 1lb/gal of salt flows into & out of the tank at a rate of 2gal/min. Find & solve for a model Q(t) that shows the amount of salt in the tank at any time t. What is the long-time behaviour of Q?</em>
+  		  
+  		    <br><li>The unit for Q is lbs and dQ/dt is lbs/min. The DE is written as follows: </li>
+  		      <ul>dQ/dt = 2gal/min * 1lb/gal - 2gal/min * (Q/100)lb/gal</ul>
+  		      <ul>dQ/dt = 2 - Q/50</ul>
+  		      <ul>dQ/dt + Q/50 = 2 // Separating equation</ul>
+  		      <ul>d(e<sup>t/50</sup> Q) = 2 e<sup>t/50</sup> dt</ul>
+  		      <ul>e<sup>t/50</sup> Q = 100 e<sup>t/50</sup> + C // Integrating both sides</ul>
+  		      <ul>Q(t) = 100 + C / e<sup>t/50</sup></ul>
+  		      
+  		      <br><ul>Q(0) = 5 (Based on the IC)</ul>
+  		      
+  		      <br><ul>Q(0) = 100 + C / e<sup>(0)/50</sup> == 5</ul>
+  		      <ul>C = -95</ul>
+  		      
+  		      <br><ul>Q(t) = 100 - 95 / e<sup>t/50</sup></ul>
+  		      <ul>Based on the equation Q(t), it can be concluded that as time t increases, the value of Q will reach a limit of 100lbs</ul>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 3: </b>
+  		  <ol><em>A 200gal tank initially contains 100gal of water & 10lbs of salt. A water stream containing 2lb/gal of salt flows into the tank at a rate of 4gal/min. The tank is well-mixed. An exit stream removes water from the tank at a rate of 3gal/min. Find & solve for model Q(t) that shows the amount of salt in the tank at any time t. How much salt is in the tank when it starts to overflow?</em>
+  		  
+  		    <br><li>The DEs are written & solved as follows: </li>
+  		      <ul>dV/dt = 4gal/min - 3gal/min</ul>
+  		      <ul>dV/dt = 1</ul>
+  		      <ul>V(t) = t + C</ul>
+  		      
+  		      <br><ul>V(0) = (0) + C == 100</ul>
+  		      <ul>C = 100</ul>
+  		      
+  		      <br><ul>V(t) = t + 100</ul>
+  		      
+  		      <br><ul>dQ/dt = 4gal/min * 2lbs/gal - 3gal/min * Q/V</ul>
+  		      <ul>dQ/dt = 8 - 3Q/(100 + t)</ul>
+  		      <ul>dQ/dt + 3Q / (100 + t) = 8</ul>
+  		      <ul>d((100 + t)<sup>3</sup> Q) = 8(100 + t)<sup>3</sup> dt</ul>
+  		      <ul>(100 + t)<sup>3</sup> Q = 2(100 + t)<sup>4</sup> + C</ul>
+  		      <ul>Q(t) = 2(100 + t) + C / (100 + t)<sup>3</sup></ul>
+  		      
+  		      <br><ul>Q(0) = 2(100 + (0)) + C / (100 + (0))<sup>3</sup> == 10</ul>
+  		      <ul>200 + 1E-6 C = 10</ul>
+  		      <ul>C = -190E6</ul>
+  		      <ul>C = -1.9E8</ul>
+  		      
+  		      <br><ul>Q(t) = 2(100 + t) - 1.9E8 / (100 + t)<sup>3</sup></ul>
+  		    
+  		    <br><li>Since the tank would overflow at a volume greater than 200gal, the amount of salt in the tank at this point can be solved: </li>
+  		      <ul>V(t) = 100 + t == 200</ul>
+  		      <ul>t = 100</ul>
+  		      
+  		      <br><ul>Q(100) = 2(100 + (100)) - 1.9E8 / (100 + (100))<sup>3</sup></ul>
+  		      <ul>Q(100) = 400 - 1.9E8 / 8E6</ul>
+  		      <ul>Q(100) = 400 - 190/8</ul>
+  		      <ul>Q(100) = 400 - 95/4</ul>
+  		      <ul>Q(100) = 376.25</ul>
+  		      <ul>Thus, there will be 376.25lbs of salt within the tank as soon as it begins to overflow above 200gal</ul>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 4: </b>
+  		  <ol><em>The surface temperature of an object changes at a rate proportional to the difference between the temperature of the object & that of the surrounding temperature. Newton's Law of Cooling allows for measuring this change over time: {dT/dt = -K(T - T<sub>s</sub>)}. At T(0) = 37°C, the temperature of the object is measured to be 32°C after 10min. At what time will temperature T equal 29.5°C when surrounding temperature T<sub>s</sub> equals 20°C?</em>
+  		  
+  		    <br><li>Solving for T(t) & K given the DE & ICs: </li>
+  		      <ul>dT/dt + KT = K T<sub>s</sub></ul>
+  		      <ul>d(e<sup>Kt</sup> T) = e<sup>Kt</sup> K T<sub>s</sub> dt</ul>
+  		      <ul>e<sup>Kt</sup> T = e<sup>Kt</sup> T<sub>s</sub> + C</ul>
+  		      <ul>T(t) = T<sub>s</sub> + C / e<sup>Kt</sup></ul>
+  		      
+  		      <br><ul>At T(0) = 37 && T<sub>s</sub> = 20: T(0) = (20) + C / e<sup>K(0)</sup> == 37</ul>
+  		      <ul>C = 17</ul>
+  		      
+  		      <br><ul>At T(10) = 32 && T<sub>s</sub> = 20: T(10) = (20) + (17) / e<sup>K(10)</sup> == 32</ul>
+  		      <ul>17 = 12 e<sup>10K</sup></ul>
+  		      <ul>K = ln(17/12) / 10</ul>
+  		      
+  		      <br><ul>T(t) = 17 / e<sup>t ln(17/12) / 10</sup> + 20</ul>
+  		      <ul>T(t) = 17 / (17/12)<sup>t / 10</sup> + 20</ul>
+  		    
+  		    <br><li>Solving for t if T = 29.5 && T<sub>s</sub> = 20: </li>
+  		      <ul>17 / (17/12)<sup>t / 10</sup> + 20 = 29.5</ul>
+  		      <ul>9.5 (17/12)<sup>t / 10</sup> = 17</ul>
+  		      <ul>t ln(9.5 (17/12)) = ln(17<sup>10</sup>)</ul>
+  		      <ul>t = ln(161.5 / (12 * 17<sup>10</sup>))</ul>
+  		      <ul>t ≈ 16.71min</ul>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 5:</b>
+  		  <ol><em>Given chemical reaction: {A + B -> C}, determine a model for how this reaction proceeds. How can experimental data used for the model?</em>
+  		  
+  		    <br><li>The model depends mostly on the mechanism of the reaction. A DE can show how C changes depending on the concentrations of A && B & their stoichiometric coefficients respectively: </li>
+  		      <ul>dC/dt = k[A]<sup>a</sup>[B]<sup>b</sup></ul>
+  		      <ul>The rate constant can be solved by using experimental data where the stoichiometric coefficients & concentrations are known</ul>
+  		  </ol>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 6: </b>
+  		  <ol><em>The Van't Hoff equation gives an alternative form for expressing equillibrium constant K of a chemical reaction with temperature T under isobaric (constant pressure) conditions: {d(ln(K))/dT<sup>-</sup> = -ΔH°/R, where T = absolute temperature, R = universal gas constant, ΔH° = standard enthalpy change}. How does K relate to T? Assume ΔH° is independent of T.</em>
+  		  
+  		    <br><li>The Van't Hoff equation can be separable & integrated: </li>
+  		      <ul>d(ln(K)) = -ΔH°/R d(1/T)</ul>
+  		      <ul>ln(K) = C - ΔH°/RT</ul>
+  		      <ul>K = D / e<sup>ΔH°/RT</sup>, where D = e<sup>C</sup></ul>
+  		      <ul>This equation tells us that K is inversely proportional to ΔH° && directly proportional to T. Experimental data for enthalpy & temperature can be used to solve/predict for the equillibrium constant of a specific reaction</ul>
+  		  </ol>
+  		</ul>
+  		
+  </body>
+</html>

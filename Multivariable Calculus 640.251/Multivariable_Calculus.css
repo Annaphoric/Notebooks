@@ -1,0 +1,61 @@
+body {
+  background: #CBB;
+  font-size: 2vw;
+}
+
+h2 {
+  font-size: 4vw;
+  text-align: center;
+}
+
+.topic:before, ol:before {
+  content: "- ";
+}
+
+.topic ul:before{
+  content: "> ";
+}
+
+.topic ul ul:before, .example ul:before {
+  content: "~ ";
+}
+
+.example ol {
+  font-style: oblique;
+}
+
+.example ul, .example li, .part {
+  font-style: initial;
+}
+
+li {
+  text-indent: 3vw;
+}
+
+a:hover {
+  color: #F00;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.red {
+  color: #C00;
+}
+
+.green {
+  color: #080;
+}
+
+.blue {
+  color: #00C;
+}
+
+.black {
+  color: #000;
+}
+
+sup, sub {
+  font-size: 1.3vw;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 2.3: The Damped Harmonic Oscillator</title>
+  </head>
+  
+  <body>
+    <h1>Section 2.3: The Damped Harmonic Oscillator</h1>
+    
+    <ul class="topic"><b>The Damped Harmonic Oscillator</b>
+      <li>A <b>damped harmonic oscillator</b> is used to model various important physical, real world situations such as mass-spring systems, RLC circuits & glucose regulation in blood</li>
+      <li>In automobiles, the suspension contains a spring & shock absorber that is used to absorb the forces caused by bumps in the road when driving</li>
+      <li>Since the forces cannot oscillate forever as in the case for undamped harmonic oscillators, the model must account for the <b>damping force</b> or the dissipation of energy from the system</li>
+        <ul>Note: Air resistance and friction isn't accounted for, however, it is stil present in a real-world system</ul>
+      <li>As mentioned in previous sections, the model for an undamped harmonic oscillator is: </li>
+        <ul>m d<sup>2</sup>y/dt<sup>2</sup> = -k y</ul>
+        <ul>m d<sup>2</sup>y/dt<sup>2</sup> + k y = 0, where m = mass, y = position, t = time, k = spring constant</ul>
+      <li>The model for a damped harmonic oscillator is: </li>
+        <ul>m d<sup>2</sup>y/dt<sup>2</sup> = -b dy/dt - k y</ul>
+        <ul class="magenta">m d<sup>2</sup>y/dt<sup>2</sup> + b dy/dt + k y = 0, where b = damping coefficient
+          <li>In this equation, (m d<sup>2</sup>y/dt<sup>2</sup>) is the linear acceleration force, (-b dy/dt) is the damping/dissipation force, & (-k y) is the restoring force</li>
+        </ul>
+        <ul>d<sup>2</sup>y/dt<sup>2</sup> + p dy/dt + q y = 0, where p = b/m, q = k/m</ul>
+      
+      <br><li>The linear system to the second-order DE is written as: </li>
+        <ul>{dy/dt = v; dv/dt = -q y - p v}, where v = velocity (rate of positional change)</ul>
+    </ul>
+    
+    <ul class="topic"><b>Solutions to a Second-Order DEs</b>
+      <li>Given second-order DE d<sup>2</sup>y/dt<sup>2</sup> + p dy/dt + q y = 0, and its corresponding linear system {dy/dt = v; dv/dt = -q y - p v}, let s = constant;</li>
+        <ul>The most convenient solution y(t) to the DE can be written as in an exponential form having some constant s: 
+          <li>y(t) = e<sup>s t</sup></li>
+        </ul>
+        <ul>This broad solution & its derivatives can simply be substituted into the DE to solve for s: 
+          <li>dy/dt = s e<sup>s t</sup></li>
+          <li>d<sup>2</sup>y/dt<sup>2</sup> = s<sup>2</sup> e<sup>s t</sup></li>
+          
+          <br><li>s<sup>2</sup> e<sup>s t</sup> + p s e<sup>s t</sup> + q e<sup>s t</sup> = 0</li>
+          <li>e<sup>s t</sup> (s<sup>2</sup> + p s + q) = 0</li>
+          <li>s<sup>2</sup> + p s + q = 0, this is the characteristic polyomial</li>
+          <li>s = (-p +- sqrt(p<sup>2</sup> - 4q)) / 2</li>
+        </ul>
+        <ul>Therefore, the solutions to the DE are: 
+          <li class="magenta">y(t) = e<sup>((-p +- sqrt(p<sup>2</sup> - 4q)) / 2) t</sup></li>
+          <li class="magenta">dy/dt = ((-p +- sqrt(p<sup>2</sup> - 4q)) / 2) e<sup>((-p +- sqrt(p<sup>2</sup> - 4q)) / 2) t</sup></li>
+        </ul>
+        <ul>The solution <b>Y</b>(y, v) to the linear system is written as: 
+          <li class="magenta"><b>Y</b>(y, v) = (e<sup>((-p +- sqrt(p<sup>2</sup> - 4q)) / 2) t</sup>, ((-p +- sqrt(p<sup>2</sup> - 4q)) / 2)) e<sup>((-p +- sqrt(p<sup>2</sup> - 4q)) / 2) t</sup></li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

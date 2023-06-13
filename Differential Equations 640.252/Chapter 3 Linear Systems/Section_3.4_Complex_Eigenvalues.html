@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.4: Complex Eigenvalues</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.4: Complex Eigenvalues</h1>
+    
+    <ul class="topic"><b>Solutions with Complex Eigenvalues</b>
+      <li>Complex numbers are number that have the form: </li>
+        <ul>a + b i, where {a, b} = real numbers & i = imaginary number corresponding to sqrt(-1)
+          <li>'a' is considered to be the real part of the number & "b i" is considered dto be the imaginary part</li>
+        </ul>
+      
+      <br><li>As mentioned in previous sections, real eigenvalues are used to determine straight-line solutions to a linear system in matrix form</li>
+      <li>Complex eigenvalues are eigenvalues in the form of a complex number</li>
+      <li>They are used to find non-straight-line solutions in the same way that real eigenvalues find straight-line solutions</li>
+      
+      <br><li><b>Euler's Formula</b> is used to determine real solutions from complex solutions: </li>
+        <ul class="magenta">e<sup>b i</sup> = cos(b) + i sin(b)</ul>
+        <ul>e<sup>a</sup> e<sup>b i</sup> = e<sup>a</sup> (cos(b) + i sin(b))</ul>
+        <ul class="magenta">e<sup>a + b i</sup> = e<sup>a</sup> (cos(b) + i sin(b))</ul>
+      <li>if b = π: </li>
+        <ul>e<sup>π i</sup> = cos(π) + i sin(π)</ul>
+        <ul class="magenta">e<sup>π i</sup> = -1</ul>
+      
+      <br><li>A complex solution <b>Y</b>(t) = e<sup>(a + b i) t</sup> <b>V</b><sub>λ</sub>, where <b>V</b><sub>λ</sub> = [[x<sub>0</sub>] [y<sub>0</sub>]] (eigenvector of corresponding complex eigenvalue (λ = a + b i)) can be written as: </li>
+        <ul><b>Y</b>(t) = e<sup>a t</sup> (cos(b t) + i sin(b t)) <b>V</b><sub>λ</sub></ul>
+        <ul><b>Y</b>(t) = e<sup>a t</sup> (cos(b t) + i sin(b t)) [[x<sub>0</sub>] [y<sub>0</sub>]]</ul>
+        <ul><b>Y</b>(t) = e<sup>a t</sup> (x<sub>0</sub> [[cos(b t)] [sin(b t)]] + i y<sub>0</sub> [[cos(b t)] [sin(b t)]])
+          <li>The solution can vary depending on the eigenvector (value of x<sub>0</sub> & y<sub>0</sub>), however, it will always be written as a complex number</li>
+          <li>The components of a complex solution are the real solution component <b>Y</b><sub>R</sub> & the imaginary solution component <b>Y</b><sub>Z</sub> (which is multiplied by i)</li>
+        </ul>
+      <li>As long as both components to a complex solution exist, the linear system d<b>Y</b>/dt = <b>A Y</b><sub>0</sub> can be written as: </li>
+        <ul><b>A Y</b><sub>0</sub> = <b>A</b> (<b>Y</b><sub>R</sub> + i <b>Y</b><sub>Z</sub>)</ul>
+        <ul>d<b>Y</b>/dt = <b>A Y</b><sub>R</sub> + i <b>A Y</b><sub>Z</sub></ul>
+        <ul>d<b>Y</b><sub>R</sub>/dt + i d<b>Y</b><sub>Z</sub> = <b>A Y</b><sub>R</sub> + i <b>A Y</b><sub>Z</sub>
+          <li>This equation equates 2 complex numbers to each other</li>
+          <li>In order for the 2 complex numbers to truly be equal to each other, their respective real components & imaginary components must both equal to each other: </li>
+            <ul class="magenta">d<b>Y</b><sub>R</sub>/dt == <b>A Y</b><sub>R</sub> && d<b>Y</b><sub>Z</sub>/dt == <b>A Y</b><sub>Z</sub> must be true</ul>
+        </ul>
+      <li>So, the general solution <b>Y</b>(t) can be shown as the linear combination of both components: </li>
+        <ul><b>Y</b>(t) = k<sub>1</sub> <b>Y</b><sub>R</sub>(t) + k<sub>2</sub> <b>Y</b><sub>Z</sub>(t)</ul>
+        <ul>Note: This only requires using one complex eigenvalue, since all complex eigenvalues for a given linear system have the same real & complex solution components</ul>
+    </ul>
+    
+    <ul class="topic"><b>Phase Portraits of Linear Systems having Complex Eigenvalues</b>
+      <li>The geometry of the vector field of a linear system containing complex solutions depends on 2 terms: its exponential component e<sup>a t</sup> & its trigonometric component (cos(b t) + i sin(b t))</li>
+        <ul>if a > 0: the solution curve spirals outwards towards infinity as t increases
+          <li>This is known as a <b>spiral source</b></li>
+        </ul>
+        <ul>if a < 0: the solution curve spirals inwards towards the origin as t increases
+          <li>This is known as a <b>spiral sink</b></li>
+        </ul>
+        <ul>if a == 0: the solution curve has a constant amplitude, forming a circle
+          <li>This is known as a <b>center</b></li>
+        </ul>
+        
+        <br><ul>The trigonometric terms cos(b t) & sin(b t) cause the solution curve to oscillate with a period of 2π/b
+          <li>This is the <b>natural period</b></li>
+          <li>The <b>natural frequency</b> is the inverse of the natural period (in other words, the frequency is the amount of oscillations per unit of time)</li>
+          <li>The product of the natural period & frequency is always one</li>
+          <li>If the unit of the natural frequency is radians, its value is simply b, which corresponds to the <b>angular frequency</b></li>
+        </ul>
+    </ul>
+    
+    <br><ul class="example"><b>Example 1: </b>
+      <ol>Find the general solution of linear system d<b>Y</b>/dt = <b>A Y</b> where <b>A</b> = [[-2, -3] [3, -2]], & <b>Y</b>(t) = [[x(t)] [y(t)]]
+      
+        <li>Solving for the eigenvalues: </li>
+          <ul>λ<sup>2</sup> - ((-2) + (-2)) λ + det(<b>A</b>) = 0</ul>
+          <ul>λ<sup>2</sup> + 4λ + 13 = 0</ul>
+          <ul>λ = {(-4 - sqrt(-36)) / 2, (-4 + sqrt(-36)) / 2}</ul>
+          <ul>λ = {-2 - 3i, -2 + 3i}</ul>
+        
+        <br><li>Solving for corresponding eigenvectors: </li>
+          <ul>{(-2 - (-2 - 3i)) x - 3y = 0; 3x + (-2 - (-2 - 3i)) y = 0}</ul>
+          <ul>{-3y + 3i x = 0; 3x + 3i y = 0}</ul>
+          <ul>{y - i x = 0; x + i y = 0}</ul>
+          <ul>y = i x</ul>
+          <ul><b>V</b><sub>1</sub> = [[1] [i]]</ul>
+          
+          <br><ul>{(-2 - (-2 + 3i)) x - 3y = 0; 3x + (-2 - (-2 + 3i)) y = 0}</ul>
+          <ul>{-3y - 3i x = 0; 3x - 3i y = 0}</ul>
+          <ul>{y + i x = 0; x - i y = 0}</ul>
+          <ul>x = i y</ul>
+          <ul><b>V</b><sub>2</sub> = [[i] [1]]</ul>
+        
+        <br><li>Accounting for Euler's Formula, the solutions are written as: </li>
+          <ul><b>Y</b><sub>1</sub>(t) = e<sup>(-2 - 3i) t</sup> [[1] [i]]</ul>
+          <ul><b>Y</b><sub>1</sub>(t) = e<sup>-2t</sup> (cos(-3t) + i sin(-3t)) [[1] [i]]</ul>
+          <ul><b>Y</b><sub>1</sub>(t) = e<sup>-2t</sup> [[cos(-3t) + i sin(-3t)] [i cos(-3t) - sin(-3t)]]</ul>
+          <ul><b>Y</b><sub>1</sub>(t) = e<sup>-2t</sup> ([[cos(-3t)] [-sin(-3t)]] + i [[sin(-3t)] [cos(-3t)]])</ul>
+          
+          <br><ul><b>Y</b><sub>2</sub>(t) = e<sup>(-2 + 3i) t</sup> [[i] [1]]</ul>
+          <ul><b>Y</b><sub>2</sub>(t) = e<sup>-2t</sup> (cos(3t) + i sin(3t)) [[i] [1]]</ul>
+          <ul><b>Y</b><sub>2</sub>(t) = e<sup>-2t</sup> ([[-sin(3t)] [cos(3t)]] + i [[cos(3t)] [sin(3t)]])</ul>
+          
+        <br><li>Since <b>Y</b><sub>1</sub>(t) == <b>Y</b><sub>2</sub>(t) is always true, the general solution can be written as: </li>
+          <ul><b>Y</b>(t) = e<sup>-2 t</sup> (k<sub>1</sub> [[-sin(3t)] [cos(3t)]] + k<sub>2</sub> [[cos(3t)] [sin(3t)]])</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

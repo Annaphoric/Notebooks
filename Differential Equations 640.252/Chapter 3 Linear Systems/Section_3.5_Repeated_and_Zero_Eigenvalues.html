@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.5: Repeated and Zero Eigenvalues</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.5: Repeated and Zero Eigenvalues</h1>
+    
+    <ul class="topic"><b>Repeated Eigenvalues</b>
+      <li>Linear systems with only one eigenvalue or an eigenvalue having a value of zero are considered <b>degenerate</b></li>
+        <ul>They are fairly uncommon compared to linear systems with 2 distinct eigenvalues</ul>
+      
+      <br><li>A repeated eigenvalue is observed when the characteristic polynomial makes a perfect square</li>
+        <ul>In this case, there will be a double root for one eigenvalue</ul>
+      
+      <br><li>Given linear system d<b>Y</b>/dt = <b>A Y</b> at IC <b>Y</b>(t) = <b>V</b><sub>0</sub>, having one distinct eigenvalue λ & two corresponding eigenvectors <b>V</b><sub>0</sub> (from the IC) & <b>V</b><sub>1</sub>, the general solution <b>Y</b>(t) will have the form: </li>
+        <ul><b>Y</b>(t) = e<sup>λ t</sup> <b>V</b><sub>0</sub> + t e<sup>λ t</sup> <b>V</b><sub>1</sub></ul>
+      <li>The solution can be checked by differentiating it and equating it to the system: </li>
+        <ul>d<b>Y</b>/dt = λ e<sup>λ t</sup> <b>V</b><sub>0</sub> + e<sup>λ t</sup> <b>V</b><sub>1</sub> + λ t e<sup>λ t</sup> <b>V</b><sub>1</sub></ul>
+        <ul>d<b>Y</b>/dt = e<sup>λ t</sup> (λ <b>V</b><sub>0</sub> + <b>V</b><sub>1</sub>) + t e<sup>λ t</sup> (λ <b>V</b><sub>1</sub>), separating like terms</ul>
+        
+        <br><ul><b>A Y</b> = e<sup>λ t</sup> <b>A V</b><sub>0</sub> + t e<sup>λ t</sup> <b>A V</b><sub>1</sub>, this is obtained by multiplying the solution by <b>A</b></ul>
+        
+        <br><ul>e<sup>λ t</sup> (λ <b>V</b><sub>0</sub> + <b>V</b><sub>1</sub>) + t e<sup>λ t</sup> (λ <b>V</b><sub>1</sub>) = e<sup>λ t</sup> (<b>A V</b><sub>0</sub>) + t e<sup>λ t</sup> (<b>A V</b><sub>1</sub>), since d<b>Y</b>/dt = <b>A Y</b>
+          <li>In order for this equation to be true, the respective components must equal each other: </li>
+            <ul>{<b>A V</b><sub>0</sub> = λ <b>V</b><sub>0</sub> + <b>V</b><sub>1</sub>; <b>A V</b><sub>1</sub> = λ <b>V</b><sub>1</sub>}</ul>
+            <ul>{(<b>A</b> - λ <b>I</b>) <b>V</b><sub>0</sub> = <b>V</b><sub>1</sub>; (<b>A</b> - λ <b>I</b>) <b>V</b><sub>1</sub> = 0}
+              <li>The first equation explains that <b>V</b><sub>0</sub> is always an eigenvector as long as <b>V</b><sub>1</sub> == <b>0</b> is true, but <b>V</b><sub>0</sub> is not an eigenvector if <b>V</b><sub>1</sub> == <b>0</b> is false</li>
+              <li>The second equation explains that <b>V</b><sub>1</sub> is always an eigenvector as long as it itself is the nonzero vector</li>
+              <li>Since <b>V</b><sub>1</sub> depends on <b>V</b><sub>0</sub>, <b>Y</b>(t) is a straight-line solution only if <b>V</b><sub>0</sub> is an eigenvector</li>
+            </ul>
+        </ul>
+      <li>As described, <b>V</b><sub>1</sub> can be solved by solving for (<b>A</b> - λ <b>I</b>) <b>V</b><sub>0</sub>, where <b>V</b><sub>0</sub> is the IC</li>
+        <ul>These vectors can then be used to find the general solution of a linear system based on its general form, giving an easier way to solve for the solution as long as the eigenvalue is repeated</ul>
+      
+      <br><li>The solution curves always spiral inwards or outwards with respect to the origin & tangent to one straight-line solution</li>
+        <ul>if λ < 0, the origin is a sink</ul>
+        <ul>if λ > 0, the origin is a source</ul>
+        
+      <br><li>Solutions curves with repeating eigenvalues appear to be in between systems that contain complex eigenvalues & systems that only contain real, distinct eigenvalues</li>
+      
+      <br><li>In order for a system to have every vector considered to be an eigenvector is: </li>
+        <ul>d<b>Y</b>/dt = [[λ, 0] [0, λ]] <b>Y</b>
+          <li>Since the system is completely decoupled, the solution curves form a ray that point towards the origin if λ < 0 (sink) or away from the origin if λ > 0 (source)</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Zero Eigenvectors</b>
+      <li>Given linear system d<b>Y</b>/dt = <b>A Y</b>, having two real, distinct eigenvalues (λ<sub>1</sub>, λ<sub>2</sub>) = (0, λ<sub>0</sub>) and their corresponding eigenvectors <b>V</b><sub>1</sub> & <b>V</b><sub>2</sub>, the general solution can be written as: </li>
+        <ul><b>Y</b>(t) = k<sub>1</sub> e<sup>λ<sub>1</sub> t</sup> <b>V</b><sub>1</sub> + k<sub>2</sub> e<sup>λ<sub>2</sub> t</sup> <b>V</b><sub>2</sub></ul>
+        <ul><b>Y</b>(t) = k<sub>1</sub> <b>V</b><sub>1</sub> + k<sub>2</sub> e<sup>λ<sub>2</sub> t</sup> <b>V</b><sub>2</sub>, since λ == 0 is true
+          <li>This equation explains that if k<sub>2</sub> == 0, all solutions are considered equillibrium solutions</li>
+          <li>Every point on the line of eigenvectors k<sub>1</sub> <b>V</b><sub>1</sub> is an equillibrium</li>
+          <li>Every solution will point inwards or outwards from the equillibrium line tangent to the line made by all eigenvectors <b>V</b><sub>2</sub></li>
+            <ul>if λ<sub>2</sub> < 0, the solutions point inwards towards the equillibrium line</ul>
+            <ul>if λ<sub>2</sub> > 0, the solutions point outwards away from the equillibrium line</ul>
+        </ul>
+    </ul>
+    
+    <br><ul class="example"><b>Example 1: </b>
+      <ol>Find the general solution of system d<b>Y</b>/dt = <b>A Y</b>, where <b>A</b> = [[-2 1] [0 -2]].
+      
+        <li>This linear system can be writen as a system of equations: </li>
+          <ul>{dx/dt = -2x + y; dy/dt = -2y}</ul>
+          <ul>This system is a linear, first-order, partially decoupled system because dx/dt is nonhomogenous & dy/dt is autonomous</ul>
+          <ul>The solution for dy/dt is y(t) = k<sub>y</sub> e<sup>-2t</sup>
+            <li>In this case, eigenvalue λ = -2 (Note: this can also be solved using the characteristic polynomial)</li>
+          </ul>
+        
+        <br><li>Solving for solution x(t): </li>
+          <ul>dx/dt = -2x + k<sub>y</sub> e<sup>-2t</sup></ul>
+          <ul>dx/dt + 2x = k<sub>y</sub> e<sup>-2t</sup>, separating</ul>
+          <ul>d((e<sup>2t</sup>) x) dt = d((e<sup>2t</sup>) k<sub>y</sub> e<sup>-2t</sup>)/dt, multiplying by integrating factor</ul>
+          <ul>(e<sup>2t</sup>) x = k<sub>y</sub> t + k<sub>x</sub>, integrating</ul>
+          <ul>x(t) = k<sub>y</sub> t e<sup>-2t</sup> + k<sub>x</sub> e<sup>-2t</sup></ul>
+        
+        <br><li>The general solution <b>Y</b>(t) for the system can now be written as: </li>
+          <ul><b>Y</b>(t) = [[k<sub>y</sub> t e<sup>-2t</sup> + k<sub>x</sub> e<sup>-2t</sup>] [k<sub>y</sub> e<sup>-2t</sup>]]</ul>
+          <ul class="green"><b>Y</b>(t) = e<sup>-2t</sup> [[k<sub>x</sub>] [k<sub>y</sub>]] + t e<sup>-2t</sup> [[k<sub>y</sub>] [0]]</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Determine the behaviour of the solutions for linear system d<b>Y</b>/dt = <b>A Y</b>, where <b>A</b> = [[-3 1] [3 -1]].
+      
+        <li>Solving for the eigenvalues: </li>
+          <ul>λ<sup>2</sup> - ((-3) + (-1)) λ + det(<b>A</b>) = 0</ul>
+          <ul>λ<sup>2</sup> + 4λ = 0</ul>
+          <ul>λ (λ + 4) = 0</ul>
+          <ul>λ = {0, -4}</ul>
+          <ul>Since one eigenvalue is zero and the other is negative, the solutions will point towards an equillibrium line</ul>
+        
+        <li>Solving for the corresponding eigenvectors: </li>
+          <ul>{(-3 - 0) x + y = 0; 3x + (-1 - 0) y = 0}</ul>
+          <ul>y = 3x</ul>
+          <ul><b>V</b><sub>0</sub> = [[1] [3]]</ul>
+          
+          <br><ul>{(-3 - (-4)) x + y = 0; 3x + (-1 - (-4)) y = 0}</ul>
+          <ul>y = -x</ul>
+          <ul><b>V</b><sub>-4</sub> = [[1] [-1]]</ul>
+        
+        <li>Writing the solutions and general solution: </li>
+          <ul><b>Y</b><sub>0</sub> = e<sup>(0)t</sup> [[1] [3]]</ul>
+          <ul><b>Y</b><sub>0</sub> = [[1] [3]]</ul>
+          
+          <br><ul><b>Y</b><sub>-4</sub> = e<sup>-4t</sup> [[1] [-1]]</ul>
+          
+          <br><ul>Y(t) = k<sub>0</sub> [[1] [3]] + k<sub>-4</sub> e<sup>-4t</sup> [[1] [-1]]
+            <li>In this case: </li>
+              <ul>x(t) = k<sub>0</sub> + k<sub>-4</sub> e<sup>-4t</sup></ul>
+              <ul>y(t) = 3k<sub>0</sub> - k<sub>-4</sub> e<sup>-4t</sup></ul>
+          </ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

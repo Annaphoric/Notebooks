@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.8: Substitutions in Multiple Integrals</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.8: Substitutions in Multiple Integrals</h2>
+  	
+  	<ul class="topic"><b>Substitutions in Double Integrals</b>
+  	  <li>In the case of a complicated double integral, the substitution method can be used to simplify the integral, whether it be the integrand, limits of integration, or both. A region R originally in the Cartesian xy-coordinate graph can be transformed into a region G in a Cartesian uv-coordinate graph. A function f(x, y) bounded within R creates the final image relative to G. By setting x equal to a function g(u, v) and y equal to a function h(u, v), a pre-image of G can be formed relative to R. Based on this information, the function can now be written as f(g(u, v), h(u, v)). Since this function now includes 4 partial derivatives (2 for g(u, v) & 2 for h(u, v)), there must be a simpler way to express all 4 in one integrand. This is the role of the <b>Jacobian determinant</b> (J(u, v)) which is the cross product of the 2 gradient vector functions: </li>
+  	    <ul>gradient-vector <b>G</b> = (∂x/∂u)<b>i</b> + (∂x/∂v)<b>j</b>;  <b>H</b> = (∂y/∂u)<b>i</b> + (∂y/∂v)<b>j</b></ul>
+  	    <ul>J(u, v) = <b>G</b> ⨯ <b>H</b></ul>
+  	    <ul class="red">J(u, v) = < ∂x/∂u, ∂x/∂v > ⨯ < ∂y/∂u, ∂y/∂v ></ul>
+  	    <ul class="red">J(u, v) = (∂x/∂u)(∂y/∂v) - (∂x/∂v)(∂y/∂u)</ul>
+  	    <ul>J(u, v) = ∂(x, y)/∂(u, v)</ul>
+  	  
+  	  <br><li>The Jacobian determinant is viewed as a scalar multiple or scaling factor of region G to achieve the differential area that is present in the region R. The transformation of the integration of f(x, y) can now be written as: </li>
+  	    <ul class="red">∬<sub>R</sub>(f(x, y)) dx dy = ∬<sub>G</sub>(f(g(u, v), h(u, v)) J(u, v)) du dv</ul>
+  	    <ul>This is analagous to the using the chain rule on a single variable function f(x) where x = g(u):
+  	      <li>∫<sub>g(a)</sub><sup>g(b)</sup>(f(x)) dx = ∫<sub>a</sub><sup>b</sup>(f(g(u)) g'(u)) du</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Find the Jacobian determinant for converting a Cartesian function into a polar function. Then, express the integral {∬<sub>R</sub>(f(x, y)) dx dy} as a polar integral within region G.
+  	  
+  	    <br><br><li>Using the Cartesian-to-polar equations {x = r cosθ, y = r sinθ}, the gradient vector functions can be defined: </li>
+  	      <ul>∂x/∂r = cosθ;  ∂x/∂θ = -r sinθ;  ∂y/∂r = sinθ;  ∂y/∂θ = r cosθ;</ul>
+  	      <ul>gradient <b>G</b> = cosθ <sub>i</sub> - (r sinθ)<sub>j</sub>;  <b>H</b> = sinθ <b>i</b> + (r cosθ)<sub>j</sub></ul>
+  	      
+  	    <br><li>The Jacobian determinant J(r, θ) is the cross product of the 2 gradient vectors: </li>
+  	      <ul>J(r, θ) = <b>G</b> ⨯ <b>H</b></ul>
+  	      <ul>J(r, θ) = < cosθ, -r sinθ > ⨯ < sinθ, r cosθ ></ul>
+  	      <ul>J(r, θ) = r cos<sup>2</sup>θ + r sin<sup>2</sup>θ</ul>
+  	      <ul class="green">J(r, θ) = r</ul>
+  	    
+  	    <br><li>The Cartesian integral can now be converted to a polar one: </li>
+  	      <ul class="green">∬<sub>R</sub>(f(x, y)) dx dy = ∬<sub>G</sub>(f(r cosθ, r sinθ) r) dr dθ</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Transform and evaluate {∫<sub>0</sub><sup>4</sup>(∫<sub>y/2</sub><sup>y/2 + 1</sup>((2x - y)/2) dx) dy} by using the following uv-coordinate equations: {u = (2x - y)/2, v = y/2}.
+  	  
+  	    <br><br><li>To find the Jacobian determinant, the uv-coordinate equations must be converted to equations of x and y in terms of u & v: </li>
+  	      <ul>2u = 2x - y;  2v = y;</ul>
+  	      <ul>x = (2u + y)/2;  y = 2v;</ul>
+  	      <ul>x(u, v) = u + v;  y(u, v) = 2v;</ul>
+  	  </ol>
+  	  
+  	</ul>
+  	
+  </body>
+</html>

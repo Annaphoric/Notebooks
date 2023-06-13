@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 13.4: Curvature & Normal Vectors</title>
+  </head>
+  
+  <body>
+  	<h2>Section 13.4: Curvature & Normal Vectors</h2>
+  	
+  	<ul class="example"><b>Example 3: </b>
+      <ol>Find both the tangent unit vector <b>T</b> & normal unit vector <b>N</b> given <b>r</b>(t) = cos(2t)<b>i</b> + sin(2t)<b>j</b>
+        
+        <br><br><li>Finding the velocity vector function <b>v</b>(t): </li>
+          <ul><b>v</b>(t) = d<b>r</b>/dt</ul>
+          <ul><b>v</b>(t) = -2sin(2t)<b>i</b> + 2cos(2t)<b>j</b></ul>
+        
+        <br><li>The magnitude of the velocity vector is: </li>
+          <ul>||<b>v</b>|| = sqrt(4sin<sup>2</sup>(2t) + 4cos<sup>2</sup>(2t))</ul>
+          <ul>||<b>v</b>|| = 2</ul>
+          
+        <br><li>The tangent unit vector in the direction <b>v</b> is found as shown: </li>
+          <ul><b>T</b> = <b>v</b> / ||<b>v</b>||</ul>
+          <ul><b>T</b> = (-2sin(2t)<b>i</b> + 2cos(2t)<b>j</b>) / 2</ul>
+          <ul class="green"><b>T</b> = -sin(2t)<b>i</b> + cos(2t)<b>j</b></ul>
+        
+        <br><li>Taking the differential of <b>T</b> in terms of time t: </li>
+          <ul>d<b>T</b>/dt = -2cos(2t)<b>i</b> - 2sin(2t)<b>j</b></ul>
+        
+        <br><li>The magnitude of this derivative is expressed as: </li>
+          <ul>||d<b>T</b>/dt|| = sqrt(4cos<sup>2</sup>(2t) + 4sin<sup>2</sup>(2t))</ul>
+          <ul>||d<d>T</d>/dt|| = 2</ul>
+        
+        <br><li>The normal unit vector can now be found: </li>
+          <ul><b>N</b> = (d<b>T</b>/dt) / ||d<b>T</b>/dt||</ul>
+          <ul><b>N</b> = (-2cos(2t)<b>i</b> - 2sin(2t)) / 2</ul>
+          <ul class="green"><b>N</b> = -cos(2t) - sin(2t)</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Circle of Curvature</b>
+      <li class="blue">The circle of curvature or osculating circle of a plane curve is the circle made tangent to a point on the curve. A normal vector would have the same direction as the radius and point towards the centre of the circle</li>
+      <li>The radius of the circle is found by taking the inverse of the curvature </li>
+    </ul>
+
+  </body>
+</html>

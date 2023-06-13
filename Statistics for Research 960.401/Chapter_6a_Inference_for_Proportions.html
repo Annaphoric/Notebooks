@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Statistics.css">
+  	<title>Chapter 6a: Inference for Proportions</title>
+  </head>
+  
+  <body>
+    <h2>Chapter 6a: Inference for Proportions</h2>
+    
+    <ul class="topic"><b>Distribution of a Proportion</b>
+      <li>The <b>Central Limit Theorem</b> (CLT) explains how the statistics of a sample follows a normal distribution as long as the sample size is large</li>
+      
+      <br><li>Sample proportions <b>p</b> are centered around population proportions p</li>
+      
+      <br><li>The standard deviation of a normal distribution in a sample based on population proportion is calculated as its <b>standard error</b> SE: </li>
+        <ul class="red">SE = sqrt((p * (1 - p)) / n), where n = sample size & p = population proportion</ul>
+      <li>Since the sample size is inversely proportional to the standard error or variability, it is observed that increasing the sample size, decreases the standard error</li>
+      
+      <br><li>The most optimal bell-shaped curve of the proportions is around 0.5. As proportions approach 0 or 1, the bell-shaped curve is almost indistinguishable</li>
+      <li>Larger sample sizes also favour optimal normal distribution (as a bell-shaped curve)</li>
+      
+      <li>Normal distribution can be appropriately assumed if n * p ≥ 10 and n * (1 - p) ≥ 10: </li>
+        <ul>if((n * p ≥ 10) && (n * (1 - p) ≥ 10)) {normalDist = true}</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>The proportion of US adults who are college graduates is 0.275 (27.5%). What is the standard error based on a sample size of 200 adults?</li>
+      
+        <br><ul>Using the formula for standard error for proportions: 
+          <li>SE = sqrt((0.275 * (1 - 0.275)) / 200)</li>
+          <li>SE = 0.032</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Confidence Interval for a Proportion</b>
+      <li>The <b>confidence interval</b> CI for a sample statistic/proportion <b>p</b> is the range in which standard error SE exists based on an appropriate percentile of a standard normal distribution z*, a special type of z-score. The standard normal z* for 95% confidence is 1.96 and for 99% confidence is 2.576. The formula for the confidence interval is: </li>
+        <ul class="red">CI = [<b>p</b> ± z* * SE]</ul>
+        <ul>CI = [<b>p</b> ± z* * sqrt((<b>p</b> * (1 - <b>p</b>)) / n)]</ul>
+        <ul>The product of z* & SE is also referred to as the <b>margin of error</b> ME. Margin of error  increases as the proportion is closer to 0.5 and the sample size decreases. In practise, the less ME, the better: 
+          <li class="red">ME = z* * SE</li>
+        </ul>
+      
+      <br><li>The sample size n can be determined based on a known margin of error ME & predicted sample proportion <b>p</b>: </li>
+        <ul>n = (<b>p</b> * (1 - <b>p</b>)) / (ME / z*)<sup>2</sup></ul>
+        <ul class="red">n = <b>p</b> * (1 - <b>p</b>) * (z* / ME)<sup>2</sup></ul>
+        <ul>If the sample proportion is unable to be accurately predicted, then it is simply set to 0.5. Using a standard normal z* of 2 (around 95% confidence) & <b>p</b> = 0.5, the formula for sample size can be simplified to: 
+          <li>n = 1 / (ME)<sup>2</sup></li>
+        </ul>
+      
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>In a sample size of n = 100 mixed nuts, 52 are peanuts. a) Is this sample size large enough to apply the Central Limit Theorem?; b) Find a 95% confidence interval for the proportion of peanuts;</li>
+      
+        <br><ul>a)
+          <li>The application of the CLT can be determined by using the test: </li>
+            <ul>n * p ≥ 10 && n * (1 - p) ≥ 10</ul>
+            <ul>100 * 0.52 ≥ 10 && 100 * 0.48 ≥ 10</ul>
+            <ul>52 ≥ 10 && 48 ≥ 10</ul>
+            <ul>true && true (true)</ul>
+            <ul>∴ the CLT can be applied</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>For a 95% CI, z* = 1.96. This CI can be found using the formula: </li>
+            <ul>CI = [<b>p</b> ± z* * SE]</ul>
+            <ul>CI = [0.52 ± 1.96 * sqrt(0.52 * (1 - 0.52)) / 100)]</ul>
+            <ul>CI = [0.52 ± 0.098]</ul>
+            <ul>CI = [0.422, 0.618]<sub>int</sub></ul>
+            <ul>This means we are 95% confident that 42.2% to 61.8% of all mixed nuts are peanuts</ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Hypothesis Test for a Proportion</b>
+      <li>A <b>hypothesis test</b> HT can be used to determine how well the sample proportion fits within the normal distribution of data when the null hypothesis H<sub>0</sub> is true. The result of a hypothesis test can be quantified in terms of the <b>p-value</b> z. Assuming the sample size is appropriate for normal standard distribution, this value is calculated by subtracting the sample statistic (proportion) <b>p</b> by the hypothesised null parameter (value/proportion) p<sub>0</sub>, then dividing by the standard error SE: </li>
+        <ul class="red">z = (<b>p</b> - p<sub>0</sub>) / SE</ul>
+        <ul>z = (<b>p</b> - p<sub>0</sub>) / sqrt((p<sub>0</sub> * (1 - p<sub>0</sub>)) / n)</ul>
+        <ul>z = (<b>p</b> - p<sub>0</sub>) * sqrt(n / (p<sub>0</sub> * (1 - p<sub>0</sub>))) </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li></li>
+    </ul>
+    
+  </body>
+</html>

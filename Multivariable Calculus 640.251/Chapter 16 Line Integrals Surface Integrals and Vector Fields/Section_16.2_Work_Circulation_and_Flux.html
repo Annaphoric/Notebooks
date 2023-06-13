@@ -1,0 +1,256 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 16.2: Work, Circulation & Flux</title>
+  </head>
+  
+  <body>
+  	<h2>Section 16.2: Work, Circulation & Flux</h2>
+  	
+  	<ul class="topic"><b>Vector Fields</b>
+  	  <li>Gravitational & electrostatic forces are expressed as vectors, having both a magnitude & direction. These forces produce a <b>vector field</b> as work is performed on an object affected by the force. Work can be calculated using line integrals using the vector field</li>
+  	    <ul class="blue">A vector field is a vector function that assigns a vector to every one of its components within their domain. It is continuous/differentiable if each one of its component functions are continuous/differentiable</ul>
+  	    <ul>Examples include: 
+  	      <li><b>F</b>(x, y) = M(x, y)<b>i</b> + N(x, y)<b>j</b></li>
+  	      <li><b>G</b>(x, y, z) = Q(x, y, z)<b>i</b> + R(x, y, z)<b>j</b> + S(x, y, z)<b>k</b></li>
+  	    </ul>
+  	  
+  	  <br><li>A velocity vector function can also be represented a vector field such as a fluid particle's velocity. Vector arrows are drawn with its tail at the originating position and the arrow pointing towards the direction of the vector field where the function increases most rapidly. The vector functions are always evaluated at the originating point. The length of the arrow represents its speed or magnitude</li>
+  	  
+  	  <br><li>A radial field is demonstrated by the vector field <b>F</b>(x, y) = {x<b>i</b> + y<b>j</b>} and a spinning field is demonstrated by <b>G</b>(x, y) = {(-y<b>i</b> + x<b>j</b>) / sqrt(x<sup>2</sup> + y<sup>2</sup>)}</li>
+  	</ul>
+  	
+  	<ul class="topic"><b>Gradient Fields</b>
+  	  <li class="topic">A gradient field is a vector field made of gradient vectors. Its component functions are the partial derivatives of the original vector function's components: </li>
+  	    <ul>∇F = (∂F/∂x)<b>i</b> + (∂F/∂y)<b>j</b> + (∂F/∂z)<b>k</b></ul>
+  	  
+  	  <br><li>Gradient vectors are used to determine the vectors that point toward the greatest increase of f at a given point</li>
+  	  
+  	  <br><li>In many physics applications, F is represented as potential energy, usually expressed as negative to show the areas of decreasing potential energy</li>
+  	</ul>
+  	
+  	<ul class="topic"><b>Example 1: </b>
+  	  <ol>Suppose a material is heated and the resulting temperature T at position P = (x, y, z) given by the equation T = {100 - x<sup>2</sup> - y<sup>2</sup> - z<sup>2</sup>}. let <b>F</b>(x, y, z) be the gradient vector of T. Solve for <b>F</b>.
+  	  
+  	    <li>The gradient of T is found by finding the partial derivatives of the function T and arranging them into a vector: </li>
+  	      <ul>∂f/∂x = -2x;  ∂f/∂y = -2y;  ∂f/∂z = -2z;</ul>
+  	      <ul class="green"><b>F</b>(x, y, z) = -2x<b>i</b> - 2y<b>j</b> - 2z<b>k</b></ul>
+  	      <ul>This gradient vector function reveals the direction of greatest increase of temperature according to the position</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Line Integrals of Vector Fields</b>
+  	  <li>Fluid flow, work, energy, electrical & gravitational fields along a curved region can be measured using line integrals of given vector fields</li>
+  	  <li>let continuous vector-field <b>F</b>(x, y, z) = {M(x, y, z)<b>i</b> + N(x, y, z)<b>j</b> + P(x, y, z)<b>k</b>}; and vector-function <b>r</b>(t) = {g(t)<b>i</b> + h(t)<b>j</b> + k(t), for t in [a, b]} is the parametrised vector for the smooth curve C. Increasing t from a to b reveals the forwards direction of the curve. The tangent (velocity) vector <b>v</b>(t) is found by differentiating <b>r</b>(t). The unit tangent vector <b>T</b> is the direction of <b>v</b>(t) (or <b>v</b>/|<b>v</b>|); this can also be found by differentiating <b>r</b> in terms of the arc length s</li>. Therefore, the line integral of <b>F</b> along C is expressed as shown:
+  	    <ul>∫<sub>C</sub>(<b>F</b> ⋅ <b>T</b>) ds = ∫<sub>C</sub>(<b>F</b> ⋅ (d<b>r</b>/ds)) ds</ul>
+  	    <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ <b>T</b>) ds = ∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>)</ul>
+  	  
+  	  <li>Converting the line integral into a definite integral for evaluation: </li>
+  	    <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(<b>F</b>(<b>r</b>(t)) ⋅ d<b>r</b>/dt) dt</ul>
+  	    <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(<b>F</b>(<b>r</b>(t)) ⋅ <b>v</b>(t)) dt</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Evaluate the line integral of <b>F</b>(x, y, z) = {z<b>i</b> + xy<b>j</b> - y<sup>2</sup><b>k</b>} along curve C parametrised by vector function <b>r</b>(t) = {t<sup>2</sup><b>i</b> + t<b>j</b> + sqrt(t)<b>k</b>, for t in [0, 1]}.
+  	  
+  	    <br><br><li>To write this line integral, <b>F</b> must be expressed in terms of t by letting <b>r</b>(t) be its argument: </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = sqrt(t)<b>i</b> + (t<sup>2</sup>)(t)<b>j</b> - (t)<sup>2</sup><b>k</b></ul>
+  	      <ul><b>F</b>(<b>r</b>(t)) = sqrt(t)<b>i</b> + t<sup>3</sup><b>j</b> - t<sup>2</sup><b>k</b></ul>
+  	    
+  	    <br><li>The velocity vector <b>v</b>(t) is the derivative of <b>r</b>(t): </li>
+  	      <ul><b>v</b>(t) = d<b>r</b>/dt</ul>
+  	      <ul><b>v</b>(t) = 2t<b>i</b> + <b>j</b> + 1/(2 sqrt(t))<b>k</b></ul>
+  	    
+  	    <br><li>Writing & evaluating the line integral: </li>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(<b>F</b>(<b>r</b>(t)) ⋅ <b>v</b>(t)) dt</ul>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>0</sub><sup>1</sup>(< sqrt(t), t<sup>3</sup>, -t<sup>2</sup> > ⋅ < 2t, 1, 1/(2 sqrt(t)) >) dt</ul>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>0</sub><sup>1</sup>((2t sqrt(t) + t<sup>3</sup> - t sqrt(t)/2) dt</ul>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>0</sub><sup>1</sup>((t<sup>3</sup> + 3t sqrt(t)/2) dt</ul>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = [t<sup>4</sup>/4 + 3t<sup>2</sup> sqrt(t)/5]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = 1/4 + 3/5</ul>
+  	      <ul class="green">∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = 17/20</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Line Integrals in Cartesian Form</b>
+  	  <li>In some applications, only a specific component is necessary when evaluating the motion of a vector field. In the case of a vector field <b>F</b>(x, y, z) = M(x, y, z)<b>i</b>, only an x-component exists. If this vector field is to be evaluated over curve C parametrised by <b>r</b>(t) = {g(t)<b>i</b> + h(t)<b>j</b> + k(t)<b>k</b>}, the dot product of <b>F</b> & d<b>r</b> will always be M(x, y, z) g'(t) dt. The line integral can therefore be simplified as: </li>
+  	    <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>C</sub>(M(x, y, z) g'(t)) dt</ul>
+  	    <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>C</sub>(M(x, y, z)) dx</ul>
+  	    <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(M(<b>r</b>(t)) g'(t)) dt</ul>
+  	    <ul>This is the evaluation of the line integral of <b>F</b> along C where <b>F</b> has only an x-component</ul>
+  	  
+  	  <br><li>If <b>F</b> has only a y-component of N(x, y, z), the line integral is: </li>
+  	    <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>C</sub>(N(x, y, z)) dy</ul>
+  	    <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(N(<b>r</b>(t)) h'(t)) dt</ul>
+
+      <br><li>If <b>F</b> has only a z-component of P(x, y, z), the line integral is: </li>
+        <ul>∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>C</sub>(P(x, y, z)) dz</ul>
+        <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ d<b>r</b>) = ∫<sub>a</sub><sup>b</sup>(P(<b>r</b>(t)) k'(t)) dt</ul>
+      
+      <br><li>The sum of the 3 line integrals of <b>F</b> for each component is written as: </li>
+        <ul>∫<sub>C</sub>(M(x, y, z)) dx + ∫<sub>C</sub>(N(x, y, z)) dy + ∫<sub>C</sub>(P(x, y, z)) dz = ∫<sub>C</sub>(M dx + N dy + P dz)</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Evaluate the line integral ∫<sub>C</sub>(-y dx + z dy + 2x dz) where helix C is parametrised by vector <b>r</b>(t) = {cos(t)<b>i</b> + sin(t)<b>j</b> + t<b>k</b>, for t in [0, 2π]}
+  	    
+  	    <br><li>Solving for the velocity vector <b>v</b>(t): </li>
+  	      <ul><b>v</b>(t) = -sin(t)<b>i</b> + cos(t)<b>j</b> + <b>k</b></ul>
+  	    
+  	    <br><li>Expressing the integrand in terms of t: </li>
+  	      <ul>dx = -sin(t) dt;  dy = cos(t) dt;  dz = dt</ul>
+  	      <ul>-y dx = sin<sup>2</sup>(t) dt;  z dy = t cos(t) dt;  2x dz = 2 cos(t) dt</ul>
+  	    
+  	    <br><li>Making appropriate substitutions & evaluating the given line integral: </li>
+  	      <ul>∫<sub>C</sub>(-y dx + z dy + 2x dz) = ∫<sub>0</sub><sup>2π</sup>(sin<sup>2</sup>(t) + t cos(t) + 2 cos(t)) dt</ul>
+  	      <ul>∫<sub>C</sub>(-y dx + z dy + 2x dz) = ∫<sub>0</sub><sup>2π</sup>((1 - cos(2t))/2 + t cos(t) + 2 cos(t)) dt</ul>
+  	      <ul>∫<sub>C</sub>(-y dx + z dy + 2x dz) = [t/2 - sin(2t)/4 + t sin(t) + cos(t) + 2 sin(t)]<sub>0</sub><sup>2π</sup></ul>
+  	      <ul class="green">∫<sub>C</sub>(-y dx + z dy + 2x dz) = π</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Work and Circulation Along a Curve in Space</b>
+  	  <li>Assume vector field <b>F</b>(x, y, z) = {M(x, y, z)<b>i</b> + N(x, y, z)<b>j</b> + P(x, y, z)<b>k</b>} is a force (gravitational, electromagnetic, or other) that occurs along a curve C parametrised by <b>r</b>(t) = {g(t)<b>i</b> + h(t)<b>j</b> + k(t)<b>k</b>, for t in [a, b]}. To solve for the work done by this force throughout the curve, the curve is partitioned into N amount of subarcs (s). The k-th subarc exists from point P<sub>k - 1</sub> to P<sub>k</sub>. Within this subarc lies a point (x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>) with a tangent unit vector of <b>T</b>(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>). The work done by the force along the k-th subarc of the curve is found by multiplying the projection of <b>F</b> onto the tangent vector (dot product with <b>T</b>) with the arclength Δs<sub>k</sub>. So, the total work of the force along the curve is the Riemann sum of all the work values for all subarcs. Letting N approach infinity reveals the line integral of the total work: </li>
+  	    <ul>W = ∑<sub>k = 1</sub><sup>N</sup>(<b>F</b>(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>) ⋅ <b>T</b>(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>)) Δs<sub>k</sub></ul>
+  	    <ul>W = ∫<sub>C</sub>(<b>F</b> ⋅ <b>T</b>) ds</ul>
+  	    <ul>W = ∫<sub>a</sub><sup>b</sup>(<b>F</b>(<b>r</b>(t)) ⋅ d<sub>r</sub>/dt) dt</ul>
+  	    <ul class="red">W = ∫<sub>a</sub><sup>b</sup>(<b>F</b>(<b>r</b>(t)) ⋅ <sub>v</sub>(t)) dt</ul>
+  	   
+  	  <li>The same integral can be used to calculate the flow of a fluid within a given region. This integral would then be known as a <b>flow integral</b>. If the initial position happens to be the same point as the terminating position (a = b), this type of flow is referred to as <b>circulation</b> around the given curved region</li>
+  	    <ul>Any vector field tangent to the curve has maximum circulation</ul>
+  	    <ul>Any vector field normal to the curve has zero circulation</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>Find the work done by the force field <b>F</b>(x, y, z) = {(y - x<sup>2</sup>)<b>i</b> + (z - y<sup>2</sup>)<b>j</b> + (x - z<sup>2</sup>)<b>k</b>} in moving an object along the parametrised curve <b>r</b>(t) = {t<b>i</b> + t<sup>2</sup><b>j</b> + t<sup>3</sup><b>k</b>, for t in [0, 1]} from the origin to point P = (1, 1, 1).
+  	    
+  	    <br><br><li>The velocity vector function <b>v</b>(t) is written as: </li>
+  	      <ul><b>v</b>(t) = <b>i</b> + 2t<b>j</b> + 3t<sup>2</sup></ul>
+  	    
+  	    <br><li>Writing the force vector <b>F</b> in terms of t: </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = (t<sup>2</sup> - t<sup>2</sup>)<b>i</b> + (t<sup>3</sup> - t<sup>4</sup>)<b>j</b> + (t - t<sup>6</sup>)<b>k</b></ul>
+  	      <ul><b>F</b>(<b>r</b>(t)) = (t<sup>3</sup> - t<sup>4</sup>)<b>j</b> + (t - t<sup>6</sup>)<b>k</b></ul>
+  	    
+  	    <br><li>The work W done by the force along the parametrised curve is the integral of the dot product of the force vector & the velocity vector: </li>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(<b>F</b>(<b>r</b>(t)) ⋅ <b>v</b>(t)) dt</ul>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(< 0, t<sup>3</sup> - t<sup>4</sup>, t - t<sup>6</sup> > ⋅ < 1, 2t, 3t<sup>2</sup> >) dt</ul>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(2t<sup>4</sup> - 2t<sup>5</sup> + 3t<sup>3</sup> - 3t<sup>8</sup>) dt</ul>
+  	      <ul>W = [2t<sup>5</sup>/5 - t<sup>6</sup>/3 + 3t<sup>4</sup>/4 - t<sup>9</sup>/3]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>W = 2/5 - 1/3 + 3/4 - 1/3</ul>
+  	      <ul>W = 24/60 - 40/60 + 45/60</ul>
+  	      <ul>W = 29/60</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <ol>Find the work done by the force field <b>F</b>(x, y, z) = {x<b>i</b> + y<b>j</b> + z<b>k</b>} in moving an object along curve C parametrised by vector <b>r</b>(t) = {cos(πt)<b>i</b> + t<sup>2</sup><b>j</b> + sin(πt)<b>k</b>, for t in [0, 1]}.
+  	  
+  	    <br><br><li>The velocity vector function is the derivative of the positional vector: </li>
+  	      <ul><b>v</b>(t) = {-π sin(πt)<b>i</b> + 2t<b>j</b> + π cos(πt)<b>k</b>}</ul>
+  	    
+  	    <br><li>Setting <b>r</b>(t) as the argument of <b>F</b>: </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = cos(πt)<b>i</b> + t<sup>2</sup><b>j</b> + sin(πt)<b>k</b></ul>
+  	    
+  	    <br><li>The work W is solved using the following integration: </li>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(<b>F</b>(<b>r</b>(t)) ⋅ <b>v</b>(t)) dt</ul>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(< cos(πt), t<sup>2</sup>, sin(πt) > ⋅ < -π sin(πt), 2t, π cos(πt) >) dt</ul>
+  	      <ul>W = ∫<sub>0</sub><sup>1</sup>(-π sin(2πt)/2 + 2t<sup>3</sup> + π sin(2πt)/2) dt</ul>
+  	      <ul>W = [t<sup>4</sup>/2]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>W = 1/2</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 6: </b>
+  	  <ol>A fluid's velocity field is <b>F</b>(x, y, z) = {x<b>i</b> + z<b>j</b> + y<b>k</b>}. Find the fluid's flow along the helix <b>r</b>(t) = {cos(t)<b>i</b> + t<b>j</b> + sin(t)<b>k</b>, for t in [0, π/2]}.
+  	  
+  	    <br><br><li>The velocity vector <b>v</b> of the helix is: </li>
+  	      <ul><b>v</b>(t) = -sin(t)<b>i</b> + <b>j</b> + cos(t)<b>k</b></ul>
+  	    
+  	    <br><li>The velocity field vector in terms of t is: </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = cos(t)<b>i</b> + sin(t)<b>j</b> + t<b>k</b></ul>
+  	    
+  	    <br><li>The flow of the fluid is determined as shown: </li>
+  	      <ul>flow = ∫<sub>0</sub><sup>π/2</sup>(< cos(t), sin(t), t > ⋅ < -sin(t), 1, cos(t) >) dt</ul>
+  	      <ul>flow = ∫<sub>0</sub><sup>π/2</sup>(-sin(2t)/2 + sin(t) + t cos(t)) dt</ul>
+  	      <ul>flow = [cos(2t)/4 - cos(t) + t sin(t) + cos(t)]<sub>0</sub><sup>π/2</sup></ul>
+  	      <ul>flow = (-1/4 - 1/4) + π/2</ul>
+  	      <ul class="green">flow = (π - 1)/2</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 7: </b>
+  	  <ol>Find the circulation of the field <b>F</b>(x, y) = {(x - y)<b>i</b> + x<b>i</b>} around the circle <b>r</b>(t) = {cos(t)<b>i</b> + sin(t)<b>j</b>, for t in [0, 2π]}.
+  	  
+  	    <br><br><li>The velocity vector <b>v</b> is: </li>
+  	      <ul><b>v</b>(t) = -sin(t)<b>i</b> + cos(t)<b>j</b></ul>
+  	    
+  	    <br><li>Setting <b>r</b>(t) as the argument of <b>F</b>: </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = (cos(t) - sin(t)<b>i</b> + cos(t)<b>j</b>)</ul>
+  	    
+  	    <br><li>The circulation of the field vector is: </li>
+  	      <ul>circulation = ∫<sub>0</sub><sup>2π</sup>(< cos(t) - sin(t), cos(t) > ⋅ < -sin(t), cos(t) >) dt</ul>
+  	      <ul>circulation = ∫<sub>0</sub><sup>2π</sup>(-sin(2t)/2 + sin<sup>2</sup>(t) + cos<sup>2</sup>(t)) dt</ul>
+  	      <ul>circulation = ∫<sub>0</sub><sup>2π</sup>(1 - sin(2t)/2) dt</ul>
+  	      <ul>circulation = [t + cos(2t)/4]<sub>0</sub><sup>2π</sup></ul>
+  	      <ul>circulation = 2π</ul>
+  	      <ul>This assumes the field vector circulates around the circle in a counter-clockwise direction, hence why it's a positive result</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Flux Across Plane Curves</b>
+  	  <li>A curve on the xy-plane can be categorised as <b>simple</b> or <b>complex</b> (non-simple)</li>
+  	    <ul>Simple curves do not overlap at any time (one-to-one curve; one coordinate point for any t)</ul>
+  	    <ul>Complex curves overlap (more than one same coordinate point for any t)</ul>
+  	  
+  	  <br><li>A curve can also be classified using its <b>closed</b> or <b>open</b> (not closed) nature</li>
+  	    <ul>Closed curves always form a loop (a terminating point is an initial point)</ul>
+  	    <ul>Open curves do not form a loop (distinct initial & terminating point)</ul>
+  	  
+  	  <br><li>To determine the rate at which a fluid enters or leaves a region enclosed by a smooth simple closed curve C on the xy-plane, the line integral of the dot product vector field <b>F</b> & the normal unit vector <b>n</b> of C (pointing outwards) is calculated. The flow of <b>F</b> along C is its <b>flux</b>: </li>
+  	    <ul class="red">flux = ∫<sub>C</sub>(<b>F</b> ⋅ <b>n</b>) ds</ul>
+  	   
+  	   <br><li>The normal unit vector of a parametrised curve on the xy-plane is determined by taking the cross product of its unit tangent vector <b>T</b> & the z-unit vector <b>k</b>. Since the curve in terms of t can have 2 directions: clockwise or counterclockwise, the order of the cross product matters when determining the outward normal unit vector</li>
+  	     <ul>For a clockwise motion, the normal unit vector that points outward is the resulting vector of <b>k</b> ⨯ <b>T</b></ul>
+  	     <ul>For a counter-clockwise motion, the normal unit vector that points outward is the resulting vector of <b>T</b> ⨯ <b>k</b>. A counter-clockwise direction of a curve is the standard direction in Calculus</ul>
+  	   
+  	   <br><li>Assume curve C has the following parameteric equations: x = g(t), y = h(t), for t in [a, b]; and vector-field <b>F</b>(x, y) = {M(x, y)<b>i</b> + N(x, y)<b>j</b>}; then the following must be true: </li>
+  	     <ul><b>T</b> = (dx/ds)<b>i</b> + (dy/ds)<b>j</b></ul>
+  	     
+  	     <br><ul><b>n</b> = <b>T</b> ⨯ <b>k</b></ul>
+  	     <ul><b>n</b> = < dx/ds, dy/ds, 0 > ⨯ < 0, 0, 1 ></ul>
+  	     <ul><b>n</b> = (dy/ds)<b>i</b> - (dx/ds)<b>j</b></ul>
+  	   
+  	   <br><li>The line integral of <b>F</b> of the curve flowing towards the counter-clockwise direction can now be rewritten as: </li>
+  	     <ul>∫<sub>C</sub>(<b>F</b> ⋅ <b>n</b>) ds = ∫<sub>C</sub>(M(x, y) (dy/ds) - N(x, y) (dx/ds)) ds</ul>
+  	     <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ <b>n</b>) ds = ∳<sub>C</sub>(M(x, y) dy - N(x, y) dx)</ul>
+  	     <ul class="red">∫<sub>C</sub>(<b>F</b> ⋅ <b>n</b>) ds = ∫<sub>a</sub><sup>b</sup>(M(<b>r</b>(t)) h'(t) - N(<b>r</b>(r)) g'(t) dt)</ul>
+  	     <ul>The counter-clockwise integral ∳ hints the counter-clockwise direction of the curve which traces around the curve only once</ul>
+  	 </ul>
+  	
+  	<ul class="example"><b>Example 8: </b>
+  	  <ol>Find the flux of <b>F</b>(x, y) = {(x - y)<b>i</b> + x<b>j</b>} across the circle C = {x<sup>2</sup> + y<sup>2</sup> = 1} in the xy-plane.
+  	  
+  	    <br><br><li>Parametrising the curve in terms of t: </li> 
+  	      <ul>let x = cos(t),  y = sin(t),  for t in [0, 2π]</ul>
+  	      <ul>vector <b>r</b>(t) = cos(t)<b>i</b> + sin(t)<b>j</b></ul>
+  	      
+  	      <br><ul>dx = -sin(t) dt;  dy = cos(t) dt</ul>
+  	    
+  	    <br><li>Assigning the vector field in terms of <b>r</b>(t): </li>
+  	      <ul><b>F</b>(<b>r</b>(t)) = (cos(t) - sin(t))<b>i</b> + cos(t)<b>j</b></ul>
+  	   
+  	    <br><li>The c-clockwise integral and its evaluation to solve for the solve of <b>F</b> along the circle are: </li>
+  	      <ul>flux = ∳<sub>C</sub>((x - y) dy - x dx)</ul>
+  	      <ul>flux = ∫<sub>0</sub><sup>2π</sup>((cos(t) - sin(t))(cos(t)) - (cos(t))(-sin(t))) dt</ul>
+  	      <ul>flux = ∫<sub>0</sub><sup>2π</sup>(cos<sup>2</sup>(t) - sin(2t)/2 + sin(2t)/2) dt</ul>
+  	      <ul>flux = 1/2 ∫<sub>0</sub><sup>2π</sup>(1 + cos(2t)) dt</ul>
+  	      <ul>flux = 1/2 [t + sin(2t)/2]<sub>0</sub><sup>2π</sup></ul>
+  	      <ul>flux = 1/2 (2π)</ul>
+  	      <ul class="green">flux = π</ul>
+  	      <ul>The answer is positive, correctly demonstrating outward flux</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

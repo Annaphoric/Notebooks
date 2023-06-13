@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.3: Partial Derivatives</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.3: Partial Derivatives</h2>
+  	
+  	<ul class="topic"><b>Introduction</b>
+  	  <li class="blue">A partial derivative is the differentiation of an independent variable with respect to another independent variable</li>
+  	  <li>The tangent line of the curve z = f(x, y) at the point P = (a, b, f(a, b)) is given by the limit of the distance between f(a, b) & f(a + h, b) when dividing by h as h approaches zero. Since this limit involves a change in the x-coordinate, the result is referred to as the partial derivative of f with respect to x (∂f/∂x or f<sub>x</sub>). This partial derivative is shown as: </li>
+  	    <ul class="red">∂f(a, b)/∂x = lim<sub>h -> 0</sub>((f(a + h, b) - f(a, b)) / h) == true
+  	      <li>A partial derivative of f with respect to y (∂f/∂y or f<sub>y</sub>)is shown identical to the previous expression, except f(a + h, b) is replaced f(a, b + h)</li>
+  	    </ul>
+  	    
+  	  <br><li>Continuous partial derivatives of a function don't necessarily imply that the function is continuous itself</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <li>Given f(x, y) = {x<sup>2</sup> + 3xy + y - 1}, find a) ∂f/∂x; b) ∂f/∂y; at point (4, -5).</li>
+  	  
+  	    <br><ul>a)
+  	      <li>To find ∂f/∂x, y is treated as a constant and both sides are differentiated with respect to x: </li>
+  	        <ul>∂f/∂x = ∂(x<sup>2</sup> + 3xy + y - 1)/∂x</ul>
+  	        <ul>∂f/∂x = 2x + 3y</ul>
+  	      
+  	      <br><li>Substituting the respective variables with the given point: </li>
+  	        <ul>∂f(4, -5)/∂x = 2(4) + 3(-5)</ul>
+  	        <ul class="green">∂f(4, -5)/∂x = -7</ul>
+  	    </ul>
+  	    
+  	    <br><ul>b)
+  	      <li>To find ∂f/∂y, x is treated as a constant and both sides are differentiated with respect to y: </li>
+  	        <ul>∂f/∂y = ∂f(x<sup>2</sup> + 3xy + y - 1)/∂y</ul>
+  	        <ul>∂f/∂y = 3x + 1</ul>
+  	     
+  	      <br><li>Substituting the respective variables with the given point: </li>
+  	        <ul>∂f(4, -5)/∂y = 3(4) + 1</ul>
+  	        <ul class="green">∂f(4, -5)/∂y = 13</ul>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <li>Find ∂f/∂y given f(x, y) = y sin(xy).</li>
+  	    
+  	    <br><ul>This partial derivative is solved by letting x equal a constant and differentiating both sides with respect to y (Using Product Rule): 
+  	      <li>∂f/∂y = ∂(y sin(xy))/∂y</li>
+  	      <li class="green">∂f/∂y = sin(xy) + xy cos(xy)</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <li>Given f(x, y) = 2y / (y + cos(x)), find a) ∂f/∂x; b) ∂f/∂y;</li>
+  	    
+  	    <br><ul>a)
+  	      <li>Letting y be a constant (Using quotient rule): </li>
+  	        <ul>∂f/∂x = ∂(2y / (y + cos(x)))/∂x</ul>
+  	        <ul class="green">∂f/∂x = (2y)(sin(x)) / (y + cos(x))<sup>2</sup></ul>
+  	    </ul>
+  	    
+  	    <br><ul>b)
+  	      <li>Letting x be a constant (Using Quotient Rule): </li>
+  	        <ul>∂f/∂y = ∂(2y / (y + cos(x)))/∂y</ul>
+  	        <ul>∂f/∂y = (2(y + cos(x)) - 2y(1)) / (y + cos(x))<sup>2</sup></ul>
+  	        <ul class="green">∂f/∂y = cos(x) / (y + cos(x))<sup>2</sup></ul>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <li>Given the equation {yz - ln(z) = x + y} find ∂z/∂x.</li>
+  	    
+  	    <br><ul>Treating y as a constant (Using Implicit Differentiation): </ul>
+  	      <li>∂(yz - ln(z))/∂x = ∂(x + y)/∂x</li>
+  	      <li>y(∂z/∂x) - (1/z)(∂z/∂x) = 1</li>
+  	      <li>(y - 1/z)(∂z/∂x) = 1</li>
+  	      <li>((zy - 1) / z)(∂z/∂x) = 1</li>
+  	      <li class="green">∂z/∂x = z / (zy - 1)</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <ol>The plane {x = 1} intersects the paraboloid {z = x<sup>2</sup> + y<sup>2</sup>} at a parabola. Find the slope of the line tangent to the parabola at point (1, 2, 5).
+  	  
+  	    <br><br><li>The cross-section parabola at the corresponding plane exists within yz-plane. This means that the tangent line must also be within this same plane. In this case, the relevant independent variable is y and x would be a constant. Solving for the partial derivative of z with respect to y: </li>
+  	      <ul>∂z/∂y = ∂(x<sup>2</sup> + y<sup>2</sup>)/∂y</ul>
+  	      <ul>∂z/∂y = 2y</ul>
+  	    
+  	    <br><li>Substituting the variable for the respective point: </li>
+  	      <ul>∂z(1, 2, 5)/∂y = 2(2)</ul>
+  	      <ul class="green">∂z(1, 2, 5)/∂y = 4</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 6: </b>
+  	  <li>Given f(x, y, z) = x sin(y + 3z), find ∂f/∂z</li>
+  	    
+  	    <br><ul>x & y are treated as constants (Using Product Rule): 
+  	      <li>∂f/∂z = ∂(x sin(y + 3z))/∂z</li>
+  	      <li>∂f/∂z = 3x cos(y + 3z)</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 7: </b>
+  	  <li>Assume 3 resistors R<sub>1</sub>, R<sub>2</sub>, & R<sub>3</sub> are connected in parallel. Find ∂R<sub>eq</sub>/∂R<sub>2</sub> given the equation (1/R<sub>eq</sub>) = {(1/R<sub>1</sub>) + (1/R<sub>2</sub>) + (1/R<sub>3</sub>)} when R<sub>1</sub> = 30Ω, R<sub>2</sub> = 45Ω, R<sub>3</sub> = 90Ω</li>
+  	    
+  	    <br><ul>R<sub>1</sub> & R<sub>3</sub> are treated like constants: 
+  	      <li>∂(1/R<sub>eq</sub>)/∂R<sub>2</sub> = ∂((1/R<sub>1</sub>) + (1/R<sub>2</sub>) + (1/R<sub>3</sub>))/∂R<sub>2</sub></li>
+  	      <li> -(1/R<sub>eq</sub><sup>2</sup>)(∂R<sub>eq</sub>/∂R<sub>2</sub>) = -1/R<sub>2</sub><sup>2</sup></li>
+  	      <li>∂R<sub>eq</sub>/∂R<sub>2</sub> = R<sub>eq</sub><sup>2</sup>/R<sub>2</sub><sup>2</sup></li>
+  	      <li class="green">∂R<sub>eq</sub>/∂R<sub>2</sub> = (R<sub>eq</sub>/R<sub>2</sub>)<sup>2</sup></li>
+  	    </ul>
+  	    
+  	    <br><ul>R<sub>eq</sub> is solved by plugging in every resistance value into the given equation: 
+  	      <li>1/R<sub>eq</sub> = 1/(30) + 1/(45) + 1/(90)</li>
+  	      <li>R<sub>eq</sub> = (1/15)<sup>-1</sup></li>
+  	      <li>R<sub>eq</sub> = 15Ω</li>
+  	    </ul>
+  	    
+  	    <br><ul>Substituting the variables in the partial derivative with the resistance values given & solved:
+  	      <li>∂R<sub>eq</sub>/∂R<sub>2</sub> = ((15)/(45))<sup>2</sup></li>
+  	      <li>∂R<sub>eq</sub>/∂R<sub>2</sub> = (1/3)<sup>2</sup></li>
+  	      <li class="green">∂R<sub>eq</sub>/∂R<sub>2</sub> = 1/9</li>
+  	      <li>This means a change in R<sub>2</sub> affects R<sub>eq</sub> 1/9 times as much</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 8: </b>
+  	  <ol>Given f(x, y) = {0 for xy != 0, 1 for xy == 0}, prove that f is not continuous at the origin when approaching the point along the line {y = x}, but its partial derivatives are.
+  	    
+  	    <br><br><li>In order to determine continuity of f at the origin, we observe what happens when approaching the origin in the direction of {y = x}</li>
+  	      <ul>let y = x;
+  	        <li>Based on the definition of f, f is always equal to 0 when x or y is not equal to 0 except when either x or y is equal to 0. Based on the 2-path test, there are different values for the function when approaching the origin from {y = x} even before applying the limit. So, the function is not continuous towards the origin</li>
+  	      </ul>
+  	    
+  	    <br><li>To find the partial derivative of f with respect to x (∂f/∂x), y is set to be the constant value 0. Regardless of the value of x, f(x, y) will always be 1 & ∂f/∂x will always be 0. Similarly, to find ∂f/∂y, x is set to the constant value of 0. Then, regardless of the x-value, f(x, y) will also be 1 & ∂f/∂y will always be 0</li>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Second-order Partial Derivatives</b>
+  	  <li>Assume there is a function f(x, y), to solve for its 2<sup>nd</sup> order partial derivative with respect to one independent variable, the derivative will have to be taken twice while treating every other independent variable as a constant value. For instance, the 2<sup>nd</sup> partial derivative of f with respect to x is represented as ∂<sup>2</sup>f/∂x<sup>2</sup> or f<sub>x</sub><sub>x</sub>. This same notation is applied when taking the 2<sup>nd</sup> partial derivative of f with respect to y</li>
+  	  <li>The partial derivative of the partial derivative of f can also be mixed. When the function is differentiated first with respect to y, then with respect to x, the 2<sup>nd</sup> partial derivative is shown as ∂<sup>2</sup>f/(∂x ∂y) or f<sub>y</sub><sub>x</sub>. When the function is differentiated first with respect x, then with respect to y, the 2<sup>nd</sup> partial derivative is shown as ∂<sup>2</sup>f/(∂y ∂x) or f<sub>x</sub><sub>y</sub></li>
+  	  
+  	  <br><li>Clairaut's Theorem or The Mixed Derivative Theorem</li>
+  	    <ul>As long as a function f(x, y) and its first & second partial derivatives are all continuous on a point (a, b), then the mixed 2<sup>nd</sup>-order partial derivatives must both equal each other. This is represented as: 
+  	      <li class="red">f<sub>x</sub><sub>y</sub>(a, b) = f<sub>y</sub><sub>x</sub>(a, b)</li>
+  	      <li class="red">∂<sup>2</sup>f(a, b)/(∂y ∂x) = ∂<sup>2</sup>f(a, b)/(∂x ∂y)</li>
+  	    </ul>
+  	    <ul>This also applies to n-th order mixed derivatives as well!</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 9: </b>
+  	  <li>Given f(x, y) = x cos(y) + y e<sup>x</sup>, find all 4 linear combinations of 2<sup>nd</sup>-order partial derivatives.</li>
+  	  
+  	    <br><ul>Solving for ∂<sup>2</sup>f/∂x<sup>2</sup> in 2 steps: 
+  	      <li>∂f/∂x = ∂(x cos(y) + y e<sup>x</sup>)/∂x</li>
+  	      <li>∂f/∂x = cos(y) + y e<sup>x</sup></li>
+  	      
+  	      <br><li>∂<sup>2</sup>f/∂x<sup>2</sup> = ∂(cos(y) + y e<sup>x</sup>)/∂x</li>
+  	      <li class="green">∂<sup>2</sup>f/∂x<sup>2</sup> = y e<sup>x</sup></li>
+  	    </ul>
+  	    
+  	    <br><ul>Solving for ∂<sup>2</sup>f/∂y<sup>2</sup> in 2 steps: 
+  	      <li>∂f/∂y = ∂(x cos(y) + y e<sup>x</sup>)/∂y</li>
+  	      <li>∂f/∂y = -x sin(y) + e<sup>x</sup></li>
+  	      
+  	      <br><li>∂<sup>2</sup>f/∂y<sup>2</sup> = ∂(e<sup>x</sup> - x sin(y))/∂y</li>
+  	      <li class="green">∂<sup>2</sup>f/∂y<sup>2</sup> = -x cos(y)</li>
+  	    </ul>
+  	    
+  	    <br><ul>Solving for ∂<sup>2</sup>f/(∂y ∂x) using the first partial derivative with respective to x that was found (∂f/∂x): 
+  	      <li>∂<sup>2</sup>f/(∂y ∂x) = ∂(cos(y) + y e<sup>x</sup>)/∂y</li>
+  	      <li class="green">∂<sup>2</sup>f/(∂y ∂x) = e<sup>x</sup> - sin(y)</li>
+  	    </ul>
+  	    
+  	    <br><ul>Solving for ∂<sup>2</sup>f/(∂x ∂y) using the first partial derivative with respective to y that was found (∂f/∂y): 
+  	      <li>∂<sup>2</sup>f/(∂x ∂y) = ∂(e<sup>x</sup> - x sin(y))/∂x</li>
+  	      <li class="green">∂<sup>2</sup>f/(∂x ∂y) = e<sup>x</sup> - sin(y)</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 10: </b>
+  	  <ol>Given w = xy + e<sup>y</sup> / (y<sup>2</sup> + 1), find ∂<sup>2</sup>w/(∂x ∂y).
+  	  
+  	    <br><br><li>Since the function & its partial derivatives up to the 2<sup>nd</sup>-order are all continuous, ∂<sup>2</sup>w/(∂x ∂y) == ∂<sup>2</sup>w/(∂y ∂x) based on Clairaut's Theorem. In this case, ∂w/∂x is solved first instead of ∂w/∂y, simplifying the calculations: </li>
+  	      <ul>∂w/∂x = ∂(xy + e<sup>y</sup> / (y<sup>2</sup> + 1))/∂x</ul>
+  	      <ul>∂w/∂x = y</ul>
+  	    
+  	    <br><li>Now, the partial derivative with respect to y of this partial derivative is calculated to determine ∂<sup>2</sup>w/(∂y ∂x) and as a result, ∂<sup>2</sup>w/(∂x ∂y): </li>
+  	      <ul>∂<sup>2</sup>w/(∂x ∂y) = ∂<sup>2</sup>w/(∂y ∂x) (Clairaut's Theorem)</ul>
+  	      <ul>∂<sup>2</sup>w/(∂x ∂y) = ∂(y)/∂y</ul>
+  	      <ul class="green">∂<sup>2</sup>w/(∂x ∂y) = 1</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 11: </b>
+  	  <ol>Find f<sub>yxyz</sub> if f(x, y, z) = 1 - 2xy<sup>2</sup>z + x<sup>2</sup>y.
+  	    
+  	    <br><br><li>Solving for f<sub>y</sub>: </li>
+  	      <ul>f<sub>y</sub> = -4xyz + x<sup>2</sup></ul>
+  	    
+  	    <br><li>Solving for f<sub>yx</sub>: </li>
+  	      <ul>f<sub>yx</sub> = -4yz + 2x</ul>
+  	    
+  	    <br><li>Solving for f<sub>yxy</sub>: </li>
+  	      <ul>f<sub>yxy</sub> = -4z</ul>
+  	      
+  	    <br><li>Solving for f<sub>yxyz</sub>: </li>
+  	      <ul class="green">f<sub>yxyz</sub> = -4</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Differentiability</b>
+  	  <li>A <b>trace</b> is a curve created by a vertical plane that passed through the surface of a graph. Partial derivatives have the slope of the tangent line of the trace curves</li>
+  	  <li>If a function z = f(x, y) is differentiable & continuous at (a, b) and {f<sub>x</sub>(a, b) && f<sub>y</sub>(a, b)} == true, the following assumptions must be true as c, d, Δx, & Δy all approach zero: </li>
+  	    <ul>Δz = f(a + Δx, b + Δy) - f(a, b)</ul>
+  	    <ul class="red">Δz = f<sub>x</sub>(a, b) Δx + f<sub>y</sub>(a, b) Δy + c Δx + d Δy</ul>
+  	    <ul>f(a + Δx, b + Δy) - f(a, b) = f<sub>x</sub>(a, b) Δx + f<sub>y</sub>(a, b) Δy + c Δx + d Δy</ul>
+  	    <ul>This theorem is derived from the Linear Approximation Theorem used for the tangent line of a  single-variable function</ul>
+  	</ul>
+  	
+  </body>
+</html>

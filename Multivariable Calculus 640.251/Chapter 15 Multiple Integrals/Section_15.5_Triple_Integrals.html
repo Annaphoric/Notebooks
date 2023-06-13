@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.5: Triple Integrals</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.5: Triple Integrals</h2>
+  	
+  	<ul class="topic"><b>Triple Integrals in Rectangular Form</b>
+  	  <li>Triple integrals solve more general regions than double integrals. They can be used to calculate volumes of 3D shapes and their average values<li>
+  	    
+  	  <br><li>Assume f(x, y, z) is a function bounded by region D in space. The change in volume ΔV of any one rectangular box within the region is found by multiplying the change in each dimension: </li>
+  	    <ul>ΔV<sub>k</sub> = Δx<sub>k</sub> Δy<sub>k</sub> Δz<sub>k</sub></ul>
+  	  
+  	  <br><li>The sum of N amount of boxes (S<sub>N</sub>) is given by the equation: </li>
+  	    <ul>S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>)) ΔV<sub>k</sub></ul>
+  	  
+  	  <br><li>As long as f(x, y, z) = 1, taking the limit of N as it approaches infinity reveals the triple integral for the volume of the region: </li>
+  	    <ul>V = lim<sub>N ➝ ∞</sub>(S<sub>N</sub>)</ul>
+  	    <ul>V = ∭<sub>D</sub>(f(x, y, z)) dx dy dz</ul>
+  	    <ul>This integral can also be expressed as an iterating integral</ul>
+  	   
+  	  <br><li>The average value of the function can be found by dividing the triple integral by the volume made by the region</li>
+  	</ul>
+  	
+  	<ul class="topic"><b>Finding Limits of Integration</b>
+  	  <li>The limits are usually found in the order: dz dy dx</li>
+  	  <li>The bottom curve f<sub>1</sub>(x, y) and top curve f<sub>2</sub>(x, y) of increasing z are the z-limit of integration. The left curve g<sub>1</sub>(x) and the right curve g<sub>2</sub>(x) of increasing y are the y-limits of integration. The outward point a and inward point b of increasing x are the x-limits of integration</li>
+  	</ul>
+  	
+  	<ul class="topic"><b>Example 1: </b>
+  	  <ol>Given sphere S of radius r = 5 centred at the origin and region D under the sphere above the plane z = 3, find the limits of integration for evaluating function h(x, y, z) over the region D. 
+  	  
+  	    <br><br><li>The spherical surface is made by the equation {x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> = 25}. Based on the sketch of the sphere and the plane, the bottom curve is the plane z = 3 and the top curve is the region z = sqrt(25 - x<sup>2</sup> - y<sup>2</sup>). These are the z-limits. To solve for the y-limits, the system of equations is solved for the y-equations: </li>
+  	      <ul>(3) = sqrt(25 - x<sup>2</sup> - y<sup>2</sup>)</ul>
+  	      <ul>16 = x<sup>2</sup> + y<sup>2</sup></ul>
+  	      <ul>y = ± sqrt(16 - x<sup>2</sup>)</ul>
+  	      <ul>The leftmost curve is y = - sqrt(16 - x<sup>2</sup>) and the rightmost curve is y = sqrt(16 - x<sup>2</sup>). These are the y-limits</ul>
+  	    
+  	    <br><li>The smallest and highest x-values are found by setting the y-equations equal to zero: </li>
+  	      <ul>0 = 16 - x<sup>2</sup></ul>
+  	      <ul>x = ±4 (x-limits)</ul>
+  	    
+  	    <br><li>Therefore, the integral is written as: </li>
+  	      <ul>∫<sub>-4</sub><sup>4</sup>∫<sub>- sqrt(16 - x<sup>2</sup>)</sub><sup>sqrt(16 - x<sup>2</sup>)</sup>∫<sub>3</sub><sup>sqrt(25 - x<sup>2</sup> - y<sup>2</sup>)</sup>(h(x, y, z) dz) dy dx</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2 & 3: </b>
+  	  <li>Find the limits of integration for the triple integral of a function f(x, y, z) along a tetrahedral region made by the vertices {(1, 1, 0), (0, 1, 0), (0, 1, 1), the origin}, then calculate the volume of the surface by evaluating the integral for f(x, y, z) = 1. </li>
+  	  
+  	    <br><ul>The plane made by the vertices is z = {y - x}. Based on a sketch of the surface, the integral can be written as: 
+  	      <li>∫<sub>0</sub><sup>1</sup>(∫<sub>x</sub><sup>1</sup>(∫<sub>0</sub><sup>y - x</sup>(f(x, y, z)) dz) dy) dx</li>
+  	    </ul>
+  	    
+  	    <br><li>Evaluating the integral: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(∫<sub>x</sub><sup>1</sup>(∫<sub>0</sub><sup>y - x</sup>(1) dz) dy) dx</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(∫<sub>x</sub><sup>1</sup>(y - x) dy) dx</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>([y<sup>2</sup>/2 - xy]<sub>x</sub><sup>1</sup>) dx</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>((1 - x<sup>2</sup>)/2 + x<sup>2</sup> - x) dx</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(1/2 + x<sup>2</sup>/2 - x) dx</ul>
+  	      <ul>V = [x/2 + x<sup>3</sup>/6 - x<sup>2</sup>/2]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>V = 1/2 + 1/6 - 1/2</ul>
+  	      <ul class="green">V = 1/6</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>Find the volume of region D enclosed by the surfaces z = {x<sup>2</sup> + 3y<sup>2</sup>, 8 - x<sup>2</sup> - y<sup>2</sup>}.
+  	  
+  	    <br><br><li>The lower ellipse is z = {8 - x<sup>2</sup> - y<sup>2</sup>} and the upper ellipse is z = {x<sup>2</sup> + 3y<sup>2</sup>}. These are the z-limits of integration. Solving for y: </li>
+  	      <ul>x<sup>2</sup> + 3y<sup>2</sup> = 8 - x<sup>2</sup> - y<sup>2</sup></ul>
+  	      <ul>x<sup>2</sup> + 2y<sup>2</sup> = 4</ul>
+  	      <ul>y = ± sqrt(2 - x<sup>2</sup>/2)</ul>
+  	      <ul>There are the y-limits of integration</ul>
+  	    
+  	    <br><li>Setting y = 0 & solving for x: </li>
+  	      <ul>2 = x<sup>2</sup>/2</ul>
+  	      <ul>x = ± 2</ul>
+  	      <ul>These are the x-limits of integration</ul>
+  	    
+  	    <br><li>Setting up the integral for the volume of the region: </li>
+  	      <ul>V = ∫<sub>-2</sub><sup>2</sup>(∫<sub>-sqrt(2 - x<sup>2</sup>/2)</sub><sup>sqrt(2 - x<sup>2</sup>/2)</sup>(∫<sub>8 - x<sup>2</sup> - y<sup>2</sup></sub><sup>x<sup>2</sup> + 3y<sup>2</sup></sup>(1) dz) dy) dx</ul>
+  	      <ul>V = ∫<sub>-2</sub><sup>2</sup>(∫<sub>-sqrt(2 - x<sup>2</sup>/2)</sub><sup>sqrt(2 - x<sup>2</sup>/2)</sup>(2x<sup>2</sup> + 4y<sup>2</sup> - 8) dy) dx</ul>
+  	      <ul>V = 4 ∫<sub>-2</sub><sup>2</sup>([x<sup>2</sup>y + 2y<sup>3</sup>/3 - 4y]<sub>0</sub><sup>sqrt(2 - x<sup>2</sup>/2)</sup>) dx</ul>
+  	      <ul>V = 4 ∫<sub>-2</sub><sup>2</sup>(x<sup>2</sup> sqrt(2 - x<sup>2</sup>/2) + 2 sqrt(2 - x<sup>2</sup>/2)<sup>3</sup>/3 - 4 sqrt(2 - x<sup>2</sup>/2))</ul>
+  	      <ul class="green">V = 8π sqrt(2)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <ol>Find the average value of function f(x, y, z) = xyz bounded by the cubical region D = {x = 2, y = 2, z = 2, first octant}.
+  	  
+  	    <br><br><li>The iterating triple integral for the function is: </li>
+  	      <ul>value = ∫<sub>0</sub><sup>2</sup>(z ∫<sub>0</sub><sup>2</sup>(y ∫<sub>0</sub><sup>2</sup>(x) dx) dy) dz</ul>
+  	      <ul>value = 2 ∫<sub>0</sub><sup>2</sup>(z ∫<sub>0</sub><sup>2</sup>(y) dy) dz</ul>
+  	      <ul>value = 4 ∫<sub>0</sub><sup>2</sup>(z) dz</ul>
+  	      <ul>value = 8</ul>
+  	    
+  	    <br><li>Since the length of each side of the cube is 2 units, the volume of the cube is 8 units cubed. Calculating the average value of the integrated function: </li>
+  	      <ul>average = 8 / 8</ul>
+  	      <ul class="green">average = 1</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

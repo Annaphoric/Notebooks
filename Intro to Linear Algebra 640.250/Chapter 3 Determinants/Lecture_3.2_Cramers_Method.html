@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 3.2: Cramer's Method</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 3.2: Cramer's Method</h2>
+    
+    <ul class="topic"><b>Determinant Rules</b>
+      <li>Transposing the matrix or interchanging rows or columns gives the same final value for the determinant: </li>
+          <ul>det(A) = det(A<sup>t</sup>)</ul>
+      
+      <br><li>The determinant of the product of 2 matrices is the product of each matrix's determinant: </li>
+          <ul>det(A ⋅ B) = det(A) * det(B)</ul>
+      
+      <br><li>If an interchange operation is done before taking the determinant, the resulting determinant of the new matrix is the opposite of the determinant of the original matrix: </li>
+          <ul>det(C) = - det(A), where matrix C is matrix A with a row interchange operation</ul>
+      
+      <br><li>Multiplying a row by a scalar c and then determining its determinant is the same as multiplying the determinant of the matrix by the scalar: </li>
+        <ul>det(C) = c * det(A), where C is A with a scalar row multiplication</ul>
+        <ul>If the scalar being multiplied is -1 (like in the opposite of a matrix), the determinant of the matrix is also the opposite. The determinant of the opposite of a matrix depends on number of rows m: 
+          <li>det(-A) = (-1)<sup>m</sup> * det(A), where m = # of rows</li>
+        </ul>
+      
+      <br><li>If Gaussian Elimination is done on 2 rows of a matrix, the determinant of the new matrix is the same as the determinant of the original: </li>
+        <ul>det(C) = det(A), where C is A after one round of Gaussian Elimination</ul>
+      
+      <br><li>The determinant of a matrix in Row Echelon Form is the same of the product of its main diagonal</li>
+        <ul>det(D) = product(diagonal(D)), if D is in Row Echelon Form</ul>
+      
+      <br><li>The determinant of the inverse of a matrix is the same as the inverse of the determinant of the matrix: </li>
+        <ul>det(A<sup>-1</sup>) = 1 / det(A)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given matrix A = [[1 -2 2] [0 5 -1] [2 -4 1]], compute the determinant of A.
+        
+        
+        <br><br><li>Converting to Row Echelon Form: </li>
+          <ul>[[1 -2 2] [0 5 -1] [2 -4 1]]</ul>
+          <ul>[[1 -2 2] [0 5 -1] [2 -4 1]] (R3 = R3 - 2 R1)</ul>
+          <ul>[[<b>1</b> -2 2] [0 <b>5</b> -1] [0 0 -3]]</ul>
+          
+        <br><li>The determinant is the product of the main diagonal in the resulting matrix: </li>
+          <ul>det(A) = product(diagonal(A))</ul>
+          <ul>det(A) = 1 * 5 * -3</ul>
+          <ul class="green">det(A) = -15</ul>
+          <ul>The determinant can also be determined by co-factor expansion but it is much more tedious</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Given matrix B = [[1 -1 2 1] [2 -1 -1 4] [-4 5 -10 -6] [3 -2 10 -1]], find the determinant of B
+      
+        <br><br><li>Converting to Row Echelon Form: </li>
+          <ul>[[1 -1 2 1] [2 -1 -1 4] [-4 5 -10 -6] [3 -2 10 -1]]</ul>
+          <ul>[[<b>1</b> -1 2 1] [0 1 -5 2] [0 1 -2 -2] [0 1 4 -4]] (R2 = R2 - 2 R1;  R3 = R3 + 4 R1;  R4 = R4 - 3 R1)</ul>
+          <ul>[[<b>1</b> -1 2 1] [0 <b>1</b> -5 -2] [0 0 3 -4] [0 0 9 -6]] (R3 = R3 - R2;  R4 = R4 - R2)</ul>
+          <ul>[[<b>1</b> -1 2 1] [0 <b>1</b> -5 -2] [0 0 <b>3</b> -4] [0 0 0 6]] (R3 = R3 - 3 R4)</ul>
+          
+        <br><li>The determinant of the matrix is the product of the diagonal in the resulting matrix: </li>
+          <ul>det(B) = 1 * 1 * 3 * 6</ul>
+          <ul class="green">det(B) = 18</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given matrix A = [[1 2 -1] [0 -1 r] [3 4 7]], find values of r so that the matrix is non-invertable (or dependent).
+      
+        <br><br><li>The matrix would be dependent if the determinant of the matrix is zero. Performing Gaussian Elimination: </li>
+          <ul>[[1 2 -1] [0 -1 r] [3 4 7]]</ul>
+          <ul>[[<b>1</b> 2 -1] [0 -1 r] [0 -2 10]] (R3 = R3 - 3 R1)</ul>
+          <ul>[[<b>1</b> 2 -1] [0 <b>-1</b> r] [0 0 (10 - 2r)]] (R3 = R3 - 2 R2)</ul>
+        
+        <br><li>Solving for r when determinant is equal to zero: </li>
+          <ul>det(A) = -(10 - 2r)</ul>
+          
+          <br><ul>for(det(A) == 0): -(10 - 2r) = 0</ul>
+          <ul>10 - 2r = 0</ul>
+          <ul class="green">r = 5</ul>
+          <ul>if(r == 5): A is non-invertable & dependent</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Cramer's Method</b>
+      <li>A way to represent solutions of a square coefficient matrix (in a system of equations) given that the # of solutions is equal to the number of equations/rows/columns. Solutions are written as a ratio of determinants where the numerator is the determinant of the coefficient matrix with the respective column replaced by the equating vector and the denominator is the determinant of the original coefficient matrix. For the system of equations: {ax + cy = p; bx + dy = q}: </li>
+        <ul>[[a c] [b d]] * [[x] [y]] = [[p q]]</ul>
+        
+        <br><ul>x = det([[p c] [q d]]) / det([[a c] [b d]]);  y = det([[a p] [c q]]) / det([[a c] [b d]])</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Find the solutions to the given system of equations using Cramer's Method: {3x + 2y = -6; 6x + 5y = 9}.
+      
+        <br><br><li>Converting the system of equations to a matrix form: </li>
+          <ul>[[3 2] [6 5]] * [[x] [y]] = [[-6] [9]]</ul>
+        
+        <br><li>Using Cramer's method to solve for the variables: </li>
+          <ul>x = det([[-6 2] [9 5]]) / det([[3 2] [6 5]]);  y = det([[3 -6] [6 9]]) / det([[3 2] [6 5]])</ul>
+          <ul>x = (-30 - 18) / (15 - 12);  y = (27 - (-36)) / (15 - 12)</ul>
+          <ul>x = -48 / 3;  y = 63 / 3</ul>
+          <ul class="green">x = -16;  y = 21</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <ol>Given system of equations: {-2x + 3y + z = -2;  3x + y - z = 1;  -x + 2y + z = -1}. Solve for the possible solutions using Cramer's Method.
+      
+        <br><br><li>Converting to a matrix form: </li>
+          <ul>[[-2 3 1] [3 1 -1] [-1 2 1]] * [[x] [y] [z]] = [[-2] [1] [-1]]</ul>
+        
+        <br><li>Solving for the variables using Cramer's Method: </li>
+          <ul>x = det([[-2 3 1] [1 1 -1] [-1 2 1]]) / det([[-2 3 1] [3 1 -1] [-1 2 1]]);  y = det([[-2 -2 1] [3 1 -1] [-1 -1 1]]) / det([[-2 3 1] [3 1 -1] [-1 2 1]]);  z = det([[-2 3 -2] [3 1 1] [-1 2 -1]]) / det([[-2 3 1] [3 1 -1] [-1 2 1]])</ul>
+          <ul>...</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 1.5: Existence & Uniqueness</title>
+  </head>
+  <body>
+  		<h1>Existence & Uniqueness</h1>
+  		
+		  <ul class="topic"><b>Existence & Uniqueness</b>
+		    <li>The term <b>existence</b> relating to DEs refers to the presence of a solution for a DE</li>
+		    
+		    <br><li>The term <b>uniqueness</b> relating to DEs refers to the presence of only one solution for a DE</li>
+		    <br><li>In the real world, existence & uniqueness are always satisfied</li>
+		    
+		    <br><li>There are 2 theorems that classify first-order DEs: </li>
+		      <ul><b>Linear Theorem</b>
+		        <li>Consider linear DE: {y' + p(t) y = g(t)}; if functions p(t) & p(t) are continuous on interval I = (a, b) containing t<sub>0</sub>, then there exists a unique function y = f(t) that satisfies the DE for every t in I and y(t<sub>0</sub>) = y<sub>0</sub></li>
+		        <li>This is an explicit method for identifying continuity. Discontinuity occurs at points that do not satisfy the initial condition, where there is no solution.</li>
+		      </ul>
+		      
+		      <br><ul><b>Non-Linear Theorem</b>
+		        <li>Consider non-linear DE: {y' = f(t, y)}; assume f & ∂f/∂y are continuous and bounded by t ∈ (a, b) && y ∈ (c, d) containing (t<sub>0</sub>, y<sub>0</sub>), then there exists a unique solution within interval t ∈ (t<sub>0</sub> ± h) && t ∈ (a, b) that satisfies y(t<sub>0</sub>) = y<sub>0</sub>
+		        <li>This method is less explicit. The solution only exists within the same interval based on the initial condition</li>
+		  </ul>
+		  
+		  <ul class="example"><b>Example 1: </b>
+		    <ol><em>What is the maximum interval of existence for the solution given DE: {sin(t) y' + (t - 1) y = 1 / (t + 1)}; & IC: y(1) = 2;? What happens at IC: y(-2) = 5;?</em>
+		    
+		      <br><li>The DE in standard form is: {y' + (t - 1) y / sin(t) = 1 / (sin(t) (t + 1))}. In this case, discontinuites exist wherever a denominator is equal to zero. for t = π [N]: sin(t) == 0 (true) && for t = -1: t + 1 == 0 (true). Therefore a solution will exist within interval I = {t ∈ π (N)} && {t != -1}, where N = any integer. At IC: y(1) = 2, where t == 1 is true, the solution will exist for t ∈ (0, π)</li>
+		      
+		      <br><li>At IC: y(-2) = 5, where t == -2 is true, the solution will exist for t ∈ (-π, -1)</li>
+		    </ol>
+		  </ul>
+		  
+		  <ul class="example"><b>Example 2: </b>
+				  <ol><em>What do existence & uniqueness theorems say about the solution to DE: dy/dt = 1 + y<sup>2</sup>? Solve for y(t) given IC: y(0) = 0 || y(0) = 1? For what values of t do solutions exist?</em>
+				    
+				    <br><li>let f(t, y) = 1 + y<sup>2</sup>; Since this is a non-linear DE, it must be differentiated further to examine how the function behaves: </li>
+				      <ul>f(t, y) = 1 + y<sup>2</sup></ul>
+				      <ul>∂f/∂y = 2y</ul>
+				      <ul>Since there is a solution for all y, the solution relative to t will exist && be unique within the same interval that bounds t<sub>0</sub> for any IC: y(t<sub>0</sub>) = y<sub>0</sub>. (Not because f(t, y) & ∂f/∂y are continuous for all real numbers)</ul>
+				      
+				    <br><li>Solving for y(t) generally: </li>
+				      <ul>dy/dt = 1 + y<sup>2</sup></ul>
+				      <ul>dy / (1 + y<sup>2</sup>) = dt // Separating equation</ul>
+				      <ul>atan(y) = t + C // Integrating equations</ul>
+				      <ul>y(t) = tan(t + C)</ul>
+				      
+				    <br><li>For IC: y(0) = 0:</li>
+				      <ul>y(0) = tan(C) == 0</ul>
+				      <ul>C = atan(0)</ul>
+				      <ul>C = 0</ul>
+				      
+				      <br><ul>y(t) = tan(t) // This is the explicit solution</ul>
+				      <ul class="green">A solution will only exist for t ∈ (N [π] / 2); such as (-π/2, π/2) or (π/2, 3π/2)</ul>
+				    
+				    <br><li>For IC: y(0) = 1: </li>
+				      <ul>y(0) = tan(C) == 1</ul>
+				      <ul>C = atan(1)</ul>
+				      <ul>C = π/4</ul>
+				      
+				      <br><ul>y = tan(t + π/4) // This is the explicit solution</ul>
+				      <ul class="green">A solution will only exist for t ∈ (N [π] / 2 + π/4); such as (-3π/4, π/4) or (π/4, 3π/4)</ul>
+				  </ol>
+				</ul>
+				
+  </body>
+</html>

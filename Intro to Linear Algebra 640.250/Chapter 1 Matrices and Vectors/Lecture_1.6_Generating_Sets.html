@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.6: Generating Sets</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.6: Generating Sets</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Find values of r so that vector <b>u</b> = [[2] [r] [-1]] lies within the span/plane of set S = {<b>v</b>, <b>w</b>} where <b>v</b> = [[1] [0] [-1]] and <b>w</b> = [[-1] [3] [2]]?
+      
+        <br><br><li>In order for <b>u</b> to lie within the span/plane of the given set, it must be a legit LCOV of the set: </li>
+          <ul>a<b>v</b> + b<b>w</b> = <b>u</b></ul>
+          <ul>a [[1] [0] [-1]] + b [[-1] [3] [2]] = [[2] [r] [-1]]</ul>
+          <ul>[[a] [0] [-a]] + [[-b] [3b] [2b]] = [[2] [r] [-1]]</ul>
+          <ul>[[a - b] [3b] [2b - a]] = [[2] [r] [-1]]</ul>
+          <ul>[[1 -1] [0 3] [-1 2]]  [[a] [b]] = [[2] [r] [-1]]</ul>
+        
+        <br><li>Converting to Row Echelon Form: </li>
+          <ul>E3 = E3 + E1</ul>
+          
+          <br><ul>[[1 -1] [0 3] [0 1]]  [[a] [b]] = [[2] [r] [1]]</ul>
+          
+          <br><ul>E3 = E3 - 3 E2</ul>
+          
+          <br><ul>[[1 -1] [0 3] [0 0]]  [[a] [b]] = [[2] [r] [1 - 3r]]</ul>
+          
+        <br><li>Converting to Reduced Echelon Form: </li>
+          <ul>E2 = E2 / 3</ul>
+          
+          <br><ul>[[1 -1] [0 1] [0 0]]  [[a] [b]] = [[2] [r/3] [1 - 3r]]</ul>
+        
+        <br><li>Solving system of equations for r: </li>
+          <ul>{a - b = 2;  b = r/3;  0 = 1 - 3r}</ul>
+          <ul class="green">r = 1/3;  b = 1/9;  a = 19/9</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Does vector <b>p</b> = [[-1] [0] [2] [3]] lie in the span/plane of set S = {[[1] [2] [-1] [1]],  [[2] [-1] [1] [0]],  [[-1] [2] [0] [3]]}?
+      
+        <br><br><li>vector <b>p</b> must be a linear combination of the vectors in set S: </li>
+          <ul>x [[1] [2] [-1] [1]] + y [[2] [-1] [1] [0]] + z [[-1] [2] [0] [3]] = [[-1] [0] [2] [3]]</ul>
+          <ul>[[1 2 -1] [2 -1 2] [-1 1 0] [1 0 3]]  [[x] [y] [z]] = [[-1] [0] [2] [3]]</ul>
+          <ul>Pivots of 1 are preferred</ul>
+          
+        <br><li>Converting the matrices to Reduced Row Echelon Form: </li>
+          <ul>[[<b>1</b> 2 -1] [0 -5 4] [0 3 -1] [0 -2 4]]  [[x] [y] [z]] = [[-1] [2] [1] [4]]  (E2 = E2 - 2 E1;  E3 = E3 + E1;  E4 = E4 - E1)</ul>
+          <ul>[[<b>1</b> 2 -1] [0 -5 4] [0 3 -1] [0 -1 2]]  [[x] [y] [z]] = [[-1] [2] [1] [2]]  (E4 = E4 / 2)</ul>
+          <ul>[[<b>1</b> 2 -1] [0 <b>-1</b> 2] [0 3 -1] [0 -5 4]]  [[x] [y] [z]] = [[-1] [2] [1] [2]]  (E2 = E4;  E4 = E2)</ul>
+          <ul>[[<b>1</b> 2 -1] [0 <b>-1</b> 2] [0 0 <b>5</b>] [0 0 -6]]  [[x] [y] [z]] = [[-1] [2] [7] [-8]]  (E3 = E3 + 3 E2;  E4 = E4 - 5 E2)</ul>
+          <ul>[[<b>1</b> 2 -1] [0 <b>-1</b> 2] [0 0 <b>5</b>] [0 0 0]]  [[x] [y] [z]] = [[-1] [2] [7] [2/5]]  (E4 = E4 + 6 E3 / 4)</ul>
+          <ul>Based on the last equation, there is no solution to the system of equations</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Generating Sets</b>
+      <li>A generating set of vectors S = {<b>v<sub>1</sub></b>, <b>v<sub>2</sub></b>...<b>v<sub>n</sub></b>} in n-dimensional space is a set of vectors for which the span of S = R<sup>n</sup> (all real numbers in any dimensional space)</li>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Is set S = {[[1] [0]], [[3] [0]]} a generating set?</li>
+      
+      <br><ul>This set is not a generating set because its span is [[a + 3b] [0]] where a & b are any real number. This includes any real number in a 1-dimensional line (x-axis) but not the 2-dimensional plane (xy-plane) in which the vectors lie in</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Is the span of set S = {[[-1] [2] [1]], [[-1] [1] [3]], [[1] [-3] [1]]} equal to R<sup>3</sup>?
+      
+        <br><br><li>If the system of equations is consistent or if the rank of S is equal to 3, the set is equal to R<sup>3</sup>. Converting to Row Echelon Form: </li>
+          <ul>[[-1 -1 1] [2 1 -3] [1 3 1]]</ul>
+          <ul>[[<b>-1</b> -1 1] [0 -1 -1] [0 -2 2]]  (E2 = E2 + 2 E1; E3 = E3 + E1)</ul>
+          <ul>[[<b>-1</b> -1 1] [0 <b>-1</b> -1] [0 0 <b>4</b>]]  (E3 = E3 - 2 E2)</ul>
+          <ul class="green">Since there are 3 pivots, the rank of S is 3, which is equal to the number of dimensions where the vectors lie. This means the span of S is all real numbers in 3D</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

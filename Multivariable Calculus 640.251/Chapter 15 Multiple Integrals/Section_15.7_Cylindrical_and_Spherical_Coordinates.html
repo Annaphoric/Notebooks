@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.7: Cylindrical & Spherical Coordinates</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.7: Cylindrical & Spherical Coordinates</h2>
+  	
+  	<ul class="topic"><b>Cylindrical Coordinates</b>
+  	  <li>Cylindrical coordinates are a combination of polar coordinates & rectangular coordinates. They have the form (r, θ, z) where r is the distance from a point within the xy-plane tothe origin (same as in polar form), θ is the angle from the positive x-axis increasing counter-clockwise when observing from the positive z-axis (same as in polar form), and z is the position of a point along the z-axis from the origin (rectangular vertical coordinate)</li>
+  	  
+  	  <br><li>The equations relating cylindrical coordinates to rectangular coordinates are the same as those with polar coordinates: </li>
+  	    <ul>x = r cosθ</ul><ul>y = r sinθ</ul><ul>r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup></ul><ul>tanθ = y/x</ul><ul>z = z</ul>
+  	  
+  	  <br><li>The equation r = 1 in cylindrical form is a cylinder of radius 1 for z = all real numbers. The equation r = 0 is the x-axis</li>
+  	</ul>
+  	
+  	<ul class="topic"><b>Integration in Cylindrical Form</b>
+  	  <li>To compute the volume of a given region D in cylindrical coordinates, the region is partitioned into cylindrical wedges. For the k-th wedge, the respective dimensions are Δr<sub>k</sub>, Δθ<sub>k</sub>, Δz<sub>k</sub>. The sum of all every wedge that makes up region D is the Riemann sum S<sub>N</sub> of wedges where N is the number of wedges. The triple integral is revealed as the number of wedges approaches infinity. Given a function f(r, θ, z) bounded by D, the Riemann sum and triple integral are written as: </li>
+  	    <ul class="red">S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(r<sub>k</sub>, θ<sub>k</sub>, z<sub>k</sub>) r<sub>k</sub>) Δr<sub>k</sub> Δθ<sub>k</sub> Δz<sub>k</sub></ul>
+  	    <ul>lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∭<sub>D</sub>(f(r, θ, z)) dV</ul>
+  	    <ul class="red">lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∭<sub>D</sub>(f(r, θ, z) r) dr dθ dz</ul>
+  	  
+  	  <br><li>The θ-limits of integration are restricted from zero to 2π from one angle to another. The lowest possible limit for r is zero</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Find the limits of integration in cylindrical coordinates for integrating the function f(r, θ, z) over region D = {z = 0, z = x<sup>2</sup> + y<sup>2</sup>, x<sup>2</sup> + (y - 1)<sup>2</sup> = 1}.
+  	  
+  	    <br><br><li>The z-limits are z = [0, r<sup>2</sup>]. To find the r-limits, the third equation is converted to a polar form: </li>
+  	      <ul>x<sup>2</sup> + y<sup>2</sup> - 2y + 1 = 1</ul>
+  	      <ul>r<sup>2</sup> = 2r sinθ</ul>
+  	      <ul class="green">r = {0, 2 sinθ}</ul>
+  	      
+  	    <br><li>Solving for the θ-limits: </li>
+  	      <ul>0 = 2 sinθ</ul>
+  	      <ul class="green">θ = {0, π}</ul>
+  	     
+  	    <br><li>The integral is written as: </li>
+  	      <ul class="green">∫<sub>0</sub><sup>π</sup>(∫<sub>0</sub><sup>2 sinθ</sup>(∫<sub>0</sub><sup>r<sup>2</sup></sup>(f(r, θ, z) r) dz) dr) dθ</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Find the centroid (centre of mass) of the solid bounded laterally by the cylinder {x<sup>2</sup> + y<sup>2</sup> = 4} and vertically by {z = 0, x<sup>2</sup> + y<sup>2</sup>}.
+  	  
+  	    <br><br><li>Converting the bound equations to a polar form: </li>
+  	      <ul>z = {0, r<sup>2</sup>} (z-limits);  r = {0, 2} (r-limits);  θ = {0, 2π} (θ-limits)</ul>
+  	    
+  	    <br><li>Solving for the mass m given the density equal to one: </li>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(∫<sub>0</sub><sup>r<sup>2</sup></sup>(r) dz) dr) dθ</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r<sup>3</sup>) dr) dθ</ul>
+  	      <ul>m = 4 ∫<sub>0</sub><sup>2π</sup>(1) dθ</ul>
+  	      <ul>m = 8π</ul>
+  	    
+  	    <br><li>Since the centroid lies in the centre with respect to x & y, the x and y coordinates of the centre of mass are both zero. To solve for the z-coordinate, the first z-moment (M<sub>xy</sub>) is is found: </li>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup> r(∫<sub>0</sub><sup>r<sup>2</sup></sup>(z) dz) dr) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 1/2 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>2</sup>(r<sup>5</sup>) dr) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 64/12 ∫<sub>0</sub><sup>2π</sup>(1) dθ</ul>
+  	      <ul>M<sub>xy</sub> = 32π/3</ul>
+  	      
+  	    <br><li>Solving for the z-coordinate c of the centroid: </li>
+  	      <ul>c = M<sub>xy</sub> / m</ul>
+  	      <ul>c = (32π/3) / (8π)</ul>
+  	      <ul>c = 4/3</ul>
+  	      <ul class="green">Therefore the centroid is the point (0, 0, 4/3)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Spherical Coordinates</b>
+  	  <li>These coordinates locate points using 1 distance measurement and 2 angle measurements unlike cylindrical (which uses 2 distance & 1 angle measurement). It has the form (ρ, φ, θ). The first coordinate ρ is the distance from a point to the origin (can never be (-)). The second coordinate φ is the angle displaced from the z-axis (can only be from 0 to π). The third coordinate θ is the angle displaced from the x-axis, increasing counter-clockwise towards the y-axis when looking for the positive z-axis (can only be from 0 to 2π).</li>
+  	  
+  	  <br><li>Equations relating Spherical Coordinates to Cartesian & Cylindrical Coordinates: </li>
+  	    <ul>x = r cosθ = ρ cosθ sinφ</ul><ul>y = r sinθ = ρ sinθ cosφ</ul><ul>z = z = ρ cosφ</ul><ul>x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup> = ρ<sup>2</sup> sin<sup>2</sup>φ</ul><ul>x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> = r<sup>2</sup> + z<sup>2</sup> = ρ<sup>2</sup></ul>
+  	
+  	  <br><li>The equation ρ = 1 is a sphere with a radius of one. The equation φ = π/3 is a cone opening up towards the (+) z-axis. The equation θ = π/3 is a half-plane originating from the z-axis</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <li>Convert the Cartesian equation {x<sup>2</sup> + y<sup>2</sup> + (z - 1)<sup>2</sup> = 1} into a spherical form.</li>
+  	    
+  	    <br><ul>Simplifying and making the appropriate substitutions: 
+  	      <li>x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> - 2z + 1 = 1</li>
+  	      <li>ρ<sup>2</sup> - 2ρ cosφ = 0</li>
+  	      <li class="green">ρ = 2 cosφ</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <li>Convert the Cartesian equation {z<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup>} into a spherical form. </li>
+  	  
+  	    <br><ul>Making the appropriate substitutions & simplifying: 
+  	      <li>ρ<sup>2</sup> cos<sup>2</sup>φ = ρ<sup>2</sup> sin<sup>2</sup>φ</li>
+  	      <li>cosφ = sinφ</li>
+  	      <li>φ = π/4</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Integration in Spherical Form</b>
+  	  <li>Assume spherical function f(ρ, φ, θ) is bounded by region D made up of N spherical wedges. The k-th wedge has the dimensions: Δρ<sub>k</sub>, Δφ<sub>k</sub>, & Δθ<sub>k</sub>. The Riemann sum S<sub>N</sub> is the sum of every wedge's volume. The triple integral is expressed by letting N approach infinity. These are written as: </li>
+  	    <ul class="red">S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(ρ<sub>k</sub>, φ<sub>k</sub>, θ<sub>k</sub>) ρ<sub>k</sub><sup>2</sup> sinφ<sub>k</sub>) Δρ<sub>k</sub> Δφ<sub>k</sub> Δθ<sub>k</sub></ul>
+  	    <ul class="red">lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∭<sub>D</sub>(f(ρ, φ, θ) ρ<sup>2</sup> sinφ) dρ dφ dθ</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <li>Find the volume of the ice cream cone made by region D = {ρ = 1, φ = π/3}. </li>
+  	    
+  	    <br><ul>The limits of integration are: 
+  	      <li>ρ = {0, 1};  φ = {0, π/3};  θ = {0, 2π}</li>
+  	    </ul>
+  	    
+  	    <br><ul>The volume V of the ice cream cone is: 
+  	      <li>V = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>(∫<sub>0</sub><sup>1</sup>(ρ<sup>2</sup> sinφ) dρ) dφ) dθ</li>
+  	      <li>V = 1/3 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>(sinφ) dφ) dθ</li>
+  	      <li>V = -1/3 ∫<sub>0</sub><sup>2π</sup>(cos(π/3) - cos(0)) dθ</li>
+  	      <li>V = -1/3 ∫<sub>0</sub><sup>2π</sup>(1/2 - 1) dθ</li>
+  	      <li class="green">V = π/3</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 6: </b>
+  	  <ol>A solid of density δ = 1 occupies same ice cream cone region as the previous example. Find the solid's z-moment of inertia.
+  	    
+  	    <br><br><li>The square of the distance from the z-axis to the solid is {x<sup>2</sup> + y<sup>2</sup>}. In spherical coordinates, this distance is written as ρ<sup>2</sup> sin<sup>2</sup>φ. The limits of integration remain the same. Therefore, the integral for the inertial z-moment (I<sub>z</sub>) is written as: </li>
+  	      <ul>I<sub>z</sub> = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>(∫<sub>0</sub><sup>1</sup>((ρ<sup>2</sup>sin<sup>2</sup>φ)(ρ<sup>2</sup>sinφ)) dρ) dφ) dθ</ul>
+  	      <ul>I<sub>z</sub> = ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>(sin<sup>3</sup>φ ∫<sub>0</sub><sup>1</sup>((ρ<sup>4</sup>) dρ) dφ) dθ</ul>
+  	      <ul>I<sub>z</sub> = 1/5 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>(sin<sup>3</sup>φ) dφ) dθ</ul>
+  	      <ul>I<sub>z</sub> = 1/5 ∫<sub>0</sub><sup>2π</sup>(∫<sub>0</sub><sup>π/3</sup>((1 - cos<sup>2</sup>φ)sinφ) dφ) dθ</ul>
+  	      <ul>I<sub>z</sub> = -1/5 ∫<sub>0</sub><sup>2π</sup>([cosφ - cos<sup>3</sup>φ/3]<sub>0</sub><sup>π/3</sup>) dθ</ul>
+  	      <ul>I<sub>z</sub> = -1/5 ∫<sub>0</sub><sup>2π</sup>((1/2 - 1) - (1/8 - 1)/3) dθ</ul>
+  	      <ul>I<sub>z</sub> = -1/5 ∫<sub>0</sub><sup>2π</sup>(7/24 - 1/2) dθ</ul>
+  	      <ul>I<sub>z</sub> = 1/24 ∫<sub>0</sub><sup>2π</sup>(1) dθ</ul>
+  	      <ul class="green">I<sub>z</sub> = π/12</ul>
+  	  </ol>
+  	</ul>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 2.4: Analytical Methods for Special Systems</title>
+  </head>
+  
+  <body>
+    <h1>Section 2.4: Analytical Methods for Special Systems</h1>
+    
+    <ul class="topic"><b>Checking Solutions</b>
+      <li>Solutions to a system of DEs can be checked by simple derivation & substitution</li>
+      
+      <br><li>let SoE {dx/dy = f(x, y); dy/dt = g(x, y)}, solution vector <b>Y</b>(t) = (x(t), y(t)), vector field <b>F</b>(x, y) = (f(x, y), g(x, y)): </li>
+        <ul>A solution <b>Y</b><sub>0</sub> = (x<sub>0</sub>, y<sub>0</sub>) to the DE would be one that satisfies both differentials of the system: 
+          <li>(f(x<sub>0</sub>, y<sub>0</sub>) == x<sub>0</sub>') && (g(x<sub>0</sub>, y<sub>0</sub>) == y<sub>0</sub>') must be true</li>
+          <li>This solution satisfies an initial condition <b>Y</b>(t<sub>0</sub>) = (a, b) only if <b>Y</b>(t<sub>0</sub>) = (x(t<sub>0</sub>), y(t<sub>0</sub>)) == (a, b) is true</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Decoupled Systems</b>
+      <li>A system is said to be <b>decoupled</b> if the rate of change for a dependent variable depends only on the dependent variable itself</li>
+      <li>A system is completely decoupled if every equation within the system depends only on its respective variable</li>
+      <li>A system is partially decoupled if at least one but not all of the equations depends only on its respective variable</li>
+      
+      <br><li>The solution to any completely decoupled system {dx/dt = f(x), dy/dt = g(y)} is <b>Y</b>(t) = (x(t), y(t)) = (c e<sup>f'(x) t</sup>, d e<sup>g'(y) t</sup>), where c & d are constants that satisfy a given IC</li>
+      <li>The solution to a partially decoupled system is based on the Extended Linearity Principle which says that the general solution to a nonhomogenous (coupled) equation is the sum of its associated homogenous equation (decoupled) & one specific solution to the nonhomogenous equation</li>
+        <ul>To solve for these, the solution to the decoupled equation will first have to found and substituted into the coupled equation</ul>
+        <ul>a-substitution is then used to solve for one solution to the coupled equation</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given SoE {dx/dt = 2x - y; dy/dt = x - 2y}, determine if solution vector <b>Y</b>(t) = (e<sup>-t</sup>, 3e<sup>-t</sup>) satisfies IC <b>Y</b>(0) = (1, 3).
+      
+        <li>Showing that the solution vector satisfies the system: </li>
+          <ul>d<b>Y</b>/dt = (-e<sup>-t</sup>, -3e<sup>-t</sup>)</ul>
+          
+          <br><ul>dx/dt (e<sup>-t</sup>, 3e<sup>-t</sup>) = 2(e<sup>-t</sup>) - (3e<sup>-t</sup>) == -e<sup>t</sup></ul>
+          <ul>-e<sup>-t</sup> = -e<sup>-t</sup> (True)</ul>
+          
+          <br><ul>dy/dt (e<sup>-t</sup>, 3e<sup>-t</sup>) = (e<sup>-t</sup>) - 2(3e<sup>-t</sup>) == -3e<sup>-t</sup></ul>
+          <ul>-5e<sup>-t</sup> == -3e<sup>-t</sup> (False)</ul>
+          <ul>Since this equality leads to a false statement, the IC cannot even be considered. The given solution is not a solution to the DE</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

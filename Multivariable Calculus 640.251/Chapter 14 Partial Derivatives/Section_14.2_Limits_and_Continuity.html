@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.2: Limits & Continuity</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.2: Limits & Continuity</h2>
+  	
+  	<ul class="topic"><b>Limits of Multivariable Functions</b>
+  	  <li>Given an input of (a, b), if f(x, y) is arbitrarily close to a real number L, L is referred to as the limit of f(x, y). The distance between (x, y) & (a, b) cannot be zero but can be infinitely close to zero. The limit can be reached afromany direction, unlike single-variable functions which can only be reached from the left & right. In order for the limit to exist, it must be able to be reached from any direction. This limit is shown as: </li>
+  	    <ul>lim<sub>(x, y) -> (a, b)</sub>(f(x, y)) = L</ul>
+  	  
+  	  <br><li>The follow assumptions must also be true: </li>
+  	    <ul>For all ε > 0, there exists a δ > 0 for all (x, y) in the domain of f. δ is the radius r of the circle centered at (x<sub>0</sub>, y<sub>0</sub>). (x, y) can exist within any points within the boundaries of (L ± ε), making up the circle</ul>
+  	    <ul>|f(x, y) - L| < ε</ul>
+  	    <ul>r = sqrt((x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup>)</ul>
+  	    <ul>0 < r < δ or r ∈ (0, δ)</ul>
+  	  
+  	  <br><li>Limits for multivariable functions share very similar principles as single-variable functions</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <li>Calculate the following limits: a) lim<sub>(x, y) -> (0, 1)</sub>((x - xy + 3) / (x<sup>2</sup>y + 5xy - y<sup>3</sup>)); b) lim<sub>(x, y) -> (3, -4)</sub>(sqrt(x<sup>2</sup> + y<sup>2</sup>));</li>
+  	  
+  	    <br><ul>a)
+  	      <li>This limit can be solved by simply plugging in the given inputs for (x, y):</li>
+  	        <ul>(0 - (0)(1) + 3) / ((0)(1) + 5(0)(1) - 1</ul>
+  	        <ul>(3) / (-1)</ul>
+  	        <ul class="green">-3</ul>
+  	    </ul>
+  	    
+  	    <br><ul>b)
+  	      <li>Likewise, the limit is solved by substituting each respective input: </li>
+  	        <ul>sqrt((3)<sup>2</sup> + (-4)<sup>2</sup>)</ul>
+  	        <ul>sqrt(9 + 16)</ul>
+  	        <ul class="green">5</ul>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Calculate the limit {lim<sub>(x, y) -> (0, 0)</sub>((x<sup>2</sup> - xy) / (sqrt(x) - sqrt(y))}.
+  	    
+  	    <br><br><li>Since plugging in the inputs for (x, y) would lead to an irrational fraction, another method will have to be used for solving this limit. Try: </li>
+  	      <ul>let y = x;
+  	        <li>(x<sup>2</sup> - x<sup>2</sup>) / (sqrt(x) - sqrt(x))</li>
+  	        <li>0 / 0 (Error: indeterminant fraction)</li>
+  	      </ul>
+  	      <ul>Multiply by the conjugate fraction {(sqrt(x) + sqrt(y)) / (sqrt(x) + sqrt(y)) = 1}
+  	        <li>((x<sup>2</sup> - xy)(sqrt(x) + sqrt(y))) / ((sqrt(x) - sqrt(y))(sqrt(x) + sqrt(y)))</li>
+  	        <li>(x<sup>2</sup> sqrt(x) + x<sup>2</sup> sqrt(y) - xy sqrt(x) - xy sqrt(y)) / (x - y)</li>
+  	        <li>((x sqrt(x)(x - y)) + (x sqrt(y)(x - y))) / (x - y)</li>
+  	        <li>x sqrt(x) + x sqrt(y)</li>
+  	        <li>x(sqrt(x) + sqrt(y))</li>
+  	        
+  	        <br><li>lim<sub>(x, y) -> (0, 0)</sub>(x(sqrt(x) + sqrt(y)))</li>
+  	        <li>((0)(sqrt(0) + sqrt(0)))</li>
+  	        <li class="green">0</li>
+  	      </ul>
+  	    
+  	    <br><li>Since {y - x} was cancelled out from the expression, it can be inferred that y = x is not part of the domain of f if f(x, y) = the original expression</li>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Find the limit {lim<sub>(x, y) -> (0, 0)</sub>(4xy<sup>2</sup> / (x<sup>2</sup> + y<sup>2</sup>))} if it exists.
+  	    
+  	    <br><br><li>Try: Substitution;</li>
+  	      <ul>(4(0)(0)) / ((0)(0))</ul>
+  	      <ul>0 / 0 (Error: Indeterminant expression)</ul>
+  	   
+  	    <br><li>Try: let y = x;</li>
+  	      <ul>4x<sup>3</sup> / (2x<sup>2</sup>)</ul>
+  	      <ul>2x</ul>
+  	      
+  	      <br><ul>lim<sub>(x, y) -> (0, 0)</sub>(2x)</ul>
+  	      <ul class="green">0</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <li>Given f(x, y) = y/x, does lim<sub>(x, y) -> (0, 0)</sub>(f(x, y)) exist?</li>
+  	    
+  	    <br><ul>Letting y = x leads to the expression f(x, x) = x/x = 1. This implies that on the limit is always 1 on the line {y = x} regardless of the limit inputs. If y were any other value, other than x, and the limit was applied to the expression, an indeterminant expression error would be raised. Therefore, this specific limit does not exist because it is only rational at the direction of the line {y = x} but not any other region</ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Continuity of Multivariable Functions</b>
+  	  <li>In order for a function f(x, y) to be continuous at point (a, b), it must follow 3 rules: </li>
+  	    <ul>f(a, b) == true</ul>
+  	    <ul>lim<sub>(x, y) -> (a, b)</sub>(f(x, y)) == true = L (from ALL directions)</ul>
+  	    <ul>lim<sub>(x, y) -> (a, b)</sub>(f(x, y)) = f(a, b)</ul>
+  	  <li>The function is continuous at every point if the above rules apply for (a, b) ∈ (domain of f)</li>
+      <li>If both a multivariable function f(x, y) & single-variable function g(t) are continuous, then the composition h(x, y) = g(f(x, y)) is also continuous</li>
+  	  
+  	  <br><li>The <b>2-path test</b> is the concept of testing the function for a specific limit along different paths. If a different result is achieved when attempting to find a limit along 2 different routes, then the limit is classified as non-existent (false)</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 5: </b>
+  	  <li>Show that the following function is continuous at every point except the origin f(x, y) = {2xy / (x<sup>2</sup>+ y<sup>2</sup>) for (x, y) != (0, 0), 0 for (x, y) == (0, 0)}</li>
+  	    
+  	    <br><ul>To determine whether this function is continuous everywhere except the origin, we must find the limit of the function as (x, y) approaches (0, 0) to prove that the function is, in fact, not continuous at the origin. Direct substitution would lead to an indeterminant expression error. Try: let y = x;
+  	      <li>2x<sup>2</sup> / 2x<sup>2</sup></li>
+  	      <li>1</li>
+  	    </ul>
+  	    <ul>Similar to the previous example, there is no chance to apply the limit before achieving a value of the expression along the line {y = x}. This means that there is no such limit for the given function</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 6: </b>
+  	  <li>Show that the limit of the function f(x, y) = {2x<sup>2</sup>y / (x<sup>4</sup> + y<sup>2</sup>)} as (x, y) approaches (0, 0) does not exist.</li>
+  	    
+  	    <br><ul>Try: let y = x;
+  	      <li>2x<sup>3</sup> / (x<sup>4</sup> + x<sup>2</sup>)</li>
+  	      
+  	      <br><li>lim<sub>(x, y) -> (0, 0)</sub>(2x<sup>3</sup> / (x<sup>4</sup> + x<sup>2</sup>))</li>
+  	      <li>2(0) / (0 + 0)</li>
+  	      <li>0 / 0 (Error: Indeterminant expression)</li>
+  	    </ul>
+  	   
+  	   <br><ul>Try: Multiplying by conjugate;
+  	     <li>((2x<sup>2</sup>y)(x<sup>4</sup> - y<sup>2</sup>)) / ((x<sup>4</sup> + y<sup>2</sup>)(x<sup>4</sup> - y<sup>2</sup>))</li>
+  	     <li>(2x<sup>6</sup>y - 2x<sup>2</sup>y<sup>3</sup>) / (x<sup>8</sup> - y<sup>4</sup>)</li>
+  	     <li>Error: No relevant result</li>
+  	   </ul>
+  	   
+  	   <br><ul>Try: let y = x<sup>2</sup>;
+  	     <li>2x<sup>4</sup> / 2x<sup>4</sup></li>
+  	     <li>1 (Constant value)</li>
+  	     <li>When using this assignment, there is no chance to apply the limit. This means the limit can approach any value from the direction of the curve {y = x<sup>2</sup>}. Therefore, since the limit is achieved from multiple directions, by the 2-path test, the limit does not exist</li>
+  	   </ul>
+  	   
+  	</ul>
+  	
+  </body>
+</html>

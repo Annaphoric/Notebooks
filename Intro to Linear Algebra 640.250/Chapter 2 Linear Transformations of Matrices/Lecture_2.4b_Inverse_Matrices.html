@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 2.4b: Inverse Matrices</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 2.4b: Inverse Matrices</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given matrix A = [[2 -1 2] [1 0 3] [0 1 4]], is this matrix invertable? If so, compute A<sup>-1</sup>.
+        
+        <br><br><li>Converting to Reduced Row Echelon Form: </li>
+          <ul>[[2 -1 2] [1 0 3] [0 1 4]] ⋅ B = [[1 0 0] [0 1 0] [0 0 1]]</ul>
+          <ul>[[1 0 3] [2 -1 2] [0 1 4]] ⋅ B = [[0 1 0] [1 0 0] [0 0 1]] (E1, E2 = E2, E1)</ul>
+          <ul>[[<b>1</b> 0 3] [0 -1 -4] [0 1 4]] ⋅ B = [[0 1 0] [1 -2 0] [0 0 1]] (E2 = E2 - 2 E1)</ul>
+          <ul>[[<b>1</b> 0 3] [0 <b>1</b> 4] [0 0 0]] ⋅ B = [[0 1 0] [1 -2 0] [-2 4 0]] (E3 = E3 + E2; RREF)</ul>
+          <ul class="green">The resulting matrix is now in RREF, having a rank of 2 and nullity of 1. Since the rank is not equal to the number of columns, matrix A does not have an inverse</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Given matrix B = [[0 2 -1] [1 -1 2] [2 -1 3]], determine if this matrix is invertable and if so, find the inverse matrix.</li>
+      
+        <br><ul>Converting to RREF: 
+          <li>[[0 2 -1] [1 -1 2] [2 -1 3]] ⋅ A = [[1 0 0] [0 1 0] [0 0 1]]</li>
+          <li>[[1 -1 2] [0 2 -1] [2 -1 3]] ⋅ A = [[0 1 0] [1 0 0] [0 0 1]] (E1, E2 = E2, E1)</li>
+          <li>[[<b>1</b> -1 2] [0 2 -1] [0 1 -1]] ⋅ A = [[0 1 0] [1 0 0] [0 -2 1]] (E3 = E3 - 2 E1)</li>
+          <li>[[<b>1</b> -1 2] [0 1 -1] [0 2 -1]] ⋅ A = [[0 1 0] [0 -2 1]] [1 0 0] (E2, E3 = E3, E2)</li>
+          <li>[[<b>1</b> -1 2] [0 <b>1</b> -1] [0 0 <b>1</b>]] ⋅ A = [[0 1 0] [0 -2 1] [1 4 -2]](E3 = E3 - 2 E2; RREF)</li>
+          <li>This matrix is now in RREF, having a rank of 3 & nullity of 1. This means there is an inverse of B</li>
+        </ul>
+        
+        <br><ul>Solving for the inverse of B by converting it into an identity matrix: 
+          <li>[[<b>1</b> 0 1] [0 <b>1</b> 0] [0 0 <b>1</b>]] ⋅ A = [[0 -1 1] [[1 2 -1] [1 4 -2]]] (E1 = E1 + E2; E2 = E2 + E3)</li>
+          <li>[[<b>1</b> 0 0] [0 <b>1</b> 0] [0 0 <b>1</b>]] ⋅ A = [[-1 -5 3] [1 2 -1] [1 4 -2]] (E1 = E1 - E3; Identity)</li>
+          <li class="green">Matrix A is now an identity matrix. This means that the matrix in the right side of the equation is the inverse of A: A<sup>-1</sup> = [[-1 -5 3] [1 2 -1] [1 4 -2]]</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Given elementary-matrix E = [[1 0 0] [-2 1 0] [0 0 1]], determine the inverse of E.</li>
+      
+      <br><ul>The identity matrix of the same dimensions is I = [[1 0 0] [0 1 0] [0 0 1]]. Performing the operation E2 = (E2 - 2 E1) on the identity matrix would give the elementary matrix. Likewise, performing the operation E2 = (E2 + 2 E1) gives the identity matrix relative to the given elementary matrix. Performing this operation on the identity matrix gives the inverse of E. Therefore, E<sup>-1</sup> = [[1 0 0] [2 1 0] [0 0 1]]</ul>
+    </ul>
+    
+    <ul class="topic"><b>Inverse Matrix Rules</b>
+      <li>The Inverse Multipication Matrix Rule says that given 2 invertable matrices A & B: </li>
+        <ul class="red">(A * B)<sup>-</sup> == B<sup>-</sup> * A<sup>-</sup> is true</ul>
+      
+      <br><li>The Inverse Transpose Matrix Rule says that given an invertable matrix A: </li>
+        <ul class="red">(A<sup>t</sup>)<sup>-</sup> == (A<sup>-</sup>)<sup>t</sup> is true</ul>
+      
+      <br><li>A matrix multiplied by its inverse always equals to an identity matrix of the same dimensions</li>
+      
+      <br><li>All independent vectors, where rank(matrix) == columns(matrix) is true, always have an inverse</li>
+      
+      <br><li>If adding 2 inverse matrices together results in a zero matrix, the sum of the 2 matrices are not invertable</li>
+      
+      <br><li>Having a column or a row of zeros within a matrix indicates that it is not invertable</li>
+    </ul>
+  </body>
+</html>

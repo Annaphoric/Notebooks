@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 4.3: Examples for Subspaces</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 4.3: Examples for Subspaces</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given set S = {[[1] [-1] [2] [1]], [[1] [3] [-1] [4]], [[2] [1] [5] [-3]]}, why doesn't S span/generate in R<sup>4</sup>?</li>
+      
+        <br><ul>Since there are only 3 vectors, the rank of the coefficient matrix made by the vectors can only be a max of 3.</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Is the set S = {[[1] [-3]], [[-2], [1]], [[1], [-1]]} a basis for R<sup>2</sup>?</li>
+      
+        <br><ul>Since there are 3 vectors each with 2 components, the span of the set can be at most 2. In order for the span to be 2, there is a minimum of 2 vectors. This means the set is linearly dependent and not an optimal set or basis</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given matrix B = [[1 1 2 1] [-1 -2 2 -2] [2 3 0 3]], determine the dimensions of null(A), col(A), row(A).
+      
+        <br><br><li>Performing row reduction: </li>
+          <ul>[[1 1 2 1] [-1 -2 2 -2] [2 3 0 3]]</ul>
+          <ul>[[<b>1</b> 1 2 1] [0 -1 4 -1] [0 1 -4 1]] (E2 = E2 + E1;  E3 = E3 - 2 E1)</ul>
+          <ul>[[<b>1</b> 1 2 1] [0 <b>-1</b> 4 -1] [0 0 0 0]] (E3 = E3 + E2)</ul>
+          <ul class="green">The rank of A is 2 since there are 2 pivots. This means that col(A) & row(A) = 2 (the dimensions of the column space & rowspace, respectively). The solutions, optimal set, or basis of this subspace can be found by back substitution to solve for variables</ul>
+          <ul class="green">The nullity of A is 2 since there are 2 free vectors/variables. This means null(A) = 2 (the dimensions of the nullspace). The basis of this subspace can be determined by casting out the vector of the original matrix based on which variable can be solved in terms of the others</ul>
+      </ol>
+    </ul>
+
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset-"utf-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.1: Modeling via Differential Equations</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.1: Modeling via Differential Equations</h1>
+    
+    <ul class="topic"><b>Mathematical Models</b>
+      <li>The main purpose of mathematical models is to convert a real-world problem into a math problem that can be solved by hand or, even better, computer</li>
+      <li>Models give a representation of an object by making use of its characteristics; it is then our decision to choose the model that is most convenient to solve</li>
+      <li>Predictions can be made using a model only if the system data agrees with it; otherwise, the model must be improved or another model must be chosen</li>
+      <li>A precise model formulates accurate quantitative predictions, whilst a simplified model formulates reliable qualitative predictions</li>
+    </ul>
+    
+    <br><ul class="topic"><b>Building a Model</b>
+      <ol>There are 3 steps to building a mathematical model: 
+        <li>State the assumptions on which the model will be based, including descriptions of the relationships between the observed quantities</li>
+        <li>Describe the quantities (variables & parameters) that will be used</li>
+        <li>Derive equations that relate the quantities based on the formulated assumptions</li>
+      </ol>
+      
+      <br><li><b>Assumptions</b> describe the most important aspects of a system</li>
+      
+      <br><li><b>Quantities</b> fall into 3 basic categories:</li>
+        <ul><b>Independent variables</b>
+          <li>A variable that is not affected by other variables, like time</li>
+        </ul>
+        <ul><b>Dependent variables</b>
+          <li>A variable that acts as a function for the independent variable(s), like position relative to time</li>
+        </ul>
+        <ul><b>Parameters</b>
+          <li>A value or constant that is not affected by the independent variable(s) but can be adjusted by the experimenter, like mass of an object</li>
+        </ul>
+      
+      <br><li>Most convenient models appear in the form of a <b>differential equation</b>, which mathematically describes how some dependent variable changes relative to an independent variable, like velocity (rate of positional change)</li>
+      
+      <br><li>When describing proportionality such as "A is proportional to B", a proportionality constant k is commonly used to form the equation: </li>
+        <ul>A = k B</ul>
+        
+      <br><li>An example of a model would be describing the air resistance of a falling object: </li>
+        <ul>Assumption: Air resistance increases as downwards velocity increases</ul>
+        <ul>Quantities: Dependent variable -> force of air resistance (A); Independent variable -> velocity (v); Parameter -> friction coefficient (k);</ul>
+        <ul>Equation: A(v) = k v || A(v) = k v<sup>2</sup></ul>
+    </ul>
+    
+    <br><ul class="topic"><b>Population Growth</b>
+      <li>Population growth is an popular example that has been modelled very extensively</li>
+      
+      <br><li>Assumption: The rate of population growth is proportional to the population size (disregarding space or resource limitations; population growth remains small & environment remains large)</li>
+      <li>Quantities: Dependent variable -> population size (P); Independent variable -> time (t); Parameter -> grwoth-rate coefficient (k)</li>
+      <li>Equation: dP/dt = k P || P'(t) = k P</li>
+      
+      <br><li>This is a form of <b>qualitative analysis</b> because the rate of population growth increases as population size increases; the equation does not give a discrete value, rather a trend</li>
+      
+      <br><li>The units of every quantity is vital to keep track of variables</li>
+        <ul>In this case, population size is number of people, time may vary, and the growth-rate coefficient is the inverse of time (1/time)</ul>
+        
+      <br><li>The equation is a <b>differential equation</b> (DE) because is shows how the dependent variable P changes over the independent variable t</li>
+      <li>It is considered a <b>first-order</b> DE because the highest derivative within the equation is the first derivative</li>
+      <li>Since there are no other independent variables mentioned within the equation, the DE is considered <b>ordinary</b>; otherwise it would be <b>partial</b></li>
+      
+      <br><li>A DE represented as its differential form is known as <b>Leibniz notation</b></li>
+      
+      <br><li>Assumption: The rate of population growth is zero when population size is zero (population doesn't exist)</li>
+      <li>Quantities: same</li>
+      <li>Equation: dP/dt = 0 if P = 0</li>
+      
+      <br><li>This equation can be proved by setting the population size equal to zero in the population growth equation: </li>
+        <ul>dP/dt = k (0)</ul>
+        <ul>dP/dt = 0</ul>
+      <li>Since the DE gives a real value given the <b>initial condition</b> (IC) P(t) = 0, P(t) = 0 is said to be a <b>solution</b> to the DE</li>
+        <ul>Specifically, P(t) = 0 is an <b>equillibrium solution</b> because the dP/dt = 0 is a constant, discrete value</ul>
+      
+      <br><li>Assumption: The rate of population growth is never zero if the population size is not zero</li>
+      <li>Quantities: same</li>
+      <li>Equation: dP/dt = k P(t<sub>0</sub>) != 0, where t<sub>0</sub> = any point in time</li>
+      
+      <li>An <b>initial value problem</b> (IVP) contains both the differential equation and an initial condition</li>
+        <ul>An IVP can be solved for a <b>solution</b> which satisfies both equations
+          <li>To solve for a solution, the derivative of P(t), (P') must match the DE</li>
+          <li>For example, P(t) = c e<sup>kt</sup> if dP/dt = k c e<sup></sup> == k P(t), where c = any constant (which can also be expressed as c = P<sub>0</sub>)</li>
+          <li>When an expression is given as the solution to a DE, it is referred to as a <b>general solution</b></li>
+        </ul>
+      
+      <br><li>In reality, this model is not accurate in real-world applications because there is usually a limit to how much a population can grow due to lack of space or resources</li>
+    </ul>
+    
+    <ul class="topic"><b>The Logistic Growth Model</b>
+      <li>To account for carrying capacity due to lack of space & resources, the following assumptions must stay true: </li>
+        <ul>The rate of population growth is proportional to the population if the population size is small</ul>
+        <ul>The rate of population growth is negative if the population size reaches a number large enough to be hindered by lack of space & resources</ul>
+      
+      <br><li>In this case, an additional quantity will have to be used. This quantity is a secondary parameter N which is known as the <b>carrying capacity</b></li>
+      <li>The following must be true: </li>
+        <ul>P(t) increases if P(t) < N && P(t) decreases if P(t) > N)</ul>
+      
+      <br><li>The model will also have to be modified to account for the carrying capacity</li>
+      <li>Since the rate of population growth in the original model increases without any limit, a factor must be multiplied alongside it that remains as close to one as possible if the population size reaches its carrying capacity; this is written as: </li>
+        <ul>dP/dt = k P (1 - P/N)</ul>
+      <li>This is known as the <b>logistic population model</b></li>
+        <ul>This model is <b>non-linear</b> because the dependent variable P does not have the linear exponent of 1</ul>
+      
+      <br><li>To solve for an equillibrium solution for this new DE, the DE must be equal to a discrete value</li>
+        <ul>In this case, it can be equal to zero</ul>
+        <ul>The only solutions that satisfy dP/dt == 0 is P(t) = 0 || P(t) = N</ul>
+        <ul>This can be proven by substituting the values of P(t) into the DE</ul>
+      
+      <br><li>When testing out multiple values for P(t) into the DE, it can be observed that: </li>
+        <ul>dP/dt increases for P in (0, N)<sub>int</sub> && dP/dt decreases for P in (-∞, 0)<sub>int</sub> || P in (N, ∞)<sub>int</sub></ul>
+    </ul>
+    
+    <ul class="topic"><b>Predator-Prey Systems</b>
+      <li>There may be situations where there are multiple dependent variables</li>
+      <li>The predator-prey system is a model where there are 2 dependent variables; the predator variable is denoted as F (for foxes) and the prey variable is denoted as R (for rabbits)</li>
+      
+      <br><li>The following assumptions must be true: </li>
+        <ul>Assumption: Rabbits reproduce indefinitely at a rate proportional to their population size only if there no foxes present</ul>
+        <ul>Assumption: The foxes eat the rabbits, thereby decreasing rabbit population, proportional to the rate at which foxes interact with the rabbits</ul>
+        <ul>Assumption: The fox population decreases if there are no rabbits present</ul>
+        <ul>Assumption: The population growth rate of foxes is proportional to the number of rabbits eaten</ul>
+      </ul>
+      
+      <li>Parameters: α = growth-rate coefficient of rabbits; β = proportionality constant for rabbit-fox interaction; γ = proportionality death-rate; δ = proportionality constant for fox benefit after eating rabbit</li>
+      <li>Equations: dR/dt = α R - β R F;  dF/dt = δ R F - γ F</li>
+      
+      <br><li>Since this model consists of 2 equations (one for each dependent variable), the pair of equations is referred to as a <b>first-order system</b> of ODEs</li>
+        <ul>This system is said to be <b>coupled</b> because the differentials of the dependent variables contain the variables themselves</ul>
+    
+      <br><li>Since there are 2 dependent variables being measured, it is impractical to find a solution to the DEs unless a qualitative or numerical method is utilised</li>
+        <ul>A solution can either be found analtyically, qualitatively or numerically
+          <li><b>Analytic</b> approaches involve the use of explicit formulas to give explicit solutions</li>
+          <li>A <b>qualitative</b> approach uses geometry to give an overview of the model's behaviour, rather than precise values</li>
+          <li>The <b>numerical</b> approach uses an approximation technique to give a reliable solution, usually done by a computer</li>
+        </ul>
+
+  </body>
+</html>

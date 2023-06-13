@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.8: Lagrange Multipliers</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.8: Lagrange Multipliers</h2>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Find the point P of the plane E = {2x + y - z = 5} that is closest to the origin.
+  	  
+  	    <br><br><li>Solving for the simplest variable of the plane: </li>
+  	      <ul>y = 5 - 2x + z</ul>
+  	     
+  	    <br><li>The distance of any 2 triple-variable points is given by the formula r = sqrt((x - x<sub>0</sub>)<sup>2</sup> + (y - y<sub>0</sub>)<sup>2</sup> + (z - z<sub>0</sub>)<sup>2</sup>). Since the origin is a point at (0, 0, 0), it can be considered the initial point. Therefore, the formula can be rewritten as {r<sup>2</sup> = x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>}. The y-variable for the formula can be substituted for the equation of y(x, z) found from rearranging the plane equation to form a simpler distance formula based on the given plane: </li>
+  	      <ul>r<sup>2</sup> = x<sup>2</sup> + (5 - 2x + z)<sup>2</sup> + z<sup>2</sup></ul>
+  	      <ul>r<sup>2</sup> = x<sup>2</sup> + 25 - 20x + 10z + 4x<sup>2</sup> - 4xz + z<sup>2</sup> + z<sup>2</sup></ul>
+  	      <ul>r<sup>2</sup> = 5x<sup>2</sup> + 2z<sup>2</sup> - 4xz - 20x + 10z + 25</ul>
+  	    
+  	    <br><li>function g(x, z) = 5x<sup>2</sup> + 2z<sup>2</sup> - 4xz - 20x + 10z + 25;  The first partial derivatives g(x, z) are: </li>
+  	      <ul>∂g/∂x = 10x - 4z - 20;  ∂g/∂z = 4z - 4x + 10;</ul>
+  	     
+  	    <br><li>Solving for the variables by setting the partial derivatives equal zero: </li>
+  	      <ul>0 = 10x - 4z - 20;  0 = 4z - 4x + 10</ul>
+  	      <ul>4z - 4x + 10 = 10x - 4z - 20</ul>
+  	      <ul>8z + 30 = 14x</ul>
+  	      <ul>z = (7x - 15)/4</ul>
+  	      
+  	      <br><ul>x = (7x - 15) + 5/2</ul>
+  	      <ul>6x = 25/2</ul>
+  	      <ul>x = 25/12;</ul>
+  	      
+  	      <br><ul>z = (7(25/12) - 15)/4</ul>
+  	      <ul>z = (175/12 - 15)/4;</ul>
+  	      <ul>z = 175/48 - 180/48</ul>
+  	      <ul>z = -5/48</ul>
+  	      <ul>critical point P = (25/12, -5/48)</ul>
+  	    
+  	    <br><li>The value of g(x, z) at P is: </li>
+  	      <ul>g(25/12, -5/48) = ...</ul>
+
+  	     
+  	    <br><li>Finding the second partial derivatives of g(x, z): </li>
+  	      <ul>∂<sup>2</sup>g/∂x<sup>2</sup> = 10;  ∂<sup>2</sup>g/∂z<sup>2</sup> = 2;  ∂<sup>2</sup>g/(∂z ∂x) = -4;</ul>
+  	    
+  	    <br><li>The discriminant of g at any point is: </li>
+  	      <ul>disc(g) = (10)(2) - (-4)<sup>2</sup></ul>
+  	      <ul>disc(g) = 20 - 16</ul>
+  	      <ul>disc(g) = 4</ul>
+  	      <ul>This proves that the critical point is a local minimum</ul>
+  	    
+  	    <br><li>Using the original plane equation and the local min point to solve for the y-variable: </li>
+  	      <ul></ul>
+  	      
+  	    
+  	    <br><li>Therefore, the point on the plane that is closest to the origin is point Q = (0, 0, -5). The distance between this point & the origin is: </li>
+  	      <ul></ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2a: </b>
+  	  <ol>Find the points on the hyperbolic cylinder {x<sup>2</sup> - z<sup>2</sup> = 1} that are closest to the origin.
+  	    
+  	    <br><br><li>Solving for x<sup>2</sup> based on the given cylinder equation: </li>
+  	      <ul>x<sup>2</sup> = z<sup>2</sup> + 1</ul>
+  	    
+  	    <br><br><li>function f(x, y, z) = x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>; (distance formula). Making appropriate substitutions: </li>
+  	      <ul>f(y, z) = (z<sup>2</sup> + 1) + y<sup>2</sup> + z<sup>2</sup></ul>
+  	      <ul>f(y, z) = y<sup>2</sup> + 2z<sup>2</sup> + 1</ul>
+  	    
+  	    <br><li>The first partial derivatives of f(y, z) are: </li>
+  	      <ul>∂f/∂y = 2y;  ∂f/∂z = 4z;</ul>
+  	    
+  	    <br><li>Performing the First Derivative Test: </li>
+  	      <ul>0 = 2y;  0 = 4z</ul>
+  	      <ul>{y, z} = 0</ul>
+  	    
+  	    <br><li>Solving for x: </li>
+  	      <ul>x<sup>2</sup> = (0) + 1</ul>
+  	      <ul>x = ±1</ul>
+  	      <ul>point A = (-1, 0, 0), B = (1, 0, 0);</ul>
+  	     
+  	    <br><li>Determining the distance between one of these points & the origin: </li>
+  	      <ul>f(1, 0, 0) = (1)<sup>2</sup> + 0 + 0</ul>
+  	      <ul>f(1, 0, 0) = 1</ul>
+  	      <ul class="green">The distance between the origin and either point A or B is 1 unit</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Introduction</b>
+  	  <li>There will occasionally be cases where the variables of an interval or bounded region of a function are not easily solvable. An alternate and more convenient method for finding extreme values of a constrained function is by using <b>Lagrange multipliers</b>. This involves solving for the gradients of both the given function f(x, y, z) and its bounded equation g(x, y, z) = 0. The point at which the gradient vectors <b>F</b> & <b>G</b> respectively exist must share a common tangent plane & normal line. The gradients should also be equal to each other by a specific scalar multiple known as a Lagrange multiplier (λ). This is shown as: </li>
+  	    <ul class="red"><b>F</b> = λ<b>G</b> for λ != 0</ul>
+  	    <ul class="red">(∂f/∂x)<b>i</b> + (∂f/dy)<b>j</b> + (∂f/∂z)<b>k</b> = λ(∂g/∂x)<b>i</b> + λ(∂g/∂y)<b>j</b> + λ(∂g/∂z)<b>k</b></ul>
+  	</ul>
+    
+    <ul class="example"><b>Example 2b: </b>
+      <ol>Find the points on the hyperbolic cylinder {x<sup>2</sup> - z<sup>2</sup> = 1} that are closest to the origin using Lagrange multipliers.
+      
+        <br><br><li>The cylinder can be represented as a function f & the distance formula can be represented as function g. function f(x, y, z) = x<sup>2</sup> - z<sup>2</sup> - 1, g(x, y, z) = x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> - r<sup>2</sup>. The first partial derivatives of both functions in terms of z, y, & z are: </li>
+          <ul>∂f/∂x = 2x;  ∂f/∂y = 0;  ∂f/∂z = -2z;  ∂g/∂x = 2x;  ∂g/∂y = 2y;  ∂g/∂z = 2z;</ul>
+        
+        <br><li>gradient vector <b>F</b> = 2x<b>i</b> - 2z<b>j</b>, <b>G</b> = 2x<b>i</b> + 2y<b>j</b> + 2z<b>k</b>. Equating the gradient vectors by a Lagrange multiplier: </li>
+          <ul><b>F</b> = λ<b>G</b></ul>
+          <ul>< 2x, 0, -2z > = λ < 2x, 2y, 2z ></ul>
+          <ul>2x = λ 2x;  0 = λ 2y;  -2z = λ 2z;</ul>
+          <ul>x != 0;  λ = 1;</ul>
+          <ul>y = 0;  z = 0;</ul>
+        
+        <br><li>Solving for x using the plane equation: </li>
+          <ul>x = sqrt((0) + 1)</ul>
+          <ul>x = ±1</ul>
+        
+        <br><li>Therefore the points closest to the origin are: </li>
+          <ul class="green">(-1, 0, 0) & (1, 0, 0)</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Find the greatest & smallest values that function f(x, y) = xy takes on the ellipse {x<sup>2</sup>/8 + y<sup>2</sup>/2 = 1}
+      
+        <br><br><li>function g(x, y) = x<sup>2</sup> + y<sup>2</sup> - 1 == 0. The first partial derivatives of both functions are: </li>
+          <ul>∂f/∂x = y;  ∂f/∂y = x;  ∂g/∂x = x/4;  ∂g/∂y = y;</ul>
+        
+        <br><li>gradient vector <b>F</b> = 2x<b>i</b> + 2y<b>j</b>;  <b>G</b> = (x/4)<b>i</b> + y<b>j</b>; Applying the Lagrange multiplier method: </li>
+          <ul><b>F</b> = λ <b>G</b></ul>
+          <ul>< y, x > = λ < x/4, y ></ul>
+          <ul>y = λ x/4;  x = λ y;</ul>
+          <ul>y = λ (λ y)/4</ul>
+          <ul>y = (λ<sup>2</sup> y)/4</ul>
+          
+        <br><li>y cannot equal to zero because x = λ y for any λ and the point (0, 0) does not satisfy g(x, y). So, λ must equal ±2 using y = (λ<sup>2</sup> y)/4 so that x = ±2y. Solving for the variables using g(x, y): </li>
+          <ul>(±2y)<sup>2</sup>/8 + y<sup>2</sup>/2 = 1</ul>
+          <ul>y<sup>2</sup>/2 + y<sup>2</sup>/2 = 1</ul>
+          <ul>y<sup>2</sup> = 1</ul>
+          <ul>y = ±1</ul>
+          
+          <br><ul>x<sup>2</sup>/8 + (±1)<sup>2</sup>/2 = 1</ul>
+            <ul>x<sup>2</sup>/8 = 1/2</ul>
+            <ul>x = ±2</ul>
+          
+        <br><li>Therefore, the 4 extreme points of the f(x, y) along g(x, y) are: </li>
+          <ul class="green">(±2, ±1)</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>Find the max & min values of function {f(x, y) = 3x + 4y} on the circle {g(x, y) = x<sup>2</sup> + y<sup>2</sup> = 1}</ol>
+      
+        <li>The first partial derivatives & gradient vectors of the functions and applying the Lagrange multiplier method: </li>
+          <ul>∂f/∂x = 3;  ∂f/∂y = 4;  ∂g/∂x = 2x;  ∂g/∂y = 2y;</ul>
+          
+          <br><ul>gradient vector <b>F</b> = 3<b>i</b> + 4<b>j</b>,  <b>G</b> = 2x<b>i</b> + 2y<b>j</b></ul>
+          
+          <br><ul>3 = λ 2x;  4 = λ 2y;</ul>
+          <ul>x = 3/(2λ); y = 2/λ</ul>
+        
+        <br><li>Solving for λ using the constrained function g(x, y)</li>
+          <ul>(3/2λ)<sup>2</sup> + (2/λ)<sup>2</sup> = 1</ul>
+          <ul>9/4λ<sup>2</sup> + 4/λ<sup>2</sup> = 1</ul>
+          <ul>λ = sqrt(25/4)</ul>
+          <ul>λ = ±5/2</ul>
+        
+        <br><li>Using the value of λ to determine x & y: </li>
+          <ul>x = 3/(2(±5/2));  y = 2/(±5/2)</ul>
+          <ul>x = ±3/5;  y = ±4/5;</ul>
+          <ul class="green">The extreme points of f are: (±3/5, ±4/5). These are the points where the 2 gradient vectors have the same direction & are farthest from the origin</ul>
+        
+        <br><li>The constant of the shared level curves for both functions is found by finding the values of f(x, y) at the extreme points: </li>
+          <ul>f(3/5, 4/5) = 3(3/5) + 4(4/5);  f(-3/5, -4/5) = 3(-3/5) + 4(-4/5)</ul>
+          <ul>f(3/5, 4/5) = (9 + 16)/5;  f(-3/5, -4/5) = -(9 + 16)/5</ul>
+          <ul>f(3/5, 4/5) = 5;  f(-3/5, -4/5) = -5</ul>
+    </ul>
+    
+    <ul><b>Lagrange Multipliers with 2 Constrained Functions</b>
+      <li>A similar concept applies when dealing with solving for extreme values of a function bounded by 2 functions. Assume function f(x, y, z);  & constraining functions g(x, y, z) = 0, h(x, y, z) = 0;  the sum of the gradient vectors <b>G</b> & <b>H</b> for the respective bounded functions must be equal to the gradient vector <b>F</b> via 2 Lagrange multipliers λ & μ where neither multiplier is equal to zero. This can be written as: </li>
+        <ul class="red"><b>F</b> = λ<b>G</b> + μ<b>H</b></ul>
+        <ul class="red">(∂f/∂x)<b>i</b> + (∂f/∂y)<b>j</b> + (∂f/∂z)<b>k</b> = λ{(∂g/∂x)<b>i</b> + (∂g/∂y)<b>j</b> + (∂g/∂z)<b>k</b>} + μ{(∂h/∂x)<b>i</b> + (∂h/∂y)<b>j</b> + (∂h/∂z)<b>k</b>}</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <ol>plane E = {x + y + z = 1} cuts through the cylinder {x<sup>2</sup> + y<sup>2</sup> = 1}, having the shape of an ellipse. Find the points on the ellipse that lie closest & farthest from the origin (using the distance formula). 
+        
+        <br><br><li>function f(x, y, z) = x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>;  constraining function g(x, y, z) = x + y + z - 1 == 0,  h(x, y, z) = x<sup>2</sup> + y<sup>2</sup> - 1 == 0;  The first partial derivatives & gradients vectors of each function are: </li>
+          <ul>∂f/∂x = 2x;  ∂f/∂y = 2y;  ∂f/∂z = 2z;  ∂g/∂x = 1;  ∂g/∂y = 1;  ∂g/∂z = 1;  ∂h/∂x = 2x;  ∂h/∂y = 2y;  ∂h/∂z = 0;</ul>
+          
+          <br><ul>gradient vector <b>F</b> = 2x<b>i</b> + 2y<b>j</b> + 2z<b>k</b>,  <b>G</b> = <b>i</b> + <b>j</b> + <b>k</b>,  <b>H</b> = 2x<b>i</b> + 2y<b>j</b></ul>
+        
+        <br><li>Applying the Lagrange Multiplier Method: </li>
+          <ul><b>F</b> = λ<b>G</b> + μ<b>H</b></ul>
+          <ul>< 2x, 2y, 2z > = λ < 1, 1, 1 > + μ < 2x, 2y, 0 ></ul>
+          
+          <br><ul>2x = λ + μ 2x;  2y = λ + μ 2y;  2z = λ</ul>
+          <ul>2x = (2z) + μ 2x</ul>
+          <ul>x = z + μ x</ul>
+          <ul>z = x(1 - μ)</ul>
+          
+          <br><ul>2y = (2z) + μ 2y</ul>
+          <ul>y = z + μ y</ul>
+          <ul>z = y(1 - μ)</ul>
+          
+          <br><ul>x(1 - μ) = y(1 - μ)</ul>
+          <ul>x = y</ul>
+          
+        <br><li>try: y = x;  Using this equation & the constraining functions to solve for variables: </li>
+          <ul>h(x, x) = x<sup>2</sup> + (x)<sup>2</sup> - 1 == 0</ul>
+          <ul>h(x, x) = 2x<sup>2</sup> = 1</ul>
+          <ul>x = ±1/sqrt(2);  y = ±1/sqrt(2)</ul>
+          
+          <br><ul>g(x, x, z) = x + (x) + z - 1 == 0</ul>
+          <ul>g(x, x, z) = 2x + z = 1</ul>
+          <ul>z = 1 - 2(±1/sqrt(2))</ul>
+          <ul>z = 1 ∓ sqrt(2)</ul>
+        
+        <br><li class="green">The extreme points are point A = (1/sqrt(2), 1/sqrt(2), 1 - sqrt(2)),  point B = (-1/sqrt(2), -1/sqrt(2), 1 + sqrt(2)) where point B is farthest from the origin</li>
+        
+        <br><li>try z = 0;  Using this value & the constraining functions to solve for variables: </li>
+          <ul>g(x, y, 0) = x + y + (0) - 1 == 0</ul>
+          <ul>g(x, y, 0) = x + y = 1</ul>
+          <ul>y = 1 - x;  x = 1 - y</ul>
+          
+          <br><ul>h(x, 1 - x) = x<sup>2</sup> + (1 - x)<sup>2</sup> - 1 = 0</ul>
+          <ul>h(x, 1 - x) = 2x<sup>2</sup> - 2x = 0</ul>
+          <ul>x = 0;  y = 1</ul>
+          
+          <br><ul>h(1 - y, y) = (1 - y)<sup>2</sup> + y<sup>2</sup> - 1 == 0</ul>
+          <ul>h(1 - y, y) = 2y<sup>2</sup> - 2y = 0</ul>
+          <ul>y = 0;  x = 1;</ul>
+          
+        <li class="green">point C = (0, 1, 0) & D = (1, 0, 0) are also considered extreme points where either one of these 2 are closest to the origin</li>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

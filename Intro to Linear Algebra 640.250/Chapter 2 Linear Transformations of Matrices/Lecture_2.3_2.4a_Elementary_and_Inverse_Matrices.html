@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 2.3, 2.4a: Elementary & Inverse Matrices</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 2.3, 2.4a: Elementary & Inverse Matrices</h2>
+    
+    <ul class="topic"><b>Elementary Matrices</b>
+      <li>As discussed in the previous chapter, an identity matrix is a symmetric matrix where the principal diagonal consists of ones & the off-diagonal consists of zeros. Like: </li>
+        <ul>I = [[1 0 0] [0 1 0] [0 0 1]] (dimensions(I) = (3 ⨯ 3))</ul>
+      <li>If matrix A is any square matrix, then ((A ⋅ I) == (I ⋅ A) == A) are all true as long as identity-matrix I has the same dimensions</li>
+      
+      <br><li>An <b>elementary matrix</b> E is an identity matrix having the same number of rows & columns as the number of rows in the multiplying matrix A to perform a row operation in A. The row operation (or entry operation) is performed on E, then multiplied with A. For instance, when performing an interchange operation (switching rows) within matrix A, it is multiplied by an identity matrix that has had an interchange operation: </li>
+        <ul>let matrix A = [[a b c] [d e f]];  [[0 1] [1 0]] ⋅ [[a b c] [d e f]] = [[d e f] [a b c]]
+          <li>[[0 1] [1 0]] is therefore the elementary matrix</li>
+        </ul>
+      <li>There are also elementary matrices for scalar row & row addition operations: </li>
+        <ul>[[2 1] [0 1]] ⋅ [[a b c] [d e f]] = [[2a 2b 2c] [d e f]]</ul>
+        <ul>[[1 0] [2 1]] ⋅ [[a b c] [d e f]] = [[a b c] [(d + 2a), (e + 2b), (f + 2c)]]</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given matrix A = [[1 -1 2] [2 -3 1] [0 4 5]] & B = [[1 -1 2] [2 -3 1] [-10 19 0]], find an elementary matrix E so that E ⋅ A = B.</li>
+      
+        <ul>Since the only row that differs is the final row, there must be a row operation on the third row: 
+          <li>[[1 0 0] [0 1 0] [0 0 1]] ⋅ [[1 -1 2] [[2 -3 1] [0 4 5]] == [[1 -1 2] [2 -3 1] [-10 19 0]]</li>
+          <li>[[1 0 0] [0 1 0] [0 -5 1]] ⋅ [[1 -1 2] [[2 -3 1] [0 4 5]] == [[1 -1 2] [2 -3 1] [-10 19 0]] (E<sub>32</sub> = E<sub>32</sub> - 5, since A3 = A3 - 5 A2)</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Inverse Matrices</b>
+      <li>Given square-matrix A, the inverse of A is B if AB = BA = I, where I is an identity matrix. In other words, B = A<sup>-1</sup></li>
+        <ul>Zero matrices & non-square matrices have no inverse</ul>
+        <ul>There is only one corresponding inverse matrix for a given matrix</ul>
+        <ul>Inverse matrices can be found by Gaussian Elimination. If there is no solution/inconsistent, then there is no corresponding matrix. In other words, if the rank of A is not n (number of dimensions or pivots) or the nullity is not zero (dependent matrices), then there is no inverse matrix: 
+          <li class="red">if(rank(A) == n || nullity(A) == 0): inverse matrix exists; else: does not exist;</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Is there an inverse matrix for matrix A = [[3 2] [7 5]]? If so, what would it be?</li>
+      
+        <br><ul>let B = A<sup>-1</sup>; matrix B must have the same rows & columns as matrix A. Converting to Reduced Row Echelon Form and into an identity matrix: 
+          <li>A ⋅ B = I</li>
+          <li>[[3 2] [7 5]] ⋅ B = [[1 0] [0 1]]</li>
+          <li>[[3 2] [1 1]] ⋅ B = [[1 0] [-2 1]] (E2 = E2 - 2 E1)</li>
+          <li>[[1 1] [3 2]] ⋅ B = [[-2 1] [1 0]] (E1, E2 = E2, E1)</li>
+          <li>[[1 1] [0 -1]] ⋅ B = [[-2 1] [7 -3]] (E2 = E2 - 3 E1)</li>
+          <li>[[1 1] [0 1]] ⋅ B = [[-2 1] [-7 3]] (E2 = -E2)</li>
+          <li>[[1 0] [0 1]] ⋅ B = [[5 -2] [-7 3]] (E1 = E1 - E2)</li>
+          <li class="green">Now that A has been converted to an identity matrix, we can confirm that the initial matrix B is equal to [[5 -2] [-7 3]] which is the inverse matrix of A</li>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

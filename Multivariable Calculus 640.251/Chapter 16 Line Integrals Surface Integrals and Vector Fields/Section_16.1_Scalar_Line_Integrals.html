@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 16.1: Line Integrals of Scalar Functions</title>
+  </head>
+  
+  <body>
+  	<h2>Section 16.1: Line Integrals of Scalar Functions</h2>
+  	
+  	<ul class="topic"><b></b>
+  	  <li class="blue">A line or path integral integrates a function over a bounded curved region</li>
+  	  
+  	  <li>Assume vector-function <b>r</b>(t) = {g(t)<b>i</b> + h(t)<b>j</b> + k(t)<b>k</b>} is the parametrisation of function f(x, y, z) for t in [a, b]. This function can be expressed as a composite function f(g(t), h(t), k(t)) or f(<b>r</b>(t)) where x = g(t), y = h(t), z = k(t). To integrate the function along a curve C, the curve is partitioned N-times, forming subarcs. The k-th subarc at point P = (x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>) has a length of Δs<sub>k</sub>. The sum of the areas of every subarc is a similar concept as a Riemann sum S<sub>N</sub>: </li>
+  	    <ul>S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(x<sub>k</sub>, y<sub>k</sub>, z<sub>k</sub>)) Δs<sub>k</sub></ul>
+  	  
+  	  <br><li>The norm of the partition occurs as N (the number of subarcs) approaches infinity. Like a single integral, this is also the definition of a line integral: </li>
+  	    <ul>lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∫<sub>C</sub>(f(x, y, z) ds)</ul>
+  	  
+  	  <br><li>The integral can be true only as long as the limit exists. In order for the limit to exist, the curve must be smooth; that is the tangent vector (velocity vector; <b>v</b> = d<b>r</b>/dt) of the curve can never be equal to zero. As described in section 13.3, the arc length s(t) is the integral of the velocity vector in terms of t along a curve bounded by [a, b] or [t<sub>0</sub>, t]</li>
+  	  
+  	  <br><li>To integrate the function f(x, y, z) along the parametrised curve C between [a, b], ds is rewritten as the magnitude of the velocity vector function multiplied by the differential of t: </li>
+  	    <ul>ds = ||<b>v</b>(t)|| dt</ul>
+  	  
+  	  <br><li>Therefore, the line integral can be rewritten as: </li>
+  	    <ul>∫<sub>C</sub>(f(x, y, z) ds = ∫<sub>a</sub><sup>b</sup>(f(g(t), h(t), k(t)) ||<b>v</b>(t)||) dt</ul>
+  	    <ul>The integral on the left is the line integral of the function whilst the integral on the right is the simple definite integral of the function</ul>
+  	  
+  	  <br><li>The initial point of the curve C in terms of the parametric vector function <b>r</b>(t) is at the position <b>r</b>(a) and the terminal point is the position <b>r</b>(b)</li>
+  	  
+  	  <br><li>Line integrals have an additive property where multiple integrals can be summed for every subcurve in a piecewise curve. Depending on which path is taken to reach the end of the last subcurve, there is a different value for integrating over an individual subcurve</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+      <ol>Integrate function f(x, y, z) = {x - 3y<sup>2</sup> + z} over the line segment C made from the origin to point P = (1, 1, 1)
+      
+      
+        <br><li>The simplest parametrisation of the curve is by using the parametric vector <b>r</b>(t) = {t<b>i</b> + t<b>j</b> + t<b>k</b> for t in [0, 1]}. Therefore, the tangent vector <b>v</b>(t) and its magnitude are written as: </li>
+          <ul><b>v</b>(t) = d<b>r</b>/dt</ul>
+          <ul><b>v</b>(t) = <b>i</b> + <b>j</b> + <b>k</b></ul>
+          
+          <br><ul>||<b>v</b>(t)|| = sqrt(3)</ul>
+          
+        <br><li>The integral is written and evaluated as shown: </li>
+          <ul>∫<sub>0</sub><sup>1</sup>(f(<b>r</b>(t)) sqrt(3)) dt</ul>
+          <ul>sqrt(3) ∫<sub>0</sub><sup>1</sup>((t) - 3(t)<sup>2</sup> + (t)) dt</ul>
+          <ul>sqrt(3) [t<sup>2</sup> - t<sup>3</sup>]<sub>0</sub><sup>1</sup></ul>
+          <ul>sqrt(3) (1 - 1)</ul>
+          <ul class="green">0</ul>
+      </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Using the same function as the previous example, another path is chosen to reach the point (1, 1, 1). This time, an initial path C<sub>1</sub> runs from the origin to point (1, 1, 0) and a second path C<sub>2</sub> runs from point (1, 1, 0) to (1, 1, 1). Integrate this function over C<sub>1</sub>∪C<sub>2</sub> (piecewise curve addition).
+  	  
+  	    <br><br><li>The simplest parametrisation of C<sub>1</sub> is found by using the parametric vector <b>r</b><sub>1</sub>(t) = {t<b>i</b> + t<b>j</b> for t in [0, 1]}. The velocity vector and its magnitude are written as: </li>
+  	      <ul><b>v</b><sub>1</sub>(t) = <b>i</b> + <b>j</b></ul>
+  	      
+  	      <br><ul>||<b>v</b><sub>1</sub>(t)|| = sqrt(2)</ul>
+  	    
+  	    <br><li>The integral of the function along this curve is expressed as: </li>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = ∫<sub>0</sub><sup>1</sup>(f(<b>r</b><sub>1</sub>(t)) ||<b>v</b><sub>1</sub>(t)||) dt</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = sqrt(2) ∫<sub>0</sub><sup>1</sup>((t) - 3(t)<sup>2</sup>) dt</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = sqrt(2) [t<sup>2</sup>/2 - t<sup>3</sup>]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = sqrt(2) (1/2 - 1)</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = -sqrt(2)/2</ul>
+  	    
+  	    <br><li>The simplest parametrisation of C<sub>2</sub> is found by using the parametric vector <b>r</b><sub>2</sub>(t) = {<b>i</b> + <b>j</b> + t<b>k</b> for t in [0, 1]}. The velocity vector and its magnitude are: </li>
+  	      <ul><b>v</b>(t) = <b>k</b></ul>
+  	      
+  	      <br><ul>||<b>v</b>(t)|| = 1</ul>
+  	    
+  	    <br><li>So, the integral of the function along this curve is: </li>
+  	      <ul>∫<sub>C<sub>2</sub></sub>(f(x, y, z)) ds = ∫<sub>0</sub><sup>1</sup>(f(<b>r</b><sub>2</sub>(t)) ||<b>v</b><sub>2</sub>(t)||) dt</ul>
+  	      <ul>∫<sub>C<sub>2</sub></sub>(f(x, y, z)) ds = ∫<sub>0</sub><sup>1</sup>((1) - 3(1)<sup>2</sup> + (t)) dt</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = ∫<sub>0</sub><sup>1</sup>(t - 2) dt</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = [t<sup>2</sup>/2 - 2t]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = 1/2 - 2</ul>
+  	      <ul>∫<sub>C<sub>1</sub></sub>(f(x, y, z)) ds = -3/2</ul>
+  	    
+  	    <br><li>The integral of the function along the entire path (C<sub>1</sub> & C<sub>2</sub>) is the sum of the 2 individuals line integrals made from them: </li>
+  	      <ul>∫(<sub>C<sub>1</sub>, C<sub>2</sub></sub>)(f(x, y, z)) ds = -sqrt(2)/2 - 3/2</ul>
+  	      <ul class="green">∫(<sub>C<sub>1</sub>, C<sub>2</sub></sub>)(f(x, y, z)) ds = -(sqrt(2) - 3)/2</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 3: </b>
+  	  <ol>Find the line integral given function f(x, y, z) = {2xy + sqrt(z)} and helical vector <b>r</b>(t) = {cos(t)<b>i</b> + sin(t)<b>j</b> + t<sub>k</sub>, for t in [0, π]}.
+  	  
+  	    <br><br><li>The velocity vector function & its magnitude based on the given positional vector function are: </li>
+  	      <ul><b>v</b>(t) = -sin(t)<b>i</b> + cos(t)<b>j</b> + <b>k</b></ul>
+  	      
+  	      <br><ul>||<b>v</b>(t)|| = sqrt(2)</ul>
+  	    
+  	    <br><li>Therefore, the line integral for the function is written as: </li>
+  	      <ul>∫<sub>0</sub><sup>π</sup>(f(<b>r</b>(t)) ||<b>v</b>(t)||) dt</ul>
+  	      <ul>sqrt(2) ∫<sub>0</sub><sup>π</sup>(2cos(t)sin(t) + sqrt(t)) dt</ul>
+  	      <ul>sqrt(2) ∫<sub>0</sub><sup>π</sup>(sin(2t) + sqrt(t)) dt</ul>
+  	      <ul>sqrt(2) [2t sqrt(t)/3 - cos(2t)/2]<sub>0</sub><sup>π</sup></ul>
+  	      <ul>sqrt(2) (2π sqrt(π)/3 - 1/2 + 1/2)</ul>
+  	      <ul class="green">2π sqrt(2π)/3</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Applying Line Integrals to Mass & Moment</b>
+  	  <li>In the case of coils or springs, the mass of the coil is distributed along it length. The density δ(x, y, z) represents the amount of mass per unit of length. let C be the curve made by the coil, <b>r</b>(t) = {x(t)<b>i</b> + y(t)<b>j</b> + z(t)<b>k</b>, for t in [a, b]} is the positional vector function that makes up the curve. Using this information, the total mass m of the coil is the line  integral of the density multiplied by the magnitude of the tangent vector function <b>v</b>(t) between [a, b]. This is written as: </li>
+  	    <ul>m = ∫<sub>C</sub>(δ) ds</ul>
+  	    <ul class="red">m = ∫<sub>a</sub><sup>b</sup>(δ(x(t), y(t), z(t)) ||<b>v</b>(t)||) dt</ul>
+  	    <ul>This formula also applies to thin rods and wires</ul>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 4: </b>
+  	  <ol>A slender metal arch that is denser towards the bottom lies along the semicircle {y<sup>2</sup> + z<sup>2</sup>, z >= 0}. Find the centre of the arch's mass given its density δ(x, y, z) = {2 - z}.
+  	    
+  	    <br><li>let y = cos(t), z = sin(t);  Since the arch lies within the yz-plane, the x & y coordinates of its centre of mass are both at 0. To find the z-coordinate, the semicircle is parametrised as a parametric vector function <b>r</b>(t) using the defined parametric equations. This positional vector, the velocity vector & its magnitude are: </li>
+  	      <ul><b>r</b>(t) = cos(t)<b>j</b> + sin(t)<b>k</b>, for t in [0, π]</ul>
+  	      
+  	      <br><ul><b>v</b>(t) = -sin(t)<b>j</b> + cos(t)<b>k</b></ul>
+  	      
+  	      <br><ul>||<b>v</b>(t)|| = 1</ul>
+  	    
+  	    <br><li>The mass m of the arch is evaluated as: </li>
+  	      <ul>m = ∫<sub>C</sub>(δ) ds</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>π</sup>(δ(0, cos(t), sin(t))) dt</ul>
+  	      <ul>m = ∫<sub>0</sub><sup>π</sup>(2 - sin(t)) dt</ul>
+  	      <ul>m = [2t + cos(t)]<sub>0</sub><sup>π</sup></ul>
+  	      <ul>m = 2π - 1 - 1</ul>
+  	      <ul>m = 2(π - 1)</ul>
+  	    
+  	    <br><li>The z-moment about the xy-plane (M<sub>xy</sub>) is evaluated as: </li>
+  	      <ul>M<sub>xy</sub> = ∫<sub>C</sub>(z δ) ds</ul>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>π</sup>(sin(t) δ(0, cos(t), sin(t))) (Every z is replaced with sin(t) as given in the positional vector)</ul>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>π</sup>(sin(t) (2 - sin(t))) dt</ul>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>π</sup>(2sin(t) - sin<sup>2</sup>(t)) dt</ul>
+  	      <ul>M<sub>xy</sub> = ∫<sub>0</sub><sup>π</sup>(2sin(t) + (cos(2t) - 1)/2) dt</ul>
+  	      <ul>M<sub>xy</sub> = [sin(t)/4 - t/2 - 2cos(t)]<sub>0</sub><sup>π</sup></ul>
+  	      <ul>M<sub>xy</sub> = 2 - π/2 + 2</ul>
+  	      <ul>M<sub>xy</sub> = 4 - π/2</ul>
+  	    
+  	    <br><li>The z-coordinate c is determined by dividing the z-moment by the mass: </li>
+  	      <ul>c = M<sub>xy</sub> / m</ul>
+  	      <ul>c = (4 - π/2) / (2(π - 1))</ul>
+  	      <ul>c ≈ 0.57</ul>
+  	      <ul>Therefore, the centre of mass is the point (0, 0, 0.57)</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="topic"><b>Line Integrals for Curved Planes</b>
+  	  <li>Assume a smooth curve C is parametrised by positional vector <b>r</b>(t) = {x(t)<b>i</b> + y(t)<b>j</b>, for t in [a, b]}, a curved plane is formed perpendicular to the xy-plane by letting z = f(x, y) = any real positive number. As long as z is positive, the graph of f will always lie above the curve, forming and curved plane with the height of f(x, y). The Riemann Sum (S<sub>N</sub>) and its line integral to solve for the area of the curved plane are then written as: </li>
+  	    <ul>S<sub>N</sub> = ∑<sub>k = 1</sub><sup>N</sup>(f(x<sub>k</sub>, y<sub>k</sub>)) Δs<sub>k</sub></ul>
+  	    <ul>lim<sub>N ➝ ∞</sub>(S<sub>N</sub>) = ∫<sub>C</sub>(f) ds</ul>
+  	</ul>
+  	
+  </body>
+</html>

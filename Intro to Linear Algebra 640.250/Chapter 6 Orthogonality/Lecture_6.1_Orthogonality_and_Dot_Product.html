@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 6.1: Orthogonality & The Dot Product</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 6.1: Orthogonality & The Dot Product</h2>
+    
+    <ul class="topic"><b>The Dot Product</b>
+      <li>let vector <b>u</b> = [[a<sub>1</sub>, a<sub>2</sub>...a<sub>n</sub>]], <b>v</b> = [[b<sub>1</sub>, b<sub>2</sub>...b<sub>n</sub>]] for all real numbers in R<sup>n</sup>; The <b>dot product</b> or scalar product is the sum of the products of both respective components for each row: </li>
+        <ul><b>u</b> ⋅ <b>v</b> = ∑<sub>k = 1</sub><sup>n</sup>(a<sub>k</sub> * b<sub>k</sub>)</ul>
+      
+      <br><li>The dot product can be used to solve for the angle made between 2 vectors. A negative value for the dot product indicates that the 2 vectors form an angle that is greater than π/2 whilst a positive value indicates that their angle is less than π/2</li>
+      
+      <br><li>The <b>magnitude</b> or length of a vector <b>u</b> (||<b>u</b>||) is the square root sum of all components within that vector. The magnitude of the vector is also the square root of the dot product of itself: </li>
+        <ul>||<b>u</b>|| = sqrt(∑<sub>k = 1</sub><sup>n</sup>(a<sub>k</sub><sup>2</sup>))</ul>
+        <ul>||<b>u</b>|| = sqrt(<b>u</b> ⋅ <b>u</b>)</ul>
+        
+      <br><li>If the dot product of a vector with itself is zero or the magnitude is zero (scalar), then the vector must be the zero vector: </li>
+        <ul>if(<b>u</b> ⋅ <b>u</b> || ||<b>u</b>|| == 0) {<b>u</b> = <b>0</b>}</ul>
+      
+      <br><Li>The dot product is cumulative: the order is irrelevant</Li>
+      
+      <br><li>The magnitude of a scaled vector is equal to the absolute value of the scalar multiplied by the magnitude of the original vector: </li>
+        <ul>||c<b>u</b>|| = |c| ||<b>u</b>||</ul>
+        
+      <br><li>The dot product of a vector <b>u</b> && the sum of 2 vectors <b>u</b> & <b>w</b> is the sum of the dot product of <b>u</b> with each vector individually: </li>
+        <ul><b>u</b> ⋅ (<b>v</b> + <b>w</b>) = (<b>u</b> ⋅ <b>v</b>) + (<b>u</b> ⋅ <b>w</b>)</ul>
+      
+      <br><li>The dot product of a scaled vector with another vector is the same as the dot product of the 2 original vectors multipliied by the scalar: </li>
+        <ul>(c<b>u</b>) ⋅ <b>v</b> = c (<b>u</b> ⋅ <b>v</b>)</ul>
+    </ul>
+    
+    <ul class="topic"><b>Unit vectors</b>
+      <li>A <b>unit vector</b> is a vector with a length/magnitude of one</li>
+      
+      <br><li>To convert any nonzero vector into a unit vector, in other words determine its direction, the vector is divided by its scalar magnitude: </li>
+        <ul>dir(<b>u</b>) = <b>u</b> / ||<b>u</b>||</ul>
+    </ul>
+    
+    <ul class="topic"><b>Orthogonality</b>
+      <li>Given nonzero vectors <b>u</b> & <b>v</b> in R<sup>n</sup>, <b>u</b> & <b>v</b> are orthogonal/perpendicular only if the dot product of both of them is zero: </li>
+        <ul>if(<b>u</b> ⋅ <b>v</b> == 0) {<b>u</b>, <b>v</b> = "orthogonal"}</ul>
+      
+      <li>Pythagorean Theorum for Vectors</li>
+        <ul>||<b>u</b> + <b>v</b>||<sup>2</sup> = ||<b>u</b>||<sup>2</sup> + ||<b>v</b>||<sup>2</sup></ul>
+    </ul>
+    
+    
+    <ul class="topic"><b>Cauchy-Schwarz Inequality Theorum</b>
+      <li>Given any 2 vectors <b>u</b>, <b>v</b> in R<sup>n</sup>, the absolute value of the dot product cannot exceed the product of the magnitudes of each vector: </li>
+        <ul>|<b>u</b> ⋅ <b>v</b>| ≤ ||<b>u</b>|| ||<b>v</b>||</ul>
+    </ul>
+    
+    <ul class="topic"><b>Triangle Inequality Theorum</b>
+      <li>Given any 2 vectors <b>u</b>, <b>v</b> in R<sup>n</sup>, the magnitude of the sum of the vectors is always less than the sum of each individual vector's magnitude: </li>
+        <ul>||<b>u</b> + <b>v</b>|| ≤ ||<b>u</b>|| + ||<b>v</b>||</ul>
+      
+      <li>This is analogous to a triangle where the length of any side is always less than the sum of the other 2 lengths</li>
+    </ul>
+    
+    <ul class="topic"><b>Projections</b>
+      <li>The <b>projection</b> (closest distance) of a vector <b>u</b> onto another vector <b>v</b> is the shadow of <b>u</b> onto <b>v</b>. The vector between the projected vector <b>w</b> & <b>u</b> is (<b>u</b> - <b>w</b>). <b>w</b> is a scaled version of <b>v</b>. The dot product of (<b>u</b> - <b>w</b>) && <b>v</b>is zero: </li>
+        <ul class="red">proj(<b>u</b>, <b>v</b>) = <b>w</b></ul>
+        
+        <br><ul><b>w</b> = c<b>v</b></ul>
+        
+        <br><ul>(<b>u</b> - <b>w</b>) ⋅ <b>v</b> = 0</ul>
+        <ul>(<b>u</b> - c<b>v</b>) ⋅ <b>v</b> = 0</ul>
+        <ul class="red">c = (<b>u</b> ⋅ <b>v</b>) / ||v||<sup>2</sup></ul>
+        
+        <ul class="red"><b>w</b> = ((<b>u</b> ⋅ <b>v</b>) / ||v||<sup>2</sup>) ⋅ <b>v</b></ul>
+      
+      <br><li>The distance between <b>u</b> & <b>v</b> or <b>u</b> & <b>w</b> is ||<b>u</b> - <b>w</b>||: </li>
+        <ul>dist(<b>u</b>, <b>v</b>) = ||<b>v</b> - <b>w</b>||</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given vector<b>u</b> = [[1] [2] [-3] [1]], <b>w</b> = [[2] [3] [2] [0]], are these vectors orthogonal to each other?</li>
+      
+        <br><ul>Computing the dot product: 
+          <li><b>u</b> ⋅ <b>v</b> = (1 * 2) + (2 * 3) + (-3 * 2) + (1 * 0)</li>
+          <li><b>u</b> ⋅ <b>v</b> = 2 + 6 - 6 + 0</li>
+          <li><b>u</b> ⋅ <b>v</b> = 2</li>
+          
+          <br><li class="green">Since the dot product of the vectors is not zero, the vectors are not orthogonal</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Find the projection of vector <b>u</b> = [[3] [4]] onto line y = -2x.
+      
+        <br><br><li>A vector is first solved which spans the line: </li>
+          <ul>solutions = {x [[1] [-2]]}, basis B = {[[1] [-2]]}</ul>
+          <ul>vector <b>v</b> = [[1] [-2]]</ul>
+          
+        <br><li>The projection (vector <b>w</b>) of <b>u</b> onto <b>v</b> can now be solved: </li>
+          <ul><b>u</b> ⋅ <b>v</b> = 3 - 8</ul>
+          <ul><b>u</b> ⋅ <b>v</b> = -5</ul>
+          
+          <br><ul>||<b>v</b>||<sup>2</sup> = (1)<sup>2</sup> + (-2)<sup>2</sup></ul>
+          <ul>||<b>v</b>|| = 5</ul>
+          
+          <br><ul><b>w</b> = proj(<b>u</b>, <b>v</b>)</ul>
+          <ul><b>w</b> = ((-5) / 5) <b>v</b></ul>
+          <ul><b>w</b> = - [[1] [-2]]</ul>
+          <ul class="green"><b>w</b> = [[-1] [2]]</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

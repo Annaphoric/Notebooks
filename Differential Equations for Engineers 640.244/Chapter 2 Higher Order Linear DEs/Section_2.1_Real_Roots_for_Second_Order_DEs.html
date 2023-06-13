@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 2.1: Real Roots for Second-Order Differential Equations</title>
+  </head>
+  <body>
+  		<h1>Section 2.1: Real Roots for Second-Order Differential Equations</h1>
+    
+    <ul class="topic"><b>Second-Order Differential Equations</b>
+      <li>A <b>second-order DE</b> is a DE where the highest derivative is the highest derivative. The general equation for a second-order DE has the form: </li>
+        <ul>y'' = f(t, y, y')</ul>
+      
+      <br><li>Generally, there are no explicit methods to solving a second-order DE, unlike first-order DEs. Linear DEs are easier to solve, having the general form: </li>
+        <ul>A(t) y'' + B(t) y' C(t) y = F(t)</ul>
+      <li>In standard form: </li>
+        <ul class="red">y'' + p(t) y' + q(t) y = g(t)</ul>
+      
+      <br><li>A second-order DE is considered homogenous if g(t) == 0 is true. Also, it is considered constant-coefficient if p(t) && q(t) are constants</li>
+          
+      <br><li>Constant-coefficient, homogenous equations are generally easiest to solve, whilst constant-coefficient, non-homogenous equations are not as easy. If a second-order DE is neither of these, it cannot be solved</li>
+      
+      <br><li>As mentioned in the previous chapter, a first-order linear, constant-coefficient, homogenous DE has the form: </li>
+        <ul>dy/dt + a y = 0</ul>
+        <ul>y(t) = C / e<sup>a t</sup> (This is the general solution to this type of DE)</ul>
+      <li>Since the solution contains an exponential (e), the exponential will persist with repeated differentiations</li>
+      
+      <br><li>Solutions to second-order DEs can be found using a similar process. It would contain e<sup>r t</sup>; the resulting equation for r is the referred to as the <b>characteristic equation</b> of the DE. {y(t) = e<sup>r t</sup>;  dy/dt = r e<sup>r t</sup>;  d<sup>2</sup>y/dt<sup>2</sup> = r<sup>2</sup> e<sup>r t</sup>} & its derivatives will replace y & its derivatives within the DE (The r-exponontial method)</li>
+      
+      <br><li>Second-order DEs apply extensively to the physics of motion, that is, the laws the govern the laws of motion. Newton's 2nd Law of Motion says that a force is caused by acceleration on an object: </li>
+        <ul>force = mass * acceleration</ul>
+        <ul>F = m a</ul>
+      <li>The force depends on the position of an object; the acceleration is the 2nd-order derivative of the position</li>
+      
+      <br><li>In relation to Newton's 2nd Law, Hooke's Law explains how the restoring force of a spring is dependent on a spring constant multiplied by the position: </li>
+        <ul>restoring_force = - spring_constant * position</ul>
+        <ul>F = -k x</ul>
+      
+      <br><li><b>Drag force</b> is the natural force of a fluid onto an object</li>
+        <ul>drag_force  = - drag_coefficient * velocity</ul>
+        <ul>F = -γ v</ul>
+      
+      <br><li>Another application of 2nd-order DEs is seen in Kirchhoff's Law. This law explains how the total voltage drop around a closed circuit must equal zero. The voltage may vary its variables depending on what lies within the circuit. For instance, in series, voltage is dependent on the current & resistance when passing through a resistor, charge over capacitance when passing through a capacitor, and inductance & rate of current when passing through an inductor: </li>
+        <ul>V<sub>resistor</sub> = current * resistance;  V<sub>capacitor</sub> = charge / capacitance;  V<sub>inductor</sub> = inductance * current_rate</ul>
+        <ul>V<sub>resistor</sub> = I R;  V<sub>capacitor</sub> = Q / C;  V<sub>inductor</sub> = L dI/dt</ul>
+      <li>The current is the first-order of charge & current rate is the second-order of charge in terms of time</li>
+      
+      <br><li>Solutions to second-order DEs can also be solved given initial conditions. let y'' = f(t, y); In order to solve this differential equation, y'(0) && y(0) must be explicitly given as ICs. There will always be 2 constants: C & D within a general solution of y(t) for y''. As long as the DE is second-order, linear, && homogenous, any 2 solutions: y<sub>1</sub> & y<sub>2</sub> can have any other solution that matches C y<sub>1</sub> D y<sub>2</sub> (linear combinations of solutions): </li>
+        <ul>solution y(t) = C y<sub>1</sub> + D y<sub>2</sub></ul>
+        <ul>y'(t) = C y<sub>1</sub>' + D y<sub>2</sub>'</ul>
+     
+      
+      <br><li>let (C y<sub>1</sub>(0) + D y<sub>2</sub>(0)) = a && (C y<sub>1</sub>'(0) + D y<sub>2</sub>'(0)) = b; To solve for constants C & D, both a is multiplied with y<sub>1</sub>'(0) and b is multiplied with y<sub>1</sub>(0). Then, the difference of a y<sub>1</sub>'(0) & b y<sub>1</sub>'(0) are taken. The constant D can now be written as: </li>
+        <ul class="red">D = (a y<sub>1</sub>'(0) - b y<sub>1</sub>(0)) / (y<sub>1</sub>'(0) y<sub>2</sub>(0) - y<sub>1</sub>(0) y<sub>2</sub>'(0)), as long as denominator does not equal zero (This would be the general solution to the DE)</ul>
+        
+      <br><li><b>Abel's Theorem</b> explains that if w(t) = {y<sub>1</sub>(t) y<sub>2</sub>'(t) - y<sub>1</sub>'(t) y<sub>2</sub>(t)} exists, the value of w(t) is always zero or never zero for all t. Testing any point will reveal the nature of this function. The function w(t) is known as the <b>Wranskian</b> of solutions. The solutions y<sub>1</sub> && y<sub>2</sub> are <b>linearly independent</b> only if the value of w(t) is never zero. They are <b>linearly dependent</b> if otherwise</li>
+      <li>Incorporating the r-exponential method (for real roots), another way to determine w(t) is by substituting for y & its derivative so that w(t) = {(r<sub>1</sub> - r<sub>2</sub>) e<sup>(r<sub>1</sub> + r<sub>2</sub>) t</sup>}, as long as r<sub>1</sub> is not equal to r<sub>2</sub></li>
+      
+      <br><li>Existence & Uniqueness Theorems also apply for second-order DEs. As long as the coefficients contained within the DE are continuous on open interval I containing t<sub>0</sub>, then there exists exactly one solution y(t) for the DE throughout I. Determining the solution requires the 2 ICs as mentioned previously (y(t<sub>0</sub>) = y<sub>0</sub> && y'(t<sub>0</sub>) = y<sub>0</sub>'). All solutions to a DE requires that there exists linear combinations of 2 y(t) solutions for all constants & all values of t</li>
+      
+      <br><li>A <b>fundamental set</b> or <b>basis</b> is a set of linear combinations for all solutions to an equation. set S = {y<sub>1</sub>, y<sub>2</sub>} is a basis for DE {y'' + p(t) y' + q(t) y = 0} if {c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>} applies for all solutions to the DE</li>
+      
+      <br><li>Linear DEs are generally easier to solve. For DE {y'' + p(t) y' + q(t) y = 0}, let L(y) = y'' + p(t) y' + q(t) y;  L(y) is referred to as a differential operator which takes the input of y(t) and substitutes its derivatives accordingly</li>
+      
+      <br><li><b>The Theorum of Superposition</b> says that if y<sub>1</sub> & y<sub>2</sub> are solutions of differential-operator L(y) = 0, then the linear combination {c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>} is also a solution to L(y). The following equations are true: </li>
+        <ul>L(c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>) == (c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>)'' + p(t) (c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>)' + q(t) (c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>)</ul>
+        <ul>L(c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>) == c<sub>1</sub> (y<sub>1</sub>'' p(t) y<sub>1</sub>' + q(t) y<sub>1</sub>) + c<sub>2</sub> (y<sub>2</sub>'' + p(t) y<sub>2</sub>' + q(t) y<sub>2</sub>)</ul>
+        <ul class="red">L(c<sub>1</sub> y<sub>1</sub> + c<sub>2</sub> y<sub>2</sub>) == c<sub>1</sub> L(y<sub>1</sub>) + c<sub>2</sub> L(y<sub>2</sub>)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol><em>For what values of r is e<sup>r t</sup> a solution to {y'' - 4y' - 5y = 0}?</em>
+      		
+      		<br><li>Replacing y & its derivatives for {y(t) = e<sup>r t</sup>...}: </li>
+      		  <ul>y'' - 4y' - 5y = 0</ul>
+      		  <ul>r<sup>2</sup> e<sup>r t</sup> - 4r e<sup>r t</sup> - 5 e<sup>r t</sup> = 0</ul>
+      		  <ul>e<sup>r t</sup>(r<sup>2</sup> - 4r - 5) = 0</ul>
+      		  <ul>(r - 5)(r + 1) = 0</ul>
+      		  <ul>r = {-1, 5}</ul>
+      		  <ul>This means the solutions to the given DE are y(t) = {e<sup>-t</sup>, e<sup>5t</sup>}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol><em>Find the solution to DE: y'' = t<sup>2</sup>; given ICs y(0) = 1 & y'(0) = 2.</em>
+      
+        <br><li>Solving for y'(t) & y(t) generally via integration: </li>
+          <ul>y''(t) = t<sup>2</sup></ul>
+          <ul>y'(t) = t<sup>3</sup>/3 + C</ul>
+          <ul>y(t) = t<sup>4</sup>/12 + C t + D</ul>
+        
+        <br><li>Solving for the constants individually using ICs: </li>
+          <ul>y(0) = (0)<sup>4</sup>/12 + C (0) + D == 1</ul>
+          <ul>D = 1</ul>
+          
+          <br>y(t) = <ul>t<sup>4</sup>/12 + C t + 1</ul>
+                    
+          <br><ul>y'(0) = (0)<sup>3</sup>/3 + C == 2</ul>
+          <ul>C = 2</ul>
+          
+          <br><ul>y(t) = t<sup>4</sup>/12 + 2t + 1</ul>
+          <ul>y'(t) = t<sup>3</sup>/3 + 2</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol><em>Find the general solution to DE {y'' + 2' - 3y = 0} and verify that it is, in fact, a general solution.</em>
+      
+        <br><li>Solutions for this DE can be determined using the r-exponential method: </li>
+          <ul>y'' + 2y' - 3y = 0</ul>
+          <ul>e<sup>r t</sup> (r<sup>2</sup> + 2r - 3) = 0</ul>
+          <ul>(r + 3)(r - 1) = 0</ul>
+          <ul>r = {-3, 1}</ul>
+          <ul>solutions = {1/e<sup>3t</sup>, e<sup>t</sup>}</ul>
+          <ul>This means the general solution is {y(t) = C / e<sup>3t</sup> + D e<sup>t</sup>}</ul>
+        
+        <br><li>To verify that this is truly the general solution, Abel's Theorem is applied: </li>
+          <ul>let y<sub>1</sub>(t) = 1/e<sup>3t</sup>;  y<sub>2</sub>(t) = e<sup>t</sup></ul>
+          
+          <br><ul>w(t) = y<sub>1</sub>(t) y<sub>2</sub>'(t) - y<sub>1</sub>'(t) y<sub>2</sub>(t)</ul>
+          <ul>w(t) = e<sup>t</sup> / e<sup>3t</sup> + 3 e<sup>t</sup> / e<sup>3t</sup></ul>
+          <ul>w(t) = 1 / e<sup>2t</sup> + 3 / e<sup>2t</sup></ul>
+          <ul>w(t) = 4 / e<sup>2t</sup></ul>
+          <ul>The value for w(t) is never zero regardless of t. Therefore, the general solution is legit</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

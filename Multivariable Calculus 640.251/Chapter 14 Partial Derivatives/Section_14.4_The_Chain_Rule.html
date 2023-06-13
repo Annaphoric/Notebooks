@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.4: The Chain Rule</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.4: The Chain Rule</h2>
+  
+    <ul class="topic"><b>Introduction</b>
+      <li>Assume w = f(x) is a differentiable function of x and x = g(t) is a differntiable function of t, the differential of w in terms of t can be solved by multiplying the 2 derivatives together. This is shown as: </li>
+        <ul>dw/dt = (dw/dx)(dx/dt)</ul>
+        <ul>In this case, w is the dependent variable, x is the intermediate variable (since it is being cancelled out) & t is the independent variable</ul>
+      
+      <br><li>This shares a similar connotation for double-variable functions. Assume w = f(x, y) is differentiable for both x & y and x = g(t) & y = h(t) are differentiable for t. dw/dt is solved as shown: </li>
+        <ul class="red">dw/dt = (∂w/∂x)(dx/dt) + (∂w/∂y)(dy/dt)</ul>
+      <li>Formally, each derivative is evaluated at a specific point, expressed as: </li>
+        <ul>dw(t<sub>0</sub>)/dt = (∂w(x<sub>0</sub>, y<sub>0</sub>)/∂x)(dx(t<sub>0</sub>)/dt) + (∂w(x<sub>0</sub>, y<sub>0</sub>)/∂y)(dy(t<sub>0</sub>)/dt)</ul>
+      
+      <br><li>Likewise, this same concept is applied with triple-variable functions & beyond. Assume w = f(x, y, z) is differentiable for each of its independent variables and x = g(t), y = h(t) & z = i(t) are all differentiable for t. dw/dt is solved as shown: </li>
+        <ul>dw/dt = (∂w/∂x)(dx/dt) + (∂w/∂y)(dy/dt) + (∂w/∂z)(dz/dt)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Use the Chain Rule to find the derivative of w = xy with respect to t along the path {x = cos(t)} & {y = sin(t)} at t<sub>0</sub> = π/2.
+      
+        <br><br><li>Solving for both partial derivatives of w: </li>
+          <ul>∂w/∂x = y; ∂w/∂y = x;</ul>
+          
+        <br><li>Calculating the derivatives of the functions x & y: </li>
+          <ul>dx/dt = -sin(t); dy/dt = cos(t);</ul>
+        
+        <br><li>Using this info to determine the differential of w in terms of t: </li>
+          <ul>dw/dt = (∂w/∂x)(dx/dt) + (∂w/∂y)(dy/dt)</ul>
+          <ul>dw/dt = (y)(-sin(t)) + (x)(cos(t))</ul>
+          <ul class="green">dw/dt = x cos(t) - y sin(t)</ul>
+        
+        <br><li>Substituting x & y for its given respective functions: </li>
+          <ul>dw/dt = (cos(t)) cos(t) - (sin(t)) sin(t)</ul>
+          <ul>dw/dt = cos<sup>2</sup>(t) - sin<sup>2</sup>(t)</ul>
+          <ul>dw/dt = cos(2t)</ul>
+        
+        <br><li>Substituting t for its given value: </li>
+          <ul>dw(π/2)/dt = cos(2(π/2))</ul>
+          <ul class="green">dw(π/2)/dt = -1</ul>
+          <ul>Note: This value can also be solved by directly substituting the x & y functions into f(x, y), differentiating, and last, substituting the t-value</ul>
+      </ol>
+    </ul>
+    
+    <ul class="green"><b>Example 2: </b>
+      <ol>Given w = xy + z, x = cos(t), y = sin(t), z = t, use the chain rule to solve for dw/dt at t = 0.
+        
+        <br><br><li>Solving for each respective partial derivative of w: </li>
+          <ul>∂w/∂x = y; ∂w/∂y = x; ∂w/∂z = 1;</ul>
+          
+        <br><li>Finding the derivatives of x, y & z: </li>
+          <ul>dx/dt = -sin(t); dy/dt = cos(t); dz/dt = 1;</ul>
+          
+        <br><li>dw/dt is calculated as shown: </li>
+          <ul>dw/dt = (∂w/∂x)(dx/dt) + (∂w/∂y)(dy/dt) + (∂w/∂z)(dz/dt)</ul>
+          <ul>dw/dt = (y)(-sin(t)) + (x)(cos(t)) + (1)(1)</ul>
+          <ul>dw/dt = x cos(t) - y sin(t) + 1</ul>
+          
+          <br><ul>dw/dt = (cos(t)) cos(t) - (sin(t)) sin(t) + 1</ul>
+          <ul>dw/dt = cos<sup>2</sup>(t) - sin<sup>2</sup>(t) + 1</ul>
+          <ul>dw/dt = cos(2t) + 1</ul>
+        
+        <br><li>Substituting for the given t-value: </li>
+          <ul>dw(0)/dt = cos(2(0)) + 1</ul>
+          <ul>dw(0)/dt = 2</ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Continued</b>
+      <li>Assume there is a triple-variable function w = f(x, y, z) and double-variable functions x = g(r, s), y = h(r, s), & z = i(r, s), ∂w/∂r & ∂w/∂s can be calculated as shown: </li>
+        <ul>∂w/∂r = (∂w/∂x)(∂x/∂r) + (∂w/∂y)(∂y/∂r) + (∂w/∂z)(∂z/∂r)</ul>
+        <ul>∂w/∂s = (∂w/∂x)(∂x/∂s) + (∂w/∂y)(∂y/∂s) + (∂w/∂z)(∂z/∂s)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Find a) ∂w/∂r; b) ∂w/∂s; given {w = x + 2y + z<sup>2</sup>}, x = r/s, y = {r<sup>2</sup> + ln(s)} & z = 2r.</li>
+        
+        <br><ul>a)
+          <li>Solving for the first partial derivatives of w: </li>
+            <ul>∂w/∂x = 1; ∂w/∂y = 2; ∂w/∂z = 2z;</ul>
+          
+          <br><li>Finding the differentials of x, y, & z with respect to r: </li>
+            <ul>∂x/∂r = 1/s; ∂y/∂r = 2r; ∂z/∂r = 2;</ul>
+          
+          <br><li>Solving for ∂w/∂r: </li>
+            <ul>∂w/∂r = (∂w/∂x)(∂x/∂r) + (∂w/∂y)(∂y/∂r) + (∂w/∂z)(∂z/∂r)</ul>
+            <ul>∂w/∂r = (1)(1/s) + (2)(2r) + (2z)(2)</ul>
+            <ul>∂w/∂r = 1/s + 4r + 4z</ul>
+            
+            <br><ul>∂w/∂r = 1/s + 4r + 4(2r)</ul>
+            <ul class="green">∂w/∂r = 1/s + 12r</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>Finding the differentials of x, y, & z with respect to s: </li>
+            <ul>∂x/∂s = -r/s<sup>2</sup>; ∂y/∂s = 1/s; ∂z/∂s = 0;</ul>
+          
+          <br><li>Solving for ∂w/∂s: </li>
+            <ul>∂w/∂s = (∂w/∂x)(∂x/∂s) + (∂w/∂y)(∂y/∂s) + (∂w/∂z)(∂z/∂s)</ul>
+            <ul>∂w/∂s = (1)(-r/s<sup>2</sup>) + (2)(1/s)</ul>
+            <ul class="green">∂w/∂s = 2/s - r/s<sup>2</sup></ul>
+            <ul>∂w/∂s = (2 - r/s)/s</ul>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4</b>
+      <li>Given {w = x<sup>2</sup> + y<sup>2</sup>}, {x = r - s}, & {y = r + s}, determine a) ∂w/∂r; b) ∂w/∂s;</li>
+      
+        <br><ul>a)
+          <li>Solving for the first partial derivatives of w: </li>
+            <ul>∂w/∂x = 2x; ∂w/∂y = 2y;</ul>
+          
+          <br><li>Finding the differentials of x & y with respect to r: </li>
+            <ul>∂x/∂r = 1; ∂y/∂r = 1;</ul>
+          
+          <br><li>Solving for ∂w/∂r: </li>
+            <ul>∂w/∂r = (∂w/∂x)(∂x/∂r) + (∂w/∂y)(∂y/∂r)</ul>
+            <ul>∂w/∂r = (2x)(1) + (2y)(1)</ul>
+            <ul>∂w/∂r = 2(x + y)</ul>
+            
+            <br><ul>∂w/∂r = 2((r - s) + (r + s))</ul>
+            <ul class="green">∂w/∂r = 4r</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>Finding the differentials of x & y with respect to s: </li>
+            <ul>∂x/∂s = -1; ∂y/∂s = 1;</ul>
+          
+          <br><li>Solving for ∂w/∂s: </li>
+            <ul>∂w/∂s = (∂w/∂x)(∂x/∂s) + (∂w/∂y)(∂y/∂s)</ul>
+            <ul>∂w/∂s = (2x)(-1) + (2y)(1)</ul>
+            <ul>∂w/∂s = 2(y - x)</ul>
+            
+            <br><ul>∂w/∂s = 2((r + s) - (r - s))</ul>
+            <ul class="green">∂w/∂s = 4s</ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Implicit Differentiation</b>
+      <li>Assume a function {w = f(x, y) = 0} & {y = g(x)} are both differentiable, since the derivative of w in terms of x is also equal to zero, then the following must be true: </li>
+        <ul>dy/dx = -f<sub>x</sub>/f<sub>y</sub></ul>
+        <ul class="red">dy/dx = -(∂w/∂x)(∂y/∂w)</ul>
+      
+      <br><li>Mixed multivariable functions work similarly. Assume a function {w = f(x, y, z) = 0} & {z = g(x, y)}, the following must be true: </li>
+        <ul>dz/dx = -f<sub>x</sub>/f<sub>z</sub>; dz/dy = -f<sub>y</sub>/f<sub>z</sub>;</ul>
+        <ul class="red">dz/dx = -(∂w/∂x)(∂z/∂w); dz/dy = -(∂w/∂y)(∂z/∂w)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 5: </b>
+      <ol>Find dy/dx if {y<sup>2</sup> - x<sup>2</sup> - sin(xy) = 0}.
+        
+        <br><li>let w = y<sup>2</sup> - x<sup>2</sup> - sin(xy). The partial derivatives of w are as follows: </li>
+          <ul>∂w/∂x = -2x - y cos(xy); ∂w/∂y = 2y - x cos(xy);</ul>
+          <ul>∂w/∂x = -(2x + y cos(xy)); ∂y/∂w = 1/(2y - x cos(xy));</ul>
+        
+        <br><li>dy/dx is calculated as shown: </li>
+          <ul>dy/dx = -(∂w/∂x)(∂y/∂w)</ul>
+          <ul class="green">dy/dx = (2x + y cos(xy)) / (2y - x cos(xy))</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 6: </b>
+      <li>Find a) ∂z/∂x; b) ∂z/∂y; at the origin if {x<sup>3</sup> + z<sup>2</sup> + y e<sup>xz</sup> + z cos(y) = 0}</li>
+      
+        <br><ul>a)
+          <li>let w = x<sup>3</sup> + z<sup>2</sup> + y e<sup>xz</sup> + z cos(y). The 3 partial derivatives of w are: </li>
+            <ul>∂w/∂x = 3x<sup>2</sup> + yz e<sup>xz</sup>; ∂w/∂y = e<sup>xz</sup> - z sin(y); ∂w/∂z = 2z + xy e<sup>xz</sup> + cos(y);</ul>
+            <ul>∂z/∂w = 1/(2z + xy e<sup>xz</sup> + cos(y))</ul>
+          
+          <br><li>∂z/∂x is determined as follows: </li>
+            <ul>∂z/∂x = -(∂w/∂x)(∂z/∂w)</ul>
+            <ul>∂z/∂x = -(3x<sup>2</sup> + yz e<sup>xz</sup>) / (2z + xy e<sup>xz</sup> + cos(y))</ul>
+          
+          <br><li>Evaluating this derivative at the origin: </li>
+            <ul>∂z(0, 0, 0)/∂x = 0</ul>
+        </ul>
+        
+        <br><ul>b)
+          <li>∂z/∂y is determined as follows: </li>
+            <ul>∂z/∂y = -(∂w/∂y)(∂z/∂w)</ul>
+            <ul>∂z/∂y = -(e<sup>xz</sup> - z sin(y)) / (2z + xy e<sup>xz</sup>+ cos(y))</ul>
+          
+          <br><li>Evaluating this derivative at the origin: </li>
+            <ul>∂z(0, 0, 0) = -1</ul>
+        </ul>
+    </ul>
+    
+  </body>
+</html>

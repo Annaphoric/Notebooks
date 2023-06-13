@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.4: Euler's Method</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.4: Euler's Method</h1>
+    
+    <ul class="topic"><b>Euler's Method</b>
+      <li><b>Euler's Method</b> is a numerical method for approximating solutions to a differential equation in an initial value problem</li>
+      <li>A solution curve to the DE is always tangent to vectors within the slope field (graph of the DE within ty-plane)</li>
+      
+      <br><li>let DE dy/dt = f(t, y), initial value point = (t<sub>0</sub>, y<sub>0</sub>)</li>
+      <li>Within slope field f(t, y), starting at (t<sub>0</sub>, y<sub>0</sub>), if tiny steps of step size Δt were to being taken along a tangent line segment towards increasing t, the overall slope of the solution curve can be determined</li>
+      <li>Say, there exists another point at (t<sub>0</sub> + Δt), which is point (t<sub>1</sub>, y<sub>1</sub>)</li>
+      <li>This continues on for as many points as possible starting from point (t<sub>k</sub>, y<sub>k</sub>) depending on step size Δt</li>
+        <ul>Generally, the shorter the step size, the more accurate the approximation</ul>
+      <li>Since t<sub>k + 1</sub> == (t<sub>k</sub> + Δt) is true, y<sub>k + 1</sub> can be solved using the slope line formula</li>
+        <ul>The slope at made from points (t<sub>k</sub>, y<sub>k</sub>) & (t<sub>k + 1</sub>, y<sub>k + 1</sub>) is equal to the value of the DE, which is f(t, y)</ul>
+        <ul>So:
+          <li>f(t, y) = (y<sub>k + 1</sub> - y<sub>k</sub>) / (t<sub>k + 1</sub> - t<sub>k</sub>)</li>
+          <li>f(t, y) = (y<sub>k + 1</sub> - y<sub>k</sub>) / Δt</li>
+          <li>y<sub>k + 1</sub> = f(t, y) Δt + y<sub>k</sub></li>
+        </ul>
+      <li>In other words, this method can be written as: </li>
+        <ul>Point (t<sub>k + 1</sub>, y<sub>k + 1</sub>) = Point (t<sub>k</sub> + Δt, f(t, y) Δt + y<sub>k</sub>)</ul>
+      
+      <br><li>Since the slope field of the DE always lies below the solution curve, the approximation based on the tangent vectors will always lie below the solution curve as well</li>
+      
+    </ul>
+    
+  </body>
+</html>

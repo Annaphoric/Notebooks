@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 2.1, 2.2: Matrix Multiplication</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 2.1, 2.2: Matrix Multiplication</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>If matrix A has the dimensions m ⨯ n, and the rank = n, are the columns linearly independent?</li>
+      
+        <br><ul>If the rank is n, which is also the # of columns, then there must be a pivot in every column. This would mean that there are no free vectors. If there are no free vectors then the matrix is, indeed, linearly independent</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Given set S of 4 vectors in R<sup>3</sup>, is set S dependent?</li>
+      
+        <br><ul>S is dependent because the number of vectors is greater than the number of dimensions. Although, having a number of vectors less than the dimensions does not imply that the set is independent. For instance, if 2 vectors lied on the same axis, then the vectors would still be considered dependent, because one may be removed & the span would remain the same</ul>
+    </ul>
+    
+    <ul class="topic"><b>Multiplying Matrices</b>
+      <li>As we saw in the previous chapter, a matrix & a vector can be multiplied together to form a new vector. The matrix is seen as a function of x (a vector in this case) to solve for a y (the resulting vector). For instance: </li>
+        <ul>[[-1 2 3] [0 1 2]] * [[x] [y] [z]] = [[-x + 2y + 3z] [y + 2z]] = [[a] [b]]</ul>
+        <ul>{a = -x + 2y + 3z; b = y + 2}</ul>
+      
+      <br><li>Assume matrix A has m ⨯ n dimensions and is being multipled by a vector x with n rows, the <b>domain</b> of A will be all real numbers in n-dimensions (R<sup>n</sup>). The <b>range</b> of the resulting vector y, having m rows, is all real numbers in m-dimensions (R<sup>m</sup>): </li>
+        <ul>A<sub>m ⨯ n</sub> * x<sub>n ⨯ 1</sub> = y<sub>m ⨯ 1</sub></ul>
+      <li>The numbers of dimensions of the range of A is always equal to the rank of A</li>
+      <li>Functions that are not one-to-one are referred to as onto</li>
+      
+      <br><li>Multiplying matrices together is much like multiplying a matrix & a vector together. It is seen as the composition of 2 matrices. In order to multiply 2 matrices together, the number of columns in the first matrix A must be equal to the number of rows in the second matrix B</li>
+        <ul class="red">columns(A) == rows(B) must be true for matrix multiplication to be valid</ul>
+      
+      <br><li>Order matters in matrix multiplication, if matrix A can be multiplied with matrix B, matrix B is not always compatible to be multiplied with matrix A. However, order is irrelevant if the 2 matrices are square matrices, where the number of rows equals the number of columns, even though the 2 results would not be equal: </li>
+        <ul class="red">if(rows(A) == columns(A) && rows(B) == columns(B)) are both true, order is irrelevant when multiplying matrix A with matrix B</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Multiply the following 2 matrices together: matrix A = [[-1 2 1] [3 4 5]] and B = [[-1 0 1 2] [0 1 0 1] [-1 1 1 0]].</li>
+      
+        <br><ul>matrix A has the dimensions 2 ⨯ 3 whilst matrix B has the dimenions 3 ⨯ 4. Multiplication is iterated by multiplying each column of B at a time for each row of A (dot product of rows in A with columns of B; ampersand symbol will be used for combining individual dot products)): 
+          <li>product = ([[-1 2 1] [3 4 5]] ⋅ [[-1] [0] [-1]]) & ([[-1 2 1] [3 4 5]] ⋅ [[0] [1] [1]]) & ([[-1 2 1] [3 4 5]] ⋅ [[1] [0] [1]]) & ([[-1 2 1] [3 4 5]] ⋅ [[2] [1] [0]])</li>
+          <li>product = [[1 - 1] [-3 - 5]] & [[2 + 1] [4 + 5]] & [[-1 + 1] [3 + 5]] & [[-2 + 2] [6 + 4]]</li>
+          <li>product = [[0] [-8]] & [[3] [9]] & [[0] [8]] & [[0] [10]]</li>
+          <li class="green">product = [[0 3 0 0] [-8 9 8 10]]</li>
+        </ul>
+    </ul>
+  </body>
+</html>

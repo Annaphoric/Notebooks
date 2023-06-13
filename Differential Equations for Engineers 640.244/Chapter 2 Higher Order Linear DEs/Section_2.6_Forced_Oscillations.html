@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 2.6: Forced Oscillations</title>
+  </head>
+  <body>
+  		<h1>Section 2.6: Forced Oscillations</h1>
+  		
+  		<ul class="topic"><b>Beats</b>
+  		  <li>The frequency of forced undamped oscillations are based upon a forcing frequency ω & natural frequency ω<sub>0</sub>. As long as {ω<sub>0</sub> - ω} is small (ω<sub>0</sub> is small or ω is large) && {ω == ω<}, the solution y(t) can be viewed as a since function with <b>amplitude modulation</b>: </li>
+  		    <ul>y(t) = C cos(ω<sub>0</sub> t) + D sin(ω<sub>0</sub> t) + F<sub>0</sub> cos(ω t) / (a (ω<sub>0</sub><sup>2</sup> - ω<sup>2</sup>))</ul>
+  		  <li>At ICs [y(0), y'(0)] = 0, the explicit solution is written: </li>
+  		    <ul>y(t) = F<sub>0</sub> (cos(ω t) - cos(ω<sub>0</sub> t)) / (a (ω<sub>0</sub><sup>2</sup> - ω<sup>2</sup>))</ul>
+  		    <ul>y(t) = -2 F<sub>0</sub> sin(((ω<sub>0</sub> - ω) t) / 2) sin(((ω + ω<sub>0</sub>) t) / 2)</ul>
+  		    <ul>If ω & ω<sub>0</sub> are close in value, the first sine term sets the bounds of a slow oscillating wave for the second sine term to run within the first. This gives rise to a beating phenomenon/pattern (a sound frequncy that fades in and out continuously). The closer the natural & forcing frequency, the slower the fading effect (as long as they are not equal)</ul>
+  		</ul>
+  		
+  		<ul class="topic"><b>Resonance</b>
+  		  <li><b>Resonance</b> occurs when natural-frequency ω<sub>0</sub> is equal to forcing-frequency ω. The DE for this case is: {y'' + 4y = cos(2t)} having imaginary roots and a homogenous solution y<sub>h</sub>(t) = {C cos(2t) + D sin(2t)}. It will also have undetermined-coefficient {At cos(2t) + Bt sin(2t)} as a guess. The equation y(t) = t sin(2t) gives rise to an oscillating curve bounded by t but infinitely growing. This does not occur in the real world, as waves truly dissipate over time & do not grow infinitely large. This highlights the idea of <b>pure resonance</b> which is resonance (oscillations) that in theory grow infinitely large & no damping occurs. In reality, there is always some resistance which prevents pure resonance from occurring</li>
+  		</ul>
+  		
+  		<ul class="topic"><b>Interpretation of Amplitude</b>
+  		  <li>The amplitude R can be interpreted numerically using the following equation: </li>
+  		    <ul>R c / F<sub>0</sub> = 1 / sqrt((b<sup>2</sup>/(ac)(w/w<sub>0</sub>)<sup>2</sup>) + (1 - (w/w<sub>0</sub>)<sup>2</sup>)<sup>2</sup>), where R = amplitude of forced response, F<sub>0</sub>/c = amplitude of oscillating force</ul>
+  		    <ul>R c / F<sub>0</sub> is the ratio of amplitudes between the 2 forces. let m = R c / F<sub>0</sub>; if(m > 1): amplitude of oscillating force is larger than that of a constant external force (<b>Practical Resonance</b>)</ul>
+  		  
+  		  <br><li>A graph of {R c / F<sub>0</sub>} over {w/w<sub>0</sub>} can be plotted using different damping coefficients to observe the behaviour of the amplitudes</li>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 1: </b>
+				  <ol><em>A RLC circuit contains a resistor of 6Ω, a capacitor of (1/9)F, and an inductor of 2H. This circuit is closed at t = 0 with an AC source that supplies a voltage of (2 cos(5t))V after t seconds. Determine a function for the charge on the capacitor at any point in time</em>
+				    
+				    <br><li>Since the charge & current are both initially zero: [Q(0), Q'(0)] = 0; The DE for this equation is as shown: </li>
+				      <ul>L Q'' + R Q' + Q/C = V(t), where L = inductance, R = resistance, C = capacitance, Q = charge, V = voltage;</ul>
+				      <ul>2Q'' + 6Q' + 9Q = 2 cos(5t)</ul>
+				      <ul>Q'' + 3Q' + 9Q/2 = cos(5t)</ul>
+				    
+				    <br><li>Solving for the homogenous solution: </li>
+				      <ul>r<sup>2</sup> + 3r + 9/2 = 0</ul>
+				      <ul>r = (-3 ± sqrt(9 - 18)) / 2</ul>
+				      <ul>r = (-3 ± 3i) / 2</ul>
+				      
+				      <br><ul>Q<sub>h</sub>(t) = C cos(3t/2) / e<sup>3t/2</sup> + D sin(3t/2) / e<sup>3t/2</sup></ul>
+				    
+				    <br><li>Solving for the non-homgenous solution: </li>
+				      <ul>Q(t) = A cos(5t) + B sin(5t) // Guess #1</ul>
+				      
+				      <br><ul>Q'(t) = 5(B cos(5t) - A sin(5t))</ul>
+				      
+				      <br><ul>Q''(t) = -25(B sin(5t) + A cos(5t))</ul>
+				      
+				      <br><ul>-25(B sin(5t) + A cos(5t)) + 15(B cos(5t) - A sin(5t)) + 9(B sin(5t) + A cos(5t))/2 = cos(5t)</ul>
+				      <ul>15(B cos(5t) - A sin(5t)) - 41(B sin(5t) + A cos(5t))/2 = cos(5t)</ul>
+				      <ul>A = -82 / 2581; B = 60 / 2581</ul>
+				      
+				      <br><ul>Q(t) = C cos(3t/2) / e<sup>3t/2</sup> + D sin(3t/2) / e<sup>3t/2</sup> + (60 sin(5t) - 82 cos(5t)) / 2581</ul>
+				      
+				    <br><li>Solving for the explicit solution: </li>
+				      <ul>Q'(t) = -3C (sin(3t/2) + cos(3t/2)) / (2 e<sup>3t/2</sup>) + 3D (cos(3t/2) - sin(3t/2)) / (2e<sup>3t/2</sup>) - (300 cos(5t) + 410 sin(5t)) / 2581</ul>
+				      <ul>Q'(t) = -(3(C (sin(3t/2) + cos(3t/2)) + D (sin(3t/2) - cos(3t/2))) / (2 e <sup>3t/2</sup>) + (300 cos(5t) + 410 sin(5t)) / 2581</ul>
+				      
+				      <br><ul>Q(0) = C cos(3(0)/2) / e<sup>3(0)/2</sup> + D sin(3(0)/2) / e<sup>3(0)/2</sup> + (60 sin(5(0)) - 82 cos(5(0))) / 2581 == 0</ul>
+				      <ul>C - 82/2581 = 0</ul>
+				      <ul>C = 82/2581</ul>
+				      
+				      <br><ul>Q'(0) = -(3((82/2581) (sin(3(0)/2) + cos(3(0)/2)) + D (sin(3(0)/2) - cos(3(0)/2))) / (2 e <sup>3(0)/2</sup>) + (300 cos(5(0)) + 410 sin(5(0))) / 2581 == 0</ul>
+				      <ul>3(82/2581 - D) / 2 + 300/2581 = 0</ul>
+				      <ul>3(82/2581 - D) / 2 = -300/2581</ul>
+				      <ul>82/2581 - D = -600/7743</ul>
+				      <ul>D = 600/7743 + 246/7743</ul>
+				      <ul>D = 846/7743</ul>
+				      
+				      <br><ul>Q(t) = (82 cos(3t/2) / e<sup>3t/2</sup> + 846 sin(3t/2) / e<sup>3t/2</sup>) / 7743 + (60 sin(5t) - 82 cos(5t)) / 2581</ul>
+				  </ol>
+				</ul>
+  		
+  </body>
+</html>

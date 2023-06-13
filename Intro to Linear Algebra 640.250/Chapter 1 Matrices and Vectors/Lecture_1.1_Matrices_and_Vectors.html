@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.1: Matrices & Vectors</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.1: Matrices & Vectors</h2>
+    
+    <ul class="topic"><b>Introduction</b>
+      <li class="blue">Linear Algebra is the method used for evaluating linear equations</li>
+      
+      <br><li>There are 2 aspects of linear algebra that are interrelated with each other: </li>
+        <ul><b>Algebraic</b></ul>
+        <ul><b>Geometric</b></ul>
+      
+      <br><li><b>Gaussian Elimination</b> is the technique used to enlighten the relationship between the 2 aspects of solving linear equations</li>
+      
+      <br><li>Linear equations do not include another exponents other than 0 or 1. In other words, quadratic or cubic functions are not linear functions</li>
+      
+      <br><li>Solutions to linear equations can only have unique solutions, no solutions or infinite solutions</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Find the solutions to the system of equations {x + y = 1} & {y = x}.</li>
+      
+      <br><ul>There are various ways to solve for x & y: 
+        <li>Geometrically</li>
+          <ul>The 2 equations are graphed and the respective coordinates for the point of intersection are the solutions for x & y</ul>
+          <ul>The point of intersection is (1/2, 1/2)</ul>
+        
+        <br><li>Algebraically</li>
+          <ul>The solutions for x & y are solved by substituting for each variable: 
+            <li>2y = 1</li><li>y = 1/2</li><li>x = 1/2</li>
+          </ul>
+          
+        <br><li>There is a unique solution for this system of equations</li>
+      </ul>
+    </ul>
+    
+    <ul class="topic"><b>Matrices</b>
+      <li class="blue">A matrix is a rectangular array of numbers of rows & columns</li>
+      
+      <br><li>They can be seen as a type of variable (like a list or array) that holds various numbers</li>
+      <li>For instance, matrix A = [[-3, 0, 4, 5],  [2, 6, 1, 2],  [0, -1, 1, π]]. In this matrix, there are 3 rows & 4 columns. So, A is a 3⨯4 matrix.</li>
+      <li>To choose a specific cell of the matrix, a certain notation is used. let b = A<sub>13</sub>. This assigns the integer 4 to variable b which is located in the 1st row & 3rd column. This is seen as b = A[0][2] in most programming languages. In general, A<sub>ij</sub> is the entry at the i-th row & j-th column</li>
+      
+      <br><li>Matrices can have m⨯n dimensions</li>
+      
+      <br><li><b>Column vectors</b> have n⨯1 dimensions like vector v = [[1],  [2],  [3],  [4]]. This matrix has 4 rows & 1 column</li>
+      
+      <br><li><b>Row vectors</b> have 1⨯m dimensions like vector w = [[1, 2, 3, 4, 5]]. This matrix has 5 columns & 1 row</li>
+      
+      <br><li><b>Square matrices</b> have m⨯n dimensions where m = n</li>
+        <ul>A <b>symmetric matrix</b> is a square matrix that gives the same result after transposing it like matrix C = [[1, -2, 1],  [-2, 2, 6],  [1, 6, 5]]. In this matrix, 1 is the top left corner of the square, 2 is the centre & 5 is the bottom right corner. These specific elements are known as the principal diagonal or the "mirror"</ul>
+      
+      <br><li><b>A zero matrix</b> has all components equal to zero regardless of number of dimensions. It is written as 0<sub>m⨯n</sub></li>
+      
+      <br><li>In order for 2 matricess to be equal to equal other, every one of its elements at their corresponding indeces must be equal to each other</li>
+    </ul>
+    
+    <ul class="topic"><b>Algebra & Arithmetic using Matrices</b>
+      <li>Assume matrix A & B are both matrices that have m⨯n dimensions. The general matrix notation for A is written as A = [[A<sub>ij</sub>]]<sub>1≤i≤m, 1≤j≤n</sub>. The same notation is written for B</li>
+      
+      <br><li>To add or subtract matrices, they both must have the same number of dimensions. The operation A+ B == (A<sub>ij</sub> + B<sub>ij</sub>). The subtraction operation is the same except the addition signs are replaced by minus signs. Addition is cumulative</li>
+      
+      <br><li>To scale or multiply a vector/matrix <b>v</b> by a scalar multiple, the matrix is given the notation c <b>v</b> where c is a scalar number. This multiplies every component/index/element of a matrix by c. Multiplying a vector by -1 reverses the direction of the vector by taking the opposite of each component</li>
+      
+      <br><lu>To transpose a matrix, the matrix is given the notation A<sup>t</sup>. Transposing means to  convert all the rows to columns and vice versa. A<sup>t</sup> has the dimensions n⨯m having the entries A<sub>ji</sub>. Transposing a matrix twice results in an identical matrix</lu>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Given matrix A = [[-1, 2, 3, 4],   [6, 2, 1, 0]],  B = [[0, -1, 1, 1],  [5, 1, 1, 1]], perform the following operations: a) A + B;  b) A - B;  c) 5 A;  d) B<sup>t</sup></li>
+      
+      <br><ul>a)
+        <li>The resulting matrix is [[-1, 1, 4, 5],  [11, 3, 2, 1]]</li>
+      </ul>
+      
+      <br><ul>b)
+        <li>The resulting matrix is [[-1, 3, 2, 3],  [1, 1, 0, -1]]</li>
+      </ul>
+      
+      <br><ul>c)
+        <li>The resulting matrix is [[-5, 10, 15, 20],  [30, 10, 5, 0]]</li>
+      </ul>
+      
+      <br><ul>d)
+        <li>Transposing B gives the resulting matrix [[0, 5],  [-1, 1],  [1, 1],  [1, 1]]</li>
+      </ul>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+    <title>Section 13.2: Integrals of Vector Functions</title>   
+  </head>
+
+  <body>
+    <h2>Section 13.2: Integrals of Vector Functions</h2>
+    
+    <ul class="topic"><b>Indefinite Integrals</b>
+      <li class="blue">A differentiable vector function <b>R</b>(t) is an antiderivative of <b>r</b>(t) if <b>r</b>(t) = d<b>r</b>/dt within an interval I. The set of all antiderivatives including their constant vector <b>C</b> of <b>r</b> is the indefinite integral of <b>r</b> within I. This is represented as: </li>
+        <ul class="red">∫(<b>r</b>(t))dt = <b>R</b>(t) + <b>C</b></ul>
+      
+      <br><li>To integrate a vector function, each one of its components must be individually integrated and their sum is taken. Since each component integration results in a constant for each corresponding standard unit vector, a separate constant vector can be specified along with the derived sum instead of writing the 3 scalar constants</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Solve ∫(< cos(t), 1, -2t >)dt.
+        
+        <br><br><li>The integration is demonstrated as follows: </li>
+          <ul>∫(< cos(t), 1, -2t >)dt = ∫(cos(t)dt)<b>i</b> + ∫(dt)<b>j</b> - 2∫(t dt)<b>k</b></ul>
+          <ul class="green">∫(< cos(t), 1, -2t >)dt = sin(t)<b>i</b> + t<b>j</b> - t<sup>2</sup><b>k</b> + <b>C</b></ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Definite Integrals</b>
+      <li>Assume <b>r</b> = f(t)<b>i</b> + g(t)<b>j</b> + h(t)<b>k</b> and <b>R</b> is an antiderivative of <b>r</b>, the definite integral of <b>r</b>(t) over the interval [a, b] is written as follows: </li>
+        <ul class="red">∫<sub>a</sub><sup>b</sup>(<b>r</b>(t)dt) = ∫<sub>a</sub><sup>b</sup>(f(t)dt)<b>i</b> + ∫<sub>a</sub><sup>b</sup>(g(t)dt)<b>j</b> + ∫<sub>a</sub><sup>b</sup>((h(t)dt)<b>k</b></ul>
+        <ul class="red">∫<sub>a</sub><sup>b</sup>(<b>r</b>(t)dt) = <b>R</b>(b) - <b>R</b>(a)</ul>
+        
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Solve ∫<sub>0</sub><sup>π</sup>((cos(t)<b>i</b> + <b>j</b> - 2t<b>k</b>)dt).
+        
+        <br><br><li>The antiderivative from the previous example can be used here and the specified interval can be applied: </li>
+          <ul>∫<sub>0</sub><sup>π</sup>((cos(t)<b>i</b> + <b>j</b> - 2t<b>k</b>)dt) = ([sin(t)]<sub>0</sub><sup>π</sup>)<b>i</b> + ([t]<sub>0</sub><sup>π</sup>)<b>j</b> - ([t<sup>2</sup>]<sub>0</sub><sup>π</sup>)<b>k</b></ul>
+          <ul>∫<sub>0</sub><sup>π</sup>((cos(t)<b>i</b> + <b>j</b> - 2t<b>k</b>)dt) = (0 - 0)<b>i</b> + (π - 0)<b>j</b> + (π<sup>2</sup> - 0)<b>k</b></ul>
+          <ul class="green">∫<sub>0</sub><sup>π</sup>((cos(t)<b>i</b> + <b>j</b> - 2t<b>k</b>)dt) = π<b>j</b> + π<sup>2</sup><b>k</b></ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Suppose the acceleration vector function of a hang glider is <b>a</b>(t) = < -3cos(t), -3sin(t), 2 >. The glider initially (at time t = 0) departed from point P = (4, 0, 0) with an initial velocity vector of <b>v</b>(0) = < 0, 3, 0 >. Find the glider's position vector <b>r</b>(t).
+        
+        <br><br><li>The velocity vector <b>v</b>(t) is solved by taking the indefinite integral of <b>a</b>(t): </li>
+          <ul><b>v</b>(t) = ∫(<b>a</b>(t)dt)</ul>
+          <ul><b>v</b>(t) = ∫(< -3cos(t), -3sin(t), 2 > dt)</ul>
+          <ul><b>v</b>(t) = -3sin(t)<b>i</b> + 3cos(t)<b>j</b> + 2t<b>k</b> + <b>C</b></ul>
+                
+        <br><li>Since <b>v</b>(0) is given, the constant vector <b>C</b> for the velocity vector function can be solved: </li>
+          <ul><b>C</b> = <b>v</b>(t) - (-3sin(t)<b>i</b> + 3cos(t)<b>j</b> + 2t<b>k</b>)</ul>
+          <ul><b>C</b> = <b>v</b>(0) + (3sin(0)<b>i</b> - 3cos(0)<b>j</b> - 2(0)<b>k</b>)</ul>
+          <ul><b>C</b> = < 0, 3, 0 > + < 0, -3, 0 ></ul>
+          <ul><b>C</b> = < 0, 0, 0, ></ul>
+          <ul><b>C</b> = <b>0</b></ul>
+        
+        <br><li>The true velocity vector function is written as: </li>
+          <ul><b>v</b>(t) = -3sin(t)<b>i</b> + 3cos(t)<b>j</b> + 2t<b>k</b> + <b>0</b></ul>
+          <ul><b>v</b>(t) = -3sin(t)<b>i</b> + 3cos(t)<b>j</b> + 2t<b>k</b></ul>
+        
+        <br><li>The position vector function <b>r</b>(t) is solved by taking the indefinite integral of <b>v</b>(t): </li>
+          <ul><b>r</b>(t) = ∫(<b>v</b>(t)dt)</ul>
+          <ul><b>r</b>(t) = ∫(< -3sin(t), 3cos(t), 2t > dt)</ul>
+          <ul><b>r</b>(t) = 3cos(t)<b>i</b> + 3sin(t)<b>j</b> + t<sup>2</sup><b>k</b> + <b>D</b></ul>
+             
+        <br><li>The point P = (4, 0, 0) can be represented as the initial position vector: </li>
+          <ul><b>r</b>(0) = < 4, 0, 0 ></ul>
+        
+        <br><li>The constant vector <b>D</b> for the position vector function can now be solved using <b>r</b>(t)</li>
+          <ul><b>D</b> = <b>r</b>(t) - (3cos(t)dt<b>i</b> + 3sin(t)<b>j</b> + t<sup>2</sup><b>k</b>)</ul>
+          <ul><b>D</b> = <b>r</b>(0) + < -3cos(0), -3sin(0), (0)<sup>2</sup> ></ul>
+          <ul><b>D</b> = < 4, 0, 0 > + < -3, 0, 0 ></ul>
+          <ul><b>D</b> = < 1, 0, 0 ></ul>
+          <ul><b>D</b> = <b>i</b></ul>
+        
+        <br><li>The true position vector function is written as: </li>
+          <ul><b>r</b>(t) = 3cos(t)<b>i</b> + 3sin(t)<b>j</b> + t<sup>2</sup><b>k</b> + (<b>i</b>)</ul>
+          <ul class="green"><b>r</b>(t) = (3cos(t) + 1)<b>i</b> + 3sin(t)<b>j</b> + t<sup>2</sup><b>k</b></ul>
+      </ol>
+    </ul>
+    
+    <ul class="topic"><b>Application to Projectile Motion</b>
+      <li>The following assumptions can be made for any object thrown on earth as long as the only force acting on the object is gravity: </li>
+        <ul>The initial position <b>r</b>(0) is always at the origin: 
+          <li><b>r</b>(0) = <b>0</b></li>
+        </ul>
+        <ul>The initial velocity <b>v</b>(0) is given by the equation: 
+          <li><b>v</b>(0) = (||<b>v</b>(0)||cosθ)<b>i</b> + (||<b>v</b>(0)sinθ||)<b>j</b></li>
+          <li>||<b>v</b>(0)|| = initial speed</li>
+        </ul>
+        <ul>The acceleration <b>a</b> is constant for any moment in time: 
+          <li><b>a</b>(t) = d<sup>2</sup><b>r</b>/dt<sup>2</sup> = -g<b>j</b></li>
+          <li>g = force due to gravity (9.86m/s<sup>2</sup>)</li>
+        </ul>
+        <ul>Integrating the acceleration vector function gives the equation for the velocity at any point in time: 
+          <li class="red"><b>v</b>(t) = d<b>r</b>/dt = -gt<b>j</b> + <b>v</b>(0)</li>
+        </ul>
+        <ul>A second integration leads to the equation for the position at any point in time: 
+          <li class="red"><b>r</b>(t) = -(gt<sup>2</sup>/2)<b>j</b> + t<b>v</b>(0) + <b>r</b>(0)</li>
+          <li class="red"><b>r</b>(t) = (t||<b>v</b>(0)||cosθ)<b>i</b> + (t||<b>v</b>(0)sinθ|| - (gt<sup>2</sup>/2))<b>j</b></li>
+        </ul>
+        <ul>The formula for the max height of the projectile is given as: 
+          <li>y<sub>max</sub> = (||<b>v</b>(0)||sinθ)<sup>2</sup> / (2g)</li>
+        </ul>
+        <ul>The formula for the flight time (total amount of time that projectile is in air):
+          <li>t<sub>flight</sub> = 2||<b>v</b>(0)||sinθ / g</li>
+        </ul>
+        <ul>The formula for the range (distance between the origin & location of where the projectile hit the ground):
+          <li>x<sub>range</sub> = ||<b>v</b>(0)||<sup>2</sup>sin(2θ) / g</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <ol>A projectile is fired from the origin over the horizontal ground at an initial speed of 500m/s and a launch angle of 60°. Where will the projectile be 10s later?
+        
+        <br><br><li>The variables can be set as shown: </li>
+          <ul>||<b>v</b>(0)|| = 500m/s; θ = 60°; t = 10s; g = 9.86m/s<sup>2</sup></ul>
+        
+        <br><li>Using the equation for the position of projectiles in motion: </li>
+          <ul><b>r</b>(10) = ((10)(500)cos(π/3))<b>i</b> + ((10)(500)sin(π/3) - (9.86)(10)<sup>2</sup>)<b>j</b></ul>
+          <ul class="green"><b>r</b>(10) ≈ 2500<b>i</b> + 3840<b>j</b></ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

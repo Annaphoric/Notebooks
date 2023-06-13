@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 15.1: Double Integrals over Rectangles</title>
+  </head>
+  
+  <body>
+  	<h2>Section 15.1: Double Integrals over Rectangles</h2>
+  	
+  	<ul class="topic"><b>Double Integrals</b>
+  	  <li class="blue">A double integral is defined as the Riemann sums of an infinite amount of partitions for a double-variable function f(x, y) over a bounded rectangle R (finite interval of both x & y)</li>
+  	    <ul>The change in area ΔA of each parition is the product of the change in width Δx with and the change in height Δy: 
+  	      <li>ΔA = Δx Δy</li>
+  	    </ul>
+  	    <ul>The Riemann sum S<sub>N</sub> of every partition = (x<sub>k</sub>, y<sub>k</sub>) of the function f(x, y) is the product of the location of the partition with its area: 
+  	      <li>S<sub>N</sub> = ΔA<sub>k</sub> ∑<sub>k = 1</sub><sup>N</sup>(f(x<sub>k</sub>, y<sub>k</sub>))</li>
+  	    </ul>
+  	    <ul>As long as the limit of N exists, the function is said to be integrable. The higher the value of N (number of partitions), the more accurate the resulting total volume made by the sum. The volume or double integral of f over the rectangular interval R is found by taking the limit of N is it approaches infinity:
+  	      <li></li>
+  	      <li>lim<sub>N -> ∞</sub>(S<sub>N</sub>) = lim<sub>N -> ∞</sub>(∑<sub>k = 1</sub><sup>N</sup>(f(x<sub>k</sub>, y<sub>k</sub>))) ΔA<sub>k</sub></li>
+  	      <li>lim<sub>N -> ∞</sub>(S<sub>N</sub>) = ∬<sub>R</sub>(f(x, y)) dA</li>
+  	      <li class="red">V(f, R) = ∬<sub>R</sub>(f(x, y)) dA</li>
+  	      <li>In this case, the values of f(x, y) is the surface of z</li>
+  	    </ul>
+  	</ul>
+  	
+  	<ul class="topic"><b>Fubini's Theorem</b>
+  	  <li>To manually calculate a double integral, the integral is split into 2 individual iterating integrals that apply to one independent variable separately. Each individual integral is calculated similar to how a regular integral is calculating, except one independent variable is kept constant while the other is being integrated with respect</li>
+  	  <li>The order of which integration occurs first is arbitrary</li>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 0: </b>
+  	  <ol>Calculate the volume under the plane z = {4 - x - y} over the rectangular region R = {x ∈ [0, 2], y ∈ [0, 1], z = 0}. 
+  	  
+  	    <br><br><li>The volume is found by integrating the equation for the plane twice using x first and y afterwards: </li>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(∫<sub>0</sub><sup>2</sup>(4 - x - y) dx) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>([4x - x<sup>2</sup> - xy]<sub>0</sub><sup>2</sup>) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>((4(2) - (2)<sup>2</sup>/2 - y(2)) - (4(0) - (0) - y(0))) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>1</sup>(6 - 2y) dy</ul>
+  	      
+  	      <br><ul>V = [6y - y<sup>2</sup>]<sub>0</sub><sup>1</sup></ul>
+  	      <ul>V = (6(1) - (1)<sup>2</sup>) - (6(0) - (0))</ul>
+  	      <ul class="green">V = 5</ul>
+  	      <ul>Choosing to integrate over y first and then x would lead to the same result</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 1: </b>
+  	  <ol>Calculate ∬<sub>R</sub>(f(x, y)) dA for function f(x, y) = {100 - 6x<sup>2</sup>y} over rectangular region R = {x ∈ [0, 2], y ∈ [-1, 1]}.
+  	  
+  	    <br><br><li>volume V = ∬<sub>R</sub>(f(x, y)) dA. Solving for the volume: </li>
+  	      <ul>V = ∫<sub>-1</sub><sup>1</sup>(∫<sub>0</sub><sup>2</sup>(100 - 6x<sup>2</sup>y) dx) dy</ul>
+  	      <ul>V = ∫<sub>-1</sub><sup>1</sup>([100x - 2x<sup>3</sup>y]<sub>0</sub><sup>2</sup>) dy</ul>
+  	      <ul>V = ∫<sub>-1</sub><sup>1</sup>(100(2) - 2(2)<sup>3</sup>y) dy</ul>
+  	      <ul>V = ∫<sub>-1</sub><sup>1</sup>(200 - 16y) dy</ul>
+  	      
+  	      <br><ul>V = [200y - 8y<sup>2</sup>]<sub>-1</sub><sup>1</sup></ul>
+  	      <ul>V = (200(1) - 8(1)<sup>2</sup>) - (200(-1) - 8(-1)<sup>2</sup>)</ul>
+  	      <ul>V = (200 - 8) - (-200 - 8)</ul>
+  	      <ul>V = 192 + 208</ul>
+  	      <ul class="topic">V = 400</ul>
+  	  </ol>
+  	</ul>
+  	
+  	<ul class="example"><b>Example 2: </b>
+  	  <ol>Find the volume V of the region bounded by the elliptical paraboloid z = {x<sup>2</sup> + 3y<sup>2</sup> + 10} and the rectangle R = {x ∈ [0, 1], y ∈ [0, 2]}. 
+  	  
+  	    <br><br><li>Solving for the volume of the bounded paraboloid: </li>
+  	      <ul>V = ∬<sub>R</sub>(z) dA</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2</sup>(∫<sub>0</sub><sup>1</sup>(x<sup>2</sup> + 3y<sup>2</sup> + 10) dx) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2</sup>([x<sup>3</sup>/3 + 3xy<sup>2</sup> + 10x]<sub>0</sub><sup>1</sup>) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2</sup>((1)<sup>3</sup>/3 + 3(1)y<sup>2</sup> + 10(1)) dy</ul>
+  	      <ul>V = ∫<sub>0</sub><sup>2</sup>(3y<sup>2</sup> + 31/3) dy</ul>
+  	      
+  	      <br><ul>V = [y<sup>3</sup> + 31y/3]<sub>0</sub><sup>2</sup></ul>
+  	      <ul>V = (2)<sup>3</sup> + 31(2)/3</ul>
+  	      <ul>V = 8 + 62/3</ul>
+  	      <ul>V = 86/3</ul>
+  	  </ol>
+  	</ul>
+  	
+  </body>
+</html>

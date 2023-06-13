@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Linear_Algebra.css">
+  	<title>Lecture 1.7a: Linear Dependence & Independence</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 1.7a: Linear Dependence & Independence</h2>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Given set S = {[[1] [0]], [[0] [1]], [[1] [1]]}, a) What is the span of S?</li>
+      
+        <br><ul>a)
+          <li>The span of the set of vectors is all real numbers in 2D (since all vectors have 2 components). The span will still remain R<sup>2</sup> even if only the first 2 vectors or simply the final vector is used. This is proved by writing the vectors as a coefficient matrix in Row Echelon Form</li>
+          <li>[[<b>1</b> 0 1], [0 <b>1</b> 1]]</li>
+            <ul>Since there are 2 pivots, the rank of the matrix is 2. This also means only 2 vectors are required to determine the span of S</ul>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>What is the span of S = {[[1] [0] [-1]], [[-2] [0] [2]], [[0 1 0]]}?</li>
+      
+        <br><ul>Converting to a coefficient matrix and reducing the rows: 
+          <li>[[1 -2 0] [0 0 1] [-1 2 0]]</li>
+          <li>[[<b>1</b> -2 0] [0 0 <b>1</b>] [0 0 0]] (E3 = E3 + E1, Reduced Row Echelon Form)</li>
+            <ul>The rank of this coefficient matrix is 2 since there are 2 pivots. This means the span of S is all real numbers in a 2D plane. Since the pivots are located on the first & third column, only the first & third vector are needed for determining the span of S</ul>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Given set S = {[[1] [0] [0]], [[1] [1] [0]], [[1] [1] [1]], [[0] [0] [1]]}, find the minimal amount of vectors (the smallest generating set) required to determine the span of S.</li>
+      
+        <br><ul>Converting to a coefficient matrix & reducing: 
+          <li>[[<b>1</b> 1 1 0] [0 <b>1</b> 1 0] [0 0 <b>1</b> 1]] (already in Reduced Row Echelon Form)</li>
+            <ul>There are 3 pivots, the rank of the matrix is 3, and the final column that does not have a pivot can be removed to still express the span of the set. The span of S is all numbers in 3D 
+            or R<sup>3</sup>, because there are 3 pivots</ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Linear Dependence & Independence</b>
+      <li>A <b>basis</b> B is an optimal generating set where number of vectors corresponds to exactly the number of dimensions in the span of B. For instance, if B = {<b>u</b>, <b>v</b>, <b>w</b>}, the span of B must be all real numbers in 3D in order for B to be considered a basis. In other words, no vector can be removed; they all affect the span of B</li>
+      
+      <br><li>Vectors in a set are said to be dependent if there is at least one zero scalar multiple, but not all, so that the linear combination of the vectors is a zero matrix or <b>0</b></li>
+        <ul>Having at least one zero scalar multiple allows us to solve for a vector in terms of another vector if they both have non-zero scalar multiples. The vectors are said to be independent if no non-zero scalar multiple can be found (all scalar multiples would have to be zero to linearly combine into a zero matrix)</ul>
+        <ul>c<sub>1</sub><b>v<sub>1</sub></b> + c<sub>2</sub><b>v<sub>2</sub></b> +...c<sub>k</sub><b>v<sub>k</sub></b> = <b>0</b></ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>Given set S = {[[1] [0]], [[0] [1]], [[1] [1]]}, is this set dependent or independent?</li>
+      
+        <br><ul>This set is a dependent set because the first & second vectors of the set are a linear combination of the third vector</ul>
+        
+        <br><ul>In order for S to be an independent set, the third vector will have to be removed. S would now be considered a basis have the form S = {[[1] [0]], [[0] [1]]}</ul>
+    </ul>
+  </body>
+</html>

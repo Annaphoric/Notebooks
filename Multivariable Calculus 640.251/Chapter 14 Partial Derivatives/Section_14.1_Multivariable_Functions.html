@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Multivariable_Calculus.css">
+  	<title>Section 14.1: Multivariable Functions</title>
+  </head>
+  
+  <body>
+  	<h2>Section 14.1: Multivariable Functions</h2>
+    
+    <ul class="topic"><b>Introduction</b>
+      <li>A function having several variables has a domain expressed as an ordered pair (tuple) containing input variables. The range of this function is the output variable when an input is given. For example, a function F with a domain (x, y) has a range of F(x, y); if is given the input tuple (a, b), its output will be f(a, b)</li>
+      <li>An <b>interior point</b> is a circle of points that satisfies a function within its domain. The set of every interior point makes up the domain of a function. A <b>boundary point</b> is a circle of points that contains points that both satisfy and does not satisfy a function</li>
+      <li>A region is considered open if it contains no boundaries and considered closed if it does</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Find the domains & ranges of the given functions a) z = sqrt(y - x<sup>2</sup>); b) z = 1/(xy); c) z = sin(xy); d) w = sqrt(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>); e) w = 1/(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>); f) w = xy ln(z);</li>
+      
+      <br><ul>a)
+        <li>Domain: (y >= x<sup>2</sup>)</li><li>Range: [0, ∞)</li>
+      </ul>
+      
+      <br><ul>b)
+        <li>Domain: (x != 0 || y != 0) (xy != 0)</li><li>Range: (-∞, ∞)</li>
+      </ul>
+      
+      <br><ul>c)
+        <li>Domain: (-∞, ∞) (entire plane; R<sup>2</sup>)</li><li>Range: [-1, 1]</li>
+      </ul>
+      
+      <br><ul>d)
+        <li>Domain: (-∞, ∞) (entire space; R<sup>3</sup>)</li><li>Range: [0, ∞)</li>
+      </ul>
+      
+      <br><ul>e)
+        <li>Domain: (x, y, z) != (0, 0, 0)</li><li>Range: (0, ∞)</li>
+      </ul>
+      
+      <br><ul>f)
+        <li>Domain: (z > 0) (half space)</li><li>Range: (-∞, ∞))</li>
+      </ul>
+    </ul>
+
+    <ul class="example"><b>Example 2: </b>
+      <li>Describe the domain of function f(x, y) = sqrt(y - x<sup>2</sup>).</li>
+      
+        <br><ul>This function has an interior made from the set (y >= x<sup>2</sup>) or (y - x<sup>2</sup> >= 0). Its boundary is made by the set (y = x<sup>2</sup>) or (y - x<sup>2</sup> = 0). The exterior is made from the set (y <= x<sup>2</sup>) or (y - x<sup>2</sup> <= 0)</ul>
+    </ul>
+    
+    <ul><b>Graphs, Level Curves & Contours of Double Variable Functions</b>
+      <li class="blue">A double variable function has 2 independent variables for one dependent variable</li>
+      <li>The set of points (x, y) on a plane that satisfies the function f at a constant value c is a level curve of f at c shown as f(x, y) = c</li>
+      <li>The set of points (x, y, f(x, y)) in space within the domain of f is the graph of f. It is also referred to as the surface of z where z = f(x, y)</li>
+      <li>A contour map is given by the graphs plane made by z = c. It is always parallel to the level curve</li>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Describe the graph z = f(x, y) where f(x, y) = 100 - x<sup>2</sup> - y<sup>2</sup>.</li>
+        <ul>The domain of this graph is all real numbers for both x & y ((-∞, ∞) or R<sup>2</sup>). The range is (-∞, 100]</ul>
+        <ul>The graph of z = 100 - x<sup>2</sup> - y<sup>2</sup> is a paraboloid</ul>
+        <ul>A level curve of zero (f(x, y) = 0) is expressed as:
+          <li>100 - x<sup>2</sup> - y<sup>2</sup> = 0</li>
+          <li>x<sup>2</sup> + y<sup>2</sup> = 100</li>
+          <li>r = 10 units</li>
+        </ul>
+        <ul>A level curve of 51 (f(x , y) = 51) is expressed as: 
+          <li>100 - x<sup>2</sup> - y<sup>2</sup> = 51</li>
+          <li>x<sup>2</sup> + y<sup>2</sup> = 49</li>
+          <li>r = 7 units</li>
+        </ul>
+        <ul>A level curve of 75 (f(x, y) = 75) is expressed as: 
+          <li>100 - x<sup>2</sup> - y<sup>2</sup> = 75</li>
+          <li>x<sup>2</sup> + y<sup>2</sup> = 25</li>
+          <li>r = 5 units</li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Graphs of Triple Variable Functions</b>
+      <li class="blue">A triple variable function has 3 independent variables for one dependent variable</li>
+      <li>The set of points (x, y, z) in space that satisfy the function f(x, y, z) at a constant value c is a level surface of f at c shown as f(x, y, z) = c</li>
+      <li>The set of points (x, y, z, f(x, y)) in space within the domain of f is the graph of f, which happens to exist in a 4-dimensional space. It is also referred to as the surface of w where w = f(x, y, z)</li>
+      <li>The definitions of a triple-variable function are shared with general multivariable functions</li>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>Describe the level surfaces of the function f(x, y, z) = sqrt(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>).</li>
+        <ul>A level surface of f exists at any constant value c where f(x, y, z) = c. The surface is a sphere on the xyz-coordinate graph that has a radius of c</ul>
+    </ul>
+    
+  </body>
+</html>

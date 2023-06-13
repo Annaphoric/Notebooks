@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.1: Properties of Linear Systems</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.1: Properties of Linear Systems</h1>
+    
+    <ul class="topic"><b>Linear Systems</b>
+      <li>A <b>linear system</b> is a system containing only first order/degree dependent variables</li>
+        <ul>In other words, the differential equations within the system are linear functions of the dependent variables</ul>
+      
+      <br><li>let linear system {dx/dt = a x + b y; dy/dt = c x + d y}, where {a, b, c, d} = constant coefficients</li>
+      <li>This linear system is considered <b>autonomous</b> because its differentials depend only on dependent variables (a, b, c, d are constant parameters)</li>
+        <ul>Since there are 2 dependent variables, the system is said to be <b>2-dimensional</b> or <b>planar</b></ul>
+      
+      <br><li>The constant coefficients can be written in matrix form: </li>
+        <ul>let coefficient matrix <b>A</b> = [[a, b], [c, d]], column vector <b>Y</b> = {x; y}
+          <li>The <b>dot product</b> of <b>A</b> & <b>Y</b> would be: </li>
+            <ul><b>A Y</b> = {{a, b} {c, d}} ⋅ {x; y} = {{a x + b y} {c x + d y}}</ul>
+        </ul>
+      
+      <br><li>let vector<b>Y</b>(t) = {x(t); y(t)}</li>
+        <ul>The derivative of the vector is written as: 
+          <li>d<b>Y</b>/dt = {dx/dt; dy/dt}</li>
+        </ul>
+        <ul>The equations can then be written as: 
+          <li>{dx/dt; dy/dt} = {{a, b} {c, d}} ⋅ {x; y}</li>
+          <li>{dx/dt; dy/dt} = <b>A Y</b></li>
+          <li>d<b>Y</b>/dt = <b>A Y</b></li>
+        </ul>
+      <li>The <b>dimensions</b> are number of dependent variables a vector has, corresponding to the number of its components</li>
+    </ul>
+    
+    <ul class="topic"><b>Equillibrium Points of Linear Systems</b>
+      <li>let vector <b>Y</b> = (x, y), coefficient matrix <b>A</b>, vector field d<b>Y</b>/dt = <b>A Y</b></li> 
+        <ul>Point vector <b>Y</b><sub>0</sub> is a <b>equillibrium point</b> only if the vector given by the d<b>Y</b>/dt at <b>Y</b><sub>0</sub> is the zero vector <b>0</b>: 
+          <li><b>A Y</b><sub>0</sub> = <b>0</b></li>
+        </ul>
+        <ul>vector <b>Y</b>(t) = (0, 0) is always a solution (<b>trivial</b>) to the linear system
+          <li>The point that determines this solution is <b>Y</b><sub>0</sub> = <b>0</b>, which is an equillibrium point</li>
+        </ul>
+        
+        <br><ul>Solutions to the system must satisfy {{a x<sub>0</sub> + b y<sub>0</sub>} {c x<sub>0</sub> + d y<sub>0</sub>}} = {{0} {0}}
+          <li>As long as there is at least 1 nonzero one coefficient, the solution can be solved based on the coefficients of the equations: </li>
+            <ul>x<sub>0</sub> = -b/a y<sub>0</sub></ul>
+            <ul>c (-b/a) y<sub>0</sub> + d y<sub>0</sub> = 0</ul>
+            <ul>(a d - b c) y<sub>0</sub> = 0</ul>
+          <li>Based on these equations, if y<sub>0</sub> == 0 is true, x<sub>0</sub> is also true, giving a trivial solution</li>
+          <li>Nontrivial equillibrium solutions are determined by calculating (a d - b c = 0), which is known as the <b>determinant</b></li>
+            <ul>In other words, the determinant (cross product) of matrix <b>A</b> = {{a, b} {c, d}} is equal to scalar det(<b>A</b>) = a d - b c</ul>
+            <ul>if det(<b>A</b>) == 0 is false, the only equillibrium point for the linear system is the origin or zero vector because the coefficients won't allow for a computable equillibrium solution</ul>
+            <ul>Matrices whose determinant is zero are considered <b>singular</b>/<b>degenerate</b> and those that are not zero are considered <b>nondegenerate</b></ul>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>The Linearity Principle</b>
+      <li>Linear systems have many useful and convenient properties that allow them to be a formidable model</li>
+      
+      <br><li>let linear system d<b>Y</b>/dt = <b>A Y</b>, where <b>A</b> = coefficient matrix, <b>Y</b> = dependent variable vector; the <b>Linearity Principle</b> or <b>Principle of Superposition</b> says:</li>
+        <ul>if <b>Y</b>(t) is a solution to the system, then k <b>Y</b>(t) is also a solution, where k = constant</ul>
+        <ul>if <b>Y</b><sub>1</sub>(t) && <b>Y</b><sub>2</sub>(t) are 2 different solutions to the system, then the sum of the solutions is also a solution</ul>
+        <ul>In other words, any <b>linear combination</b> of solutions (k<sub>1</sub> <b>Y</b><sub>1</sub>(t) + k<sub>2</sub> <b>Y</b><sub>2</sub>(t)) is a solution to the system</ul>
+      
+      <li>The multiplication of matrices can be expressed as follow: </li>
+        <ul><b>A</b>(k <b>Y</b>) = k <b>A</b> <b>Y</b></ul>
+        
+        <br><ul><b>A</b>(<b>Y</b><sub>1</sub> + <b>Y</b><sub>2</sub>) = <b>A Y</b><sub>1</sub> + <b>A Y</b><sub>2</sub></ul>
+    </ul>
+    
+    <ul class="topic"><b>Solving Initial Value Problems</b>
+      <li>The linear combination of any 2 solutions can be a solution at a specific initial value point/problem (IVP) even if the solutions individually do not coincide with the IVP</li>
+      <li>This combination of solutions can be determined by solving for the constants k<sub>1</sub> & k<sub>2</sub> in a 2-parameter family of solutions</li>
+      
+      <br><li>2 vectors that do not lie on the same line through the origin are considered <b>linearly independent</b></li>
+      <li>let linearly independent vectors <b>Y</b><sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>), <b>Y</b><sub>2</sub> = (x<sub>2</sub>, y<sub>2</sub>), there exists any parameters k<sub>1</sub> & k<sub>2</sub> so that the IVP <b>Y</b><sub>0</sub>(0) = (x<sub>0</sub>, y<sub>0</sub>) is satisfied: </li>
+        <ul>k<sub>1</sub> {{x<sub>1</sub>} {y<sub>1</sub>}} + k<sub>2</sub> {{x<sub>2</sub>} {y<sub>2</sub>}} = {{x<sub>0</sub>} {y<sub>0</sub>}}</ul>
+        <ul>This linear combination is also considered the <b>general solution</b> of the system</ul>
+    </ul>
+    
+    <ul class="topic"><b>Harmonic Oscillators</b>
+      <li>As described previously, a <b>harmonic oscillator</b> is a model used to study the motion of an object (mass) attached to a spring</li>
+      <li>The object is assumed to be to frictionless and unaffected by any forces except the restoring force & damping force</li>
+        <ul>The restoring force is determined by Hooke's Law and the damping force is determined by Newton's 2nd Law of motion, giving the equation or system: 
+          <li>m d<sup>2</sup>y/dt<sup>2</sup> + b dy/dt + k y = 0, where m = mass, b = damping coefficient, k = spring constant, y = position, t = time</li>
+          <li>{dy/dt = v; dv/dt = -(k y + b v) / m}</li>
+        </ul>
+        <ul>Both differential equations within the system depend linearly on y and/or v</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given system d<b>Y</b>/dt = {dx/dt = sqrt(2) x + y; dy/dt = z; dz/dt = -x - y + 2z}, vector <b>Y</b> & coefficient matrix <b>A</b>, show the dot product of <b>A</b> & <b>Y</b> that makes up the system.
+      
+        <li>Showing the dot product of the vector & matrix: </li>
+          <ul>d<b>Y</b>/dt = <b>A Y</b></ul>
+          <ul>d<b>Y</b>/dt = {{sqrt(2), 1, 0} {0, 0, 1} {-1, -1, 2}} ⋅ {{x} {y} {z}}</ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Given linear system d<b>Y</b>/dt = {{2, 3} {0, -4}} <b>Y</b>, variable vector <b>Y</b> = {{x} {y}}, solution vectors <b>Y</b><sub>1</sub>(t) = {{e<sup>2t</sup>} {0}}, <b>Y</b><sub>2</sub>(t) = {{-e<sup>-4t</sup>} {2e<sup>-4t</sup>}}, assuming that <b>Y</b><sub>1</sub>(t) && <b>Y</b><sub>2</sub>(t) are both solutions to the system, prove that <b>Y</b><sub>3</sub>(t) = -2<b>Y</b><sub>1</sub>(t) + 5<b>Y</b><sub>2</sub>(t) is also a solution.
+      
+        <li>Calculating <b>Y</b><sub>3</sub>(t) and its derivative: </li>
+          <ul><b>Y</b><sub>3</sub>(t) = -2<b>Y</b><sub>1</sub> + 5<b>Y</b><sub>2</sub></ul>
+          <ul><b>Y</b><sub>3</sub>(t) = -2{{e<sup>2t</sup>} {0}} + 5{{-e<sup>-4t</sup>} {2e<sup>-4t</sup>}}</ul>
+          <ul><b>Y</b><sub>3</sub>(t) = {{-2 e<sup>2t</sup>} {0}} + {{-5 e<sup>-4t</sup>} {10 e<sup>-4t</sup>}}</ul>
+          <ul><b>Y</b><sub>3</sub>(t) = {{-2 e<sup>2t</sup> - 5 e<sup>-4t</sup>} {10 e<sup>-4t</sup>}} +</ul>
+          
+          <br><ul>d<b>Y</b><sub>3</sub>/dt = {{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}}</ul>
+        
+        <li><b>Y</b><sub>3</sub>(t) is a solution if its derivative is equal to the linear system at the vector's components: </li>
+          <ul>{{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}} == {{2, 3} {0, -4}} ⋅ {{-2 e<sup>2t</sup> - 5 e<sup>-4t</sup>} {10 e<sup>-4t</sup>}}</ul>
+          <ul>{{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}} == {{2(-2 e<sup>2t</sup> - 5 e<sup>-4t</sup>) + 3(10 e<sup>-4t</sup>)} {-4(10 e<sup>-4t</sup>)}}</ul>
+          <ul>{{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}} == {{-4 e<sup>2t</sup> - 10 e<sup>-4t</sup> + 30 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}}</ul>
+          <ul>{{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}} == {{-4 e<sup>2t</sup> + 20 e<sup>-4t</sup>} {-40 e<sup>-4t</sup>}} (true)</ul>
+          <ul>Therefore, <b>Y</b><sub>3</sub>(t) is a solution to the system</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

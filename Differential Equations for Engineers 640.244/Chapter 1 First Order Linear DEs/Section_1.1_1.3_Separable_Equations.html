@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+		<head>
+				<meta charset="utf-8">
+				<link rel="stylesheet" href="../Differential_Equations.css">
+				<title>Section 1.1 - 1.3: Separable Equations</title>
+		</head>
+		
+		<body>
+				<h1>Section 1.1 - 1.3: Separable Equations</h1>
+				
+				<ul class=""><b>Classifying Solutions</b>
+				  <li>There are 2 classifications of solutions: </li>
+				    <ul><b>Explicit solutions</b>
+				      <li>A solution whereby a dependent variable can be written explicity in terms of an independent variable such as y = f(x) = x<sup>2</sup></li>
+				      <li>These types of solutions can usually be solved by simple integration</li>
+				    </ul>
+				    
+				    <ul><b>Implicit solutions</b>
+				      <li>A solution whereby a dependent variable cannot be written explicitly in terms of an independent  variable such as f(x, y) = (y<sup>2</sup> + x<sup>2</sup> + y + x). In this case, it is not possible to isolate the dependent variable y onto one side of the equation</li>
+				    </ul>
+				  
+				  <br><li>A DE is said to be <b>separable</b> if the differential and its like-terms can be isolated to one side of the equation such as dy/dt = f(t, y) -> g(y) dy = h(t) dt</li>   
+				</ul>
+				
+				<ul class="example"><b>Example 1: </b>
+				  <ol><em>Find the general solution of the DE: dy/dx = -x/y if y(0) = 3. </em>
+				  
+				    <br><li>Attempting to solve for y in terms of x (separating the equation): </li>
+				      <ul><span>dy/dx = -x/y</span></ul>
+				      <ul><span>y dy = -x dx (multiply both differentials on opposite sides)</span></ul>
+				      <ul>y<sup>2</sup>/2 = -x<sup>2</sup>/2 + C (integrated both sides, on the left with respect to y and on the right in terms of x)</ul>
+				      <ul>y<sup>2</sup> + x<sup>2</sup> = C (multiply by 2 on both sides, let C absorb the 2)</ul>
+				      <ul>This is an implicit equation since y cannot be written as an explicit function of x (it would have ±)</ul>
+				    
+				    <br><li>Solving for C given the initial condition y(0) = 3: </li>
+				      <ul><span>y<sup>2</sup> + x<sup>2</sup> = C</span></ul>
+				      <ul><span>(3)<sup>2</sup> + (0)<sup>2</sup> = C (substituting)</span></ul>
+				      <ul><span>9 = C</span></ul>
+				    
+				    <br><li>Solving for y explicitly: </li>
+				      <ul><span>y<sup>2</sup> + x<sup>2</sup> = 9</span></ul>
+				      <ul class="green"><span>y = sqrt(9 - x<sup>2</sup>)</span></ul>
+				      <ul>This function of x is an implicit solution because y is written in term of x without any ambiguity</ul>
+				  </ol>
+				</ul>
+				
+				<ul class"example"><b>Example 2: </b>
+				  <ol><em>Find the general solution given DE: {dx/dt = (x<sup>2</sup> - 1) t} & initial condition: x(0) = 0.</em>
+				  
+				    <br><li>Solving for x(t): </li>
+	  		     <ul>dx/dt = (x<sup>2</sup> - 1) t</ul>
+	    	    <ul>dx / (x<sup>2</sup> - 1) = t dt (Separating the DE)</ul>
+			       <ul>dx / ((x + 1)(x - 1)) = t dt</ul>
+				    
+   	      <br><ul>((A / (x + 1)) + (B / (x - 1))) = 1 / ((x + 1)(x - 1)) (Converting to partial fractions)</ul>
+		  	     <ul>((A(x - 1) + B(x + 1)) / ((x + 1)(x - 1))) = 1 / ((x + 1)(x - 1))</ul>
+			       <ul>A(x - 1) + B(x + 1) = 1</ul>
+   	      <ul>For x = 0: B - A = 1 -> B = A + 1</ul>
+			       <ul>For x = 1: 2B = 1 -> B = 1/2</ul>
+			       <ul>Therefore, A = -1/2</ul>
+				    
+     	    <br><ul>(1 / 2(x - 1) - 1 / 2(x + 1)) dx = t dt</ul>
+		  	     <ul>ln|x - 1|/2 - ln|x + 1|/2 = t<sup>2</sup>/2 + C (Integrating both sides; on the left using u-substitution)</ul>
+			       <ul>ln((1 - x) / (x + 1)) = t<sup>2</sup> + C (Since the absolute value will always make the expression within the log positive, the numerator can be written)</ul>
+   	      <ul>(1 - x) / (x + 1) = e<sup>t<sup>2</sup> + C</sup></ul>
+			       <ul>1 - x = D e<sup>t<sup>2</sup></sup> (x + 1) (let D absorb C where D = e<sup>C</sup>)</ul>
+  			     <ul>1 - x = Dx e<sup>t<sup>2</sup></sup> + D e<sup>t<sup>2</sup></sup></ul>
+     	    <ul>Dx e<sup>t<sup>2</sup></sup> + x = 1 - D e<sup>t<sup>2</sup></sup></ul>
+			       <ul>x (D e<sup>t<sup>2</sup></sup> + 1) = 1 - D e<sup>t<sup>2</sup></sup></ul>
+			       <ul>x(t) = (1 + D e<sup>t<sup>2</sup></sup>) / (1 - D e<sup>t<sup>2</sup></sup>)</ul>
+				      
+				    <br><li>Solving for D using initial condition x(0) = 0: </li>
+				      <ul>0 = (1 + D) / (1 - D)</ul>
+				      <ul>D = -1</ul>
+				    
+				    <br><li>Simplifying x(t): </li>
+				      <ul class="green">x(t) = (1 - e<sup>t<sup>2</sup></sup>) / (1 + e<sup>t<sup>2</sup></sup>)</ul>
+				  </ol>
+				</ul>
+				
+				<ul class="example"><b>Example 3: </b>
+				  <ol><em>Find the solution given DE: dy/dx = {(3x<sup>2</sup> + cos(x)) / (y<sup>4</sup> + y)} & initial condition: y(0) = -3.</em>
+				  
+				    <br><li>Attempting to solve for y in terms of x: </li>
+				      <ul>dy/dx = (3x<sup>2</sup> + cos(x)) / (y<sup>4</sup> + y)</ul>
+				      <ul>(y<sup>4</sup> + y) dy = (3x<sup>2</sup> + cos(x)) dx (multiplying differentials on both sides)</ul>
+				      <ul>y<sup>5</sup>/5 + y<sup>2</sup>/2 = x<sup>3</sup> + sin(x) + C (integrate both sides)</ul>
+				      <ul>This is the implicit form of the equation</ul>
+				     
+				    <br><li>Solving for C given the initial condition y(0) = -3: </li>
+				      <ul>(-3)<sup>5</sup>/5 + (-3)<sup>2</sup>/2 = (0)<sup>3</sup> + sin(0) + C</ul>
+				      <ul>C = -243/5 + 9/2</sup></ul>
+				      <ul class="green">The only form of the solution that can be written is {y<sup>5</sup>/5 + y<sup>2</sup>/2 = x<sup>3</sup> + sin(x) - 243/5 + 9/2}. In other words, there is no possible way to write an explicit function of x by isolating y</ul>
+				  </ol>
+				</ul>
+				
+		</body>
+</html>			

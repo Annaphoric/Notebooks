@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="../Linear_Algebra.css">
+  	<title>Lecture 5.2: Diagonalisation</title>
+  </head>
+  
+  <body>
+    <h2>Lecture 5.2: Diagonalisation</h2>
+    
+    <ul class="topic"><b>Diagonalisation</b>
+      <li>For a matrix A, A is diagonalisable if there is an invertable matrix P so that A = P * D * P<sup>-1</sup>, where D = diagonal square matrix containing all eigenvalues of matrix A. The matrix P is constructed using the bases for eigenspaces by combining the eigenvectors in each set. P must be invertable & linearly independent</li>
+        <ul>The diagonal matrix D must correspond to the positions (row/columns) of the eigenvectors placed in matrix P</ul>
+        
+      <br><li>Diagonalisation is only possible if the dimensions of each eigenspace is equal to the size of the matrix's rows/columns</li>
+      
+      <br><li>When computing determinants, it is recommended to use a combination of row/column reduction & co-factor expansion</li>
+      
+      <br><li>The <b>multiplicity</b> of an eigenvalue is the # of times it exists in the set of eigenvalues. It corresponds to the dimensions of the eigenspace/basis B formed by the corresponding eigenvalue.</li>
+        <ul>The dimensions of the eigenspace must always be 1 or greater but less than or equal to the number of its multiplicity: 
+          <li>1 ≤ dim(B<sub>λ</sub>) ≤ mult(λ)</li>
+        </ul>
+      
+      <br><li>For a matrix A of size n, p(λ) is always a polynomial degree of n where the constant is equal to det(A)</li>
+      
+      <br><li>The <b>trace</b> of A is the sum of the main diagonal. The constant of p(λ) is equal to trace(A)</li>
+      
+      <br><li>If the multiplicity of eigenvalues for a matrix is one for each eigenvalue, the matrix is diagonalisable</li>
+      
+      <br><li>The standard vectors are always eigenvectors for an identity matrix of the same size</li>
+      
+      <br><li>The multiplicity of an eigenvalue for an identity matrix of size n is always n</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given matrix A = [[2 0 -1] [1 3 -1] [2 0 5]], determine if A is diagonalisable.
+      
+        <br><li>Solving for the eigenvalues λ using (A - λI): </li>
+          <ul>[[(2 - λ) 0 -1] [1 (3 - λ) -1] [2 0 (5 - λ)]]</ul>
+          <ul>[[(1 - λ) 0 -1] [0 (3 - λ) -1] [(7 - λ) 0 (5 - λ)]] (C1 = C1 + C3)</ul>
+          <ul>Using 2nd column for co-factor expansion: 
+            <li>(3 - λ) * det([[(1 - λ) -1] [(7 - λ) (5 - λ)]]) * (-1)<sup>4</sup> = 0</li>
+            <li>(3 - λ) * ((1 - λ)(5 - λ) - (-1)(7 - λ)) = 0</li>
+            <li>(3 - λ) * ((λ<sup>2</sup> - 6λ + 5) + (7 - λ)) = 0</li>
+            <li>(3 - λ) * (λ<sup>2</sup> - 7λ + 12) = 0</li>
+            <li>(3 - λ)(λ - 4)(λ - 3) = 0</li>
+            <li>(λ - 3)<sup>2</sup>(λ - 4)</li>
+            <li>λ = {3, 3, 4} (Since 3 appears twice, its multiplicity is 2)</li>
+          </ul>
+        
+        <br><li>Finding the bases for the eigenvalues: </li>
+          <ul>For λ = 3: 
+            <li>[[-1 0 -1] [1 0 -1] [2 0 2]]</li>
+            <li>[[-1 0 -1] [0 0 0] [0 0 0]] (R2 = R2 + R1;  R3 = R3 + 2 R1)</li>
+            <li>{-x - z = 0}</li>
+            <li>x(x) = x; y(x) = y; z(x) = -x</li>
+            <li>solutions = x [[1] [0] [-1]] + y [[0] [1] [0]];  B<sub>(λ = 3)</sub> = {[[1] [0] [1]], [[0] [1] [0]]}</li>
+            <li>This eigenspace has 2 dimensions</li>
+          </ul>
+          
+          <br><ul>For λ = 4: 
+            <li>[[-2 0 -1] [1 -1 -1] [2 0 1]]</li>
+            <li>[[-2 0 -1] [1 -1 -1] [0 0 0]] (R3 = R3 + R1)</li>
+            <li>[[1 -1 -1] [-2 0 -1] [0 0 0]] (R1, R2 = R2, R1)</li>
+            <li>{x - y - z = 0;  -2x - z = 0}</li>
+            <li>y = x - z;  z = -2x</li>
+            <li>x(x) = x;  y(x) = 3x; z(x) = -2x</li>
+            <li>solutions = x [[1] [3] [-2]];  B<sub>(λ = 4)</sub> = {[[1] [3] [-2]]</li>
+            <li class="green">This eigenspace has 1 dimension. Therefore, A is diagonalisable because sum of the dimensions of both eigenspaces is 3 which is the size of the matrix's rows/columns</li>
+            <li>Combining all the eigenvectors together gives matrix P = [[1 0 1] [0 1 -2] [1 0 -2]] and diagonal-matrix D = [[3 0 0] [0 3 0] [0 0 4]]. So: </li>
+              <ul>A == PDP<sup>-1</sup> is true</ul>
+          </ul>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <ol>Given matrix B = [[-7 -1 -2] [0 c 0]] [-10 3 3] and p(λ) = -(λ - c)(λ + 3)(λ + 2), find values of c so that B is not diagonalisable.
+      
+        <br><br><li>matrix B may not be diagonalisable if there are 2 or more of the same eigenvalues (multiplicity). So, for A to not be diagonalisable, c would have to be -3 or -2</li>
+          <ul>For c = -3: 
+            <li>-(λ + 3)<sup>2</sup>(λ + 2) = 0</li>
+            <li>λ = {-3, -3 -2}</li>
+            
+            <br><li>[[(-7 - λ) -1 -2] [0 (-3 - λ) 0] [-10 3 (3 - λ)]] (eigenmatrix)</li>
+            
+            <br><li>For λ = -3: </li>
+              <ul>[[-4 -1 -2] [0 0 0] [-10 3 6]]</ul>
+              <ul>[[-4 -1 -2] [-10 3 6] [0 0 0]] (R2, R3 = R3, R2)</ul>
+              <ul>[[-4 -1 -2] [0 11/2 11] [0 0 0]] (R2 = R2 - 5 R1 / 2)</ul>
+              <ul>dim(S<sub>(λ = -3)</sub>) = 1 (since the nullity is 1)</ul>
+              
+            <br><li>For λ = -2: </li>
+              <ul>dim(S<sub>(λ = -2)</sub>) = 1 (since the multiplicity of (λ + 2) = 0 is 1)</ul>
+            
+            <br><li>dim(S<sub>(λ = -3)</sub>) + dim(S<sub>(λ = -2)</sub>) == 3 (3 is the size of the matrix)</li>
+            <li>1 + 1 == 3 (false)</li>
+            <li>Since the sum of the dimensions of both eigenspaces is not 3, matrix B is not diagonalisable when c = -3</li>
+          </ul>
+          
+          <br><ul>For c = -2: 
+            <li>-(λ + 3)(λ + 2)<sup>2</sup></li>
+            <li>λ = {-3, -2, -2}</li>
+            
+            <br><li>[[(-7 - λ) -1 -2] [0 (-2 - λ) 0] [-10 3 (3 - λ)]]</li>
+            
+            <br><li>For λ = -3: </li>
+              <ul>dim(S<sub>(λ = -3)</sub>) = 1 (multiplicity = 1)</ul>
+            
+            <br><li>For λ = -2: </li>
+              <ul>[[-5 -1 -2] [0 0 0] [-10 3 5]]</ul>
+              <ul>[[-5 -1 -2] [-10 3 5] [0 0 0]] (R2, R3 = R3, R2)</ul>
+              <ul>[[-5 -1 -2] [0 5 9] [0 0 0]] (R2 = R2 - 2 R1)</ul>
+              <ul>dim(S<sub>(λ = -2)</sub>) = 1 (nullity = 1)</ul>
+            
+            <br><li>dim(S<sub>(λ = -3)</sub>) + dim(S<sub>(λ = -2)</sub>) == 3 (size of matrix)</li>
+            <li>1 + 1 == 3 (false)</li>
+            <li>Since the sum of the dimensions of both eigenspaces is not 3, matrix B is not diagonalisable when c = -3</li>
+          </ul>
+        
+        <br><li class="green">In conclusion, matrix B is not diagonalisable when c = {-3, -2}</li>
+      </ol>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <ol>Given matrix A = [[6 -5 -4] [5 -3 -5] [4 -5 -2]] and p(λ) = -(λ + 3)(λ - 2)<sup>2</sup>, solve for the eigenspaces for each eigenvalue and determine if A is diagonalisable.
+        
+        <br><br><li>The eigenvalues are λ = {-3, 2} and the eigenmatrix is [[(6 - λ) -5 -4] [5 (-3 - λ) -5] [4 -5 (-2 - λ)]]</li>
+          <ul>For λ = -3: 
+            <li>[[9 -5 -4] [5 0 -5] [4 -5 1]]</li>
+            <li>[[9 -5 -4] [1 0 -1] [4 -5 1]] (R2 = R2 / 5)</li>
+            <li>[[1 0 -1] [9 -5 -4] [4 -5 1]] (R1, R2 = R2, R1)</li>
+            <li>[[<b>1</b> 0 -1] [0 -5 5] [0 -5 5]] (R2 = R2 - 9 R1;  R3 = R3 - 4 R1)</li>
+            <li>[[<b>1</b> 0 -1] [0 <b>-5</b> 5] [0 0 0]] (R3 = R3 - R2)</li>
+            <li>nullity = 1</li>
+            
+            <br><li>{x - z = 0;  -5y + 5z = 0}</li>
+            <li>x(z) = z;  y(z) = z;  z(z) = z</li>
+            <li class="green">B<sub>(λ = -3)</sub> = {[[1] [1] [1]]}</li>
+          </ul>
+          
+          <br><ul>For λ = 2: 
+            <li>[[4 -5 -4] [5 -5 -5] [4 -5 -4]]</li>
+            <li>[[4 -5 -4] [1 -1 -1] [0 0 0]] (R2 = R2 / 5;  R3 = R3 - R2)</li>
+            <li>[[1 -1 -1] [4 -5 -4] [0 0 0]] (R1, R2 = R2, R1)</li>
+            <li>[[<b>1</b> -1 -1] [0 <b>-1</b> 0] [0 0 0]] (R2 = R2 - 4 R1)</li>
+            <li>nullity = 1</li>
+            
+            <br><li>{x - y - z = 0;  -y = 0}</li>
+            <li>x(z) = z;  y(z) = 0;  z(z) = z</li>
+            <li class="green">B<sub>(λ = 2)</sub> = {[[1] [0] [1]]}</li>
+            
+            <br><li>Since the nullity of both eigenspaces are 1. The sum of the dimensions of these eigenspaces is 2. Since this value is less than the size of the matrix, 3, matrix A is not diagonalisable</li>
+          </ul>
+        
+        <br><br><li>Computing p(λ): </li>
+          <ul>det([[(6 - λ) -5 -4] [5 (-3 - λ) -5] [4 -5 (-2 - λ)]]) = 0</ul>
+          <ul>det([[(6 - λ) -1 -4] [5 (2 - λ) -5] [4 (-3 + λ) (-2 - λ)]]) = 0 (C2 = C2 - C3)</ul>
+          <ul>det([[(6 - λ) -1 0] [5 (2 - λ) (-13 + 4λ)] [4 (-3 + λ) (10 - 5λ)]]) = 0 (C3 = C3 - 4 C2)</ul>
+          <ul>det([[(6 - λ) -1 0] [1 (5 - 2λ) (-23 + 9λ)] [4 (-3 + λ) (10 - 5λ)]]) = 0 (R2 = R2 - R3)</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

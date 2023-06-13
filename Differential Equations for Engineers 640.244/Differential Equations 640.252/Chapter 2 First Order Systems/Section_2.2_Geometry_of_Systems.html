@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 2.2: The Geometry of Systems</title>
+  </head>
+  
+  <body>
+    <h1>Section 2.2: The Geometry of Systems</h1>
+    
+    <ul class="topic"><b>Vector Fields for Predator-Prey Systems</b>
+      <li>A <b>vector</b> is a matrix of dimensions (1 x m), where m = columns</li>
+      
+      <li>Given system of equations {dR/dt = 2R - 1.2R F, dF = 0.9R F - F}, a solution curve (R(t), F(t)) can be written as a vector function <b>P</b>(t), having 2 components: </li>
+        <ul><b>P</b>(t) = (R(t); F(t))</ul>
+      
+      <br><li>The derivative of a vector function is the derivatives of all its components: </li>
+        <ul>d<b>P</b>/dt = (dR/dt; dF/dt)</ul>
+        <ul>d<b>P</b>/dt = (2R - 1.2R F; 0.9R F - F)</ul>
+      
+      <br><li>A vector field <b>V</b> can be expressed as: </li>
+        <ul><b>V</b>(R, F) = (2R - 1.2R F, 0.9R F - F)
+          <li>This vector takes 2 inputs as solutions, one for R & one for F</li>
+        </ul>
+      <li>The solutions R(t) = 2 & F(t) = 1 can be written as (R, F) = (2, 1) and as a vector field: </li>
+        <ul><b>V</b>(2, 1) = (2(2) - 1.2(2)(1), 0.9(2)(1) - (1))</ul>
+        <ul><b>V</b>(2, 1) = (1.6, 0.8)</ul>
+      
+      <br><li>Since <b>P</b>(t) uses the functions themselves as components and <b>V</b>(R, F) using the functions' derivatives as components, the derivative of vector function <b>P</b> is the vector field <b>V</b> itself</li>
+        <ul>d<b>P</b>/dt = <b>V</b>(R, F)</ul>
+        <ul>d<b>P</b>/dt = <b>V</b>(<b>P</b>)</ul>
+      
+      <br><li>The vectors that make up this field lie on the RF-plane, each having an R-component and F-component</li>
+        <ul>This results in vectors varying in magnitude & direction: Magnitude = sqrt(R<sup>2</sup> + F<sup>2</sup>), Direction = atan(F / R)</ul>
+        <ul>To better visualise the graph made by the vector field, the vectors can be shown as unit vectors, having the same direction as an original vector but a magnitude of one
+          <li>This creates a <b>direction field</b></li>
+        </ul>
+    </ul>
+    
+    <ul class="topic"><b>Vector Fields for Simple Harmonic Oscillators</b>
+      <li>As previously discussed, the equations describing undamped mass-spring motion are: </li>
+        <ul>d<sup>2</sup>y/dt + k y/m = 0</ul>
+        
+        <br><ul>{dy/dt = v; dv/dt = -k y/m}</ul>
+        
+        <ul>if k / m = 1: {dy/dt = v; dv/dt = -y}</ul>
+      
+      <br><li>let vector field <b>F</b>(y, v) = (v, -y)</li>
+    </ul>
+    
+    <ul class="topic"><b>The Geometry of Vector Fields & its Solutions</b>
+      <li>let systems of equations (SoE) {dx/dt = f(x, y); dy/dt = g(x, y)}, solution vector <b>Y</b>(t) = (x(t), y(t)), vector field <b>F</b>(x, y) = (f(x, y), g(x, y))</li>
+      <li>The derivative of the solution vector can be written as: </li>
+        <ul>d<b>Y</b>/dt = (dx/dt; dy/dt)</ul>
+        <ul>d<b>Y</b>/dt = (f(x, y), g(x, y))</ul>
+        <ul>d<b>Y</b>/dt = <b>F</b>(<b>Y</b>)</ul>
+      
+      <br><li>if dx/dt = x & dy/dt = y: the vectors with vector field <b>F</b>(x, y) = (x, y) always point away from the origin</li>
+      <li>if dx/dt = -x & dy/dt = -y: the vectors with vector field <b>F</b>(x, y) = (-x, -y) always point towards from the origin</li>
+      
+      <br><li>The solution vector <b>Y</b>(t) = (x(t), y(t)) can be considered a parameterization of a solution curve on the xy-plane</li>
+      <li>Therefore, the derivative of the solution vector (d<b>Y</b>/dt = <b>F</b>(<b>Y</b>)) represents the tangent vectors of the solution curves, which can also be represented by the vectors within the vector field themselves</li>
+      
+      <li>Given d<b>Y</b>/dt = <b>F</b>(<b>Y</b>) = <b>F</b>(x, y), a point <b>Y</b><sub>0</sub> = (x<sub>0</sub>, y<sub>0</sub>) is an equillibrium point if <b>F</b>(<b>Y</b><sub>0</sub>) = <b>0</b> (zero vector)</li>
+        <ul>Solution vector <b>Y</b>(t) = <b>Y</b><sub>0</sub> is then considered an equillibrium solution</ul>
+      <li>In other words, d<b>Y</b>/dt = (dx/dt, dy/dt) == (0, 0) must be true for all t</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Given SoE {dx/dt = 3x + y; dy/dt = x - y}, determine the equillibrium point(s).
+      
+        <li>Setting the derivatives equal to zero and solving the system: </li>
+          <ul>{3x + y = 0; x - y = 0}</ul>
+          <ul>3x + y = x - y</ul>
+          <ul>2x = -2y</ul>
+          <ul>x = -y</ul>
+          
+          <ul class="green">(x, y) = (0, 0)
+            <li>The vectors never touch this point (the origin), they instead are repelled by it</li>
+          </ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="Statistics.css">
+  	<title>Chapter 4: Hypothesis Tests</title>
+  </head>
+  
+  <body>
+    <h2>Chapter 4: Hypothesis Tests</h2>
+    
+    <ul class="topic"><b>Hypothesis Tests</b>
+      <li>Hypothesis or statistical tests are used to make conclusions or statistical inferences of a population based on a known sample</li>
+        <ul>2 hypotheses for a population can be made based on data from a sample: 
+          <li>Alternative Hypothesis (H<sub>a</sub>)</li>
+            <ul>This hypothesis supports the claim of a general population made by a study where the experimental group shows defined distinctions compared to a control group. In other words, the values of the dependent variables for both groups were different enough to not be concluded as values due to random chance</ul>
+            
+            <br><ul>It is measured by comparing the 2 means of the values of the dependent variable. If the one mean is clearly higher, lower or different from than the other, then the alternative hypothesis is supported</ul>
+            
+            <br><ul>The notations used for stating the alternative hypothesis are either: 
+              <li>H<sub>a</sub> : parameter -in relation to- value</li>
+              <li>H<sub>a</sub> : parameter1 -in relation to- parameter2</li>
+            </ul>
+          
+          <br><li>Null Hypothesis (H<sub>0</sub>)</li>
+            <ul>This hypothesis rejects the claim of a general population made by the study, which resulted in no clear difference between the experimental group and control group. In other words, the dependent variable being measured had values that were most likely due to random chance</ul>
+            
+            <br><ul>It is measured by compared the 2 means of the values of the dependent variable. If the means are equal or almost equal, the null hypothesis is supported</ul>
+            
+            <br><ul>The notations used for stating the null hypothesis are either: 
+              <li>H<sub>0</sub> : parameter = value</li>
+              <li>H<sub>0</sub> : parameter1 = parameter2</li>
+            </ul>
+        </ul>
+      
+      <br><li>The closer the parameter of interest is closest to the predicted value or another parameter, the more likely it is to support the null hypothesis (against the alternative hypothesis) and vice versa</li>
+      
+      <br><li>The order for the difference in 2 parameters matters, as this properly determines the sign of the null parameter</li>
+    </ul>
+    
+    <ul class="topic"><b>Measuring Evidence using p-Values</b>
+      <li>To determine if the null hypothesis H<sub>0</sub> is supported or rejected for one sample statistic, a <b>randomisation distribution</b> is generated from many randomisation samples who reject H<sub>0</sub> based on their values for the statistic of interest. This is done by randomly reassigning the locations of the values of the 2 variables</li>
+        <ul>Random sample distributions are always centered at the value suggested by H<sub>0</sub></ul>
+        <ul>Randomisation distribution simulates sample data occurring at random chance. If an actual sample data is not within the the range of randomised samples, this is likely that the data from the actual sample did not occur by random chance</ul>
+        <ul>Every randomisation distribution is different and will give different individual statistics</ul>
+      
+      <br><li>The <b>p-value</b> is the proportion of samples for H<sub>0</sub> = true that have the same or greater statistical value than the observed sample statistic. The p-value is measured by counting all of the randomised sample statisics that are at or exceed the observed sample statistic and dividing it by the total number of randomised samples: </li>
+        <ul class="red">p-value = exceedingRandomisedSamples / totalRandomisedSamples</ul>
+      
+      <br><li>Generally, the farther the statistic is from the proposed H<sub>0</sub> parameter, the smaller the p-value. The smaller the p-value, the more likely it is to reject the null hypothesis</li>
+      
+      <br><li>Increasing the number of randomised samples in a distribution increases the accuracy of the p-value. Every p-value is specific to a randomised distribution and is different from other distributions, however, all randomised distributions for a sample of data have similar p-values</li>
+      
+      <br><li>The direction of where the sample statistic should lie to rejected H<sub>0</sub> depends on the alternative hypothesis H<sub>a</sub>. Although the p-value is solely dependent on H<sub>0</sub> and not H<sub>a</sub></li>
+        <ul>A summary statistic greater than the proposed H<sub>0</sub> parameter (null parameter) is said to lie within the right-tail of a randomisation distribution. One that is lower is said to lie within the left-tail of the distribution</ul>
+        <ul>If the direction of the observed statistic is irrelevant, then it can lie within either tail of the randomisation distribution, expressing a two-tailed test. The final p-value for such tests is double the proportion of exceeding randomised distribution samples in the smaller tail (the smaller proportion out of the 2 tails)</ul>
+    </ul>
+    
+    <ul class="topic"><b>Determining Statistical Significance</b>
+      <li>A p-value that is small enough indicates that the corresponding sample results are <b>statistically significant</b>. In other words, it is likely that H<sub>0</sub> is rejected & H<sub>a</sub> is supported. The evidence is not simply obtained by random chance</li>
+      
+      <br><li>The <b>significance level</b> α is the maximum required p-value P to be statistically significant and reject H<sub>0</sub>. Generally, α = 0.05 so that P < 0.05 is required for sample data to be statistically significant: </li>
+        <ul class="red">if(P < α) {results = "statistically significant"};  else {results = "statistically insignificant"}</ul>
+        
+      <br><li>Rejecting H<sub>0</sub> does not always necessarily mean that H<sub>a</sub> is supported. Because of this, experiments are generally based off of solely the null hypothesis</li>
+      
+      <br><li>The p-value and its association with the significance level seems to have a quite black & white connotation. In practise, statistical significance has more of a spectrum behaviour where the value of α is considered to be a "moderate" level of statistical significance. A higher p-value than α indicates some or even little evidence. A lower p-value indicates strong or even very strong evidence</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <li>Does having a light on at night affect weight? A study based on this question was conducted on mice. In this study, a group of 18 mice were randomly assigned into the "dark group" or "light group". 10 were assigned into the light (experimental) group & 8 were assigned into the dark (control) group. Mice in the light group were exposed to light during nighttime whilst mice in the dark group were not. After 3 weeks of the collecting data, the results for body mass gain (in grams) were recorded as follows: 
+        lightGroup = [9.17, 6.94, 4.99, 1.71, 5.43, 10.26, 4.67, 11.67, 7.15, 5.33];
+        darkGroup = [2.83, 4.60, 6.52, 2.27, 5.95, 4.21, 4.00, 2.53];
+        
+        a) Is this study an experiment or an observational study? What are the cases, variables and best population parameter to measure.
+        b) Compare the 2 groups using summary statistics.
+        c) If 3000 randomised samples were generated using the same values for the 2 variables but spread between both variables and 54 out of these samples had statistics that were at or exceeded the determined mean statistic, how likely is it that H<sub>0</sub> is not rejected (the data is obtained from random chance)?
+        d) For α = 0.05 and the determined p-value, is the sample data significant enough to reject H<sub>0</sub>?</li>
+        
+        <br><ul>a)
+          <li>This study is an experiment because the light of during the mice's slumber was being manipulated to test for weight gain. The cases are the 18 mice in both groups. The independent variable is the categorical variable of light, having 2 values: light or dark. The dependent variable is the mouse's weight gain in grams. The best parameter to measure is the difference in means μ<sub>L</sub> - μ<sub>D</sub> where μ<sub>L</sub> is the mean mass gain for mice in the light group and μ<sub>D</sub> is for mice in the dark group</li>
+        </ul>
+        
+        <br><ul>b)
+          <li>The average body mass gain for the mice in the light group (<b>x</b><sub>L</sub>) is: </li>
+            <ul>lightMass = (9.17 + 6.94 + 4.99 + 1.71 + 5.43 + 10.26 + 4.67 + 11.67 + 7.15 + 5.33) / 10</ul>
+            <ul>lightMass = 6.732</ul>
+          
+          <br><li>The average body mass gain for the mice in the dark group (<b>x</b><sub>D</sub>) is: </li>
+            <ul>darkMass = (2.83 + 4.60 + 6.52 + 2.27 + 5.95 + 4.21 + 4.00 + 2.53) / 8</ul>
+            <ul>darkMass = 4.114</ul>
+            
+          <br><li>The difference in sample means (<b>x</b><sub>L</sub> - <b>x</b><sub>D</sub>) is: </li>
+            <ul>meanDifference = 6.732 - 4.114</ul>
+            <ul>meanDifference = 2.618</ul>
+        </ul>
+        
+        <br><ul>c)
+          <li>To determine whether H<sub>0</sub> was rejected or not using these randomised samples, the p-value is calculated: </li>
+            <ul>p-value = 54 / 3000</ul>
+            <ul>p-value = 0.018 = 1.8%</ul>
+            <ul>This means that there is a 1.8% chance that the data obtained from the observed sample was due to random chance. In other words, there is a 1.8% chance that the null hypothesis is supported</ul>
+        </ul>
+        
+        <br><ul>d)
+          <li>Since P < α, the sample data is significant enough to reject H<sub>0</sub>. In other words, it it is unlikely that the data was obtained fom random chance; light does affect the slumber of mice during nightime via weight gain</li>
+        </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 2: </b>
+      <li>Have you ever forgotten a to-go box? A server at a restaurant notices that some people out of everyone who dines at the restaurant forgets the storage box that holds leftovers from a meal. It was reported by a server that 30% of customers leave the box at the table where they ate. The restaurant plans to take a random sample of 120 customers who request a to-go box and record how many of them leave the box at the table.
+        a) Define the parameter being measured and state the hypotheses to test whether the sample would provide sufficient evidence to reject the conclusion made by the server</li>
+        
+          <br><ul>The variable being measured is a categorical variable having the values "forgot" and "took home". It is measured as a proportion; the given proportion indicates the population proportion p = 0.3. The 2 hypotheses to test are the alternative hypothesis H<sub>a</sub> (stating the server's estimate differs from the sample data) & the null hypothesis H<sub>0</sub> (stating that the server's estimate is accurate based on the sample data). The H<sub>a</sub> is written as (H<sub>a</sub> : p != 0.30) whilst the H<sub>0</sub> is written as (H<sub>0</sub> : p = 0.30)</ul>
+    </ul>
+    
+    <ul class="example"><b>Example 3: </b>
+      <li>Do students dislike zeros? In a student survey, 250 students were asked to write down a random 4-digit number. Out of the 250 numbers, only 12 of them had a zero as the final digit. If the numbers were truly random, then the proportion of a zero as the last digit would be 0.1. Does this show evidence that students are not very good at self-developing random numbers?
+      
+        a) State the alternative & null hypotheses.
+        b) Where is the distribution centered?
+        c) Is this a right-tailed, left-tailed, or two-tailed test?
+        d) Give the value & notation for the sample statistic.</li>
+        e) For α = 0.05 and P = 0.001, is the sample data statistically significant enough to reject the null hypothesis stating that students are able to formulate random numbers themselves
+        
+      <br><ul>a)
+        <li>H<sub>a</sub> : p < 0.1 (The proportion of zeros in students' numbers is less than a truly random propotion of zeros)</li>
+        <li>H<sub>0</sub> : p == 0.1 (The proportion of zeros in students' numbers is the same as a truly random proportion of zeros)</li>
+      </ul>
+      
+      <br><ul>b)
+        <li>The distribution is centered at the population parameter (proportion) p = 0.1</li>
+      </ul>
+      
+      <br><ul>c)
+        <li>This is a left-tailed since H<sub>a</sub> compares the parameter to values less than the null parameter</li>
+      </ul>
+      
+      <br><ul>d)
+        <li>The sample statistic is the sample mean <b>x</b>: </li>
+          <ul><b>x</b> = 12 / 250</ul>
+          <ul class="green"><b>x</b> = 0.048</ul>
+      </ul>
+      
+      <br><ul>e)
+        <li>Since P < α, the sample data is significant enough to reject H<sub>0</sub>. In other words, students are not adept at making random numbers</li>
+      </ul>
+    </ul>
+    
+    <ul class="example"><b>Example 4: </b>
+      <li>Do men or women play more video games? A Pew Research conducted in July 2015 asked 2001 US adults whether they play video games (considered any type of game played on a screen). Within the sample, 501 out of the 1000 males and 477 out of the 1001 females reported that they, indeed, play video games. Is this evidence sufficient to make the conclusion that the frequency of playing video games is affected by gender?
+      
+      a) State the null & alternative hypotheses. Where is the randomisation distribution centered? What type of test does this show? 
+      b) Give the notation & value for the statistic.</li>
+      c) For α = 0.05 & P = 0.282, is the sample data significant enough to reject H<sub>0</sub>?
+      
+      <br><ul>a)
+        <li>H<sub>0</sub> : p<sub>M</sub> - p<sub>F</sub> == 0</li>
+        <li>H<sub>a</sub> : p<sub>M</sub> - p<sub>F</sub> != 0</li>
+        
+        <br><li>0 is where the randomisation distribution is centered based on the null parameter. This is a two-tailed test based on the H<sub>a</sub></li>
+      </ul>
+      
+      <br><ul>b)
+        <li>The sample statistic is the difference in sample proportions <b>p</b><sub>M</sub> - <b>p</b><sub>F</sub>: </li>
+          <ul>propDifference = (501 / 1000) - (477 / 1000)</ul>
+          <ul class="green">propDifference = 0.024 = 2.4%</ul>
+      </ul>
+      
+      <br><ul>c)
+        <li>Since P > α, the results of the experiment are not statistically significant to reject H<sub>0</sub>. Therefore, gender does not significantly affect who plays video games</li>
+      </ul>
+    </ul>
+    
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset-"UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 3.2: Straight-Line Solutions</title>
+  </head>
+  
+  <body>
+    <h1>Section 3.2: Straight-Line Solutions</h1>
+    
+    <ul class="topic"><b>Straight-Line Solutions</b>
+      <li>The geometry of a vector field came be used to determine special solutions for linear systems</li>
+      
+      <br><li>Since the solutions to a linear system are always tangent to vectors within a vector field d<b>Y</b>/dt, they can be drawn as straight lines with a slope according to the components of a solution vector <b>Y</b>(x, y) scaled to a common factor</li>
+        <ul>This factor λ, also known as an <b>eigenvalue</b>, has to scale from the origin to some other point in the xy-plane</ul>
+        
+      <br><li>let coefficient-matrix <b>A</b> = {{a, b} {c, d}}, vector <b>V</b> = {{x} {y}}, there exists a factor λ to give a nonzero solution such that: </li>
+        <ul><b>A V</b> == λ <b>V</b> is true</ul>
+        <ul><b>A V</b> - λ <b>V</b> == <b>0</b> is also true</ul>
+      
+      <li>This can also be written as: </li>
+        <ul>{{a, b} {c, d}} {{x} {y}} - λ {{x} {y}} = {{0} {0}}</ul>
+        <ul>{{a x + b y} {c x + d y}} - {{λ x} {λ y}} = {{0} {0}}</ul>
+        <ul>{{(a - λ) x + b y} {c x + (d - λ) y}} = {{0} {0}}</ul>
+        <ul>{(a - λ) x + b y = 0; c x + (d - λ) y = 0}    (This is the corresponding linear system)</ul>
+        <ul>{{a - λ, b} {c, d - λ}} ⋅ {{x} {y}} = {{0} {0}}</ul>
+        <ul>{{a - λ, b} {c, d - λ}} <b>Y</b> = <b>0</b></ul>
+      
+      <br><li>To determine if there is a nonzero solution, the determinant of the resulting matrix (<b>A</b> - λ <b>I</b>, where <b>I</b> is the <b>identity matrix</b> equal to {{1, 0} {0, 1}}) must equal zero: </li>
+        <ul>det({{a - λ, b} {c, d - λ}}) = 0</ul>
+        <ul>(a - λ) (d - λ) - b c = 0</ul>
+        <ul>λ<sup>2</sup> - (a + d) λ + (a d - b c) = 0</ul>
+        <ul>λ<sup>2</sup> - (a + d) λ + det(<b>A</b>) = 0
+          <li>This equation is known as the <b>characteristic polynomial</b></li>
+          <li>The roots (solutions) to the polynomial are the eigenvalues of the matrix <b>A</b></li>
+          <li>If the solutions are not real, then they are considered <b>complex eigenvalues</b></li>
+          <li>If the solutions lead to a solely a squared eigenvalue, this is known as a <b>repeating root</b></li>
+        </ul>
+      
+      <br><li>if b || d == 0 is true, then there are nontrivial solutions for the values λ = {a, d}</ul>
+      <li>if λ > 0, the vectors along the solution curve point away from the origin</li>
+      <li>if λ < 0, the vectors along the solution curve point towards the origin</li>
+      
+      <br><li>The vector <b>V</b> that corresponds to an eigenvalue λ is known as an <b>eigenvector</b></li>
+        <ul>These vectors correspond to any vector within a straight-line solution of the linear system</ul>
+        <ul>Eigenvectors can be solved by plugging in the corresponding eigenvalue into the previous equation: 
+          <li><b>A V</b> - λ <b>V</b> = <b>0</b></li>
+          <li><b>A</b> {{x} {y}} - λ {{x} {y}} = <b>0</b></li>
+          <li>{{a - λ, b} {c, d - λ}} <b>V</b> = <b>0</b></li>
+          <li>{(a - λ) x + b y = 0; c x + (d - λ) y = 0}</li>
+        </ul>
+      
+      <br><li>As long as there is an eigenvalue λ for a matrix <b>A</b>, then the solution <b>Y</b><sub>0</sub>(t) for the linear system d<b>Y</b>/dt = <b>A Y</b> using the corresponding eigenvector <b>V</b><sub>λ</sub>(x, y) is: </li>
+        <ul><b>Y</b>(t) = e<sup>λ t</sup> <b>V</b><sub>λ</sub></ul>
+        <ul><b>Y</b>(t) = e<sup>λ t</sup> {{x} {y}}</ul>
+        <ul><b>Y</b>(t) = {{e<sup>λ t</sup> x} {e<sup>λ t</sup> y}}</ul>
+      <li>The system at the solution <b>Y</b><sub>0</sub>(t) is written as: </li>
+        <ul>d<b>Y</b><sub>0</sub>/dt = {{λ e<sup>λ t</sup> x<sub>0</sub>} {λ e<sup>λ t</sup> y<sub>0</sub>}}</ul>
+        <ul>d<b>Y</b><sub>0</sub>/dt = λ <b>Y</b><sub>0</sub>(t)</ul>
+      
+      <br><li>If there are 2 distinct eigenvectors <b>V</b><sub>1</sub> & <b>V</b><sub>2</sub> for their respective corresponding real eigenvalues λ<sub>1</sub> & λ<sub>2</sub>, these vectors are considered linearly independent</li>
+      <li>As long as they are linearly independent, the Linearity Principle can be applied to them: </li>
+        <ul>For solution vectors <b>Y</b><sub>1</sub> = e<sup>λ<sub>1</sub> t</sup> <b>V</b><sub>1</sub> & <b>Y</b><sub>2</sub> = e<sup>λ<sub>2</sub> t</sup> <b>V</b><sub>2</sub>, the general solution to the linear system is written as:
+          <li><b>Y</b>(t) = k<sub>1</sub> <b>Y</b><sub>1</sub> + k<sub>2</sub> <b>Y</b><sub>2</sub></li>
+          <li><b>Y</b>(t) = k<sub>1</sub> e<sup>λ<sub>1</sub> t</sup> <b>V</b><sub>1</sub> + k<sub>2</sub> e<sup>λ<sub>2</sub> t</sup> <b>V</b><sub>2</sub></li>
+        </ul>
+    </ul>
+    
+    <br><ul class="example"><b>Example 1: </b>
+      <ol>Given matrix <b>A</b> = {{4, 3} {-1, 0}}, determine the eigenvalues, eigenvectors & solutions to its corresponding linear system.
+      
+        <li>Solving for the eigenvalues: </li>
+          <ul>det({{4 - λ, 3} {-1, -λ}}) = 0</ul>
+          <ul>-λ (4 - λ) + 3 = 0</ul>
+          <ul>λ<sup>2</sup> - 4λ + 3 = 0</ul>
+          <ul>(λ - 3) (λ - 1) = 0</ul>
+          <ul>λ = {1, 3}</ul>
+      
+        <li>Solving for the corresponding eigenvectors <b>V</b>: </li>
+          <ul>if λ = 1:
+            <li>{{4 - (1), 3} {-1, -(1)}} ⋅ {{x} {y}} = <b>0</b></li>
+            <li>{{3, 3} {-1, -1}} ⋅ {{x} {y}} = <b>0</b></li>
+            <li>{3x + 3y = 0; -(x + y) = 0}</li>
+            <li>x + y = 0</li>
+            <li>y = -x</li>
+            
+            <br><li><b>V</b><sub>1</sub> = {{1} {-1}}</li>
+          </ul>
+          
+          <br><ul>if λ = 3:
+            <li>{{4 - (3), 3} {-1, -(3)}} ⋅ 3 {{x} {y}} = <b>0</b></li>
+            <li>{x + 3y = 0; -(x + 3y) = 0}</li>
+            <li>x = -3y</li>
+            
+            <br><li><b>V</b><sub>2</sub> = {{-3} {1}}</li>
+          </ul>
+        
+      </ol>
+    </ul>
+    
+  </body>
+</html>

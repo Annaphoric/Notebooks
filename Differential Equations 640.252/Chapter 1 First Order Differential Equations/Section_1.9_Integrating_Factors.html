@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../Differential_Equations.css">
+    <title>Section 1.9: Integrating Factors</title>
+  </head>
+  
+  <body>
+    <h1>Section 1.9: Integrating Factors</h1>
+    
+    <ul class="topic"><b>Integration Factor</b>
+      <li>let non-homogenous DE {dy/dt + g(t) y = b(t)};</li>
+      <li>let μ(t) = integration factor, a function that satisfies d(μ(t) y(t))/dt = μ(t) dy/dt + μ(t) g(t) y(t)</li>
+      
+      <br><li>The Product Rule of Derivatives says that: </li> 
+        <ul>d(μ(t) y(t))/dt = μ(t) dy/dt + dμ/dt y(t)</ul>
+      <li>Therefore: </li>
+        <ul>μ(t) dy/dt + μ(t) g(t) y(t) = μ(t) dy/dt + dμ/dt y(t)</ul>
+      <li>Cancelling out μ(t) dy/dt and dividing by y(t), the equation remains as: </li>
+        <ul>dμ/dt = μ(t) g(t)</ul>
+      <li>Solving for a solution to the DE via separation & integration gives: </li>
+        <ul class="red">μ(t) = e<sup>∫(g(t))dt</sup></ul>
+      
+      <br><li>Note: dμ/dt == g(t) is always true</li>
+    </ul>
+    
+    <ul class="example"><b>Example 1: </b>
+      <ol>Determine the general solution to DE {dy/dt + 2y / t = t - 1}.
+      
+        <li>let g(t) = 2/t, b(t) = t - 1; Solving for integration factor μ(t): </li>
+          <ul>μ(t) = e<sup>∫(2/t)dt</sup>  // The constant of integration is absorbed by the integration factor</ul>
+          <ul>μ(t) = e<sup>2 ln(t)</sup></ul>
+          <ul>μ(t) = e<sup>ln(t<sup>2</sup>)</sup></ul>
+          <ul>μ(t) = t<sup>2</sup></ul>
+         
+        <br><li>Multiplying μ(t) to both sides of the DE and simplifying: </li>
+          <ul>(t<sup>2</sup>) dy/dt + (t<sup>2</sup>) 2y / t = (t<sup>2</sup>) (t - 1)</ul>
+          <ul>t<sup>2</sup> dy/dt + 2t y = t<sup>3</sup> - t<sup>2</sup></ul>
+          
+        <br><li>Applying the product rule and solving for the general solution via integration: </li>
+          <ul>d(t<sup>2</sup> y)/dt = t<sup>2</sup> dy/dt + 2t y  // This is true because dμ/dt = 2t</ul>
+          
+          <br><ul>∫(d(t<sup>2</sup> y)/dt)dt = ∫(t<sup>3</sup> - t<sup>2</sup>)dt</ul>
+          <ul>t<sup>2</sup> y = t<sup>4</sup>/4 - t<sup>3</sup>/3 + C</ul>
+          <ul class="green">y(t) = t<sup>2</sup>/4 - t/3 + C/t<sup>2</sup></ul>
+          
+          <br><ul>Note: {y(t) = t<sup>2</sup>/4 - t/3} is one solution to the DE (where C = 0)</ul>
+          <ul>Note: The associated homogenous DE is dy/dt = -2y/t</ul>
+      </ol>
+    </ul>
+    
+  </body>
+</html>

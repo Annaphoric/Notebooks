@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+		  <meta charset="UTF-8">
+		  <link rel="stylesheet" href="../Differential_Equations.css">
+		  <title>Section 1.6: Euler's Method</title>
+  </head>
+  <body>
+  		<h1>Section 1.6: Euler's Method</h1>
+  		
+  		<ul class="topic"><b>Euler's Method</b>
+  		  <li><b>Euler's Method</b> provides a way of numerically approximating the solution to a DE without graphical methods. Existence & uniqueness must be present</li>
+  		  
+  		  <br><li>The tangent line (derivative) of a function provides the best linear approximation. Tangent lines at different points of a function at h-distance away from each other are iterated to approximate how the function will behave, starting with an initial point. Given y' = f(t, y) (the slope), initial point (t<sub>0</sub>, y<sub>0</sub>), step-size h, points are chosen as followed: </li>
+  		    <ul>Point 0 = (t<sub>0</sub>, y<sub>0</sub>)</ul>
+  		    <ul>Point 1 = (t<sub>1</sub>, y<sub>1</sub>) == (t<sub>0</sub> + h, y<sub>0</sub> + f(t<sub>0</sub>, y<sub>0</sub>) h)</ul>
+  		    <ul>Point 2 = (t<sub>2</sub>, y<sub>2</sub>) == (t<sub>1</sub> + h, y<sub>1</sub> + f(t<sub>1</sub>, y<sub>1</sub>) h)</ul>
+  		    <ul class="red">Point k = (t<sub>k</sub>, y<sub>k</sub>) == (t<sub>k - 1</sub> + h, y<sub>k - 1</sub> + f(t<sub>k - 1</sub>, y<sub>k - 1</sub>) h)</ul>
+  		    
+  		    <br><li>Decreasing the step size (or increasing number of intervals) would increase the accuracy of Euler's Method Approximations</li>
+  		</ul>
+  		
+  		<ul class="example"><b>Example 1:</b>
+  		  <ol><em>Approximate the solution to DE: dy/dt = y; using IC: y(0) = 1; at t = 2 & step-size h = 0.5; How does this compare to the actual solution?</em>
+  		  
+  		    <br><li>let f(t, y) = y; Using Euler's Method, the points until t = 2 are determined starting with the IC: </li>
+  		      <ul>pointK = (t<sub>k - 1</sub> + h, y<sub>k - 1</sub> + f(t<sub>k - 1</sub>, y<sub>k - 1</sub>) h)</ul>
+  		      <ul>initial-point = (0, 1)</ul>
+  		      
+  		      <br><ul>point1 = (0 + 0.5, 1 + f(0, 1) 0.5)</ul>
+  		      <ul>point1 = (0.5, 1.5)</ul>
+  		      
+  		      <br><ul>point2 = (0.5 + 0.5, 1.5 + f(0.5, 1.5) 0.5)</ul>
+  		      <ul>point2 = (1, 2.25)</ul>
+  		      
+  		      <br><ul>point3 = (1 + 0.5, 2.25 + f(1, 2.25) 0.5)</ul>
+  		      <ul>point3 = (1.5, 3.375)</ul>
+  		      
+  		      <br><ul>point4 = (1.5 + 0.5, 3.375 + f(1.5, 3.375) 0.5)</ul>
+  		      <ul>point4 = (2, 5.0625)</ul>
+  		      <ul class="green">This means y ≈ 5.0625 at t = 2. y(t) is found to equal e<sup>t</sup>. y(2) = 7.389 which is somewhat close to 5.0625</ul>
+  		  </ol>
+  		</ul>
+  		
+  		
+  		<ul class="example"><b>Example 2: </b>
+  		  <ol><em>Approximate the solution to DE: {dy/dt = 3y - t<sup>2</sup>}; using IC: y(1) = 2; at t = 4; with a step-size h = 1;</em>
+  		  
+  		    <br><li>let {f(t, y) = 3y - t<sup>2</sup>}; Using Euler's Method until t = 4: </li>
+  		      <ul>initial-point = (1, 2)</ul>
+  		      
+  		      <br><ul>point1 = (1 + 1, 2 + f(1, 2) 1)</ul>
+  		      <ul>point2 = (2, 7)</ul>
+  		      
+  		      <br><ul>point2 = (2 + 1, 7 + f(2, 7) 1)</ul>
+  		      <ul>point2 = (3, 24)</ul>
+  		      
+  		      <br><ul>point3 = (3 + 1, 24 + f(3, 24) 1)</ul>
+  		      <ul>point3 = (4, 87)</ul>
+  		      <ul>Solving for y(t) via separating, integration factor & integrating, y(t) is found to equal (t<sup>2</sup>/3 + 2t / 9 + 2/27 + 37 e<sup>3t</sup> / (27 e<sup>3</sup>)). y(4) = 11110.5. This answer is quite far off due to a rather large step-size</ul>
+  		  </ol>
+  		</ul>
+  		
+  </body>
+</html>
